@@ -217,13 +217,19 @@ function foot(s,t){
     s.addText(m[0],{x:x+0.46,y,w:3.65,h:0.44,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13.5,bold:true,color:INK,lineSpacing:17});
     s.addText(m[1],{x:x+0.46,y:y+0.46,w:3.62,h:1.05,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,color:BODY,lineSpacing:15});
   });
-  card(s,9.0,1.95,3.73,4.3,'FAF8FD');
-  s.addText('Data I would ask for in week one',{x:9.28,y:2.15,w:3.2,h:0.6,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:INK,lineSpacing:19});
-  bullets(s,9.28,2.78,3.2,3.2,['Balance sensitivity by segment, from a geographic rate holdout — not a blended number',
-    'LTV by acquisition source: yield-acquired vs. income-acquired',
-    'Balance concentration — does the premium cap even bind?',
-    'Attrition elasticity vs. the competitor gap, not vs. our own rate',
-    'Marginal risk-adjusted credit yield — is deployment actually accretive?'],11.5);
+  card(s,9.0,1.95,3.73,4.3,PURPLE_PALE);
+  s.addText('The first test I would run',{x:9.28,y:2.15,w:3.2,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:PURPLE});
+  const td=[['Unit','Customer, randomised at the Turbo gate'],
+            ['Arms','Premium gated on income landing, vs. on one card purchase, vs. control'],
+            ['Primary','Balance retention · blended cost of funds'],
+            ['Guardrail','Card transaction volume — Card’s metric, agreed with them before launch'],
+            ['Accept','Neutral or positive contribution margin. Do no harm.'],
+            ['Set first','MDE and power before launch, never after']];
+  td.forEach((t,i)=>{
+    const y=2.55+i*0.6;
+    s.addText(t[0].toUpperCase(),{x:9.28,y,w:0.95,h:0.26,isTextBox:true,margin:0,fontFace:HEAD,fontSize:9,bold:true,charSpacing:1,color:PURPLE});
+    s.addText(t[1],{x:9.28,y:y+0.2,w:3.2,h:0.42,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11,color:BODY,lineSpacing:14});
+  });
   s.addText([{text:'The trade-off, said out loud:  ',options:{bold:true,color:INK}},
     {text:'the rate is our biggest acquisition asset and our biggest cost line at the same time. That is exactly why I would not cut the headline — I would change what it is quoted against, and what it is attached to.'}],
     {x:M,y:5.35,w:8.1,h:0.9,isTextBox:true,margin:0,fontFace:TEXT,fontSize:13,color:BODY,lineSpacing:18});
@@ -298,9 +304,9 @@ function foot(s,t){
 
   card(s,8.83,3.05,3.9,2.55,PURPLE_PALE);
   s.addText('Show the estimate — and the path',{x:9.11,y:3.24,w:3.35,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:PURPLE});
-  s.addText('Show our income estimate back, with the reasoning and an appeal path, before we price anyone on it.\n\nThen show what raises the line: a counterfactual — the specific, reachable actions that unlock the next level, surfaced before the customer has to ask.',
+  s.addText('Score the customer as if they had repaid in full and on time — then show them the limit that unlocks.\n\nThat counterfactual is the only question a capped customer actually has: what would have to be different? And the answer is a commitment, not a score.',
     {x:9.11,y:3.6,w:3.35,h:1.9,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12,color:BODY,lineSpacing:16.5});
-  foot(s,'I shipped counterfactual line-progression at Tala México — same market, same thin-file segment — and it lifted retention 10% in the hardest and riskiest segments. Nu buys retention today with a 13% yield; progression buys it more cheaply, and unlike yield it compounds, because the customer who is climbing is the one who is repaying.');
+  foot(s,'I shipped this in México, to this segment. The non-obvious finding was timing — exposing a limit too early cuts default but gives the gain back through faster repayment cycles, so expose one personalised limit, and only as the due date approaches.');
 }
 
 /* ---------- 11 RESPONSIBLE AI ---------- */
@@ -358,11 +364,12 @@ function foot(s,t){
   head(s,'2.2  Cross-functional alignment','Change what we are arguing about',false);
   s.addText([{text:'Scenario: the Credit Card roadmap collides with a mass-market bundle on a regulatory clock.  ',options:{italic:true,color:MUTED}},{text:'I would not try to win that argument on its own terms.',options:{bold:true,color:INK}}],
     {x:M,y:1.98,w:11.9,h:0.45,isTextBox:true,margin:0,fontFace:TEXT,fontSize:14,lineSpacing:19});
-  const mv=[['Make it one P&L, not three roadmaps.','Core does not own Card or GBA — so Core should own the currency. “My roadmap versus yours” cannot be won on evidence. “Which sequence makes this customer worth more” can.'],
+  const mv=[['Make it one P&L, not three roadmaps.','Core owns neither Card nor GBA, so Core should own the currency. At Tala my launch criterion was neutral-or-positive monthly credit margin — not my feature’s engagement, not Credit’s default rate. One number downstream of all of us.'],
     ['Trade assets, not favours.','Concretely: payday-aligned autopay. Card has autopay and a selectable due date; what it lacks is knowing when payday is. Income landing supplies it, and the delinquency gain lands on their P&L. They give me placement.'],
     ['Never let the regulatory date be my deadline.','The moment it is my launch date it is my problem and their favour. It is a shared compliance exposure — agreed with Legal before the conversation with Card, so it arrives as a fact.'],
     ['Pre-agree the escalation path before you need it.','With Diego and the Card/GBA leads: what is mine, what is theirs, what goes up, and a time-box. Escalating without one wins a decision and costs the relationship.'],
-    ['Take the smaller ask.','If Card genuinely cannot move, I ship without the card component and add it later. Shipping on time beats winning the argument.']];
+    ['Take the smaller ask.','If Card genuinely cannot move, I ship without the card component and add it later. Shipping on time beats winning the argument.'],
+    ['Put the disagreement in a test design.','The fastest way to end a roadmap argument is to convert it into a testable question with a pre-agreed MDE and a guardrail metric the other team chooses. Then we argue about the design, which is solvable — instead of about priority, which is not.']];
   mv.forEach((m,i)=>{
     const x=M+(i%3)*4.05, y=2.55+Math.floor(i/3)*1.85;
     s.addShape(P.ShapeType.ellipse,{x,y:y+0.02,w:0.32,h:0.32,fill:{color:PURPLE_PALE}});
@@ -375,7 +382,7 @@ function foot(s,t){
 /* ---------- 14 FIRST 6 MONTHS ---------- */
 { const s=S(); light(s);
   head(s,'2.4  Prioritisation and global alignment','Three priorities, and why in this order',false);
-  const pr=[['01','Fix what we measure about deposits','WEEKS 1–6','Segment β via a geographic holdout. Re-quote yield as a spread. Retire deposit growth in favour of deployable deposits and cost of funds against TIIE.','First because it is nearly free, it is fast, and it is the evidence base for everything else. A new person with no credibility balance should spend month one producing evidence, not asking for headcount.'],
+  const pr=[['01','Fix what we measure about deposits','WEEKS 1–6','Run the gate test above as a geographic holdout, with MDE and guardrails pre-registered. Re-quote yield as a spread. Retire deposit growth in favour of deployable deposits and cost of funds against TIIE.','First because it is nearly free, it is fast, and it is the evidence base for everything else. A new person with no credibility balance should spend month one producing evidence, not asking for headcount.'],
     ['02','Ship Track A to the cohort we can already detect','WEEKS 4–16','Portability for customers whose payroll pattern is already in our data. Measure completed first salary landings.','Second because it is the expiring opportunity.'],
     ['03','Stand up Track B’s consent and estimate spine','WEEKS 10–26','Not the whole product — the consent flow, the estimator and the fairness harness, so H2 is an extension rather than a new build.','Third because it has the longest lead time, so it has to start early even though it lands late.']];
   pr.forEach((p,i)=>{

@@ -153,6 +153,28 @@ real when the model leans on features the customer shouldn't be optimising, whic
 reason the exclusion list matters. **A counterfactual you can't safely show the customer is
 a signal the model is using something it shouldn't.**"
 
+### Q12d. "How would you actually run the pricing test?" *(likely from Diego or the DS in the room)*
+**Answer:** "Randomised at the Turbo gate, geographically held out. Three arms: premium
+gated on income landing, premium gated on one card purchase as today, and control. Primary
+metrics are balance retention and blended cost of funds. **The guardrail is card transaction
+volume — Card's metric, and I'd let them choose it and set its threshold before launch.**
+Acceptance criterion is neutral-or-positive contribution margin: do no harm. MDE and power
+fixed before we start, not after we see the read."
+
+**If they push on why the guardrail is Card's metric:** "Because it's the fastest way to
+make this a joint decision rather than my proposal. If the team that could block me owns the
+number that would stop me, they have no reason to fight the test — and I've run it that way
+before. At Tala my Growth Hub launch criterion was neutral-or-positive monthly credit
+margin, deliberately not my own feature's metric."
+
+### Q12e. "Isn't there a risk in promising a limit you might not honour?"
+**Answer:** "That's the central design tension, and I've had to resolve it. You either
+honour the originally promised limit always, which gives the customer predictability, or you
+let it increase if rescoring improves, which leverages the model harder. I proposed testing
+both rather than assuming. The thing that must not happen is a hard credit override silently
+breaking a promise you already showed someone — that costs more trust than the limit was
+ever worth, and it's the failure mode I'd instrument first."
+
 ## Tier 3 — global-stakeholder questions (Julia / Juca)
 
 ### Q13. "How do you handle it when the global roadmap doesn't have room for Mexico?"
@@ -181,7 +203,9 @@ credibility arguing that Mexico goes first than arguing that Mexico gets its own
 | Lead any section with balance-sheet language | The JD explicitly prefers product-centric over traditional. Lead with the customer. |
 | Defend an assumption verbally | Move the slider instead. Every time. |
 | Claim the informal track is easy | It's the hardest thing in the deck. Saying so is what makes the rest credible. |
-| Over-index on Tala generally | Two beats only: the Crece progression product, and the +10% retention number. It's evidence, not biography. |
+| Over-index on Tala generally | Three beats: the shared CrM criterion, the timing finding, the retention result. Evidence, not biography. |
+| **Quote Tala's internal baselines, SQL, or model internals** | **Both source documents are Restricted/Confidential, and Nubank competes with Tala in Mexican consumer credit.** Describe your work, never their numbers. Discretion here is itself a signal. |
+| Say "+10% retention" without knowing relative vs. absolute | Decide before you walk in. Being caught unsure undoes the credibility the rest of the answer earns. |
 | Assert any Nu figure as fact | Say the sourcing line in the first minute. Every Nu number is "my read of a public source, treated as an assumption." It costs 15 seconds and it makes every later number safe. |
 
 ## If you're running long
