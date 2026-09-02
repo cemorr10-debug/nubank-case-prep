@@ -226,11 +226,41 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
   <h2 class="rise">We're on a mission to unleash the power of the global majority.</h2>
   <div class="grid g2" style="align-items:stretch">
     <div class="card" data-step="1">
-      <div class="eb" style="color:var(--coral-ink);margin-bottom:6px">The customer's problem</div>
-      <h3>They already solve it — creatively, and at high risk.</h3>
-      <p style="font-size:14px;margin-top:4px">Tandas, prestamistas, the casa de empeño, four small loans stacked across four apps. <b>Thin-file customers are not passive.</b> High risk is simply what they pay for being invisible.</p>
-      <span class="why">63% of Mexican adults cannot get formal credit — 82% of women. Not for lack of income. For lack of any way to prove it. So the price is set for the worst case, and our own personal loan carries a CAT near 85%.</span>
-      <div class="do">Every option is defensive. Agency stays capped.</div>
+      <div class="eb" style="color:var(--coral-ink);margin-bottom:4px">The customer's problem</div>
+      <h3>They solve it themselves — creatively, at high risk.</h3>
+      <svg class="draw" viewBox="0 0 540 400" role="img" aria-label="A self-reinforcing loop. The product does not fit, so customers stack loans across apps and risk compounds. The price does not fit, so they borrow only in emergencies and growth stalls. The path does not fit, so they cannot see how to climb and agency erodes, which sends them back to workarounds." style="margin-top:10px">
+        <defs><marker id="cyc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0L10 5 0 10z" fill="var(--muted)"/></marker></defs>
+        <g fill="none" stroke="var(--muted)" stroke-width="2.2" marker-end="url(#cyc)">
+          <path class="arc" d="M392 62 C 470 104, 486 196, 449 238"/>
+          <path class="arc" style="transition-delay:.3s" d="M300 302 C 278 328, 252 328, 240 306"/>
+          <path class="arc" style="transition-delay:.6s" d="M92 238 C 55 196, 71 104, 148 62"/>
+        </g>
+        <g font-family="Inter,sans-serif" text-anchor="middle">
+          <g class="node">
+            <rect x="165" y="6" width="210" height="88" rx="14" fill="var(--c1)"/>
+            <text x="270" y="30" font-size="14" font-weight="700" fill="var(--ink)">The product doesn't fit</text>
+            <text x="270" y="49" font-size="11.5" fill="var(--ink2)">tandas, prestamistas, empeño</text>
+            <rect x="212" y="60" width="116" height="22" rx="11" fill="var(--coral)" opacity=".85"/>
+            <text x="270" y="75" font-size="10.5" font-weight="700" fill="#3a1a10">Risk compounds</text>
+          </g>
+          <g class="node" style="transition-delay:.35s">
+            <rect x="310" y="250" width="210" height="88" rx="14" fill="var(--c2)"/>
+            <text x="415" y="274" font-size="14" font-weight="700" fill="var(--ink)">The price doesn't fit</text>
+            <text x="415" y="293" font-size="11.5" fill="var(--ink2)">CAT near 85% — crisis only</text>
+            <rect x="360" y="304" width="110" height="22" rx="11" fill="#e1a93c" opacity=".85"/>
+            <text x="415" y="319" font-size="10.5" font-weight="700" fill="#3a2c08">Growth stalls</text>
+          </g>
+          <g class="node" style="transition-delay:.7s">
+            <rect x="20" y="250" width="210" height="88" rx="14" fill="var(--c3)"/>
+            <text x="125" y="274" font-size="14" font-weight="700" fill="var(--ink)">The path doesn't fit</text>
+            <text x="125" y="293" font-size="11.5" fill="var(--ink2)">nothing shows you how to climb</text>
+            <rect x="72" y="304" width="106" height="22" rx="11" fill="var(--nu)" opacity=".85"/>
+            <text x="125" y="319" font-size="10.5" font-weight="700" fill="#fff">Agency erodes</text>
+          </g>
+          <text class="node" style="transition-delay:.95s" x="270" y="185" font-family="Fraunces,serif" font-size="19" font-weight="600" fill="var(--nu-ink)">the workaround loop</text>
+        </g>
+      </svg>
+      <span class="why" style="margin-top:8px">63% of adults can't get formal credit — 82% of women. Not for lack of income.</span>
     </div>
     <div class="card" data-step="2">
       <div class="eb" style="color:var(--nu-ink);margin-bottom:6px">Nu's problem</div>
