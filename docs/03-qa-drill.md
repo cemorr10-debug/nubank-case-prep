@@ -193,6 +193,30 @@ number that would stop me, they have no reason to fight the test — and I've ru
 before. At Tala my Growth Hub launch criterion was neutral-or-positive monthly credit
 margin, deliberately not my own feature's metric."
 
+### Q12d-i. "We just launched Croma. Why doesn't México do that?" *(likely from the global stakeholder)*
+**Under it:** are you going to fight the group roadmap, or work with it?
+**Answer:** "Croma is a good product and the architecture is right — a card, a boosted box,
+a non-financial bundle, all in one tier. What doesn't transfer is the **anchor.** Croma
+targets customers from five thousand reais a month and monetises spend and subscriptions.
+My segment's spend is small and irregular, and most of them don't hold subscriptions. So
+México needs the same architecture with income landing as the anchor instead of spend."
+
+**Then make it a global argument rather than a local exception:** "And I'd put it that way
+in a global forum. Croma is the affluent-tier instance of a bundle pattern. What I'm
+proposing is the mass-market instance — and every market Nu licenses next is going to need
+the mass-market one before it needs Croma."
+
+**If pressed on the non-financial component:** "Not Netflix. Recargas. We've processed
+mobile top-ups from thirty-plus carriers since 2024 — the rail exists, it's just not part of
+a bundle yet."
+
+### Q12d-ii. "Quoting against CETES sounds like a big change." *(the softest possible objection to your best move)*
+**Answer:** "It's less of a change than it sounds, because **Brazil already does it** — the
+Caixinha Turbo Croma is quoted as 120% of CDI, not as a fixed percentage. Same capped-box
+architecture as Cajita Turbo, just quoted relative instead of absolute. On this specific
+convention México is the outlier, not the innovator. I'd be asking to align with group
+practice, not to invent something."
+
 ### Q12e. "Isn't there a risk in promising a limit you might not honour?"
 **Answer:** "That's the central design tension, and I've had to resolve it. You either
 honour the originally promised limit always, which gives the customer predictability, or you

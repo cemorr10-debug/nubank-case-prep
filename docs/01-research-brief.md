@@ -164,6 +164,83 @@ market that does the arithmetic, that gap costs trust — and Nubank's stated mi
 fighting complexity. **Do not put this on a slide.** If it comes up, raise it as a question
 worth testing, never as an accusation.
 
+## 3d. Cross-market comparison — Brazil vs México
+
+### Nubank Croma — **Brazil, not México.** Launched 28 July 2026.
+Confirming tells: quoted against **CDI**; priced in **R$**; LATAM Pass / Azul / Smiles;
+*Caixinha* (Portuguese) not *Cajita*; NuCel and NuTag are Brazilian products.
+
+| | Detail |
+|---|---|
+| Position | New mid-tier **between standard Nubank and Ultravioleta** (the high-income segment) |
+| Target | "Média renda" — customers earning **from R$5,000/month** |
+| Card | Mastercard Platinum · **0.8% cashback** on all credit purchases, or 1.4 points per dollar |
+| Streaming | **5% cashback** across 28 subscription services (Netflix, Spotify, Disney+, Uber One, iFood…) |
+| Savings | **Caixinha Turbo Croma at 120% of CDI**, immediate liquidity, **capped at R$10,000** |
+| Investments | CDB Croma at 130% of CDI for new investors |
+| Non-financial | NuCel 10GB free for 6 months · NuTag with no monthly fee · 80% of HBO Max · ChatGPT Go free for 6 months |
+| Price | R$39/month, waivable |
+
+### ⚠️ Three things this comparison hands the case
+
+**1. The spread-quoting recommendation is the group convention — México is the outlier.**
+
+| | Brazil (Caixinha Turbo Croma) | México (Cajita Turbo) |
+|---|---|---|
+| Rate | **120% of CDI** — quoted *relative* | **13.00% fija** — quoted *absolute* |
+| Cap | R$10,000 (~US$1,850) | MX$25,000 (~US$1,350) |
+| Gate | Segment membership (fee/income) | One card purchase a month |
+
+Same architecture, same capped-box pattern, **different quoting convention**. So "quote a
+spread, not a number" is not an idea being imported from outside — it is what Brazil already
+does. That reframes the recommendation from *my proposal* to *an alignment gap with group
+practice*, which is far easier to carry in a global forum.
+
+It also means **changing the gate is choosing among patterns the group already uses**, not
+inventing one. Brazil gates on segment; México gates on activity. Neither is a law.
+
+**2. Croma is the concrete instance of "local priorities don't align with the global roadmap."**
+It is an **upmarket, spend-monetised** bundle: platinum card, streaming cashback,
+subscriptions, telco. Good architecture — but a customer with small, irregular spend and no
+subscriptions cannot be monetised through it. México's mass market needs the same
+architecture anchored on **income landing** rather than on spend.
+
+The winning framing for section 2.4 is therefore not "México is different" but: *Croma is
+the affluent-tier instance of a bundle pattern; here is the mass-market instance, and every
+market Nu licenses next will need the mass-market one first.*
+
+**3. The non-financial component in México is not Netflix — it is recargas.**
+Croma bundles NuCel, HBO Max and ChatGPT. The mass-market Mexican equivalent is prepaid
+mobile top-ups — and **Cuenta Nu has processed recargas from 30+ carriers since Nov 2024**.
+The rail already exists; it is simply not part of a bundle or a reward structure yet.
+Another instance of the "the loop is already built" pattern.
+
+Cashback context: Croma pays **0.8%** on general spend in a paid tier; Nu+ in México pays
+**~0.3%** effective in a free one.
+
+---
+
+## 3e. Cuenta Nu's launch — the best evidence that the base was not bought with rate
+
+| | |
+|---|---|
+| Public launch | **4 May 2023** |
+| Launch yield | **9% per year**, 24/7 liquidity, no minimum balance, no maintenance fee |
+| Banxico policy rate at the time | **11.25%** (raised there March 2023, then held) |
+
+**Nu México acquired its first wave of savers at a yield roughly 2.25pp *below* the
+risk-free rate.** The proposition was liquidity, no minimums, no fees and the app — not the
+rate. The rate arms race came afterwards.
+
+This is the strongest available argument that balance sensitivity is structurally low and
+that repricing is safe, and it is Nu's own history rather than an assumption. It sits on
+slide 7 for exactly that reason.
+
+`[VERIFY]` Launch date and 9% figure are from the Nu México launch announcement, May 2023;
+the 11.25% policy rate from Banxico's March 2023 decision. Both third-party-reported.
+
+---
+
 ## 4. Rate environment (falling)
 
 | Rate | Level |

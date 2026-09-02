@@ -173,7 +173,7 @@ function foot(s,t){
     s.addText(d[0],{x:7.78,y:y-0.02,w:4.6,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13,bold:true,color:INK});
     s.addText(d[1],{x:7.78,y:y+0.3,w:4.6,h:0.9,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,color:BODY,lineSpacing:15});
   });
-  foot(s,'Rates as published by Nu México, calculated 10 Aug 2026, in force to 7 Oct 2026 — read from public pages, so treat as my assumption. One tier, two doors: documented and observed income must reach identical terms.');
+  foot(s,'Brazil runs the same architecture — a capped, boosted box, quoted as 120% of CDI. The capped box is the group pattern; the gate and the quoting convention are what differ. Rates as published, 10 Aug 2026.');
   s.addNotes('Critical: do NOT propose tiering, capping or behavioural gating as new ideas. Diego owned this product and all three already exist. The contribution is which gate and which cap.');
 }
 
@@ -206,7 +206,7 @@ function foot(s,t){
 /* ---------- 7 PRICING ---------- */
 { const s=S(); light(s);
   head(s,'2.1.3  Pricing and yield','Four moves, and the data behind each',false);
-  const mv=[['Quote a spread, not a number.','Today it is “13% fija”, so every cut must be announced — January’s produced “ganarás menos por tus ahorros”. Quoted against CETES, funding cost falls as Banxico moves, with no headline.'],
+  const mv=[['Quote a spread, not a number.','Brazil already quotes its equivalent box as 120% of CDI. México quotes “13% fija”, so every cut must be announced — January’s made headlines. México is the outlier here, not the innovator.'],
     ['Fix the gate, not the size of the premium.','Further cuts have diminishing returns and real brand cost. Re-point the 13% at income landing rather than at one card purchase a month, and it buys a relationship instead of a pulse.'],
     ['Segment balance sensitivity. Never blend it.','Balances that leave per point of rate cut — not the pass-through “deposit beta”. The base is two populations: brand-acquired and near-insensitive, and rate-shoppers. Blending them makes every cut look safe until it is not.'],
     ['Retire “deposit growth” as a goal.','At 35% LDR it is a cost line wearing a growth metric’s clothes. Replace with deployable deposits and cost of funds against TIIE.']];
@@ -230,9 +230,9 @@ function foot(s,t){
     s.addText(t[0].toUpperCase(),{x:9.28,y,w:0.95,h:0.26,isTextBox:true,margin:0,fontFace:HEAD,fontSize:9,bold:true,charSpacing:1,color:PURPLE});
     s.addText(t[1],{x:9.28,y:y+0.2,w:3.2,h:0.42,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11,color:BODY,lineSpacing:14});
   });
-  s.addText([{text:'The trade-off, said out loud:  ',options:{bold:true,color:INK}},
-    {text:'the rate is our biggest acquisition asset and our biggest cost line at the same time. That is exactly why I would not cut the headline — I would change what it is quoted against, and what it is attached to.'}],
-    {x:M,y:5.35,w:8.1,h:0.9,isTextBox:true,margin:0,fontFace:TEXT,fontSize:13,color:BODY,lineSpacing:18});
+  s.addText([{text:'The base was never bought with rate.  ',options:{bold:true,color:INK}},
+    {text:'Cuenta Nu launched publicly in May 2023 at 9%, when Banxico’s policy rate was 11.25%. The first wave of savers arrived at a yield below the risk-free rate — for liquidity, no minimums, no fees and the app. The rate arms race came afterwards, which is why I would change what the rate is quoted against and attached to rather than cut it.'}],
+    {x:M,y:5.28,w:8.1,h:1.15,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12.5,color:BODY,lineSpacing:17});
 }
 
 /* ---------- 8 DEMO ---------- */
@@ -390,17 +390,18 @@ function foot(s,t){
     ['02','Ship Track A to the cohort we can already detect','WEEKS 4–16','Portability for customers whose payroll pattern is already in our data. Measure completed first salary landings.','Second because it is the expiring opportunity.'],
     ['03','Stand up Track B’s consent and estimate spine','WEEKS 10–26','Not the whole product — the consent flow, the estimator and the fairness harness, so H2 is an extension rather than a new build.','Third because it has the longest lead time, so it has to start early even though it lands late.']];
   pr.forEach((p,i)=>{
-    const y=1.95+i*1.24;
+    const y=1.92+i*1.18;
     s.addText(p[0],{x:M,y,w:0.6,h:0.4,isTextBox:true,margin:0,fontFace:HEAD,fontSize:20,bold:true,color:PURPLE});
     s.addText(p[1],{x:M+0.72,y:y-0.02,w:4.0,h:0.6,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:INK,lineSpacing:18});
     s.addText(p[2],{x:M+0.72,y:y+0.62,w:2.2,h:0.26,isTextBox:true,margin:0,fontFace:HEAD,fontSize:9.5,bold:true,charSpacing:1.2,color:MUTED});
     s.addText(p[3],{x:M+4.9,y:y-0.02,w:3.5,h:1.1,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,color:BODY,lineSpacing:15});
     s.addText(p[4],{x:M+8.6,y:y-0.02,w:3.55,h:1.1,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,italic:true,color:AMBER,lineSpacing:15});
   });
-  card(s,M,5.72,12.11,1.16,PURPLE_PALE);
+  card(s,M,5.52,12.11,1.38,PURPLE_PALE);
   s.addText([{text:'Representing México globally:  ',options:{bold:true,color:PURPLE}},
-    {text:'the argument is not “México is different”, it is “México is the proving ground”. Every market Nu enters next will arrive newly licensed, with a low LDR and no income visibility — exactly where México is now. Asks framed as local exceptions lose. Asks framed as reusable platform capability win.'}],
-    {x:M+0.3,y:5.94,w:11.5,h:0.8,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12.5,color:BODY,lineSpacing:17});
+    {text:'Croma — launched in Brazil in July for customers earning R$5,000+ — is the group’s newest bundle: platinum card, streaming cashback, telco, boosted box. The architecture is right, but it monetises spend and subscriptions, and my segment’s spend is small and irregular. México needs that architecture with a different anchor. Brazil anchors on spend; México anchors on income landing — and that is the instance every newly licensed market will need first.'}],
+    {x:M+0.3,y:5.72,w:11.5,h:1.05,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12,color:BODY,lineSpacing:16.5});
+  s.addNotes('If asked what the non-financial component looks like in México: not Netflix. Recargas — Cuenta Nu already processes mobile top-ups from 30+ carriers, so the rail exists and is simply not part of a bundle yet.');
 }
 
 /* ---------- 15 ASSUMPTIONS ---------- */
