@@ -137,6 +137,7 @@ body.anim .slide.in .tam .fill{width:var(--w)}
 .tl .t small{display:block;font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:5px;font-weight:700}
 .foot{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.5}
 .foot b{color:var(--ink2)}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-size:15.5px;line-height:1.35;color:var(--nu-ink);text-align:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--hair)}
 .quote{font-family:'Fraunces',serif;font-size:15.5px;font-style:italic;line-height:1.4;color:var(--ink);padding:11px 15px;border-left:3px solid var(--coral);background:var(--c1);border-radius:0 12px 12px 0}
 .quote small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:11.5px;color:var(--muted);margin-top:6px}
 svg{display:block;width:100%;height:auto;overflow:visible}
@@ -226,42 +227,58 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
   <h2 class="rise">We're on a mission to unleash the power of the global majority.</h2>
   <div class="grid g2" style="align-items:stretch">
     <div class="card" data-step="1">
-      <div class="eb" style="color:var(--coral-ink);margin-bottom:6px">The customer's problem</div>
-      <p style="font-size:14.5px"><b>63% of Mexican adults can't get formal credit</b> — and those who can often pay a price premium.</p>
-      <h3 style="margin-top:12px">Today, customers find creative, albeit high-risk, solutions to their credit problems.</h3>
-      <div class="do" style="margin-top:6px">And risk compounds.</div>
-      <svg class="draw" viewBox="0 0 540 400" role="img" aria-label="A self-reinforcing loop. The product does not fit, so customers stack loans across apps and risk compounds. The price does not fit, so they borrow only in emergencies and growth stalls. The path does not fit, so they cannot see how to climb and agency erodes, which sends them back to workarounds." style="margin-top:4px">
-        <defs><marker id="cyc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0L10 5 0 10z" fill="var(--muted)"/></marker></defs>
-        <g fill="none" stroke="var(--muted)" stroke-width="2.2" marker-end="url(#cyc)">
-          <path class="arc" d="M392 62 C 470 104, 486 196, 449 238"/>
-          <path class="arc" style="transition-delay:.3s" d="M300 302 C 278 328, 252 328, 240 306"/>
-          <path class="arc" style="transition-delay:.6s" d="M92 238 C 55 196, 71 104, 148 62"/>
+      <div class="eb" style="color:var(--nu-ink);margin-bottom:6px">The customer's problem</div>
+      <p style="font-size:14.5px"><b>63% of Mexican adults can't get formal credit</b> — and those who can often pay a price premium, or start with limits under their true capacity.</p>
+      <svg class="draw" viewBox="0 0 500 376" role="img" aria-label="A self-reinforcing loop. Product doesn't fit: customers stack loans to cover unmet needs, so risk compounds. Price doesn't fit: high prices force emergency-only borrowing, so growth stalls. Pathway doesn't fit: customers can't see how to improve, so trust and agency erode — which returns them to stacking loans." style="margin-top:14px">
+        <defs><marker id="cyc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5 0 10z" fill="var(--nu)"/></marker></defs>
+        <g fill="none" stroke="var(--nu)" stroke-width="2.4" opacity=".45" marker-end="url(#cyc)">
+          <path class="arc" d="M363 80 C 445 112, 458 188, 421 232"/>
+          <path class="arc" style="transition-delay:.3s" d="M278 318 C 258 342, 242 342, 223 321"/>
+          <path class="arc" style="transition-delay:.6s" d="M80 232 C 43 188, 55 112, 137 80"/>
         </g>
         <g font-family="Inter,sans-serif" text-anchor="middle">
           <g class="node">
-            <rect x="165" y="6" width="210" height="88" rx="14" fill="var(--c1)"/>
-            <text x="270" y="30" font-size="14" font-weight="700" fill="var(--ink)">The product doesn't fit</text>
-            <text x="270" y="49" font-size="11.5" fill="var(--ink2)">tandas, prestamistas, empeño</text>
-            <rect x="212" y="60" width="116" height="22" rx="11" fill="var(--coral)" opacity=".85"/>
-            <text x="270" y="75" font-size="10.5" font-weight="700" fill="#3a1a10">Risk compounds</text>
+            <rect x="145" y="0" width="210" height="128" rx="14" fill="var(--c3)"/>
+            <g transform="translate(235,8)" fill="var(--nu)">
+              <rect x="0" y="18" width="11" height="10" rx="1.5" opacity=".5"/>
+              <rect x="12" y="13" width="11" height="15" rx="1.5" opacity=".75"/>
+              <rect x="3" y="6" width="11" height="10" rx="1.5" opacity=".62"/>
+              <rect x="16" y="0" width="10" height="12" rx="1.5" transform="rotate(15 21 6)"/>
+            </g>
+            <text x="250" y="57" font-size="14" font-weight="700" fill="var(--ink)">Product doesn't fit</text>
+            <text x="250" y="75" font-size="11" fill="var(--ink2)">Customers stack loans</text>
+            <text x="250" y="89" font-size="11" fill="var(--ink2)">to cover unmet needs</text>
+            <rect x="192" y="99" width="116" height="21" rx="10.5" fill="var(--nu)"/>
+            <text x="250" y="113.5" font-size="10" font-weight="700" fill="#fff" letter-spacing=".3">Risk Compounds</text>
           </g>
           <g class="node" style="transition-delay:.35s">
-            <rect x="310" y="250" width="210" height="88" rx="14" fill="var(--c2)"/>
-            <text x="415" y="274" font-size="14" font-weight="700" fill="var(--ink)">The price doesn't fit</text>
-            <text x="415" y="293" font-size="11.5" fill="var(--ink2)">CAT near 85% — crisis only</text>
-            <rect x="360" y="304" width="110" height="22" rx="11" fill="#e1a93c" opacity=".85"/>
-            <text x="415" y="319" font-size="10.5" font-weight="700" fill="#3a2c08">Growth stalls</text>
+            <rect x="285" y="244" width="210" height="128" rx="14" fill="var(--c3)"/>
+            <g transform="translate(376,252)" fill="var(--nu)">
+              <path d="M3 15 L15 3 L25 3 A2.5 2.5 0 0 1 27.5 5.5 L27.5 15 L15.5 27 Z" opacity=".8"/>
+              <circle cx="21" cy="9.5" r="2.6" fill="var(--surface)"/>
+            </g>
+            <text x="390" y="301" font-size="14" font-weight="700" fill="var(--ink)">Price doesn't fit</text>
+            <text x="390" y="319" font-size="11" fill="var(--ink2)">High prices force</text>
+            <text x="390" y="333" font-size="11" fill="var(--ink2)">emergency-only borrowing</text>
+            <rect x="336" y="343" width="108" height="21" rx="10.5" fill="var(--nu)"/>
+            <text x="390" y="357.5" font-size="10" font-weight="700" fill="#fff" letter-spacing=".3">Growth Stalls</text>
           </g>
           <g class="node" style="transition-delay:.7s">
-            <rect x="20" y="250" width="210" height="88" rx="14" fill="var(--c3)"/>
-            <text x="125" y="274" font-size="14" font-weight="700" fill="var(--ink)">The path doesn't fit</text>
-            <text x="125" y="293" font-size="11.5" fill="var(--ink2)">nothing shows you how to climb</text>
-            <rect x="72" y="304" width="106" height="22" rx="11" fill="var(--nu)" opacity=".85"/>
-            <text x="125" y="319" font-size="10.5" font-weight="700" fill="#fff">Agency erodes</text>
+            <rect x="5" y="244" width="210" height="128" rx="14" fill="var(--c3)"/>
+            <g transform="translate(95,253)" fill="none" stroke="var(--nu)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M0 26 L0 20 L9 20 L9 13 L18 13"/>
+              <path d="M18 13 L18 6 L28 6" stroke-dasharray="3 3.5" opacity=".42"/>
+            </g>
+            <text x="110" y="301" font-size="14" font-weight="700" fill="var(--ink)">Pathway doesn't fit</text>
+            <text x="110" y="319" font-size="11" fill="var(--ink2)">Customers can't see</text>
+            <text x="110" y="333" font-size="11" fill="var(--ink2)">how to improve</text>
+            <rect x="40" y="343" width="140" height="21" rx="10.5" fill="var(--nu)"/>
+            <text x="110" y="357.5" font-size="10" font-weight="700" fill="#fff" letter-spacing=".3">Trust &amp; Agency Erode</text>
           </g>
-          <text class="node" style="transition-delay:.95s" x="270" y="185" font-family="Fraunces,serif" font-size="19" font-weight="600" fill="var(--nu-ink)">the workaround loop</text>
+          <text class="node" style="transition-delay:.95s" x="250" y="186" font-family="Fraunces,serif" font-size="21" font-weight="600" fill="var(--nu-ink)">And risk compounds.</text>
         </g>
       </svg>
+      <p class="pull">Today, customers find creative, albeit high-risk, solutions to their credit problems.</p>
     </div>
     <div class="card" data-step="2">
       <div class="eb" style="color:var(--nu-ink);margin-bottom:6px">Nu's problem</div>
@@ -301,8 +318,8 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
       </svg>
     </div>
   </div>
-  <div class="band" data-step="3" style="margin-top:14px"><b>Both problems have the same cause — and the licence is the first answer to either.</b> Nu can see what sixteen million people <i>spend</i>, never what they <i>earn</i>. As a bank we can finally host their income, insure it to 400,000 UDIs, and hold the whole relationship in one place instead of four apps. <b>That consolidation is the agency:</b> an institution that sees everything can price on everything.</div>
-  <p class="foot" data-step="3">CNBV/INEGI ENIF 2024 · Nu Holdings Q2 2026 results · Banxico policy announcements and the August Citi expectations survey · Nu México rate card. CAT figure is my read of public disclosure, treated as an assumption.</p>
+  <div class="band" data-step="3" style="margin-top:14px"><b>Same cause. And the licence is the first answer to either.</b> Nu sees what sixteen million people <i>spend</i>, never what they <i>earn</i>. As a bank we can host their income, insure it to 400,000 UDIs, and hold the whole relationship in one place. <b>That consolidation is the agency.</b></div>
+  <p class="foot" data-step="3">CNBV/INEGI ENIF 2024 · Nu Holdings Q2 2026 · Banxico &amp; the August Citi survey · Nu México rate card. Credit-pricing figures are my read of public disclosure, treated as assumptions.</p>
 </div></section>
 
 <!-- 3 ACT ONE : LUPITA -->
