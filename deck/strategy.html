@@ -88,6 +88,21 @@ h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:20px;line-heig
 .dt td:first-child{font-weight:700;color:var(--ink);width:15%}
 .dt td.call{font-weight:700;color:var(--nu-ink);width:24%}
 .dt .cost{color:var(--coral-ink)}.dt .gain{color:var(--good)}
+/* bundle comparison table */
+.tbl{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);border:1px solid var(--hair);border-radius:16px;overflow:hidden;box-shadow:var(--sh)}
+.tbl th,.tbl td{padding:10px 16px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.4}
+.tbl tr:last-child td{border-bottom:none}
+.tbl th{font-family:'Fraunces',serif;font-size:19px;font-weight:600}
+.tbl th.nu{color:var(--nu-ink)}
+.tbl td:first-child{color:var(--muted);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;width:19%;padding-top:13px}
+.tbl td.on{font-weight:600;color:var(--ink)}
+/* team pod */
+.pod{display:flex;flex-direction:column;gap:0}
+.pod .p{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:8px 0;border-bottom:1px solid var(--hair);font-size:13.5px}
+.pod .p:last-child{border-bottom:none}
+.pod .p b{font-weight:600;color:var(--ink)}
+.pod .p.me b{color:var(--nu-ink)}
+.pod .p span{color:var(--muted)}
 .tl .row{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;padding:11px 0;border-bottom:1px solid var(--hair)}
 .tl .row:last-child{border-bottom:none}
 .tl .t{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--nu-ink);line-height:1}
@@ -175,7 +190,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 
 <!-- 1 TITLE -->
 <section class="slide in"><div class="w tight">
-  <div class="eb rise">Product Director · Core México · 4 September 2026</div>
+  <div class="eb rise">Caroline Morrison · Product Director, Core México · 4 September 2026</div>
   <h1 class="rise">Nu te ve.</h1>
   <p class="lede rise" style="margin-top:22px;font-size:clamp(17px,1.7vw,22px)">Know the customer. Price them fairly. Show them the path.<br>That is how a bank gets loved — and how it wins the mass market.</p>
   <p class="foot rise">→ advances the story · ← goes back · P prints. A live pricing model and two clickable flows sit behind this deck.</p>
@@ -282,11 +297,11 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   <div class="grid g3">
     <div class="card" data-step="1"><div class="num" style="font-size:26px">1</div><h3>Three minutes, no boss involved.</h3><p style="font-size:14.5px">Portability is her legal right — free, eleven business days, employer never has to know. The incumbent's grip is an HR contract signed years ago. She walks around it.</p></div>
     <div class="card" data-step="2"><div class="num" style="font-size:26px">2</div><h3>Everything else is already here.</h3><p style="font-size:14.5px">Her card already pays itself from her Nu account. She already picks the date. Her Nu+ points already land in a Cajita. Only the paycheck is missing — and with it, knowing payday.</p></div>
-    <div class="card" data-step="3"><div class="num" style="font-size:26px">3</div><h3>Her card pays itself the day after payday.</h3><p style="font-size:14.5px">Salary lands the 15th; card debits the 16th. Crédito de nómina economics — through data, not a contract with her employer. And only a bank can host the payroll at all.</p></div>
+    <div class="card" data-step="3"><div class="num" style="font-size:26px">3</div><h3>Her card pays itself the day after payday.</h3><p style="font-size:14.5px">Salary lands the 15th; card debits the 16th. That captures the <b>timing</b> advantage of payroll lending without an employer contract — though it is a debit she controls, not a deduction at source, so I would size the gain from a test rather than assume it.</p></div>
   </div>
   <div class="strip" data-step="4">
     <div><div class="k">Funding</div><div class="v">Cheaper &amp; stickier</div><span class="why">salary balances are transactional, not rate-shopping — they don't leave for 50bps</span></div>
-    <div><div class="k">Deployment</div><div class="v">35% → 60% lent</div><span class="why">verified income is what lets us underwrite the two thirds we currently park</span></div>
+    <div><div class="k">Deployment</div><div class="v">35% → 60% lent</div><span class="why">not an invented target — the group already runs near 58%. This is México catching up.</span></div>
     <div><div class="k">Loss</div><div class="v">Fewer missed payments</div><span class="why">payday-aligned autopay lands on Card's delinquency line</span></div>
   </div>
   <p class="foot" data-step="4"><b>What we count:</b> her salary actually landing, never the request. The eleven-day wait is where she'd get nervous — we name the date, show the steps, watch the old account. That is the product, not polish.</p>
@@ -297,8 +312,8 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   <div class="eb rise">Beto's door · Informal</div>
   <h2 class="rise">Fix the product, the price and the path — together.</h2>
   <div class="grid g3">
-    <div class="card" data-step="1"><div class="eb" style="margin-bottom:4px;color:var(--coral-ink)">Product fit</div><h3>One line that grows. No stacking.</h3><p style="font-size:14px">His remesa and deposit rhythm are the income. We size one line to what we can see, with confidence attached — and it grows with his record instead of him juggling four lenders.</p><span class="why">Signals: remittances (US$30.76B in H1), deposit rhythm, platform earnings via Rollee / Palenca. Never his phone, contacts or location — by policy.</span></div>
-    <div class="card" data-step="2"><div class="eb" style="margin-bottom:4px;color:var(--gold-ink)">Price fit</div><h3>Same price as Lupita. Risk lives in the line, not the rate.</h3><p style="font-size:14px">A higher rate for the customer with less paperwork is what makes borrowing emergency-only. So we hold the price, size the line to our confidence, and let the ladder do the rest.</p><span class="why">He sees our income estimate before we price him on it — with the reasons, and a person to appeal to.</span></div>
+    <div class="card" data-step="1"><div class="eb" style="margin-bottom:4px;color:var(--coral-ink)">Product fit</div><h3>One line that grows. No stacking.</h3><p style="font-size:14px">His remesa and deposit rhythm are the income. We size one line to what we can see, with confidence attached — and it grows with his record instead of him juggling four lenders.</p><span class="why"><b>The spine is first-party</b> — his remesa and his deposits land in a Nu account, needing no open-banking regime, which México still has not published. Rollee / Palenca are an optional third signal, never the pipe. Never his phone, contacts or location — by policy.</span></div>
+    <div class="card" data-step="2"><div class="eb" style="margin-bottom:4px;color:var(--gold-ink)">Price fit</div><h3>Same price as Lupita. Risk lives in the line, not the rate.</h3><p style="font-size:14px">A higher rate for the customer with less paperwork is what makes borrowing emergency-only. So we hold the price and size the line to our confidence. Same <b>rate</b> — not the same return per peso, and I take that hit early, because shorter tenors and progression push risk down over the relationship.</p><div class="band" style="margin-top:8px;padding:10px 13px;font-size:13.5px"><b>The rule for AI in pricing: personalisation may only move a price in the customer's favour.</b> It sets eligibility, limits and timing — never that this customer will tolerate worse. Elasticity tracks desperation, so optimising for willingness-to-pay charges the most to those least able to bear it.</div><span class="why" style="margin-top:8px">He sees our estimate before we price him on it, with the reasons and a person to appeal to. Fairness tested on <b>outcomes</b> — approval, limit and price parity by gender and state.</span></div>
     <div class="card" data-step="3"><div class="eb" style="margin-bottom:4px;color:var(--nu-ink)">Pathway fit</div><h3>See exactly what raises the line.</h3><p style="font-size:14px">"Two more on-time payments, your remesa landing two more months, and your line goes to $19,500." Shown before he asks. In thin-file lending the good customers leave as fast as the bad ones default — because nobody gives them a reason to stay.</p>
       <div class="quote" style="margin-top:8px">"I want to see my name next to a higher limit. It motivates me to work harder at my job too."<small>A customer, on a growth hub I shipped in México for this segment. It cut default 1.43% (ITT) — and a simple ladder captured most of it.</small></div></div>
   </div>
@@ -309,7 +324,25 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   </div>
 </div></section>
 
-<!-- 8 WHAT THEY GET -->
+<!-- 8 THE BUNDLE -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">The mass-market bundle</div>
+  <h2 class="rise">What both doors open onto.</h2>
+  <table class="tbl rise" style="--d:140ms">
+    <tr><th></th><th>Nu</th><th class="nu">Nu Nómina</th></tr>
+    <tr data-step="1"><td>How you qualify</td><td>Anyone</td><td class="on">Income lands here — payslip <b>or</b> observed</td></tr>
+    <tr data-step="1"><td>Account &amp; yield</td><td>Cuenta Nu · Cajita at CETES, matched</td><td class="on">Cajita at CETES + 6.5, capped at one month of income</td></tr>
+    <tr data-step="2"><td>Credit card</td><td>Limit from a bureau score</td><td class="on">Limit sized on the income we see · payment timed to the day after payday</td></tr>
+    <tr data-step="2"><td>Credit line</td><td>Invite-only, on bureau history</td><td class="on">Préstamo timed to the quincena · a ladder you can see</td></tr>
+    <tr data-step="3"><td>Rewards</td><td>Nu+ as today</td><td class="on">Nu+ doubled on recargas and basic services</td></tr>
+    <tr data-step="3"><td>Protection</td><td>—</td><td class="on">Micro life and unemployment cover</td></tr>
+    <tr data-step="3"><td>Fees, minimums</td><td>None</td><td>None</td></tr>
+  </table>
+  <div class="band" data-step="4" style="margin-top:14px"><b>Budget-neutral at launch.</b> Base = CETES matched (today's 6.50%). Premium = CETES + 6.5 (today's 13%). What changes is <b>who earns the premium</b> — a card swipe today, income landing tomorrow — not how much premium is spent. Every base component already exists in the app; the licence adds payroll hosting, IPAB cover, higher limits and investments.</div>
+  <p class="foot" data-step="4"><b>One tier, two doors — deliberately.</b> Two bundles would mean two roadmaps, two pricing committees, and a worse deal for the customer with less paperwork.</p>
+</div></section>
+
+<!-- 9 WHAT THEY GET -->
 <section class="slide dense"><div class="w">
   <div class="eb rise">What they get</div>
   <h2 class="rise">The same Nu they already love — now with their income in it.</h2>
@@ -367,7 +400,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
       <tr><td>Beto's price</td><td>Risk-priced rate. <span class="cost">Emergency-only borrowing, fairness exposure, trust erodes</span></td><td>Same price, smaller line. <span class="gain">Risk in the line size; ladder grows it; identical terms</span></td><td class="call">Same price. Size the line.</td></tr>
     </table>
   </div>
-  <div class="band" data-step="3" style="margin-top:12px"><b>The rule:</b> pay premium only where it buys income we can lend against · price risk in the line, not the rate · buy retention with progression before yield. Budget-neutral at launch — what changes is who earns it. <span class="why" style="display:inline">Every input is a slider in the live model; the base was never bought with rate — Cuenta Nu launched at 9% under an 11.25% policy rate.</span></div>
+  <div class="band" data-step="3" style="margin-top:12px"><b>On the price itself:</b> our personal loan averages a CAT near 85%, because it is priced for what we cannot see. <b>Visibility is what makes credit cheaper</b> — so CAT goes on the scorecard and should fall as visibility rises, rather than be defended.<br><br><b>The rule:</b> pay premium only where it buys income we can lend against · price risk in the line, not the rate · buy retention with progression before yield. Budget-neutral at launch — what changes is who earns it. <span class="why" style="display:inline">Every input is a slider in the live model; the base was never bought with rate — Cuenta Nu launched at 9% under an 11.25% policy rate.</span></div>
 </div></section>
 
 <!-- 10 GO TO MARKET -->
@@ -395,7 +428,77 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   <div class="band" data-step="4" style="margin-top:14px"><b>What we measure:</b> landings per thousand people prompted, and cost per landed customer against cost per rate-acquired one. Month one is in-app only. Mass media waits until the funnel earns it.</div>
 </div></section>
 
-<!-- 11 MEASURED & RISKS -->
+<!-- 12 SEQUENCING -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Strategy &amp; sequencing · 24 months</div>
+  <h2 class="rise">Ordered by what expires first.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15.5px;margin-bottom:14px">Only one thing has a clock on it: the licence advantage. Anything a licensed competitor could also do goes later. Anything only we can do right now goes first.</p>
+  <div class="grid" style="grid-template-columns:1.4fr 1fr 1fr">
+    <div class="card" data-step="1" style="background:linear-gradient(180deg,var(--c3),transparent 60%) var(--surface)">
+      <div class="eb" style="margin-bottom:6px">H1 · months 0–6 · my first three priorities</div>
+      <div class="q"><span class="num">1</span><div><b>Fix what we measure about deposits.</b><span class="why">Balance sensitivity by segment via a geographic holdout, MDE pre-registered. Re-quote yield as a spread. Retire "deposit growth" as a goal. <i>First because it is nearly free and it is the evidence base for the other two.</i></span></div></div>
+      <div class="q"><span class="num">2</span><div><b>Ship Lupita's door to the cohort we can already see.</b><span class="why">Portability for customers whose payroll pattern is already in our data. <i>Second because it is the thing that expires.</i></span></div></div>
+      <div class="q"><span class="num">3</span><div><b>Stand up Beto's spine.</b><span class="why">Consent flow, income estimator, fairness harness. Not the whole product. <i>Third because it has the longest lead time, so it has to start early to land late.</i></span></div></div>
+    </div>
+    <div class="card" data-step="2">
+      <div class="eb" style="margin-bottom:6px">H2 · months 7–12</div>
+      <h3>Scale the anchor before the window closes</h3>
+      <span class="why">Beto's door to general availability at the same tier · credit lines sized on observed income · the bundle live end-to-end · protection attached.</span>
+      <div class="do" style="font-size:14px">Measured on landings and on lending moving off 35%.</div>
+    </div>
+    <div class="card" data-step="3">
+      <div class="eb" style="margin-bottom:6px">H3 · months 13–24</div>
+      <h3>Turn the anchor into depth</h3>
+      <span class="why">Investments — newly licensable · préstamo timed to the quincena at scale · higher-value lending · and only now an employer-side offer.</span>
+      <div class="do" style="font-size:14px">Leading with an HR sales motion is how a challenger loses this market to people who have sold to HR for thirty years.</div>
+    </div>
+  </div>
+  <p class="foot" data-step="4"><b>If the window is six months instead of twelve</b> — because Mercado Pago is licensed sooner — H1 does not compress. H3 gets cut. I would rather have 300,000 salaries landing than a signed employer pipeline.</p>
+</div></section>
+
+<!-- 13 TEAM -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">The team</div>
+  <h2 class="rise">A foundational hire should design the pod, not just staff it.</h2>
+  <div class="grid g2" style="align-items:start">
+    <div class="card" data-step="1">
+      <h3>What I would build</h3>
+      <div class="pod" style="margin-top:8px">
+        <div class="p me"><b>Me</b><span>Value proposition, the bundle, pricing and yield</span></div>
+        <div class="p"><b>PM · Income</b><span>Both doors — portability, the estimator, the growth hub</span></div>
+        <div class="p"><b>PM/APM · Pricing</b><span>The model, the holdouts, the rate-committee interface</span></div>
+        <div class="p"><b>Design lead</b><span>The other open role — placed on Beto's door</span></div>
+        <div class="p"><b>Embedded</b><span>2 analysts (one pricing, one credit-adjacent) + 1 data scientist</span></div>
+        <div class="p"><b>Dotted</b><span>Model risk · legal and regulatory · treasury</span></div>
+      </div>
+    </div>
+    <div class="card" data-step="2">
+      <h3>Three org calls I would defend</h3>
+      <div class="q"><span class="num">1</span><div><b>Hire the pricing analyst before the second PM.</b><span class="why">The bottleneck here is decision quality, not shipping throughput. One more PM ships more things; one analyst makes the yield decision right, and that decision is worth more than a quarter of roadmap.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>Do not ask to own Card's or GBA's surfaces.</b><span class="why">Own the income signal and the customer-level P&amp;L instead. Asking for org control costs six months and the relationship — and I would lose the argument anyway.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>Put the designer on Beto's door, not Lupita's.</b><span class="why">Portability is a known pattern. Consent, an income estimate shown back, and a visible ladder are where craft decides whether it works at all.</span></div></div>
+    </div>
+  </div>
+  <p class="foot" data-step="3">One of two open roles, and the first PM reporting into this structure — how the pod is shaped now is how it scales.</p>
+</div></section>
+
+<!-- 14 ALIGNMENT -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Alignment without authority</div>
+  <h2 class="rise">I would not try to win the argument. I would change what we are arguing about.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-bottom:12px">Say Card's roadmap collides with a bundle I need to ship on a regulatory clock. I own none of the three teams that have to move.</p>
+  <div class="grid g3">
+    <div class="card" data-step="1"><div class="eb" style="margin-bottom:4px">With Credit Card</div><h3>Trade an asset, not a favour.</h3>
+      <span class="why">I bring something they cannot get elsewhere: income they can underwrite against, and collection timed to payday. Both land on <b>their</b> delinquency line. They give me placement in their flows. That is a trade with a number on it — not a request.</span></div>
+    <div class="card" data-step="2"><div class="eb" style="margin-bottom:4px">With Account · GBA</div><h3>Own the spec, not the surface.</h3>
+      <span class="why">They own the account experience; I own what the bundle promises and what the customer is worth. The interface between us is one shared customer-level P&amp;L — so we argue about which sequence makes the customer worth more, which evidence can settle, instead of whose roadmap wins, which it cannot.</span></div>
+    <div class="card" data-step="3"><div class="eb" style="margin-bottom:4px">With global</div><h3>Not an exception — the next instance.</h3>
+      <span class="why">Croma is the group's newest bundle: a platinum card, streaming cashback, telco, for customers from R$5,000 a month. Right architecture, spend-anchored. México's mass market needs the same architecture <b>income-anchored</b> — and that is the instance every newly licensed market will need first.</span></div>
+  </div>
+  <div class="band" data-step="4" style="margin-top:14px"><b>Three things I would do before I needed to.</b> Agree the shared P&amp;L with Diego and both leads while nothing is at stake · get Legal to frame the regulatory date as a <b>shared compliance exposure</b>, so it arrives as a fact rather than as my deadline · and put the disagreement into a test design with a guardrail metric <b>the other team chooses</b>. And if Card still cannot move: ship the bundle without the card component and add it later. Shipping on time beats winning the argument.</div>
+</div></section>
+
+<!-- 15 MEASURED & RISKS -->
 <section class="slide dense"><div class="w">
   <div class="eb rise">How we'll know — and where it breaks</div>
   <h2 class="rise">One north star. Three checkpoints. Three risks.</h2>
@@ -411,7 +514,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
     <div>
       <div class="q" data-step="4"><span class="num">1</span><div><b>Customers get pickier about rate once Mercado Pago and Klar are banks.</b> <span class="chip warn">most likely</span><span class="why">They aren't today — Cuenta Nu launched at 9% under an 11.25% policy rate. Measure it by segment now, and hold the base on relationship, not rate.</span></div></div>
       <div class="q" data-step="5"><span class="num">2</span><div><b>We see something we shouldn't.</b> <span class="chip hot">trust</span><span class="why">Exclusion by policy, outcome parity by gender and state, and an explanation we can show the customer. If we can't show it, the model is using something it shouldn't.</span></div></div>
-      <div class="q" data-step="6"><span class="num">3</span><div><b>Bigger lines, more bust-out.</b> <span class="chip hot">credit</span><span class="why">Stage limits, short tenors, progression not jumps. Climbers have to outweigh the rest — measured, not assumed. And we're a supervised bank now: build the appeal path before the model.</span></div></div>
+      <div class="q" data-step="6"><span class="num">3</span><div><b>Bigger lines, more bust-out — and a remesa is not a salary.</b> <span class="chip hot">credit</span><span class="why">Remittance income depends on someone offshore and correlated to US labour, so a cohort can move together — that argues for smaller lines, shorter tenors and a concentration limit, not for refusing to lend. Climbers have to outweigh the rest, measured not assumed. And we are a supervised bank now: build the appeal path before the model.</span></div></div>
     </div>
   </div>
 </div></section>
