@@ -280,8 +280,8 @@ hr.r{border:0; border-top:1px solid var(--line); margin:26px 0}
      </div>
 
      <div class="ctrl">
-      <div class="ctrl-top"><label for="i-beta">Deposit sensitivity β</label><span class="val" id="v-beta">2.9</span></div>
-      <p class="hint">% of balances lost per 1pp of rate cut. β=2.9 reproduces the observed 15%→11.5% cut at &gt;90% retention.<span class="anchor">calibrated</span></p>
+      <div class="ctrl-top"><label for="i-beta">Balance sensitivity β</label><span class="val" id="v-beta">2.9</span></div>
+      <p class="hint">% of balances that leave per 1pp of rate cut — an outflow elasticity, <em>not</em> the pass-through "deposit beta". β=2.9 reproduces the observed 15%→11.5% cut at &gt;90% retention.<span class="anchor">calibrated</span></p>
       <input type="range" id="i-beta" min="0" max="10" step="0.1" value="2.9">
       <div class="scale"><span>0 · sticky</span><span>10 · mercenary</span></div>
      </div>
@@ -358,14 +358,14 @@ hr.r{border:0; border-top:1px solid var(--line); margin:26px 0}
    <h4>Three decisions this model produces, and the data I would need for each</h4>
    <ul>
     <li><b>Price the yield as a spread, not a number.</b> Quote it against CETES rather than as an absolute %. With Banxico cutting, funding cost falls automatically and we never run a "Nu cut your rate" news cycle. <em>Needs:</em> brand-tracking on how the rate is understood, and whether customers anchor on the number or the ranking.</li>
-    <li><b>Pay up only for money that brings income with it.</b> Base rate for everyone; the premium tier requires a recurring inbound and is capped at a balance ceiling. <em>Needs:</em> β by segment from a geographic rate holdout — not a single blended β. The one number I would most want on day 1.</li>
+    <li><b>Pay up only for money that brings income with it.</b> Base rate for everyone; the premium tier requires a recurring inbound and is capped at a balance ceiling. <em>Needs:</em> balance sensitivity by segment, from a geographic rate holdout — not a single blended figure. The one number I would most want on day 1.</li>
     <li><b>Stop treating deposit growth as a goal.</b> At 35% LDR, deposits above what we can deploy are a cost line wearing a growth metric's clothes. <em>Needs:</em> LTV by acquisition source, split yield-acquired vs. income-acquired, which I would expect to differ by more than the rate does.</li>
    </ul>
   </div>
   <div class="note">
    <div class="lab">Where this model breaks</div>
    <h4>The honest limits</h4>
-   <p>β is <b>not constant</b>. It is low today because the base was acquired on a brand promise, not a rate table; it rises sharply once a licensed competitor advertises against us. The model treats β as fixed, so it flatters any large cut — push the β slider to 6 and the "cut the rate" preset stops working. That asymmetry is the point: <b>a rate cut is a one-time harvest with rising risk, income visibility is a compounding asset.</b></p>
+   <p>Balance sensitivity (β) is <b>not constant</b>. It is low today because the base was acquired on a brand promise, not a rate table; it rises sharply once a licensed competitor advertises against us. The model treats it as fixed, so it flatters any large cut — push the balance-sensitivity slider to 6 and the "cut the rate" preset stops working. That asymmetry is the point: <b>a rate cut is a one-time harvest with rising risk, income visibility is a compounding asset.</b></p>
    <p>The LDR ceiling is also an assumption, not a finding. It presumes underwriting quality holds as we deploy — which is exactly the thing to instrument before, not after.</p>
   </div>
  </div>
@@ -538,7 +538,7 @@ Figures tagged <span class="tag assum">ASSUM</span> are the candidate's assumpti
       note='This is roughly where Nu México sits today: US$5.7B of deposits, 35% deployed, the rest parked in CETES at '+fmt(s.cetes,2)+'%. The deposits are not the problem — two thirds of them have nowhere profitable to go.';
     } else if(s.attach<=10 && s.yield<BASE_YIELD-0.3){
       lede='Cutting the rate alone moves the spread to <em>'+fmt(sp)+'pp</em> — and costs you '+fmt(Math.abs((1-m.dep/BASE_DEP)*100))+'% of balances.';
-      note='It works, up to a point: at β='+fmt(s.beta)+' you keep '+fmt(m.dep/BASE_DEP*100)+'% of the base. But this is a one-time harvest with rising risk — β is low today because the base was won on brand, and it will not stay low once a licensed competitor advertises against us. Now drag income visibility instead.';
+      note='It works, up to a point: at balance sensitivity '+fmt(s.beta)+' you keep '+fmt(m.dep/BASE_DEP*100)+'% of the base. But this is a one-time harvest with rising risk — β is low today because the base was won on brand, and it will not stay low once a licensed competitor advertises against us. Now drag income visibility instead.';
     } else if(s.attach>=30){
       lede='At <em>'+fmt(s.attach,0)+'%</em> income visibility the next peso earns <em>'+fmt(sp)+'pp</em>'+(dN>0?', and NII is '+money(dN)+'/yr higher.':'.');
       note='LDR reaches '+fmt(m.ldr)+'% — and note the yield slider never moved. This is the whole case: we did not get here by paying customers less, we got here by being the account their income arrives in. Same rate, different business.';

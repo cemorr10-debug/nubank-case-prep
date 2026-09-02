@@ -177,7 +177,7 @@ function foot(s,t){
     {text:'the only thing that expires is licence exclusivity. Anything a licensed competitor could also do goes later. Anything only we can do right now goes first.'}],
     {x:M,y:1.88,w:11.9,h:0.55,isTextBox:true,margin:0,fontFace:TEXT,fontSize:14,color:BODY,lineSpacing:19});
   const hz=[['H1 · MONTHS 0–6','Prove the funding thesis',
-      ['Re-quote yield as a spread over CETES — no headline cut','Ship portability to the cohort already visible in our data','Instrument β by segment via a geographic holdout'],
+      ['Re-quote yield as a spread over CETES — no headline cut','Ship portability to the cohort already visible in our data','Instrument balance sensitivity by segment, via a geographic holdout'],
       'Metric: completed first salary landings — not sign-ups'],
     ['H2 · MONTHS 7–12','Scale the anchor before the window closes',
       ['Track B: consent flow, income estimator, same tier','Credit lines sized on observed income','Bundle GA and protection attach'],
@@ -201,7 +201,7 @@ function foot(s,t){
   head(s,'2.1.3  Pricing and yield','Four moves, and the data behind each',false);
   const mv=[['Quote a spread, not a number.','“CETES + 4.00%”, not “10.49%”. As Banxico cuts, funding cost falls automatically and there is never a “Nu cut your rate” headline — because we did not.'],
     ['Price the relationship, not the balance.','The premium requires income landing and is capped. We pay up only for money that brings data and stickiness with it.'],
-    ['Segment β. Never blend it.','The base is two populations: brand-acquired at β near zero, and rate-shoppers. A blended β makes every cut look safe until it suddenly is not.'],
+    ['Segment balance sensitivity. Never blend it.','Balances that leave per point of rate cut — not the pass-through “deposit beta”. The base is two populations: brand-acquired and near-insensitive, and rate-shoppers. Blending them makes every cut look safe until it is not.'],
     ['Retire “deposit growth” as a goal.','At 35% LDR it is a cost line wearing a growth metric’s clothes. Replace with deployable deposits and cost of funds against TIIE.']];
   mv.forEach((m,i)=>{
     const x=M+(i%2)*4.3, y=1.95+Math.floor(i/2)*1.62;
@@ -212,7 +212,7 @@ function foot(s,t){
   });
   card(s,9.0,1.95,3.73,4.3,'FAF8FD');
   s.addText('Data I would ask for in week one',{x:9.28,y:2.15,w:3.2,h:0.6,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:INK,lineSpacing:19});
-  bullets(s,9.28,2.78,3.2,3.2,['β by segment, from a geographic rate holdout — not a blended number',
+  bullets(s,9.28,2.78,3.2,3.2,['Balance sensitivity by segment, from a geographic rate holdout — not a blended number',
     'LTV by acquisition source: yield-acquired vs. income-acquired',
     'Balance concentration — does the premium cap even bind?',
     'Attrition elasticity vs. the competitor gap, not vs. our own rate',
@@ -240,7 +240,7 @@ function foot(s,t){
   card(s,9.3,2.6,3.43,2.9,INK_SOFT);
   s.addShape(P.ShapeType.roundRect,{x:9.3,y:2.6,w:3.43,h:2.9,rectRadius:0.06,fill:{color:INK_SOFT},line:{color:'54397A',width:1}});
   s.addText('Then invite the attack',{x:9.58,y:2.8,w:2.9,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13,bold:true,color:PURPLE_LT});
-  s.addText('“Move any slider. The one I would move first is β — push it to 6 and the rate-cut story stops working. That asymmetry is the argument: a rate cut is a one-time harvest with rising risk. Income visibility compounds.”',
+  s.addText('“Move any slider. The one I would move first is balance sensitivity — push it to 6 and the rate-cut story stops working. That asymmetry is the argument: a rate cut is a one-time harvest with rising risk. Income visibility compounds.”',
     {x:9.58,y:3.18,w:2.9,h:2.1,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12,color:'D6CCE6',lineSpacing:16.5});
   s.addText('Interactive model and both product flows:  claude.ai/code/artifact/93da0992-7c28-4c92-81cd-f67f16a3cfaa',
     {x:M,y:6.15,w:11.9,h:0.35,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12,color:PURPLE_LT});
@@ -391,10 +391,10 @@ function foot(s,t){
     '45% income-landing attach reaches that ceiling',
     '8% income landing today (calibration check: this yields 35.5% LDR against the 35% reported)',
     'Headline yield paid on all balances — deliberately conservative',
-    'β constant. It is not: it rises once a licensed competitor advertises against us'],12);
+    'Balance sensitivity constant. It is not — it rises once a licensed competitor advertises against us'],12);
   card(s,6.92,1.95,5.81,4.3,PURPLE_PALE);
   s.addText('Six questions for week one',{x:7.2,y:2.15,w:5.3,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:PURPLE});
-  bullets(s,7.2,2.58,5.25,3.4,['Is β blended, or do you have it by segment?',
+  bullets(s,7.2,2.58,5.25,3.4,['Is balance sensitivity blended, or do you have it by segment?',
     'What share of the US$5.7B sits in the top decile of balances?',
     'What is the income-landing rate today? I assumed 8%.',
     'What is the real risk-adjusted marginal credit yield?',

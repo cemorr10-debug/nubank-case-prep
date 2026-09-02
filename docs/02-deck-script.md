@@ -113,7 +113,7 @@ goes first.
 **H1 · months 0–6 — Prove the funding thesis**
 - Re-quote yield as a spread over CETES. No headline cut.
 - Ship portability to the cohort whose payroll pattern is **already in our data**
-- Instrument β by segment via a geographic holdout
+- Instrument balance sensitivity by segment via a geographic holdout
 - Metric: **completed first salary landings** — not sign-ups
 
 **H2 · months 7–12 — Scale the anchor before the window closes**
@@ -140,9 +140,10 @@ goes first.
    didn't. *Risk to test: customers may anchor on absolute numbers, and the competitive
    comparison sites certainly do.*
 2. **Price the relationship, not the balance.** Premium requires income landing; capped.
-3. **Segment β — never blend it.** A blended β hides that the base is two populations:
-   brand-acquired at β≈0 and rate-shoppers at β high. **Blended β makes every cut look safe
-   until it suddenly isn't.**
+3. **Segment balance sensitivity — never blend it.** This is *outflow elasticity* — how many balances leave per point of rate cut — **not** the
+   standard pass-through "deposit beta". Say which you mean. A blended figure hides that the
+   base is two populations: brand-acquired and near-insensitive, and rate-shoppers.
+   **Blending them makes every cut look safe until it suddenly isn't.**
 4. **Retire "deposit growth" as a goal metric.** At 35% LDR it's a cost line wearing a growth
    metric's clothes. Replace with **deployable deposits** and **cost of funds vs. TIIE**.
 
@@ -151,7 +152,7 @@ and our biggest cost line. That's precisely why I wouldn't cut the headline — 
 it's quoted *against* and what it's *attached to*.
 
 **The data I'd need to make the call — and would ask for in week one:**
-- β **by segment**, from a geographic rate holdout. Not a blended number.
+- **Balance sensitivity by segment**, from a geographic rate holdout. Not a blended number.
 - LTV by acquisition source: yield-acquired vs. income-acquired cohorts
 - Balance concentration — what share of the $5.7B sits in the top 5%? Tells us whether the
   premium cap even binds
@@ -169,7 +170,7 @@ Demo sequence — 40 seconds, then talk over it:
 3. **24-month plan** → "Same rate. Never touched the yield slider. LDR to ~56%, spread to
    ~6pp. That's the case."
 
-Then invite attack: **"Move any slider. The one I'd move first if I were you is β — push it
+Then invite attack: **"Move any slider. The one I'd move first if I were you is balance sensitivity — push it
 to 6 and watch the rate-cut story stop working. That asymmetry is the argument: a rate cut
 is a one-time harvest with rising risk; income visibility compounds."**
 
@@ -322,10 +323,10 @@ credibility on a fight I've already lost is the most expensive thing a local PM 
 
 **What I assumed** (all in the model as sliders): 25% net credit yield · 28% LDR floor /
 70% ceiling · 45% attach for full deployment · 8% income landing today · headline yield paid
-on all balances (conservative) · β constant.
+on all balances (conservative) · balance sensitivity constant.
 
 **Six questions I'd ask in week one:**
-1. Is β blended, or do you have it by segment?
+1. Is balance sensitivity blended, or do you have it by segment?
 2. What share of the $5.7B sits in the top decile of balances?
 3. What *is* the income-landing rate today? I assumed 8%.
 4. What's the real risk-adjusted marginal credit yield?

@@ -34,7 +34,7 @@ not month twelve."
 **Under it:** are you telling us things we did last quarter?
 **Answer:** "You have, and it worked — that's why I used your own result as the model's
 calibration rather than inventing one. What I'd add is three things you can't see from the
-outside but I'd bet aren't all in place: **β by segment rather than blended**, the yield
+outside but I'd bet aren't all in place: **balance sensitivity by segment rather than blended**, the yield
 quoted as a *spread* so it reprices itself as Banxico cuts, and the premium attached to
 income landing rather than balance size. The first is measurement, the second is
 communication, the third is the actual strategy change. And the honest framing is that
@@ -105,7 +105,7 @@ emotionally loaded contact. Where I would *not* use it is setting the price per 
 That's the one-line rule: personalisation can only move a price in the customer's favour."
 
 ### Q11. "What's your biggest risk?"
-**Answer:** "That β isn't as low as the historical result suggests, because it was measured
+**Answer:** "That balance sensitivity isn't as low as the historical result suggests, because it was measured
 in a market where no licensed competitor was advertising against you. The retention through
 the 15-to-11.5 cut might have been brand, or it might have been the absence of a credible
 alternative — and Klar and Mercado Pago getting licensed changes which of those it was. If
