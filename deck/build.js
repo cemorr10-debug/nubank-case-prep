@@ -110,7 +110,7 @@ function foot(s,t){
 
   s.addText('The peso is not unprofitable. It earns about a quarter of what it should — a deployment problem, not a pricing problem.',
     {x:M,y:6.32,w:11.9,h:0.55,isTextBox:true,margin:0,fontFace:HEAD,fontSize:15,bold:true,color:INK,lineSpacing:20});
-  foot(s,'Q2 2026 results. Net credit yield of 25% is my assumption, not company data — it is a slider in the model and the conclusion holds from 15% to 35%.');
+  foot(s,'Every Nu figure in this deck is my read of a public source, treated as an assumption and cited in the appendix — you have the real ones, so please correct any of them. Sources here: Q2 2026 results release, 13 Aug 2026. The 25% net credit yield is mine, and is a slider in the model.');
   s.addNotes('If challenged on 25%, open the simulator here rather than defending it verbally. Say the word assumption out loud.');
 }
 
@@ -173,7 +173,7 @@ function foot(s,t){
     s.addText(d[0],{x:7.78,y:y-0.02,w:4.6,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13,bold:true,color:INK});
     s.addText(d[1],{x:7.78,y:y+0.3,w:4.6,h:0.9,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,color:BODY,lineSpacing:15});
   });
-  foot(s,'One tier, two doors: documented income and observed income must reach identical terms — which is the inclusion argument and the fairness argument at once.');
+  foot(s,'Rates as published by Nu México, calculated 10 Aug 2026, in force to 7 Oct 2026 — read from public pages, so treat as my assumption. One tier, two doors: documented and observed income must reach identical terms.');
   s.addNotes('Critical: do NOT propose tiering, capping or behavioural gating as new ideas. Diego owned this product and all three already exist. The contribution is which gate and which cap.');
 }
 
@@ -256,24 +256,27 @@ function foot(s,t){
 
 /* ---------- 9 TRACK A ---------- */
 { const s=S(); light(s);
-  head(s,'2.1.4  Product · Track A','Trae tu nómina — the wedge only a licensed bank has',false);
-  const yy=1.95;
+  head(s,'2.1.4  Product · Track A','Trae tu nómina — the missing input',false);
+  const yy=1.88;
   stat(s,M,yy,2.7,'22.76M','FORMAL JOBS (IMSS)','record, July 2026');
   stat(s,M+3.05,yy,2.7,'~36%','OF ADULTS HAVE ONE','a payroll account at all');
   stat(s,M+6.1,yy,2.7,'~90%','OF THOSE AT BIG BANKS','the entire incumbent moat');
   stat(s,M+9.15,yy,2.9,'11 days','TO PORT ONE','free, by law, worker-initiated',GREEN);
 
-  card(s,M,3.62,6.2,2.5,PURPLE_PALE);
-  s.addText('The wedge',{x:M+0.3,y:3.82,w:5.5,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:15,bold:true,color:PURPLE});
-  s.addText('Portabilidad de nómina is the worker’s legal right. Banks cannot charge for it and cannot refuse it. No employer sale is required.\n\nThe incumbent moat is a corporate contract signed years ago. Portability makes it irrelevant — the decision belongs to the worker.',
-    {x:M+0.3,y:4.18,w:5.6,h:1.8,isTextBox:true,margin:0,fontFace:TEXT,fontSize:13,color:BODY,lineSpacing:18});
-
-  card(s,7.1,3.62,5.63,2.5,'FAF8FD');
-  s.addText('Three things I would hold the team to',{x:7.38,y:3.82,w:5.1,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:15,bold:true,color:INK});
-  bullets(s,7.38,4.2,5.1,1.8,['Sell the credit line, not the rate — the rate attracts the deposits we least want',
-    'Measure completed first salary landings, never requests',
-    'The 11-day gap is where the funnel leaks: naming a date is the retention mechanic, not polish'],12.5);
-  foot(s,'This is the one play that stops working the day Mercado Pago is licensed — which is what makes the next twelve months the whole strategy.');
+  const cw=3.9, cy=3.5, ch=2.78;
+  const cards=[[M,'The wedge',PURPLE_PALE,
+    'Portabilidad de nómina is the worker’s legal right. Banks cannot charge for it and cannot refuse. No employer sale required.\n\nThe incumbent moat is a corporate contract signed years ago. Portability makes it irrelevant — the decision belongs to the worker.'],
+   [M+cw+0.2,'The loop is already built','FAF8FD',
+    'Autopay already debits the Nu account. The Turbo yield gate already requires monthly card activity. Nu+ points already route back into a Cajita. Customers already choose their own payment due date.\n\nNómina is not a new business line. It is the missing input to a machine that is already running.'],
+   [M+2*(cw+0.2),'Payday-aligned autopay','FAF8FD',
+    'We have autopay. We have a selectable due date. What we do not have is knowing when payday is — income landing supplies exactly that.\n\nDebit one day after the observed payday and delinquency falls. That is crédito de nómina economics without employer deduction — reached through data, not a corporate contract.']];
+  cards.forEach(c=>{
+    card(s,c[0],cy,cw,ch,c[2]);
+    s.addText(c[1],{x:c[0]+0.28,y:cy+0.2,w:cw-0.5,h:0.34,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14.5,bold:true,color:c[2]===PURPLE_PALE?PURPLE:INK});
+    s.addText(c[3],{x:c[0]+0.28,y:cy+0.6,w:cw-0.5,h:2.0,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,color:BODY,lineSpacing:15.5});
+  });
+  foot(s,'Metric: completed first salary landings, never requests. The 11-day gap is where the funnel leaks — naming a date is the retention mechanic, not polish.');
+  s.addNotes('The third card is the strongest thing in the deck. Do not rush it. Both components already exist in the product — the only missing input is knowledge of payday, which is precisely what income landing provides. It also happens to improve Card\u2019s P&L rather than mine, which is what makes it tradeable.');
 }
 
 /* ---------- 10 TRACK B ---------- */
@@ -294,10 +297,10 @@ function foot(s,t){
     {x:4.96,y:4.98,w:3.35,h:0.55,isTextBox:true,margin:0,fontFace:TEXT,fontSize:10.5,italic:true,color:MUTED,lineSpacing:14});
 
   card(s,8.83,3.05,3.9,2.55,PURPLE_PALE);
-  s.addText('The move nobody else makes',{x:9.11,y:3.24,w:3.3,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:PURPLE});
-  s.addText('Show the customer our income estimate — with the reasoning and an appeal path — before we price them on it.\n\nContestability is what makes automated decisioning defensible, to the customer and to a supervisor.',
+  s.addText('Show the estimate — and the path',{x:9.11,y:3.24,w:3.35,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:PURPLE});
+  s.addText('Show our income estimate back, with the reasoning and an appeal path, before we price anyone on it.\n\nThen show what raises the line: a counterfactual — the specific, reachable actions that unlock the next level, surfaced before the customer has to ask.',
     {x:9.11,y:3.6,w:3.35,h:1.9,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12,color:BODY,lineSpacing:16.5});
-  foot(s,'I have built this underwriting spine before, at Tala, for exactly this customer. The appeal path consistently produced better data than any feature we added.');
+  foot(s,'I shipped counterfactual line-progression at Tala México — same market, same thin-file segment — and it lifted retention 10% in the hardest and riskiest segments. Nu buys retention today with a 13% yield; progression buys it more cheaply, and unlike yield it compounds, because the customer who is climbing is the one who is repaying.');
 }
 
 /* ---------- 11 RESPONSIBLE AI ---------- */
@@ -315,7 +318,8 @@ function foot(s,t){
   bullets(s,7.68,4.26,4.8,1.85,['Excluded features by policy, not by review',
     'Fairness tested on outcomes — approval, limit and price parity by gender and state',
     'Consent that costs nothing to decline. If declining raises your price, it is not consent',
-    'Model risk governance under CNBV; reasons explainable to CONDUSEF'],11.5,'D6CCE6');
+    'Counterfactual recourse — every capped or declined customer sees what would have to be different, not a reason code',
+    'Model risk governance under CNBV; reasons explainable to CONDUSEF'],11,'D6CCE6');
   foot(s,'ENIF 2024 shows a 10 percentage-point gender gap in formal credit access — 28.2% of men against 18.3% of women. We should be closing that, not encoding it.');
 }
 
@@ -355,7 +359,7 @@ function foot(s,t){
   s.addText([{text:'Scenario: the Credit Card roadmap collides with a mass-market bundle on a regulatory clock.  ',options:{italic:true,color:MUTED}},{text:'I would not try to win that argument on its own terms.',options:{bold:true,color:INK}}],
     {x:M,y:1.98,w:11.9,h:0.45,isTextBox:true,margin:0,fontFace:TEXT,fontSize:14,lineSpacing:19});
   const mv=[['Make it one P&L, not three roadmaps.','Core does not own Card or GBA — so Core should own the currency. “My roadmap versus yours” cannot be won on evidence. “Which sequence makes this customer worth more” can.'],
-    ['Trade assets, not favours.','I bring Card verified income: better approval rates, higher limits, lower losses. They give me placement. That is a trade with a number on it.'],
+    ['Trade assets, not favours.','Concretely: payday-aligned autopay. Card has autopay and a selectable due date; what it lacks is knowing when payday is. Income landing supplies it, and the delinquency gain lands on their P&L. They give me placement.'],
     ['Never let the regulatory date be my deadline.','The moment it is my launch date it is my problem and their favour. It is a shared compliance exposure — agreed with Legal before the conversation with Card, so it arrives as a fact.'],
     ['Pre-agree the escalation path before you need it.','With Diego and the Card/GBA leads: what is mine, what is theirs, what goes up, and a time-box. Escalating without one wins a decision and costs the relationship.'],
     ['Take the smaller ask.','If Card genuinely cannot move, I ship without the card component and add it later. Shipping on time beats winning the argument.']];
@@ -392,13 +396,12 @@ function foot(s,t){
 { const s=S(); light(s);
   head(s,'Rigour','What I assumed, and what I would ask on day one',false);
   card(s,M,1.95,6.0,4.3,'FAF8FD');
-  s.addText('Assumptions — all of them sliders in the model',{x:M+0.3,y:2.15,w:5.3,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:AMBER});
-  bullets(s,M+0.3,2.58,5.3,3.4,['25% net credit yield after expected losses',
-    '28% LDR floor with no income signal; 70% ceiling with it',
-    '45% income-landing attach reaches that ceiling',
-    '8% income landing today (calibration check: this yields 35.5% LDR against the 35% reported)',
-    'Headline yield paid on all balances — deliberately conservative',
-    'Balance sensitivity constant. It is not — it rises once a licensed competitor advertises against us'],12);
+  s.addText('Treated as assumptions — including your own numbers',{x:M+0.3,y:2.15,w:5.4,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:AMBER});
+  bullets(s,M+0.3,2.58,5.35,3.4,['Your figures, read from public sources: 35% LDR and US$5.7B deposits (Q2 2026 release); the published rate card; Nu+ point value. I have treated all of these as assumptions rather than facts',
+    'Mine: 25% net credit yield after expected losses',
+    'Mine: 28% LDR floor with no income signal, 70% ceiling with it, reached at 45% attach',
+    'Mine: 8% income landing today — this calibrates to a 35.5% LDR against the 35% reported',
+    'Mine: balance sensitivity constant. It is not — it rises once a licensed competitor advertises against us'],11.5);
   card(s,6.92,1.95,5.81,4.3,PURPLE_PALE);
   s.addText('Six questions for week one',{x:7.2,y:2.15,w:5.3,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:PURPLE});
   bullets(s,7.2,2.58,5.25,3.4,['Is balance sensitivity blended, or do you have it by segment?',
@@ -432,6 +435,7 @@ function foot(s,t){
    {text:'INEGI / CNBV ENIF 2024 — ',options:{bold:true}},{text:'76.5% of adults hold a formal product; 63% a savings account; 37.3% access to formal credit (men 28.2%, women 18.3%).',options:{breakLine:true}},
    {text:'INEGI ENOE Q2 2026 — ',options:{bold:true}},{text:'55.1% labour informality, 33.1 million workers. IMSS July 2026 — 22.76 million formal jobs.',options:{breakLine:true}},
    {text:'CONDUSEF / Banxico — ',options:{bold:true}},{text:'portabilidad de nómina: worker-initiated, free of charge, begins within 11 business days, cancellable in 3.',options:{breakLine:true}},
+   {text:'Nu México product pages, Sept 2026 — ',options:{bold:true}},{text:'published rate card (Cajita 24/7 6.50%, Cajita Turbo 13.00% capped MX$25,000 on one card purchase a month, Ahorro Congelado 6.55–6.80%); credit-card automatic payment, funded from the Nu debit account, on a customer-selected cut-off or due date; Nu+ rewards, 3% in points at MX$0.10 a point on a MX$33.34 minimum, redeemable into a Cajita.',options:{breakLine:true}},
    {text:'Competitive — ',options:{bold:true}},{text:'Stori licensed 2023, Revolut 2024; Mercado Pago and Klar applications pending with CNBV. BBVA México ~26.7% market share, strong in cards and payroll lending.'}],
    {x:M,y:1.95,w:12.1,h:4.3,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12,color:BODY,lineSpacing:19,paraSpaceAfter:6});
   foot(s,'Public sources only. Every figure not attributed above is my assumption and is marked as such in the model.');

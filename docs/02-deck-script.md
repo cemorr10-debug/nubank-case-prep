@@ -15,6 +15,12 @@
 **Say:** "I've built a working model and two product flows rather than just slides — I'll
 demo both, and every assumption in the model is a slider you can move while I'm talking."
 
+**Then, immediately — the sourcing posture. Say it once, early, and it protects everything:**
+> *"One thing before I start. Every number I'll show you about Nu is my read of a public
+> source, and I've treated all of it as an assumption rather than as fact — including your
+> own reported figures. You have the real numbers. If any of them are wrong, please stop
+> me, because some of them are load-bearing."*
+
 ---
 
 ## 2 · We're already past the starting line  ·  *2:00*
@@ -196,6 +202,20 @@ is a one-time harvest with rising risk; income visibility compounds."**
 
 ## 9 · Track A — *Trae tu nómina*  ·  *4:00*  ·  **PROTOTYPE**
 
+> **The reframe that makes this ask small:** the loop is already built. Autopay already
+> debits the Nu account. The Turbo yield gate already requires monthly card activity. Nu+
+> points already route back into a Cajita. Customers already choose their own payment due
+> date. **Nómina is not a new business line — it is the missing input to a machine that is
+> already running.**
+
+**The product this unlocks — payday-aligned autopay:**
+Nu has autopay. Nu lets the customer pick their due date. What Nu does *not* have is
+knowledge of **when payday is** — which is exactly what income landing supplies. Debit one
+day after the observed payday and the successful-autopay rate rises while delinquency falls.
+That is **crédito de nómina economics without employer deduction** — what BBVA's and
+Banorte's payroll-lending moat is built on, reached through data instead of a contract.
+It works identically for Track B: an observed remittance rhythm is a payday like any other.
+
 - 22.76M IMSS formal jobs · ~36% of adults hold a payroll account · **~90% of those sit with
   a handful of big banks**
 - **The wedge:** portability is the *worker's* legal right, banks cannot charge for it, and
@@ -225,10 +245,23 @@ the day Mercado Pago is licensed."
   region and ethnicity. Excluded **by policy**, and the customer is told so on the consent screen.
 - **Show the estimate back to the customer**, with the reasoning and an appeal path.
 
-**Say:** "I've built this underwriting spine before, at Tala, for exactly this customer. The
-thing I'd carry over is the appeal path — it consistently produced better data than any
-feature we added, because customers correct you precisely on the cases the model is least
-sure about."
+- **Then show what raises the line.** A *counterfactual* — the specific, reachable actions
+  that unlock the next level, surfaced before the customer has to ask.
+
+**Say:** "I built this at Tala México — same market, same thin-file segment. It's called
+Crece con Tala: instead of a score or a reason code, the customer sees the only thing they
+actually want to know, which is *what would have to be different*. Payment streaks, the next
+level, and the specific actions that get them there — shown before they finish paying the
+current loan. **It lifted retention 10% in the hardest and riskiest segments.**"
+
+**Then land the synthesis — this is the strongest single beat in the deck:**
+> *"And that number is really a pricing argument. You currently buy retention with a 13%
+> yield. Progression buys retention too, far more cheaply — and unlike yield it compounds,
+> because the customer who's climbing is the same customer who's repaying."*
+
+**If pressed on mechanism:** counterfactual explanation is the strongest available form of
+algorithmic recourse. It is also what makes automated credit decisions defensible to a
+supervisor, which matters now that Nu is CNBV-supervised.
 
 ---
 
@@ -251,6 +284,8 @@ constrain the objective than audit the outcome."
   ENIF shows a **10pp gender gap in formal credit access (28.2% vs 18.3%)**. We should be
   closing that, not encoding it.
 - Consent that costs nothing to decline — *if declining raises your price, it isn't consent*
+- **Counterfactual recourse** — every capped or declined customer sees what would have to be
+  different, not a reason code. Shipped at Tala México; +10% retention in the riskiest segments
 - Estimate shown back + human appeal — contestability is what makes automated decisioning defensible
 - We're a supervised bank now: model risk governance under CNBV, reasons explainable to CONDUSEF
 - Champion/challenger gated on **fairness**, not only accuracy

@@ -131,6 +131,28 @@ put it in the portability flow rather than in a campaign."
 
 ---
 
+### Q12b. "What would you actually build first for the informal segment?"
+**Under it:** do you have a real product, or a thesis?
+**Answer:** "Counterfactual line progression — I've shipped it. At Tala México it's called
+Crece con Tala. Instead of a score or a reason code, the customer sees the one thing they
+actually want to know: *what would have to be different.* Payment streaks, the next level,
+and the specific reachable actions that unlock it — shown **before** they finish paying the
+current loan, so there's no application and no waiting to be told no. **It lifted retention
+10% in the hardest and riskiest segments.** Same market as here, same thin-file customer."
+
+**Follow with the synthesis — do not skip it:** "And that's really a pricing finding. You
+buy retention today with a 13% yield. Progression buys retention too, far more cheaply, and
+unlike yield it compounds — because the customer who's climbing is the same customer who's
+repaying. That's the cheapest substitute for yield spend I know of, and I've measured it."
+
+### Q12c. "Isn't showing customers how to game the model dangerous?"
+**Answer:** "It's the opposite of gaming, if the counterfactual is built on the things you
+actually want. The actions we surfaced were *pay on time* and *keep the income arriving* —
+if a customer 'games' those, they have simply become a better credit. The danger is only
+real when the model leans on features the customer shouldn't be optimising, which is another
+reason the exclusion list matters. **A counterfactual you can't safely show the customer is
+a signal the model is using something it shouldn't.**"
+
 ## Tier 3 — global-stakeholder questions (Julia / Juca)
 
 ### Q13. "How do you handle it when the global roadmap doesn't have room for Mexico?"
@@ -159,9 +181,11 @@ credibility arguing that Mexico goes first than arguing that Mexico gets its own
 | Lead any section with balance-sheet language | The JD explicitly prefers product-centric over traditional. Lead with the customer. |
 | Defend an assumption verbally | Move the slider instead. Every time. |
 | Claim the informal track is easy | It's the hardest thing in the deck. Saying so is what makes the rest credible. |
-| Over-index on Tala | One line, as evidence. It's a credential, not the argument. |
+| Over-index on Tala generally | Two beats only: the Crece progression product, and the +10% retention number. It's evidence, not biography. |
+| Assert any Nu figure as fact | Say the sourcing line in the first minute. Every Nu number is "my read of a public source, treated as an assumption." It costs 15 seconds and it makes every later number safe. |
 
 ## If you're running long
 Cut in this order: slide 12 (org) to 60 seconds → slide 6 (sequencing) to the ordering
 principle plus the H1 bullets → slide 5 (bundles) to the table with no commentary.
-**Never cut:** slide 3 (diagnosis), slide 8 (live demo), slide 11 (the AI rule).
+**Never cut:** slide 3 (diagnosis), slide 8 (live demo), slide 11 (the AI rule), the
+payday-aligned autopay card on slide 9, or the Crece/+10% beat on slide 10.

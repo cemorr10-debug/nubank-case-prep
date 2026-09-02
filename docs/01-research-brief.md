@@ -89,6 +89,81 @@ What is genuinely open:
 Reasons 1 and 2 have both weakened. But further cuts have diminishing returns and a real
 brand cost, so the move is to change **what the premium is attached to**, not its size.
 
+## 3b. Product teardown — what Nu México has already built
+
+Checked against Nu's own help pages and blog, Sept 2026.
+
+### Credit card autopay — **yes, it exists**
+| Feature | Detail |
+|---|---|
+| Product | *Pago automático de la Tarjeta de Crédito Nu* |
+| Funding source | **Only** the Nu debit account balance |
+| Timing | Customer chooses: on the **fecha de corte** (statement close) or the **fecha límite de pago** (due date) |
+| Default mode | "Pago para no generar intereses" — the amount that avoids interest |
+| Notifications | On payment made, **and on insufficient balance** |
+| Cancellation | Any time |
+| Grace period | 10 days after cut-off |
+| **Due date** | **Customer-selectable** ("puedes escoger la fecha límite de pago… con la Moradita") |
+| Also | External services (utilities, streaming) can be *domiciliados* to the Nu card, set up with the provider directly |
+
+### Nu+ rewards — launched May 2025 in Mexico
+| Feature | Detail |
+|---|---|
+| Cost | **Free.** No membership fee, no usage minimum, no lock-up |
+| Earns on | Credit **and debit** card purchases — including MSI purchases |
+| Headline rate | "**3% en puntos**" on credit and Garantizada cards |
+| Point value | **1 point = MX$0.10**; minimum MX$33.34 purchase to earn a point |
+| **Effective cashback** | **≈0.3%** — 3 points per MX$100, worth MX$0.30 |
+| Redemption | Apply to card balance · transfer to debit · **move into a Cajita (where it then earns yield)** · withdraw as cash |
+| Expiry / cap | None of either |
+
+---
+
+## 3c. ⚠️ The insight that follows — and it reframes the whole case
+
+**The principality machine is already built. Nu just doesn't own the first link.**
+
+```
+   ??? paycheck  →  Nu account  →  autopay pulls  →  card activity satisfies  →  Nu+ points
+   NOT OWNED        EXISTS         EXISTS            the Turbo yield gate       route back
+                                                     EXISTS                     into a Cajita
+                                                                                EXISTS
+```
+
+Every mechanism downstream of the salary exists and is live. Autopay debits the Nu account.
+The Turbo gate requires monthly card activity. Points can be routed into a Cajita to earn
+yield. The customer can even pick their own payment due date.
+
+**So nómina is not a new business line. It is the missing input to a machine already
+running.** That makes the ask far smaller, far more credible, and much harder to argue
+against — which matters enormously for a PM with no authority over Card or Account.
+
+### The specific product this unlocks: **payday-aligned autopay**
+Nu already has autopay, and already lets the customer choose their due date. What it does
+not have is **knowledge of when payday is.** Income landing supplies exactly that.
+
+Align the debit to one or two days after the observed payday and you get:
+- materially higher successful-autopay rates and lower delinquency — **Card's P&L, not mine**
+- it works for Track B too: an observed remittance rhythm is a payday like any other
+- it is, in effect, **crédito de nómina economics without employer deduction** — the very
+  thing BBVA's and Banorte's payroll-lending moat is built on, reached through data rather
+  than through a corporate contract
+
+**This is the trade to offer the Credit Card team.** Not a vague "verified income helps
+you" — a specific mechanism: *I will align your collections with their payday.*
+
+### On the Nu+ economics — handle with care
+The rewards budget is **small and undifferentiated** (~0.3% spread across all spend) while
+the yield budget is **large** (13% on up to MX$25,000, roughly 6.5pp above CETES). Nu spends
+far more buying deposits than buying engagement. So the lever is not more rewards spend —
+it is re-pointing the yield budget, and if a rewards lever is wanted, **multiplying points
+when income lands** is cheap and targeted where raising the base rate is neither.
+
+`[JUDGEMENT CALL]` "3% en puntos" reads as 3% and pays 0.3%. In a price-sensitive mass
+market that does the arithmetic, that gap costs trust — and Nubank's stated mission is
+fighting complexity. **Do not put this on a slide.** If it comes up, raise it as a question
+worth testing, never as an accusation.
+
 ## 4. Rate environment (falling)
 
 | Rate | Level |

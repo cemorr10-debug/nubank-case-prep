@@ -156,6 +156,7 @@ table.a td:first-child{color:var(--ink); font-weight:500; width:29%}
 table.a tr:last-child td{border-bottom:0}
 .tag{display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.06em; padding:1px 5px; border-radius:3px; font-weight:500; vertical-align:1px}
 .tag.fact{background:var(--good-bg); color:var(--good)}
+.tag.nu{background:var(--accent-soft); color:var(--accent)}
 .tag.assum{background:var(--warn-bg); color:var(--warn)}
 
 /* ---------- flow prototype ---------- */
@@ -308,12 +309,14 @@ hr.r{border:0; border-top:1px solid var(--line); margin:26px 0}
     <div class="assump-b">
      <table class="a">
       <tr><th>Input</th><th>Value &amp; basis</th></tr>
-      <tr><td>Deposit base</td><td><span class="tag fact">FACT</span> US$5.70B (Q2 2026) — second-hand from the 13 Aug release; verify. Scales with β.</td></tr>
-      <tr><td>Published rates</td><td><span class="tag fact">FACT</span> Cajita 24/7 <b>6.50%</b> · Cajita Turbo <b>13.00%</b>, cap MX$25,000, one card purchase/month · Ahorro Congelado 6.55–6.80%. In force 10 Aug – 7 Oct 2026. Turbo was 15% until 5 Jan 2026.</td></tr>
-      <tr><td>LDR floor</td><td><span class="tag assum">ASSUM</span> 28% — what is underwritable with no income signal.</td></tr>
-      <tr><td>LDR ceiling</td><td><span class="tag assum">ASSUM</span> 70% — Brazil-like deployment once income is visible.</td></tr>
-      <tr><td>Visibility for ceiling</td><td><span class="tag assum">ASSUM</span> 45% attach. Calibration check: 8% attach ⇒ 35.5% LDR, against 35% reported.</td></tr>
-      <tr><td>Cost of funds</td><td><span class="tag assum">ASSUM</span> The 11.5% default is a <em>blended</em> cost across the tiers, not a published rate — second-hand and unreconciled to the card above. Treated as paid on all balances, which is deliberately conservative.</td></tr>
+      <tr><td colspan="2" style="color:var(--ink);font-weight:500;padding-bottom:10px">Every Nu figure here is read from a public source and <b>treated as an assumption, not as your data</b> — you have the real numbers.</td></tr>
+      <tr><td>Deposit base</td><td><span class="tag nu">NU</span> US$5.70B, 35% LDR — Q2 2026 results release, 13 Aug 2026, read from summaries of it rather than the filing. Scales with β.</td></tr>
+      <tr><td>Published rates</td><td><span class="tag nu">NU</span> Cajita 24/7 <b>6.50%</b> · Cajita Turbo <b>13.00%</b>, cap MX$25,000, one card purchase/month · Ahorro Congelado 6.55–6.80%. Nu México pages, in force 10 Aug – 7 Oct 2026. Turbo was 15% until 5 Jan 2026.</td></tr>
+      <tr><td>Already built</td><td><span class="tag nu">NU</span> Card autopay from the debit account on a customer-chosen cut-off or due date · Nu+ points redeemable into a Cajita. Nu México help pages, Sept 2026.</td></tr>
+      <tr><td>LDR floor</td><td><span class="tag assum">MINE</span> 28% — what is underwritable with no income signal.</td></tr>
+      <tr><td>LDR ceiling</td><td><span class="tag assum">MINE</span> 70% — Brazil-like deployment once income is visible.</td></tr>
+      <tr><td>Visibility for ceiling</td><td><span class="tag assum">MINE</span> 45% attach. Calibration check: 8% attach ⇒ 35.5% LDR, against 35% reported.</td></tr>
+      <tr><td>Cost of funds</td><td><span class="tag assum">MINE</span> The 11.5% default is a <em>blended</em> cost across the tiers, not a published rate — second-hand and unreconciled to the card above. Treated as paid on all balances, which is deliberately conservative.</td></tr>
      </table>
     </div>
    </details>
@@ -406,7 +409,7 @@ hr.r{border:0; border-top:1px solid var(--line); margin:26px 0}
 
 <hr class="r">
 <p class="foot"><b>Sources.</b> Nu Holdings Q2 2026 results (customers, US$5.7B deposits, 35% LDR, ARPAC, cost of deposits); CNBV/SHCP authorisation, bank operations from 6 Aug 2026; IPAB vs. SOFIPO insurance limits; Banxico &amp; CETES auction, 1 Sept 2026; INEGI ENIF 2024 (financial inclusion, formal credit access); INEGI ENOE Q2 2026 (55.1% informality, 33.1M workers); IMSS July 2026 (22.76M formal jobs); Banxico remittances H1 2026 (US$30.76B); CONDUSEF rules on portabilidad de nómina.<br>
-Figures tagged <span class="tag assum">ASSUM</span> are the candidate's assumptions, not company data. Product screens are illustrative mock-ups made for this case, not Nu México designs.</p>
+Figures tagged <span class="tag nu">NU</span> are Nu's own numbers read from public sources and <b>treated as assumptions</b>; those tagged <span class="tag assum">MINE</span> are the candidate's own. Product screens are illustrative mock-ups made for this case, not Nu México designs.</p>
 </main>
 
 <script>
@@ -653,6 +656,18 @@ Figures tagged <span class="tag assum">ASSUM</span> are the candidate's assumpti
     p:'Eleven business days is a long silence after an irreversible-feeling decision, and it is where I would expect the funnel to leak hardest. Naming a date, showing the steps, and monitoring the old account are not polish — <b>they are the retention mechanic</b>.',
     p2:'It is also the metric I would instrument first: not sign-ups, but <b>completed first salary landings</b>. Requests are vanity; the deposit arriving is the event that changes the balance sheet.'},
 
+   {badge:'Now possible',
+    body:'<h4>Pay your card the day after you get paid.</h4>'+
+     '<div class="card"><div class="row"><span>Nómina arrives</span><b>15th &amp; 30th</b></div>'+
+     '<div class="row"><span>Card payment moves to</span><b style="color:var(--good)">16th</b></div>'+
+     '<div class="row" style="color:var(--ink-3)"><span>Was</span><b>4th</b></div></div>'+
+     '<p class="tiny">You already had automatic payment, and you could already choose your due date. We just never knew when you got paid.</p>',
+    cta:'Mover mi fecha de pago',
+    lab:'The strongest idea in the case',
+    h:'Payday-aligned autopay',
+    p:'Both halves already exist in the product: autopay debits the Nu account, and the customer can already choose their own payment due date. <b>The only missing input is knowing when payday is</b> — which is exactly what income landing supplies.',
+    p2:'Debit a day after the observed payday and the successful-autopay rate rises while delinquency falls. That is <b>crédito de nómina economics without employer deduction</b> — what BBVA’s and Banorte’s payroll-lending moat is built on, reached through data instead of a corporate contract. And it works identically for Track B: an observed remittance rhythm is a payday like any other.'},
+
    {badge:'Active',
     body:'<h4>Your salary is here.</h4>'+
      '<div class="card"><div class="row"><span>Nómina · 15 Sept</span><b style="color:var(--good)">+$8,420</b></div></div>'+
@@ -727,6 +742,21 @@ Figures tagged <span class="tag assum">ASSUM</span> are the candidate's assumpti
     h:'Show the customer the estimate before you price them on it',
     p:'This is the screen I would fight for. Showing our income estimate back, in plain language, with the reasoning and a correction path, converts an opaque model into something a person can contest. <b>Contestability is what makes automated decisioning defensible</b> — to the customer, and to a supervisor.',
     p2:'It is also free accuracy. Customers correct our errors for us, on the cases the model is least sure about. I have built this underwriting spine before, at Tala, for this exact customer — and the appeal path consistently produced better data than another feature ever did.'},
+
+   {badge:'What unlocks next',
+    body:'<h4>Here is exactly what raises your line.</h4>'+
+     '<div class="card"><h5>Tu racha</h5>'+
+      '<div class="row"><span>Pagos puntuales seguidos</span><b style="color:var(--good)">4</b></div>'+
+      '<div class="row" style="color:var(--ink-3)"><span>Para el siguiente nivel</span><b>6</b></div></div>'+
+     '<div class="card"><h5>Tu línea sube a <b style="font-family:\'IBM Plex Mono\',monospace">$19,500</b> cuando…</h5>'+
+      '<div class="checkrow"><span class="ic">✓</span><span>Dos pagos puntuales más</span></div>'+
+      '<div class="checkrow off"><span class="ic">·</span><span>Tu ingreso siga llegando a Nu 2 meses más</span></div></div>'+
+     '<p class="tiny">We show you this before you finish paying the current one. No application, no waiting to be told no.</p>',
+    cta:'Ver mi camino',
+    lab:'Shipped this before — Tala México',
+    h:'Counterfactual scoring, turned into a product surface',
+    p:'A counterfactual explanation answers the only question a declined or capped customer actually has: <b>what would have to be different?</b> Not a score, not a reason code — a specific, reachable set of actions and the outcome each one unlocks. It is the strongest available form of algorithmic recourse, and it is what makes automated credit decisions defensible to a supervisor.',
+    p2:'I built this at Tala México — same market, same thin-file segment — and it lifted retention <b>10% in the hardest and riskiest segments</b>. That number is the argument: <b>Nu currently buys retention with a 13% yield. Progression buys it too, far more cheaply — and unlike yield it compounds, because the customer who is climbing is the same customer who is repaying.</b>'},
 
    {badge:'Active',
     body:'<h4>Same account. Same terms.</h4>'+
