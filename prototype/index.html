@@ -1,0 +1,774 @@
+<title>Where Income Lands</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#FCFBFE; --surface:#FFFFFF; --surface-2:#F5F2FA; --line:#E4DFEC; --line-strong:#CFC7DE;
+  --ink:#181423; --ink-2:#4A4259; --ink-3:#7A7189;
+  --accent:#820AD1; --accent-ink:#FFFFFF; --accent-soft:#F3E8FD;
+  --credit:#7C3AED; --treasury:#D97706;
+  --good:#0E8A5F; --warn:#B45309; --crit:#BE123C;
+  --good-bg:#E4F5EE; --warn-bg:#FBF0E0; --crit-bg:#FCE8EC;
+  --phone-bg:#FFFFFF; --phone-chrome:#F5F2FA;
+  --shadow:0 1px 2px rgba(24,20,35,.06), 0 8px 24px -12px rgba(24,20,35,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#141118; --surface:#1D1926; --surface-2:#262032; --line:#332B42; --line-strong:#473C5C;
+    --ink:#EDE9F2; --ink-2:#B7AEC6; --ink-3:#877D99;
+    --accent:#A855F7; --accent-ink:#1A0B26; --accent-soft:#2A1740;
+    --credit:#8B5CF6; --treasury:#C07C10;
+    --good:#34D399; --warn:#F5A524; --crit:#FB7185;
+    --good-bg:#12332A; --warn-bg:#332612; --crit-bg:#3A1620;
+    --phone-bg:#1D1926; --phone-chrome:#262032;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#141118; --surface:#1D1926; --surface-2:#262032; --line:#332B42; --line-strong:#473C5C;
+  --ink:#EDE9F2; --ink-2:#B7AEC6; --ink-3:#877D99;
+  --accent:#A855F7; --accent-ink:#1A0B26; --accent-soft:#2A1740;
+  --credit:#8B5CF6; --treasury:#C07C10;
+  --good:#34D399; --warn:#F5A524; --crit:#FB7185;
+  --good-bg:#12332A; --warn-bg:#332612; --crit-bg:#3A1620;
+  --phone-bg:#1D1926; --phone-chrome:#262032;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.55; margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:Archivo,"Helvetica Neue",Arial,sans-serif; text-wrap:balance; margin:0; letter-spacing:-.015em}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace; font-variant-numeric:tabular-nums}
+.wrap{max-width:1220px; margin:0 auto; padding:0 28px}
+
+/* ---------- header ---------- */
+header{border-bottom:1px solid var(--line); background:var(--surface)}
+.head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:22px 0 0; flex-wrap:wrap}
+.brandline{display:flex; align-items:center; gap:10px; margin-bottom:6px}
+.dot{width:9px; height:9px; border-radius:50%; background:var(--accent); flex:none}
+.eyebrow{font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); font-weight:600}
+.head h1{font-size:25px; font-weight:700; line-height:1.15}
+.head .sub{color:var(--ink-2); font-size:13.5px; margin-top:4px; max-width:60ch}
+.byline{font-size:12px; color:var(--ink-3); text-align:right; line-height:1.7}
+.byline b{color:var(--ink-2); font-weight:600}
+
+nav{display:flex; gap:2px; margin-top:20px}
+nav button{
+  font-family:Archivo,sans-serif; font-size:13.5px; font-weight:600; letter-spacing:-.01em;
+  background:none; border:0; border-bottom:2px solid transparent; color:var(--ink-3);
+  padding:9px 15px; cursor:pointer; margin-bottom:-1px;
+}
+nav button:hover{color:var(--ink)}
+nav button[aria-selected="true"]{color:var(--accent); border-bottom-color:var(--accent)}
+nav button:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:3px 3px 0 0}
+.tabnum{font-family:"IBM Plex Mono",monospace; font-size:10.5px; color:var(--ink-3); margin-right:6px}
+nav button[aria-selected="true"] .tabnum{color:var(--accent)}
+
+main{padding:28px 0 72px}
+[role=tabpanel][hidden]{display:none}
+
+/* ---------- thesis bar ---------- */
+.thesis{
+  border-left:3px solid var(--accent); background:var(--accent-soft);
+  padding:13px 18px; border-radius:0 8px 8px 0; margin-bottom:24px;
+}
+.thesis p{margin:0; font-size:14.5px; color:var(--ink); max-width:88ch}
+.thesis strong{font-weight:600}
+
+/* ---------- simulator layout ---------- */
+.sim{display:grid; grid-template-columns:312px minmax(0,1fr); gap:26px; align-items:start}
+@media(max-width:940px){.sim{grid-template-columns:1fr}}
+
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:10px}
+.panel-h{padding:13px 16px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:baseline; gap:10px}
+.panel-h h3{font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); font-weight:600}
+.panel-b{padding:16px}
+
+.ctrl{padding:13px 0; border-bottom:1px dashed var(--line)}
+.ctrl:last-child{border-bottom:0; padding-bottom:2px}
+.ctrl-top{display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin-bottom:3px}
+.ctrl label{font-size:13px; font-weight:500; color:var(--ink)}
+.ctrl .val{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-size:13.5px; font-weight:600; color:var(--accent)}
+.ctrl .hint{font-size:11.5px; color:var(--ink-3); line-height:1.45; margin-bottom:8px}
+input[type=range]{width:100%; margin:0; accent-color:var(--accent); height:20px; cursor:pointer}
+input[type=range]:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+.scale{display:flex; justify-content:space-between; font-family:"IBM Plex Mono",monospace; font-size:10px; color:var(--ink-3); margin-top:1px}
+.anchor{display:inline-block; font-size:10px; font-family:"IBM Plex Mono",monospace; color:var(--treasury); border:1px solid var(--treasury); border-radius:3px; padding:0 4px; margin-left:6px; vertical-align:1px}
+
+.presets{display:flex; gap:6px; padding:0 16px 14px; flex-wrap:wrap}
+.presets button{
+  font-family:"IBM Plex Sans",sans-serif; font-size:12px; font-weight:500; cursor:pointer;
+  background:var(--surface-2); border:1px solid var(--line); color:var(--ink-2);
+  padding:5px 10px; border-radius:6px;
+}
+.presets button:hover{border-color:var(--line-strong); color:var(--ink)}
+.presets button:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.presets button.on{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+
+/* ---------- verdict + tiles ---------- */
+.verdict{
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  padding:20px 22px; margin-bottom:16px; border-left:3px solid var(--accent);
+}
+.verdict .lede{font-family:Archivo,sans-serif; font-size:20px; font-weight:600; line-height:1.3; letter-spacing:-.02em}
+.verdict .lede em{font-style:normal; color:var(--accent)}
+.verdict .vnote{font-size:13.5px; color:var(--ink-2); margin:7px 0 0; max-width:78ch}
+
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-bottom:16px}
+.tile{background:var(--surface); padding:14px 16px}
+.tile.hero{background:var(--accent-soft)}
+.tile .k{font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); font-weight:600}
+.tile .v{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-size:23px; font-weight:600; letter-spacing:-.03em; margin-top:5px; line-height:1.1}
+.tile.hero .v{color:var(--accent)}
+.tile .d{font-size:11.5px; color:var(--ink-3); margin-top:3px; font-variant-numeric:tabular-nums}
+.tile .d.up{color:var(--good)} .tile .d.down{color:var(--crit)}
+
+.charts{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+@media(max-width:860px){.charts{grid-template-columns:1fr}}
+.chart-cap{font-size:12px; color:var(--ink-2); padding:0 16px 14px; line-height:1.5; margin-top:-2px}
+.chart-cap b{color:var(--ink); font-weight:600}
+svg{display:block; width:100%; height:auto; overflow:visible}
+.legend{display:flex; gap:16px; padding:0 16px 10px; flex-wrap:wrap}
+.legend span{display:flex; align-items:center; gap:6px; font-size:12px; color:var(--ink-2)}
+.swatch{width:11px; height:11px; border-radius:3px; flex:none}
+
+/* ---------- assumptions ---------- */
+details.assump{margin-top:16px; background:var(--surface); border:1px solid var(--line); border-radius:10px}
+details.assump summary{
+  cursor:pointer; padding:13px 16px; font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:600; font-family:Archivo,sans-serif; list-style:none;
+  display:flex; justify-content:space-between; align-items:center;
+}
+details.assump summary::-webkit-details-marker{display:none}
+details.assump summary::after{content:"＋"; font-size:14px; color:var(--ink-3)}
+details.assump[open] summary::after{content:"−"}
+details.assump summary:focus-visible{outline:2px solid var(--accent); outline-offset:-2px; border-radius:10px}
+.assump-b{padding:0 16px 16px; border-top:1px solid var(--line); padding-top:14px}
+table.a{width:100%; border-collapse:collapse; font-size:12.5px}
+table.a th{text-align:left; font-weight:600; color:var(--ink-3); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; padding:0 12px 7px 0; border-bottom:1px solid var(--line)}
+table.a td{padding:8px 12px 8px 0; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-2)}
+table.a td:first-child{color:var(--ink); font-weight:500; width:29%}
+table.a tr:last-child td{border-bottom:0}
+.tag{display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.06em; padding:1px 5px; border-radius:3px; font-weight:500; vertical-align:1px}
+.tag.fact{background:var(--good-bg); color:var(--good)}
+.tag.assum{background:var(--warn-bg); color:var(--warn)}
+
+/* ---------- flow prototype ---------- */
+.flow{display:grid; grid-template-columns:300px minmax(0,1fr); gap:34px; align-items:start}
+@media(max-width:900px){.flow{grid-template-columns:1fr; gap:24px}}
+.stage{display:flex; flex-direction:column; align-items:center; gap:14px; position:sticky; top:20px}
+.phone{
+  width:280px; border-radius:34px; background:var(--phone-bg); border:1px solid var(--line-strong);
+  box-shadow:var(--shadow); overflow:hidden; position:relative;
+}
+.phone-chrome{background:var(--phone-chrome); padding:9px 18px 7px; display:flex; justify-content:space-between; font-family:"IBM Plex Mono",monospace; font-size:10px; color:var(--ink-3); border-bottom:1px solid var(--line)}
+.screen{padding:18px 18px 24px; min-height:462px; display:flex; flex-direction:column; gap:13px}
+.screen h4{font-size:17.5px; font-weight:600; line-height:1.25}
+.screen p{margin:0; font-size:13px; color:var(--ink-2); line-height:1.5}
+.screen .tiny{font-size:11px; color:var(--ink-3); line-height:1.45}
+.sbadge{align-self:flex-start; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; font-weight:600; padding:3px 8px; border-radius:20px; background:var(--accent-soft); color:var(--accent)}
+.card{background:var(--surface-2); border:1px solid var(--line); border-radius:10px; padding:12px 13px; display:flex; flex-direction:column; gap:5px}
+.card .row{display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:12.5px}
+.card .row b{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-weight:600}
+.card h5{margin:0; font-size:12.5px; font-weight:600; font-family:"IBM Plex Sans",sans-serif}
+.big{font-family:"IBM Plex Mono",monospace; font-size:27px; font-weight:600; letter-spacing:-.03em; line-height:1.1}
+.cta{margin-top:auto; background:var(--accent); color:var(--accent-ink); border:0; border-radius:10px; padding:13px; font-family:"IBM Plex Sans",sans-serif; font-size:14px; font-weight:600; cursor:pointer; width:100%}
+.cta:hover{filter:brightness(1.08)}
+.cta:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+.cta.ghost{background:none; color:var(--ink-2); border:1px solid var(--line-strong); margin-top:8px; padding:10px; font-size:13px}
+.checkrow{display:flex; gap:9px; align-items:flex-start; font-size:12.5px; color:var(--ink-2); line-height:1.45}
+.checkrow .ic{flex:none; width:17px; height:17px; border-radius:5px; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-size:10px; font-weight:700; margin-top:1px}
+.checkrow.off .ic{background:var(--surface-2); color:var(--ink-3)}
+.timeline{display:flex; flex-direction:column; gap:0}
+.tl{display:flex; gap:10px; font-size:12px; color:var(--ink-2)}
+.tl .bar{flex:none; width:9px; display:flex; flex-direction:column; align-items:center}
+.tl .pip{width:9px; height:9px; border-radius:50%; background:var(--line-strong); margin-top:4px}
+.tl.done .pip{background:var(--accent)}
+.tl .stem{width:1px; flex:1; background:var(--line); min-height:16px}
+.tl:last-child .stem{display:none}
+.tl .txt{padding-bottom:11px}
+.tl b{display:block; color:var(--ink); font-weight:600; font-size:12.5px}
+
+.steprail{display:flex; gap:6px; align-items:center; justify-content:center; flex-wrap:wrap}
+.steprail button{
+  width:26px; height:26px; border-radius:7px; border:1px solid var(--line); background:var(--surface);
+  color:var(--ink-3); font-family:"IBM Plex Mono",monospace; font-size:11px; cursor:pointer; font-weight:500;
+}
+.steprail button:hover{border-color:var(--line-strong); color:var(--ink)}
+.steprail button:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.steprail button.on{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+.navbtns{display:flex; gap:8px}
+.navbtns button{background:var(--surface); border:1px solid var(--line-strong); color:var(--ink); border-radius:8px; padding:7px 15px; font-size:13px; font-family:"IBM Plex Sans",sans-serif; font-weight:500; cursor:pointer}
+.navbtns button:disabled{opacity:.38; cursor:default}
+.navbtns button:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+.notes{display:flex; flex-direction:column; gap:16px}
+.note{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:16px 18px}
+.note .lab{font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--accent); margin-bottom:6px}
+.note h4{font-size:16px; font-weight:600; margin-bottom:6px}
+.note p{margin:0 0 9px; font-size:13.5px; color:var(--ink-2); max-width:66ch}
+.note p:last-child{margin-bottom:0}
+.note b{color:var(--ink); font-weight:600}
+.note ul{margin:0; padding-left:18px; font-size:13.5px; color:var(--ink-2)}
+.note li{margin-bottom:5px}
+.note li:last-child{margin-bottom:0}
+.pill{display:inline-block; font-size:11px; font-weight:600; padding:2px 8px; border-radius:20px; margin-right:5px}
+.pill.f{background:var(--good-bg); color:var(--good)}
+.pill.a{background:var(--warn-bg); color:var(--warn)}
+hr.r{border:0; border-top:1px solid var(--line); margin:26px 0}
+.foot{font-size:12px; color:var(--ink-3); line-height:1.65; max-width:80ch}
+.foot a{color:var(--ink-2)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+</style>
+
+<header>
+ <div class="wrap">
+  <div class="head">
+   <div>
+    <div class="brandline"><span class="dot"></span><span class="eyebrow">Business case · Core México</span></div>
+    <h1>Where income lands</h1>
+    <p class="sub">A pricing model and two product flows for Nu México's mass-market value proposition, four weeks after the banking licence went live.</p>
+   </div>
+   <div class="byline">
+    <b>Product Director, Core México</b><br>
+    Prepared for Diego Sierra &amp; panel<br>
+    <span class="mono">4 Sept 2026</span>
+   </div>
+  </div>
+  <nav role="tablist" aria-label="Sections">
+   <button role="tab" id="t-sim" aria-controls="p-sim" aria-selected="true"><span class="tabnum">01</span>Pricing engine</button>
+   <button role="tab" id="t-nom" aria-controls="p-nom" aria-selected="false"><span class="tabnum">02</span>Track A · Trae tu nómina</button>
+   <button role="tab" id="t-inf" aria-controls="p-inf" aria-selected="false"><span class="tabnum">03</span>Track B · Ingreso observado</button>
+  </nav>
+ </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ TAB 1 ============ -->
+<section role="tabpanel" id="p-sim" aria-labelledby="t-sim">
+ <div class="thesis"><p><strong>Nu México is not deposit-constrained — it is constrained by how much income it can see.</strong> At a 35% loan-to-deposit ratio the next peso of deposit earns about a quarter of what it would earn if we could deploy it. Drag <em>income visibility</em> and watch the marginal spread move. Every assumption below is a slider, so push back on any of them live.</p></div>
+
+ <div class="sim">
+  <div>
+   <div class="panel">
+    <div class="panel-h"><h3>Inputs</h3><span class="mono" style="font-size:11px;color:var(--ink-3)">live</span></div>
+    <div class="presets">
+      <button data-preset="today" class="on">Today</button>
+      <button data-preset="cut">Cut the rate only</button>
+      <button data-preset="plan">24-month plan</button>
+    </div>
+    <div class="panel-b" style="padding-top:0">
+
+     <div class="ctrl">
+      <div class="ctrl-top"><label for="i-attach">Income visibility</label><span class="val" id="v-attach">8%</span></div>
+      <p class="hint">Share of active customers whose salary, remittance or platform payout lands in a Nu account. This is the variable the whole case is about.</p>
+      <input type="range" id="i-attach" min="0" max="60" step="1" value="8">
+      <div class="scale"><span>0%</span><span>60%</span></div>
+     </div>
+
+     <div class="ctrl">
+      <div class="ctrl-top"><label for="i-yield">Deposit yield paid</label><span class="val" id="v-yield">11.50%</span></div>
+      <p class="hint">Headline rate on Cuenta Nu. Cut from ~15% to ~11.5% with &gt;90% retention.<span class="anchor">observed</span></p>
+      <input type="range" id="i-yield" min="0" max="16" step="0.25" value="11.5">
+      <div class="scale"><span>0%</span><span>CETES</span><span>16%</span></div>
+     </div>
+
+     <div class="ctrl">
+      <div class="ctrl-top"><label for="i-beta">Deposit sensitivity β</label><span class="val" id="v-beta">2.9</span></div>
+      <p class="hint">% of balances lost per 1pp of rate cut. β=2.9 reproduces the observed 15%→11.5% cut at &gt;90% retention.<span class="anchor">calibrated</span></p>
+      <input type="range" id="i-beta" min="0" max="10" step="0.1" value="2.9">
+      <div class="scale"><span>0 · sticky</span><span>10 · mercenary</span></div>
+     </div>
+
+     <div class="ctrl">
+      <div class="ctrl-top"><label for="i-cetes">CETES 28d</label><span class="val" id="v-cetes">6.49%</span></div>
+      <p class="hint">Where undeployed deposits sit. Banxico at 6.50% and cutting.<span class="anchor">1 Sep 26</span></p>
+      <input type="range" id="i-cetes" min="3" max="12" step="0.01" value="6.49">
+      <div class="scale"><span>3%</span><span>12%</span></div>
+     </div>
+
+     <div class="ctrl">
+      <div class="ctrl-top"><label for="i-credit">Net credit yield</label><span class="val" id="v-credit">25.0%</span></div>
+      <p class="hint">Risk-adjusted yield on deployed balances, after expected losses. The softest number here — move it.</p>
+      <input type="range" id="i-credit" min="8" max="40" step="0.5" value="25">
+      <div class="scale"><span>8%</span><span>40%</span></div>
+     </div>
+
+    </div>
+   </div>
+
+   <details class="assump" open>
+    <summary>Assumptions</summary>
+    <div class="assump-b">
+     <table class="a">
+      <tr><th>Input</th><th>Value &amp; basis</th></tr>
+      <tr><td>Deposit base</td><td><span class="tag fact">FACT</span> US$5.70B at 11.5% (Q2 2026). Scales with β.</td></tr>
+      <tr><td>LDR floor</td><td><span class="tag assum">ASSUM</span> 28% — what is underwritable with no income signal.</td></tr>
+      <tr><td>LDR ceiling</td><td><span class="tag assum">ASSUM</span> 70% — Brazil-like deployment once income is visible.</td></tr>
+      <tr><td>Visibility for ceiling</td><td><span class="tag assum">ASSUM</span> 45% attach. Calibration check: 8% attach ⇒ 35.5% LDR, against 35% reported.</td></tr>
+      <tr><td>Cost of funds</td><td><span class="tag assum">ASSUM</span> Headline yield paid on <em>all</em> balances. Deliberately conservative — real nómina balances are transactional and cost far less, so the case understates its own upside.</td></tr>
+     </table>
+    </div>
+   </details>
+  </div>
+
+  <div>
+   <div class="verdict">
+    <div class="lede" id="verdict-lede">—</div>
+    <p class="vnote" id="verdict-note">—</p>
+   </div>
+
+   <div class="tiles">
+    <div class="tile hero"><div class="k">Marginal spread</div><div class="v" id="o-spread">—</div><div class="d" id="o-spread-d">on the next peso of deposit</div></div>
+    <div class="tile"><div class="k">Loan-to-deposit</div><div class="v" id="o-ldr">—</div><div class="d" id="o-ldr-d">—</div></div>
+    <div class="tile"><div class="k">Deposits</div><div class="v" id="o-dep">—</div><div class="d" id="o-dep-d">—</div></div>
+    <div class="tile"><div class="k">Net interest income</div><div class="v" id="o-nii">—</div><div class="d" id="o-nii-d">—</div></div>
+   </div>
+
+   <div class="charts">
+    <div class="panel">
+     <div class="panel-h"><h3>Marginal spread vs. income visibility</h3></div>
+     <div id="c1"></div>
+     <p class="chart-cap"><b>The curve is the argument.</b> Rate cuts move you a little way up the y-axis. Income visibility moves you along the x-axis, which is where the slope is.</p>
+    </div>
+    <div class="panel">
+     <div class="panel-h"><h3>Where the next peso goes</h3></div>
+     <div class="legend">
+      <span><i class="swatch" style="background:var(--credit)"></i>Lent — credit yield</span>
+      <span><i class="swatch" style="background:var(--treasury)"></i>Parked — CETES</span>
+      <span><i class="swatch" style="background:var(--ink-3);width:3px;height:13px;border-radius:1px"></i>Cost of funds</span>
+     </div>
+     <div id="c2"></div>
+     <p class="chart-cap"><b>Bar past the rule = spread.</b> The bar length barely changes with the rate; the <em>mix</em> inside it is what pays.</p>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <hr class="r">
+ <div class="notes">
+  <div class="note">
+   <div class="lab">How I would actually make the call</div>
+   <h4>Three decisions this model produces, and the data I would need for each</h4>
+   <ul>
+    <li><b>Price the yield as a spread, not a number.</b> Quote it against CETES rather than as an absolute %. With Banxico cutting, funding cost falls automatically and we never run a "Nu cut your rate" news cycle. <em>Needs:</em> brand-tracking on how the rate is understood, and whether customers anchor on the number or the ranking.</li>
+    <li><b>Pay up only for money that brings income with it.</b> Base rate for everyone; the premium tier requires a recurring inbound and is capped at a balance ceiling. <em>Needs:</em> β by segment from a geographic rate holdout — not a single blended β. The one number I would most want on day 1.</li>
+    <li><b>Stop treating deposit growth as a goal.</b> At 35% LDR, deposits above what we can deploy are a cost line wearing a growth metric's clothes. <em>Needs:</em> LTV by acquisition source, split yield-acquired vs. income-acquired, which I would expect to differ by more than the rate does.</li>
+   </ul>
+  </div>
+  <div class="note">
+   <div class="lab">Where this model breaks</div>
+   <h4>The honest limits</h4>
+   <p>β is <b>not constant</b>. It is low today because the base was acquired on a brand promise, not a rate table; it rises sharply once a licensed competitor advertises against us. The model treats β as fixed, so it flatters any large cut — push the β slider to 6 and the "cut the rate" preset stops working. That asymmetry is the point: <b>a rate cut is a one-time harvest with rising risk, income visibility is a compounding asset.</b></p>
+   <p>The LDR ceiling is also an assumption, not a finding. It presumes underwriting quality holds as we deploy — which is exactly the thing to instrument before, not after.</p>
+  </div>
+ </div>
+</section>
+
+<!-- ============ TAB 2 ============ -->
+<section role="tabpanel" id="p-nom" aria-labelledby="t-nom" hidden>
+ <div class="thesis"><p><strong>22.76M formal workers. ~36% of adults hold a payroll account and ~90% of those sit with the big banks.</strong> Their moat is the employer relationship. <em>Portabilidad de nómina</em> routes around it entirely: it is the worker's legal right, banks cannot charge for it, and it completes in 11 business days. No HR sale required — which is the only reason a challenger can win this.</p></div>
+ <div class="flow">
+  <div class="stage">
+   <div class="phone">
+    <div class="phone-chrome"><span>9:41</span><span>Nu</span></div>
+    <div class="screen" id="scr-a"></div>
+   </div>
+   <div class="navbtns"><button id="a-prev">← Back</button><button id="a-next">Next →</button></div>
+   <div class="steprail" id="rail-a"></div>
+  </div>
+  <div class="notes" id="notes-a"></div>
+ </div>
+</section>
+
+<!-- ============ TAB 3 ============ -->
+<section role="tabpanel" id="p-inf" aria-labelledby="t-inf" hidden>
+ <div class="thesis"><p><strong>55.1% of Mexican workers are informal — 33.1 million people with no payslip to port.</strong> A formal-only strategy addresses under half the market and is off-mission for a company that exists for financial inclusion. So Track B earns the <em>same</em> tier through observed income instead of documented income. Same underwriting spine, different proof.</p></div>
+ <div class="flow">
+  <div class="stage">
+   <div class="phone">
+    <div class="phone-chrome"><span>9:41</span><span>Nu</span></div>
+    <div class="screen" id="scr-b"></div>
+   </div>
+   <div class="navbtns"><button id="b-prev">← Back</button><button id="b-next">Next →</button></div>
+   <div class="steprail" id="rail-b"></div>
+  </div>
+  <div class="notes" id="notes-b"></div>
+ </div>
+</section>
+
+<hr class="r">
+<p class="foot"><b>Sources.</b> Nu Holdings Q2 2026 results (customers, US$5.7B deposits, 35% LDR, ARPAC, cost of deposits); CNBV/SHCP authorisation, bank operations from 6 Aug 2026; IPAB vs. SOFIPO insurance limits; Banxico &amp; CETES auction, 1 Sept 2026; INEGI ENIF 2024 (financial inclusion, formal credit access); INEGI ENOE Q2 2026 (55.1% informality, 33.1M workers); IMSS July 2026 (22.76M formal jobs); Banxico remittances H1 2026 (US$30.76B); CONDUSEF rules on portabilidad de nómina.<br>
+Figures tagged <span class="tag assum">ASSUM</span> are the candidate's assumptions, not company data. Product screens are illustrative mock-ups made for this case, not Nu México designs.</p>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  /* ---------- tabs ---------- */
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(o){
+        var sel=o===t;
+        o.setAttribute('aria-selected',sel?'true':'false');
+        document.getElementById(o.getAttribute('aria-controls')).hidden=!sel;
+      });
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+
+  /* ---------- model ---------- */
+  var BASE_DEP=5.70, BASE_YIELD=11.5, LDR_FLOOR=28, LDR_CEIL=70, ATTACH_CEIL=45;
+  var TODAY={attach:8,yield:11.5,beta:2.9,cetes:6.49,credit:25};
+
+  function ldrAt(attach){ return LDR_FLOOR+(LDR_CEIL-LDR_FLOOR)*Math.min(1,attach/ATTACH_CEIL); }
+  function model(s){
+    var ldr=ldrAt(s.attach)/100;
+    var dep=Math.max(0.5, BASE_DEP*(1+(s.beta/100)*(s.yield-BASE_YIELD)));
+    var assetYield=ldr*s.credit+(1-ldr)*s.cetes;
+    var spread=assetYield-s.yield;
+    var nii=dep*1000*(ldr*s.credit+(1-ldr)*s.cetes-s.yield)/100; // $M/yr
+    return {ldr:ldr*100,dep:dep,assetYield:assetYield,spread:spread,nii:nii,
+            creditPart:ldr*s.credit, treasuryPart:(1-ldr)*s.cetes};
+  }
+  var BASE=model(TODAY);
+
+  /* ---------- helpers ---------- */
+  var ids=['attach','yield','beta','cetes','credit'];
+  function read(){ var s={}; ids.forEach(function(k){ s[k]=parseFloat(document.getElementById('i-'+k).value); }); return s; }
+  function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+  function fmt(n,d){ return n.toFixed(d===undefined?1:d); }
+  function money(m){ return m>=1000||m<=-1000 ? '$'+(m/1000).toFixed(2)+'B' : (m<0?'−$':'$')+Math.abs(m).toFixed(0)+'M'; }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  /* ---------- chart 1 : spread vs visibility ---------- */
+  function chart1(s,m){
+    var W=520,H=250,L=46,R=18,T=22,B=38, iw=W-L-R, ih=H-T-B;
+    var pts=[],i,mx=-1e9,mn=1e9;
+    for(i=0;i<=60;i++){
+      var l=ldrAt(i)/100, y=(l*s.credit+(1-l)*s.cetes)-s.yield;
+      pts.push([i,y]); if(y>mx)mx=y; if(y<mn)mn=y;
+    }
+    mn=Math.min(mn,0); var pad=(mx-mn)*0.12||1; mx+=pad; mn-=pad*0.5;
+    function X(v){ return L+(v/60)*iw; }
+    function Y(v){ return T+ih-((v-mn)/(mx-mn))*ih; }
+    var ink3=css('--ink-3'), ink2=css('--ink-2'), line=css('--line'), acc=css('--accent'), surf=css('--surface');
+    var g='';
+    // grid + y ticks
+    var step=Math.max(1,Math.round((mx-mn)/5));
+    for(var t=Math.ceil(mn/step)*step;t<=mx;t+=step){
+      g+='<line x1="'+L+'" y1="'+Y(t).toFixed(1)+'" x2="'+(W-R)+'" y2="'+Y(t).toFixed(1)+'" stroke="'+line+'" stroke-width="1"/>';
+      g+='<text x="'+(L-8)+'" y="'+(Y(t)+4).toFixed(1)+'" text-anchor="end" fill="'+ink3+'" font-size="10.5" font-family="IBM Plex Mono, monospace">'+t+'pp</text>';
+    }
+    // zero line
+    if(mn<0&&mx>0) g+='<line x1="'+L+'" y1="'+Y(0).toFixed(1)+'" x2="'+(W-R)+'" y2="'+Y(0).toFixed(1)+'" stroke="'+css('--line-strong')+'" stroke-width="1.5" stroke-dasharray="3 3"/>';
+    // x ticks
+    [0,15,30,45,60].forEach(function(v){
+      g+='<text x="'+X(v).toFixed(1)+'" y="'+(T+ih+17)+'" text-anchor="middle" fill="'+ink3+'" font-size="10.5" font-family="IBM Plex Mono, monospace">'+v+'%</text>';
+    });
+    g+='<text x="'+(L+iw/2).toFixed(1)+'" y="'+(T+ih+33)+'" text-anchor="middle" fill="'+ink2+'" font-size="11">Income visibility — share of customers whose income lands at Nu</text>';
+    // area + line
+    var d=pts.map(function(p,k){ return (k?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1); }).join(' ');
+    g+='<path d="'+d+' L'+X(60).toFixed(1)+' '+Y(mn).toFixed(1)+' L'+X(0).toFixed(1)+' '+Y(mn).toFixed(1)+' Z" fill="'+acc+'" opacity="0.10"/>';
+    g+='<path d="'+d+'" fill="none" stroke="'+acc+'" stroke-width="2" stroke-linejoin="round"/>';
+    // today marker
+    var ty=(ldrAt(TODAY.attach)/100*s.credit+(1-ldrAt(TODAY.attach)/100)*s.cetes)-s.yield;
+    g+='<line x1="'+X(TODAY.attach).toFixed(1)+'" y1="'+T+'" x2="'+X(TODAY.attach).toFixed(1)+'" y2="'+(T+ih)+'" stroke="'+ink3+'" stroke-width="1" stroke-dasharray="2 3"/>';
+    g+='<circle cx="'+X(TODAY.attach).toFixed(1)+'" cy="'+Y(ty).toFixed(1)+'" r="4.5" fill="'+surf+'" stroke="'+ink3+'" stroke-width="2"/>';
+    g+='<text x="'+(X(TODAY.attach)+8).toFixed(1)+'" y="'+(T+11)+'" fill="'+ink3+'" font-size="10.5" font-weight="600" font-family="IBM Plex Sans, sans-serif">Today</text>';
+    // current marker
+    g+='<circle cx="'+X(s.attach).toFixed(1)+'" cy="'+Y(m.spread).toFixed(1)+'" r="6" fill="'+acc+'" stroke="'+surf+'" stroke-width="2"/>';
+    var lx=X(s.attach), anch=lx>W-140?'end':'start', off=lx>W-140?-11:11;
+    g+='<text x="'+(lx+off).toFixed(1)+'" y="'+(Y(m.spread)-11).toFixed(1)+'" text-anchor="'+anch+'" fill="'+acc+'" font-size="12.5" font-weight="700" font-family="IBM Plex Mono, monospace">'+fmt(m.spread)+'pp</text>';
+    document.getElementById('c1').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Marginal spread rises from '+fmt(BASE.spread)+' percentage points at today’s 8% income visibility toward '+fmt(pts[45][1])+' points at 45%."><rect width="'+W+'" height="'+H+'" fill="none"/>'+g+'</svg>';
+  }
+
+  /* ---------- chart 2 : the marginal peso ---------- */
+  function chart2(s,m){
+    var W=520,H=250,L=74,R=54,T=30,B=46, iw=W-L-R;
+    var same=Math.abs(s.attach-TODAY.attach)<0.5 && Math.abs(s.yield-TODAY.yield)<0.01;
+    var rows=[{n:'Today',ld:ldrAt(TODAY.attach)/100,y:TODAY.yield},
+              {n:same?'Scenario —':'Scenario',ld:m.ldr/100,y:s.yield}];
+    rows.forEach(function(r){ r.c=r.ld*s.credit; r.t=(1-r.ld)*s.cetes; r.tot=r.c+r.t; });
+    var maxv=Math.max(rows[0].tot,rows[1].tot,rows[0].y,rows[1].y)*1.16;
+    function X(v){ return L+(v/maxv)*iw; }
+    var ink3=css('--ink-3'), ink=css('--ink'), ink2=css('--ink-2'), surf=css('--surface'),
+        cr=css('--credit'), tr=css('--treasury'), line=css('--line');
+    var g='', bh=44, gap=34;
+    // x axis ticks
+    var stp=Math.max(5,Math.round(maxv/5/5)*5);
+    for(var v=0;v<=maxv;v+=stp){
+      g+='<line x1="'+X(v).toFixed(1)+'" y1="'+T+'" x2="'+X(v).toFixed(1)+'" y2="'+(T+2*bh+gap+6)+'" stroke="'+line+'" stroke-width="1"/>';
+      g+='<text x="'+X(v).toFixed(1)+'" y="'+(T+2*bh+gap+22)+'" text-anchor="middle" fill="'+ink3+'" font-size="10.5" font-family="IBM Plex Mono, monospace">'+v+'%</text>';
+    }
+    g+='<text x="'+(L+iw/2).toFixed(1)+'" y="'+(T+2*bh+gap+40)+'" text-anchor="middle" fill="'+ink2+'" font-size="11">Annualised yield on one marginal peso of deposit</text>';
+    rows.forEach(function(r,i){
+      var y0=T+i*(bh+gap), by=y0+8, h=bh-18;
+      g+='<text x="'+(L-10)+'" y="'+(by+h/2+4).toFixed(1)+'" text-anchor="end" fill="'+ink+'" font-size="12" font-weight="600" font-family="IBM Plex Sans, sans-serif">'+r.n+'</text>';
+      if(i===1&&same) g+='<text x="'+(L-10)+'" y="'+(by+h/2+17).toFixed(1)+'" text-anchor="end" fill="'+ink3+'" font-size="9.5" font-family="IBM Plex Sans, sans-serif">move a slider</text>';
+      var w1=X(r.c)-L, w2=X(r.tot)-X(r.c);
+      g+='<rect x="'+L+'" y="'+by+'" width="'+Math.max(0,w1).toFixed(1)+'" height="'+h+'" fill="'+cr+'" rx="3"/>';
+      g+='<rect x="'+(X(r.c)+2).toFixed(1)+'" y="'+by+'" width="'+Math.max(0,w2-2).toFixed(1)+'" height="'+h+'" fill="'+tr+'" rx="3"/>';
+      // total label
+      g+='<text x="'+(X(r.tot)+9).toFixed(1)+'" y="'+(by+h/2+4).toFixed(1)+'" fill="'+ink+'" font-size="12" font-weight="700" font-family="IBM Plex Mono, monospace">'+fmt(r.tot)+'%</text>';
+      // segment labels when wide enough
+      if(w1>52) g+='<text x="'+(L+9)+'" y="'+(by+h/2+4).toFixed(1)+'" fill="#fff" font-size="11" font-weight="600" font-family="IBM Plex Mono, monospace">'+fmt(r.c)+'</text>';
+      if(w2>52) g+='<text x="'+(X(r.c)+11).toFixed(1)+'" y="'+(by+h/2+4).toFixed(1)+'" fill="#fff" font-size="11" font-weight="600" font-family="IBM Plex Mono, monospace">'+fmt(r.t)+'</text>';
+      // cost-of-funds rule
+      g+='<line x1="'+X(r.y).toFixed(1)+'" y1="'+(by-7)+'" x2="'+X(r.y).toFixed(1)+'" y2="'+(by+h+7)+'" stroke="'+surf+'" stroke-width="5"/>';
+      g+='<line x1="'+X(r.y).toFixed(1)+'" y1="'+(by-7)+'" x2="'+X(r.y).toFixed(1)+'" y2="'+(by+h+7)+'" stroke="'+ink3+'" stroke-width="2.5"/>';
+      var sp=r.tot-r.y, col=sp<1?css('--crit'):(sp<3?css('--warn'):css('--good'));
+      g+='<text x="'+X(r.y).toFixed(1)+'" y="'+(by-12)+'" text-anchor="middle" fill="'+col+'" font-size="11" font-weight="700" font-family="IBM Plex Mono, monospace">'+(sp>=0?'+':'−')+fmt(Math.abs(sp))+'pp</text>';
+    });
+    document.getElementById('c2').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="The marginal peso today yields '+fmt(rows[0].tot)+'% against an '+fmt(rows[0].y)+'% cost of funds; in the scenario it yields '+fmt(rows[1].tot)+'% against '+fmt(rows[1].y)+'%."><rect width="'+W+'" height="'+H+'" fill="none"/>'+g+'</svg>';
+  }
+
+  /* ---------- verdict copy ---------- */
+  function verdict(s,m){
+    var lede, note, sp=m.spread, dN=m.nii-BASE.nii;
+    if(s.attach<=10 && Math.abs(s.yield-BASE_YIELD)<0.3){
+      lede='The next peso earns <em>'+fmt(sp)+'pp</em>. It should earn about three times that.';
+      note='This is roughly where Nu México sits today: US$5.7B of deposits, 35% deployed, the rest parked in CETES at '+fmt(s.cetes,2)+'%. The deposits are not the problem — two thirds of them have nowhere profitable to go.';
+    } else if(s.attach<=10 && s.yield<BASE_YIELD-0.3){
+      lede='Cutting the rate alone moves the spread to <em>'+fmt(sp)+'pp</em> — and costs you '+fmt(Math.abs((1-m.dep/BASE_DEP)*100))+'% of balances.';
+      note='It works, up to a point: at β='+fmt(s.beta)+' you keep '+fmt(m.dep/BASE_DEP*100)+'% of the base. But this is a one-time harvest with rising risk — β is low today because the base was won on brand, and it will not stay low once a licensed competitor advertises against us. Now drag income visibility instead.';
+    } else if(s.attach>=30){
+      lede='At <em>'+fmt(s.attach,0)+'%</em> income visibility the next peso earns <em>'+fmt(sp)+'pp</em>'+(dN>0?', and NII is '+money(dN)+'/yr higher.':'.');
+      note='LDR reaches '+fmt(m.ldr)+'% — and note the yield slider never moved. This is the whole case: we did not get here by paying customers less, we got here by being the account their income arrives in. Same rate, different business.';
+    } else {
+      lede='Marginal spread <em>'+fmt(sp)+'pp</em> at '+fmt(s.attach,0)+'% income visibility.';
+      note='LDR '+fmt(m.ldr)+'%, deposits '+money(m.dep*1000)+', net interest income '+money(m.nii)+'/yr ('+(dN>=0?'+':'')+money(dN)+' vs. today).';
+    }
+    document.getElementById('verdict-lede').innerHTML=lede;
+    document.getElementById('verdict-note').textContent=note;
+  }
+
+  function render(){
+    var s=read(), m=model(s);
+    document.getElementById('v-attach').textContent=fmt(s.attach,0)+'%';
+    document.getElementById('v-yield').textContent=fmt(s.yield,2)+'%';
+    document.getElementById('v-beta').textContent=fmt(s.beta,1);
+    document.getElementById('v-cetes').textContent=fmt(s.cetes,2)+'%';
+    document.getElementById('v-credit').textContent=fmt(s.credit,1)+'%';
+
+    document.getElementById('o-spread').textContent=fmt(m.spread)+'pp';
+    document.getElementById('o-spread-d').textContent='asset yield '+fmt(m.assetYield)+'% − funding '+fmt(s.yield)+'%';
+    document.getElementById('o-ldr').textContent=fmt(m.ldr)+'%';
+    document.getElementById('o-ldr-d').textContent='was 35% · '+money(m.dep*1000*m.ldr/100)+' deployed';
+    document.getElementById('o-dep').textContent='$'+fmt(m.dep,2)+'B';
+    var dd=(m.dep/BASE_DEP-1)*100, de=document.getElementById('o-dep-d');
+    de.textContent=(dd>=0?'+':'')+fmt(dd)+'% vs. base at 11.5%';
+    de.className='d'+(Math.abs(dd)<0.05?'':(dd>0?' up':' down'));
+    document.getElementById('o-nii').textContent=money(m.nii);
+    var dn=m.nii-BASE.nii, ne=document.getElementById('o-nii-d');
+    ne.textContent=(dn>=0?'+':'')+money(dn)+'/yr vs. today';
+    ne.className='d'+(Math.abs(dn)<1?'':(dn>0?' up':' down'));
+
+    verdict(s,m); chart1(s,m); chart2(s,m);
+  }
+  ids.forEach(function(k){ document.getElementById('i-'+k).addEventListener('input',function(){
+    document.querySelectorAll('.presets button').forEach(function(b){b.classList.remove('on');}); render(); }); });
+
+  var PRESETS={
+    today:{attach:8,yield:11.5,beta:2.9,cetes:6.49,credit:25},
+    cut:{attach:8,yield:8,beta:2.9,cetes:6.49,credit:25},
+    plan:{attach:32,yield:11.5,beta:2.9,cetes:6.49,credit:25}
+  };
+  document.querySelectorAll('.presets button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var p=PRESETS[b.dataset.preset];
+      ids.forEach(function(k){ document.getElementById('i-'+k).value=p[k]; });
+      document.querySelectorAll('.presets button').forEach(function(o){o.classList.remove('on');});
+      b.classList.add('on'); render();
+    });
+  });
+
+  /* ================= FLOWS ================= */
+  function row(t,on){ return '<div class="checkrow'+(on?'':' off')+'"><span class="ic">'+(on?'✓':'·')+'</span><span>'+t+'</span></div>'; }
+
+  var FLOW_A=[
+   {badge:'Detected',
+    body:'<h4>Your salary is going somewhere else.</h4>'+
+     '<p>We can see a fortnightly deposit arriving from another bank. It leaves within 48 hours — mostly to pay a Nu card.</p>'+
+     '<div class="card"><div class="row"><span>Inbound, 29 Aug</span><b>$8,420</b></div>'+
+     '<div class="row"><span>Inbound, 14 Aug</span><b>$8,420</b></div>'+
+     '<div class="row" style="color:var(--ink-3)"><span>Source</span><b>SPEI · BBVA</b></div></div>'+
+     '<p class="tiny">Signal: fixed amount, fixed cadence, single counterparty. That is a payroll pattern, and we already hold it.</p>',
+    cta:'Trae tu nómina a Nu',
+    lab:'Where the wedge starts',
+    h:'The signal is already in our data',
+    p:'We do not need to buy a list or sign an employer. A regular fixed inbound from a bank CLABE is a payroll deposit, and a large share of our 16M customers already show one. <b>The first version of this product is a query, not a build</b> — which is why it can ship inside the licence window rather than after it.'},
+
+   {badge:'The offer',
+    body:'<h4>What changes when it lands here.</h4>'+
+     '<div class="card"><h5>Cuenta Nómina</h5>'+
+      row('Your CETES-linked rate, on your whole balance',1)+
+      row('A credit line sized on income we can see — not a score',1)+
+      row('Salary available the day it arrives, no hold',1)+
+      row('Insured to IPAB limits, backed by the federal government',1)+
+     '</div>'+
+     '<p class="tiny">Nothing here requires your employer to agree, or to know.</p>',
+    cta:'Ver cómo funciona',
+    lab:'Value proposition',
+    h:'Sell the credit line, not the interest rate',
+    p:'Every competitor advertises a rate, and rate shoppers are exactly the deposits we least want — they are the mercenary tail that lifts β. <b>The reason to move your nómina is the credit line on the other side of it</b>, which only we can offer because only we can see the income.',
+    p2:'Note what the licence adds that no SOFIPO can match: payroll hosting, and deposit insurance that went from roughly US$12.6K to US$201K per person. For someone parking a month of salary, that is the difference between a fintech and a bank.'},
+
+   {badge:'Step 1 of 2',
+    body:'<h4>We handle the paperwork.</h4>'+
+     '<p>Portability is your right under Mexican law. Your bank cannot charge you for it and cannot refuse.</p>'+
+     '<div class="card"><h5>Where your salary lands now</h5>'+
+      '<div class="row"><span>Bank</span><b>BBVA</b></div>'+
+      '<div class="row"><span>CLABE</span><b>012···4471</b></div></div>'+
+     '<div class="card"><h5>Where it will land</h5>'+
+      '<div class="row"><span>Bank</span><b>Nu México</b></div>'+
+      '<div class="row"><span>CLABE</span><b>638···0192</b></div></div>'+
+     '<p class="tiny">Free by law · begins within 11 business days · cancel any time, effective in 3</p>',
+    cta:'Solicitar portabilidad',
+    lab:'The regulatory unlock',
+    h:'Eleven days, and no HR department in the way',
+    p:'The incumbent moat on nómina is a corporate contract signed years ago. Portability makes that moat irrelevant, because the decision belongs to the worker, the transfer is free by law, and it completes in <b>11 business days</b>.',
+    p2:'This is the same consumer-pull motion Nu used against card incumbents in Brazil, pointed at a market where ~90% of payroll accounts sit with a handful of banks. It is also the one move that stops working the moment Mercado Pago and Klar are licensed — <b>which is what makes the next twelve months the whole strategy.</b>'},
+
+   {badge:'In progress',
+    body:'<h4>On its way.</h4>'+
+     '<div class="timeline">'+
+      '<div class="tl done"><div class="bar"><span class="pip"></span><span class="stem"></span></div><div class="txt"><b>Request sent</b>Today, 9:41</div></div>'+
+      '<div class="tl done"><div class="bar"><span class="pip"></span><span class="stem"></span></div><div class="txt"><b>Confirmed by BBVA</b>Expected in 3 business days</div></div>'+
+      '<div class="tl"><div class="bar"><span class="pip"></span><span class="stem"></span></div><div class="txt"><b>First salary arrives at Nu</b>On or before 17 Sept</div></div>'+
+      '<div class="tl"><div class="bar"><span class="pip"></span></div><div class="txt"><b>Credit line activates</b>Same day</div></div>'+
+     '</div>'+
+     '<p class="tiny">We will keep watching your old account. If anything still lands there, we will tell you.</p>',
+    cta:'Entendido',
+    lab:'The eleven-day problem',
+    h:'The gap is where this product dies',
+    p:'Eleven business days is a long silence after an irreversible-feeling decision, and it is where I would expect the funnel to leak hardest. Naming a date, showing the steps, and monitoring the old account are not polish — <b>they are the retention mechanic</b>.',
+    p2:'It is also the metric I would instrument first: not sign-ups, but <b>completed first salary landings</b>. Requests are vanity; the deposit arriving is the event that changes the balance sheet.'},
+
+   {badge:'Active',
+    body:'<h4>Your salary is here.</h4>'+
+     '<div class="card"><div class="row"><span>Nómina · 15 Sept</span><b style="color:var(--good)">+$8,420</b></div></div>'+
+     '<div class="card"><h5>Línea de crédito</h5><div class="big">$24,000</div>'+
+      '<p class="tiny">Sized on three months of income we can now see directly. Grows as that record grows.</p></div>'+
+     '<div class="card"><div class="row"><span>Rendimiento</span><b>CETES + 4.00%</b></div>'+
+      '<div class="row" style="color:var(--ink-3)"><span>Today that is</span><b>10.49%</b></div></div>',
+    cta:'Ver mi línea',
+    lab:'Pricing, made concrete',
+    h:'Quote the rate as a spread, and it reprices itself',
+    p:'The screen says <b>CETES + 4.00%</b>, not 10.49%. As Banxico cuts, our cost of funding falls automatically and there is never a "Nu cut your rate" headline — because we did not. We published a spread and honoured it.',
+    p2:'And the premium spread is attached to the <b>income landing</b>, not to the balance. We pay up for money that arrives with a payslip and a credit line behind it, and pay the base rate for money that is only visiting.'}
+  ];
+
+  var FLOW_B=[
+   {badge:'Detected',
+    body:'<h4>Money arrives. Just not from an employer.</h4>'+
+     '<div class="card"><div class="row"><span>Remesa · 28 Ago</span><b>$6,100</b></div>'+
+      '<div class="row"><span>Remesa · 29 Jul</span><b>$5,900</b></div>'+
+      '<div class="row"><span>Remesa · 27 Jun</span><b>$6,100</b></div></div>'+
+     '<p>Eleven months, same sender, same week each month. That is more regular than most salaries.</p>'+
+     '<p class="tiny">33.1 million Mexicans work informally. They have income. What they do not have is a payslip.</p>',
+    cta:'Continuar',
+    lab:'Why this track is co-equal',
+    h:'A formal-only strategy addresses 44.6% of workers',
+    p:'55.1% of Mexico’s workforce is informal — 33.1M people. Building only for the 22.76M with IMSS registration would leave out the majority of the mass market, in a country where only 37.3% of adults can access formal credit at all.',
+    p2:'The signal is there. Remittances alone were <b>US$30.76B in the first half of 2026</b>, arriving on a rhythm most payroll cycles would envy. The work is turning that rhythm into an income estimate a regulated bank can lend against.'},
+
+   {badge:'Your choice',
+    body:'<h4>You decide what we look at.</h4>'+
+     '<div class="card"><h5>We would use</h5>'+
+      row('Money coming into your Nu account',1)+
+      row('How regularly it arrives',1)+
+      row('Platform payouts, if you connect them',1)+
+     '</div>'+
+     '<div class="card"><h5>We will never use</h5>'+
+      row('Your contacts or your messages',0)+
+      row('Where your phone has been',0)+
+      row('What kind of phone you own',0)+
+     '</div>'+
+     '<p class="tiny">You can turn this off whenever you want. Your rate will not go up if you do.</p>',
+    cta:'Sí, usen mis datos',
+    lab:'Responsible AI, as a product decision',
+    h:'The exclusion list is the product',
+    p:'Alternative-data underwriting earns trust by what it refuses to look at. Device model, location trails and social graphs all predict repayment — and all of them are proxies for class, region and ethnicity. <b>They are excluded by policy, not by oversight</b>, and the customer is told so on the screen where consent is asked.',
+    p2:'The last line matters most: <b>declining cannot make your price worse.</b> If sharing data is the only way to avoid a penalty, it is not consent. That single rule is what separates personalisation from coercion.'},
+
+   {badge:'Optional',
+    body:'<h4>Add anything else you earn.</h4>'+
+     '<div class="card"><h5>Connected</h5>'+
+      '<div class="row"><span>Remesas</span><b style="color:var(--good)">✓ 11 meses</b></div>'+
+      '<div class="row"><span>Depósitos en efectivo</span><b style="color:var(--good)">✓ 8 meses</b></div></div>'+
+     '<div class="card"><h5>You could add</h5>'+
+      '<div class="row"><span>Ventas por terminal</span><b style="color:var(--ink-3)">Conectar</b></div>'+
+      '<div class="row"><span>Plataformas de reparto</span><b style="color:var(--ink-3)">Conectar</b></div></div>'+
+     '<p class="tiny">Each one you add makes the estimate steadier — and a steadier estimate means a larger line.</p>',
+    cta:'Continuar',
+    lab:'Design principle',
+    h:'Reward the variance reduction, not the data volume',
+    p:'The incentive has to be honest: adding a source helps because it makes income <b>less uncertain</b>, and less uncertainty genuinely supports a bigger line. That is a real mechanism the customer can understand, and it survives being explained to CONDUSEF.',
+    p2:'It also gives the customer a reason to keep the picture current, which is what keeps the underwriting fresh — the hardest problem in thin-file lending is not the first decision, it is the second one a year later.'},
+
+   {badge:'What we see',
+    body:'<h4>Here is what we think you earn.</h4>'+
+     '<div class="card"><h5>Ingreso estimado</h5><div class="big">$6,050 <span style="font-size:13px;color:var(--ink-3)">/ mes</span></div>'+
+      '<div class="row"><span>Confianza</span><b style="color:var(--good)">Alta · 11 meses</b></div></div>'+
+     '<div class="card"><h5>Why</h5>'+
+      '<p class="tiny">Remittances arriving in the last week of every month for 11 months, varying by less than 4%. Cash deposits add about $900 a month on top.</p></div>'+
+     '<p class="tiny">Wrong? Tell us — we will look again, and a person will review it.</p>',
+    cta:'Se ve bien',
+    lab:'The move nobody else makes',
+    h:'Show the customer the estimate before you price them on it',
+    p:'This is the screen I would fight for. Showing our income estimate back, in plain language, with the reasoning and a correction path, converts an opaque model into something a person can contest. <b>Contestability is what makes automated decisioning defensible</b> — to the customer, and to a supervisor.',
+    p2:'It is also free accuracy. Customers correct our errors for us, on the cases the model is least sure about. I have built this underwriting spine before, at Tala, for this exact customer — and the appeal path consistently produced better data than another feature ever did.'},
+
+   {badge:'Active',
+    body:'<h4>Same account. Same terms.</h4>'+
+     '<div class="card"><h5>Línea de crédito</h5><div class="big">$14,000</div>'+
+      '<p class="tiny">Sized on observed income. Grows with your record, exactly like a salaried line.</p></div>'+
+     '<div class="card"><div class="row"><span>Rendimiento</span><b>CETES + 4.00%</b></div>'+
+      '<div class="row" style="color:var(--ink-3)"><span>Today that is</span><b>10.49%</b></div></div>'+
+     '<p class="tiny">You reached this tier without a payslip. The proof was different; the product is not.</p>',
+    lab:'The structural point',
+    h:'One tier, two ways to qualify',
+    p:'Track A and Track B end on <b>the same screen with the same spread</b>. That is deliberate. Two products would mean two roadmaps, two pricing committees and, inevitably, a worse deal for the customer with less documentation — which is the outcome the mission exists to prevent.',
+    p2:'It is also the simplest thing to defend in a fairness review: if the informal tier is not a lower tier, there is no disparate-outcome question to answer. And commercially, it is how a payroll strategy stops being a strategy for less than half the country.'}
+  ];
+
+  function mountFlow(cfg){
+    var i=0, scr=document.getElementById(cfg.scr), rail=document.getElementById(cfg.rail),
+        notes=document.getElementById(cfg.notes), prev=document.getElementById(cfg.prev), next=document.getElementById(cfg.next);
+    rail.innerHTML=cfg.data.map(function(_,k){ return '<button type="button" aria-label="Step '+(k+1)+'">'+(k+1)+'</button>'; }).join('');
+    var btns=[].slice.call(rail.children);
+    btns.forEach(function(b,k){ b.addEventListener('click',function(){ i=k; draw(); }); });
+    function draw(){
+      var s=cfg.data[i];
+      scr.innerHTML='<span class="sbadge">'+esc(s.badge||'')+'</span>'+s.body+
+        (s.cta?'<button class="cta" type="button" data-adv>'+esc(s.cta)+'</button>':'');
+      var adv=scr.querySelector('[data-adv]');
+      if(adv) adv.addEventListener('click',function(){ if(i<cfg.data.length-1){ i++; draw(); } });
+      notes.innerHTML='<div class="note"><div class="lab">'+esc(s.lab)+'</div><h4>'+esc(s.h)+'</h4><p>'+s.p+'</p>'+(s.p2?'<p>'+s.p2+'</p>':'')+'</div>'+
+        '<div class="note"><div class="lab">Step '+(i+1)+' of '+cfg.data.length+'</div><p style="color:var(--ink-3);font-size:12.5px">'+esc(cfg.foot)+'</p></div>';
+      btns.forEach(function(b,k){ b.classList.toggle('on',k===i); });
+      prev.disabled=i===0; next.disabled=i===cfg.data.length-1;
+    }
+    prev.addEventListener('click',function(){ if(i>0){i--;draw();} });
+    next.addEventListener('click',function(){ if(i<cfg.data.length-1){i++;draw();} });
+    draw();
+  }
+
+  mountFlow({scr:'scr-a',rail:'rail-a',notes:'notes-a',prev:'a-prev',next:'a-next',data:FLOW_A,
+    foot:'Illustrative mock-up built for this case. Amounts are examples, not Nu México data. Tap the purple button in the phone to advance.'});
+  mountFlow({scr:'scr-b',rail:'rail-b',notes:'notes-b',prev:'b-prev',next:'b-next',data:FLOW_B,
+    foot:'Illustrative mock-up built for this case. Amounts are examples, not Nu México data. Tap the purple button in the phone to advance.'});
+
+  render();
+  var mq=window.matchMedia('(prefers-color-scheme: dark)');
+  if(mq.addEventListener) mq.addEventListener('change',render);
+})();
+</script>
