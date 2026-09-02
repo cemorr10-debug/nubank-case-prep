@@ -137,13 +137,39 @@ put it in the portability flow rather than in a campaign."
 Crece con Tala. Instead of a score or a reason code, the customer sees the one thing they
 actually want to know: *what would have to be different.* Payment streaks, the next level,
 and the specific reachable actions that unlock it — shown **before** they finish paying the
-current loan, so there's no application and no waiting to be told no. **It lifted retention
-10% in the hardest and riskiest segments.** Same market as here, same thin-file customer."
+current loan, so there's no application and no waiting to be told no. Same market as here,
+same thin-file customer. **Exposing that limit ten days before the due date cut default
+rate 1.43% intent-to-treat, 95% interval minus two to minus nine-tenths.**"
 
 **Follow with the synthesis — do not skip it:** "And that's really a pricing finding. You
-buy retention today with a 13% yield. Progression buys retention too, far more cheaply, and
-unlike yield it compounds — because the customer who's climbing is the same customer who's
+buy retention today with a 13% yield. Progression buys it too, far more cheaply, and unlike
+yield it compounds — because the customer who's climbing is the same customer who's
 repaying. That's the cheapest substitute for yield spend I know of, and I've measured it."
+
+### Q12b-i. "Why ten days and not three?" *(the question a good DS will ask)*
+**Answer:** "That's the interesting part, and the honest answer is more complicated than
+the headline. Ten days beat three on the diluted read — 1.43% against a non-significant
+0.47%. But **conditional on actually receiving the offer, three days performed the same as
+ten**: minus 2.31 against minus 2.25. Ten days won because more customers received an offer
+at all — 56% of loans against 38%."
+
+**Then show you did the arithmetic:** "Coverage doesn't explain all of it, though. Pure
+dilution at an equal treated effect predicts about a 0.42pp gap and I saw 0.96pp, so the
+ten-day arm also produced effect outside the offer group. I'd call it roughly half coverage,
+half something else I'd want more data on."
+
+### Q12b-ii. "How much did the personalisation actually buy you?"
+**Answer:** "Less than I expected, and it's the most useful thing I learned. A lightly
+personalised policy based just on loan number got minus 1.16% against the full causally-
+sound model's minus 1.43%. **About four fifths of the value came from exposing a limit at
+all, not from personalising it.** Which is exactly why my H1 here ships portability to the
+cohort we can already detect rather than waiting on a model — the sophistication earns its
+place in H2, on evidence, not on faith."
+
+**If they press on the economics:** "One caution I'd carry over too — the effect measured by
+loan *count* was about double the effect measured by loan *amount*, so the benefit
+concentrated in smaller loans. The money-weighted case was more modest than the headline,
+and I'd expect the same shape here."
 
 ### Q12c. "Isn't showing customers how to game the model dangerous?"
 **Answer:** "It's the opposite of gaming, if the counterfactual is built on the things you
@@ -203,9 +229,11 @@ credibility arguing that Mexico goes first than arguing that Mexico gets its own
 | Lead any section with balance-sheet language | The JD explicitly prefers product-centric over traditional. Lead with the customer. |
 | Defend an assumption verbally | Move the slider instead. Every time. |
 | Claim the informal track is easy | It's the hardest thing in the deck. Saying so is what makes the rest credible. |
-| Over-index on Tala generally | Three beats: the shared CrM criterion, the timing finding, the retention result. Evidence, not biography. |
+| Over-index on Tala generally | Three beats: the shared CrM criterion, the −1.43% result, the four-fifths-from-the-simple-policy lesson. Evidence, not biography. |
+| Say "timing didn't matter, coverage did" | Too strong. Coverage explains roughly half the gap. The precise version is more impressive anyway. |
 | **Quote Tala's internal baselines, SQL, or model internals** | **Both source documents are Restricted/Confidential, and Nubank competes with Tala in Mexican consumer credit.** Describe your work, never their numbers. Discretion here is itself a signal. |
-| Say "+10% retention" without knowing relative vs. absolute | Decide before you walk in. Being caught unsure undoes the credibility the rest of the answer earns. |
+| Quote "+10% retention" alongside the default numbers | Different metric, different analysis. Lead with −1.43% default, which you have with a confidence interval. Only use retention if you can name which read it came from and whether it's relative or absolute. |
+| Quote the −10% "Lift Attribution to Growth Hub" row | Confirm what it actually measures first — share of total lift, or a relative lift. Unused in the deck for that reason. |
 | Assert any Nu figure as fact | Say the sourcing line in the first minute. Every Nu number is "my read of a public source, treated as an assumption." It costs 15 seconds and it makes every later number safe. |
 
 ## If you're running long

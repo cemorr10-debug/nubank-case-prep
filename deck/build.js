@@ -200,7 +200,7 @@ function foot(s,t){
     bullets(s,x+0.28,3.72,3.25,1.6,h[2],12);
     s.addText(h[3],{x:x+0.28,y:5.42,w:3.25,h:0.5,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11,italic:true,color:AMBER,lineSpacing:14});
   });
-  foot(s,'Employer-side distribution is deliberately last: the incumbents have sold to HR for thirty years, and consumer pull is the only motion where a challenger starts ahead.');
+  foot(s,'And ship the simple version first: when I tested this in México, a plain loan-number ladder captured about four fifths of what a fully personalised causal model achieved. Personalisation earns its place later.');
 }
 
 /* ---------- 7 PRICING ---------- */
@@ -304,9 +304,13 @@ function foot(s,t){
 
   card(s,8.83,3.05,3.9,2.55,PURPLE_PALE);
   s.addText('Show the estimate — and the path',{x:9.11,y:3.24,w:3.35,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14,bold:true,color:PURPLE});
-  s.addText('Score the customer as if they had repaid in full and on time — then show them the limit that unlocks.\n\nThat counterfactual is the only question a capped customer actually has: what would have to be different? And the answer is a commitment, not a score.',
-    {x:9.11,y:3.6,w:3.35,h:1.9,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12,color:BODY,lineSpacing:16.5});
-  foot(s,'I shipped this in México, to this segment. The non-obvious finding was timing — exposing a limit too early cuts default but gives the gain back through faster repayment cycles, so expose one personalised limit, and only as the due date approaches.');
+  s.addText('Score the customer as if they had repaid on time, then show the limit that unlocks — a commitment, not a score.',
+    {x:9.11,y:3.58,w:3.35,h:0.78,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,color:BODY,lineSpacing:16});
+  s.addText('TESTED IN MÉXICO, THIS SEGMENT',{x:9.11,y:4.4,w:3.35,h:0.24,isTextBox:true,margin:0,fontFace:HEAD,fontSize:9.5,bold:true,charSpacing:.9,color:PURPLE});
+  s.addText('−1.43%',{x:9.11,y:4.64,w:3.35,h:0.34,isTextBox:true,margin:0,fontFace:HEAD,fontSize:17,bold:true,color:PURPLE});
+  s.addText('default rate, ITT, at 10 days pre-due. 95% CI −2.00 to −0.90. No significant move at 3 days.',
+    {x:9.11,y:5.0,w:3.35,h:0.55,isTextBox:true,margin:0,fontFace:TEXT,fontSize:10.5,color:BODY,lineSpacing:13.5});
+  foot(s,'Conditional on receiving the offer, 3 days performed the same as 10 (−2.31% vs −2.25%). Ten days won the diluted read because more customers received an offer at all — 56% of loans against 38%.');
 }
 
 /* ---------- 11 RESPONSIBLE AI ---------- */
