@@ -72,13 +72,32 @@ h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:20px;line-heig
 .pill{display:inline-flex;align-items:center;gap:7px;background:var(--bg);border:1px solid var(--hair);border-radius:999px;padding:6px 12px;font-size:13.5px;font-weight:600;margin:3px 5px 3px 0}
 .pill i{font-style:normal;width:8px;height:8px;border-radius:50%;display:inline-block}
 .i-a{background:var(--nu)}.i-b{background:var(--coral)}.i-ok{background:var(--good)}
+/* business-impact strip */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.strip>div{background:var(--surface);border:1px solid var(--hair);border-radius:12px;padding:10px 14px;box-shadow:var(--sh)}
+.strip .k{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.strip .v{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--good);line-height:1.15;margin-top:2px}
+.strip .why{font-size:12.5px;margin-top:2px}
+@media(max-width:860px){.strip{grid-template-columns:1fr}}
+/* decision table */
+.dt{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--surface);border:1px solid var(--hair);border-radius:16px;overflow:hidden;box-shadow:var(--sh)}
+.dt th,.dt td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.4}
+.dt tr:last-child td{border-bottom:none}
+.dt th{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+.dt td:first-child{font-weight:700;color:var(--ink);width:15%}
+.dt td.call{font-weight:700;color:var(--nu-ink);width:24%}
+.dt .cost{color:var(--coral-ink)}.dt .gain{color:var(--good)}
 .tl .row{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;padding:11px 0;border-bottom:1px solid var(--hair)}
 .tl .row:last-child{border-bottom:none}
 .tl .t{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--nu-ink);line-height:1}
 .tl .t small{display:block;font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:5px;font-weight:700}
 .foot{font-size:12.5px;color:var(--muted);margin-top:16px;line-height:1.5}
 .foot b{color:var(--ink2)}
-/* denser slides that carry more structure */
+.quote{font-family:'Fraunces',serif;font-size:16.5px;font-style:italic;line-height:1.4;color:var(--ink);padding:12px 16px;border-left:3px solid var(--coral);background:var(--c1);border-radius:0 12px 12px 0}
+.quote small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:11.5px;color:var(--muted);margin-top:6px}
+.mono{font-variant-numeric:tabular-nums}
+svg{display:block;width:100%;height:auto;overflow:visible}
+/* denser slides */
 .dense h2{margin-bottom:14px;font-size:clamp(28px,3.6vw,44px)}
 .dense .card{padding:14px 16px}
 .dense .q{padding:8px 2px}
@@ -89,9 +108,11 @@ h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:20px;line-heig
 .dense .ph .body{gap:7px;padding:10px 10px 12px}
 .dense .ph .c{padding:8px 10px}
 .dense .cap{margin-top:6px;font-size:12.5px}
-.mono{font-variant-numeric:tabular-nums}
-svg{display:block;width:100%;height:auto;overflow:visible}
-/* phones (recreated Nu screens) */
+.pricing h2{margin-bottom:10px}
+.pricing .q{padding:6px 2px}
+.pricing .dt th,.pricing .dt td{padding:7px 11px;font-size:13px}
+.pricing .band{padding:12px 16px;font-size:14.5px}
+/* phones */
 .phones{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
 @media(max-width:860px){.phones{grid-template-columns:1fr}}
 .ph{width:100%;max-width:250px;margin:0 auto;border-radius:30px;background:var(--ph-bg);border:1px solid rgba(0,0,0,.12);box-shadow:var(--shh);overflow:hidden;color:var(--ph-ink);font-size:12px;line-height:1.35}
@@ -161,22 +182,37 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 </div></section>
 
 <!-- 2 PROBLEM -->
-<section class="slide"><div class="w">
+<section class="slide dense"><div class="w">
   <div class="eb rise">The customer problem</div>
-  <h2 class="rise">Two people who earn steadily, and a bank that can't tell.</h2>
-  <div class="grid g2">
+  <h2 class="rise">Two people. Two different problems.</h2>
+  <div class="grid g2" style="grid-template-columns:1fr 1.25fr;align-items:start">
     <div class="card" data-step="1">
       <h3>Lupita, 29 <span class="chip nu">nómina</span></h3>
-      <p>"My salary goes to the bank my boss picked. I pay fees, I keep a minimum, and my credit line is whatever the bureau says — not what I actually earn."</p>
-      <span class="why">She already lives in Nu: card, Cajitas, recargas. Her paycheck leaves the other bank within 48 hours — mostly to pay her Nu card.</span>
+      <p>"My salary goes to the bank my boss picked. I pay fees, I keep a minimum, and my credit line is whatever the bureau says — not what I earn."</p>
+      <span class="why">She already lives in Nu — card, Cajitas, recargas. Her paycheck leaves the other bank within 48 hours, mostly to pay her Nu card.</span>
+      <div class="do">Her problem is plumbing. The paycheck is parked in the wrong place.</div>
     </div>
-    <div class="card" data-step="2">
-      <h3>Don Beto, 47 <span class="chip hot">remesas</span></h3>
-      <p>"My son sends money the last week of every month. Eleven months now, never late. Plus the tienda. But when I ask for credit, they look at me like I have nothing."</p>
-      <span class="why">The most regular income in his family is invisible to every lender in the country.</span>
+    <div data-step="2">
+      <div class="card" style="padding-bottom:8px">
+        <h3>Don Beto, 47 <span class="chip hot">remesas</span></h3>
+        <p style="font-size:14.5px">"My son sends money the last week of every month — eleven months, never late. Plus the tienda. When I ask for credit they look at me like I have nothing." So he borrows the way people without a bank borrow: creatively, and at high risk.</p>
+        <svg class="draw" viewBox="0 0 520 190" role="img" aria-label="A loop: product does not fit so he stacks loans and risk compounds; price does not fit so he borrows only in emergencies and growth stalls; pathway does not fit so he cannot see how to improve and trust erodes." style="margin-top:6px">
+          <defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5 0 10z" fill="var(--muted)"/></marker></defs>
+          <g fill="none" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar2)">
+            <path class="arc" d="M172 58 C 210 18, 300 18, 346 58"/>
+            <path class="arc" style="transition-delay:.3s" d="M424 114 C 432 150, 396 164, 354 163"/>
+            <path class="arc" style="transition-delay:.6s" d="M166 163 C 124 164, 86 150, 92 114"/>
+          </g>
+          <g font-family="Inter,sans-serif" text-anchor="middle">
+            <g class="node"><rect x="8" y="58" width="164" height="56" rx="12" fill="var(--c1)"/><text x="90" y="80" font-size="13" font-weight="700" fill="var(--ink)">Product doesn't fit</text><text x="90" y="97" font-size="11" fill="var(--ink2)">stacks loans · risk compounds</text></g>
+            <g class="node" style="transition-delay:.35s"><rect x="346" y="58" width="166" height="56" rx="12" fill="var(--c2)"/><text x="429" y="80" font-size="13" font-weight="700" fill="var(--ink)">Price doesn't fit</text><text x="429" y="97" font-size="11" fill="var(--ink2)">emergency-only · growth stalls</text></g>
+            <g class="node" style="transition-delay:.7s"><rect x="172" y="140" width="176" height="46" rx="12" fill="var(--c3)"/><text x="260" y="159" font-size="13" font-weight="700" fill="var(--ink)">Pathway doesn't fit</text><text x="260" y="176" font-size="11" fill="var(--ink2)">can't see how to improve · trust erodes</text></g>
+          </g>
+        </svg>
+      </div>
     </div>
   </div>
-  <div class="band" data-step="3" style="margin-top:18px"><b>Their income is invisible to the bank that would lend to them — so they pay more and get less.</b> Fix what the bank can see, and both of them get the price and the credit their income deserves.</div>
+  <div class="band" data-step="3" style="margin-top:12px"><b>Lupita's problem is solvable today — the licence and payroll do it.</b> Beto's is a loop, and it is where the informal track earns its place: the product, the price and the path all have to change at once, or none of them holds.</div>
 </div></section>
 
 <!-- 3 VALIDATION -->
@@ -184,13 +220,13 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   <div class="eb rise">It is not just them</div>
   <h2 class="rise">Millions earn steadily. Few are seen.</h2>
   <div class="grid g4">
-    <div class="card stat" data-step="1"><div class="v coral"><span class="cnt" data-to="33.1" data-dec="1" data-suf="M">0</span></div><div class="k">people like Beto</div><span class="why">55.1% of workers have no payslip — but most have income</span></div>
-    <div class="card stat" data-step="2"><div class="v"><span class="cnt" data-to="63" data-suf="%">0</span></div><div class="k">of adults can't get formal credit</div><span class="why">82% of women. Not because they don't earn — because no one can see it</span></div>
-    <div class="card stat" data-step="3"><div class="v"><span class="cnt" data-to="64" data-suf="%">0</span></div><div class="k">of adults have no payroll account</div><span class="why">and the ones who do are mostly parked at big banks, paying fees</span></div>
-    <div class="card stat" data-step="4"><div class="v coral"><span class="cnt" data-to="16" data-suf="M">0</span></div><div class="k">people already trust Nu</div><span class="why">and we can see what only a fraction of them earn — our book is 35% lent, two thirds parked</span></div>
+    <div class="card stat" data-step="1"><div class="v coral"><span class="cnt" data-to="42" data-suf="%">0</span></div><div class="k">don't make it to month-end</div><span class="why">only 58% of adults can cover expenses from current income — ENIF 2024</span></div>
+    <div class="card stat" data-step="2"><div class="v coral"><span class="cnt" data-to="57" data-suf="%">0</span></div><div class="k">have no cushion</div><span class="why">couldn't cover a one-month emergency from savings — so a shock becomes a loan</span></div>
+    <div class="card stat" data-step="3"><div class="v"><span class="cnt" data-to="63" data-suf="%">0</span></div><div class="k">can't get formal credit</div><span class="why">82% of women. Not because they don't earn — because no one can see it</span></div>
+    <div class="card stat" data-step="4"><div class="v"><span class="cnt" data-to="16" data-suf="M">0</span></div><div class="k">people already trust Nu</div><span class="why">and we can see what only a fraction of them earn — our book is 35% lent, two thirds parked</span></div>
   </div>
-  <div class="band" data-step="5" style="margin-top:18px"><b>Sixteen million people already bring Nu their spending. Almost none bring Nu their income.</b> That is the gap between a card they like and a bank they love.</div>
-  <p class="foot rise">INEGI ENOE Q2 2026 · ENIF 2024 · Nu Holdings Q2 2026 results, read from public summaries and treated as assumptions.</p>
+  <div class="band" data-step="5" style="margin-top:18px"><b>Sixteen million people already bring Nu their spending. Almost none bring Nu their income.</b> That is the gap between a card they like and a bank they love — and between a book that is 35% lent and one that is 60%.</div>
+  <p class="foot rise">INEGI/CNBV ENIF 2024 · INEGI ENOE Q2 2026 · Nu Holdings Q2 2026 results, read from public summaries and treated as assumptions.</p>
 </div></section>
 
 <!-- 4 THE IDEA -->
@@ -213,8 +249,8 @@ svg{display:block;width:100%;height:auto;overflow:visible}
       </g>
     </svg>
     <div>
-      <p class="lede rise" style="--d:200ms">The better Nu can see what you earn, the better price and the bigger line it can give you. And the longer you stay, the better it sees you.</p>
-      <p class="why rise" style="--d:400ms;font-size:15px;margin-top:14px">A rate is copyable in a week. A year of someone's income landing with you is not. That is the moat — for the customer, it just feels like being understood.</p>
+      <p class="lede rise" style="--d:200ms">Seeing income answers <b>can they repay</b>. A visible path answers <b>will they</b>. Price on both, and the loop runs the right way.</p>
+      <p class="why rise" style="--d:400ms;font-size:15px;margin-top:14px">Every turn makes the next decision better and the next competitor's worse. A rate is copyable in a week. A year of someone's income landing with you is not.</p>
       <div class="do rise" style="--d:600ms">A bank that sees you is a bank you keep.</div>
     </div>
   </div>
@@ -226,53 +262,54 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   <h2 class="rise">One tier. Two doors in.</h2>
   <div class="grid g2">
     <div class="door a" data-step="1">
-      <h3>Lupita's door</h3><div class="sub">Formal — bring your paycheck to Nu</div>
+      <h3>Lupita's door</h3><div class="sub">Formal — what the licence and payroll unlock, now</div>
       <span class="pill"><i class="i-a"></i>Trae tu nómina, in the app</span><span class="pill"><i class="i-a"></i>Your card pays itself after payday</span><span class="pill"><i class="i-a"></i>Bills &amp; wallet set up</span><span class="pill"><i class="i-a"></i>A line sized on your salary</span>
+      <p class="why" style="margin-top:12px"><b style="color:var(--good)">For Nu:</b> cheaper, stickier funding, and income we can lend against.</p>
     </div>
     <div class="door b" data-step="2">
-      <h3>Beto's door</h3><div class="sub">Informal — Nu sees the income you already have</div>
-      <span class="pill"><i class="i-b"></i>Your remesa counts as income</span><span class="pill"><i class="i-b"></i>Your deposit rhythm counts</span><span class="pill"><i class="i-b"></i>Platform earnings · Rollee / Palenca</span><span class="pill"><i class="i-b"></i>See exactly what raises your line</span><span class="pill"><i class="i-b"></i>Rewards on recargas</span>
+      <h3>Beto's door</h3><div class="sub">Informal — fix the product, the price and the path together</div>
+      <span class="pill"><i class="i-b"></i>Your remesa counts as income</span><span class="pill"><i class="i-b"></i>Your deposit rhythm counts</span><span class="pill"><i class="i-b"></i>Platform earnings · Rollee / Palenca</span><span class="pill"><i class="i-b"></i>One line that grows — no stacking</span><span class="pill"><i class="i-b"></i>See exactly what raises it</span>
+      <p class="why" style="margin-top:12px"><b style="color:var(--good)">For Nu:</b> new lendable demand at high yield, and loyalty bought with progression instead of rate.</p>
     </div>
   </div>
-  <div class="band" data-step="3" style="margin-top:18px"><b>Both doors open onto the same account, the same price, the same credit line.</b> Different proof, identical terms. A person with less paperwork does not get a worse deal here — that is the whole point of the mission, and it is also the simplest thing to defend in a fairness review.</div>
+  <div class="band" data-step="3" style="margin-top:18px"><b>Both doors open onto the same account, the same price, the same credit line.</b> Different proof, identical terms. A person with less paperwork does not get a worse deal here — that is the mission, and it is also the simplest thing to defend in a fairness review.</div>
 </div></section>
 
 <!-- 6 LUPITA -->
-<section class="slide"><div class="w">
+<section class="slide dense"><div class="w">
   <div class="eb rise">Lupita's door · Formal</div>
   <h2 class="rise">Trae tu nómina.</h2>
   <div class="grid g3">
-    <div class="card" data-step="1"><div class="num" style="font-size:28px">1</div><h3>Three minutes, no boss involved.</h3><p>Portability is her legal right — free, eleven business days, and her employer never has to know. The incumbent's grip is an HR contract signed years ago. She just walks around it.</p></div>
-    <div class="card" data-step="2"><div class="num" style="font-size:28px">2</div><h3>Everything else is already here.</h3><p>Her card already pays itself from her Nu account. She already picks the date. Her Nu+ points already land in a Cajita. Her recargas are already here.</p><span class="why">Only the paycheck is missing — and with it, knowing when payday is.</span></div>
-    <div class="card" data-step="3"><div class="num" style="font-size:28px">3</div><h3>Her card pays itself the day after payday.</h3><p>Salary lands on the 15th; card debits on the 16th. Fewer misses for her, lower losses for Card. Crédito de nómina economics — through data, not a contract with her employer.</p></div>
+    <div class="card" data-step="1"><div class="num" style="font-size:26px">1</div><h3>Three minutes, no boss involved.</h3><p style="font-size:14.5px">Portability is her legal right — free, eleven business days, employer never has to know. The incumbent's grip is an HR contract signed years ago. She walks around it.</p></div>
+    <div class="card" data-step="2"><div class="num" style="font-size:26px">2</div><h3>Everything else is already here.</h3><p style="font-size:14.5px">Her card already pays itself from her Nu account. She already picks the date. Her Nu+ points already land in a Cajita. Only the paycheck is missing — and with it, knowing payday.</p></div>
+    <div class="card" data-step="3"><div class="num" style="font-size:26px">3</div><h3>Her card pays itself the day after payday.</h3><p style="font-size:14.5px">Salary lands the 15th; card debits the 16th. Crédito de nómina economics — through data, not a contract with her employer. And only a bank can host the payroll at all.</p></div>
   </div>
-  <div class="band" data-step="4" style="margin-top:18px"><b>What we count: her salary actually landing — never the request.</b> The eleven-day wait is where she'd get nervous, so we name the date, show the steps and watch the old account for her. That is the product, not polish.</div>
+  <div class="strip" data-step="4">
+    <div><div class="k">Funding</div><div class="v">Cheaper &amp; stickier</div><span class="why">salary balances are transactional, not rate-shopping — they don't leave for 50bps</span></div>
+    <div><div class="k">Deployment</div><div class="v">35% → 60% lent</div><span class="why">verified income is what lets us underwrite the two thirds we currently park</span></div>
+    <div><div class="k">Loss</div><div class="v">Fewer missed payments</div><span class="why">payday-aligned autopay lands on Card's delinquency line</span></div>
+  </div>
+  <p class="foot" data-step="4"><b>What we count:</b> her salary actually landing, never the request. The eleven-day wait is where she'd get nervous — we name the date, show the steps, watch the old account. That is the product, not polish.</p>
 </div></section>
 
 <!-- 7 BETO -->
-<section class="slide"><div class="w">
+<section class="slide dense"><div class="w">
   <div class="eb rise">Beto's door · Informal</div>
-  <h2 class="rise">Nu sees the income you already have.</h2>
+  <h2 class="rise">Fix the product, the price and the path — together.</h2>
   <div class="grid g3">
-    <div class="card" data-step="1"><h3>What Nu can see</h3>
-      <div class="q"><span class="num">·</span><div><b>His remesa</b><span class="why">US$30.76B arrived in Mexico this way in H1 2026 — on a rhythm most payrolls would envy</span></div></div>
-      <div class="q"><span class="num">·</span><div><b>His deposit rhythm</b><span class="why">cash-ins, terminal sales, months of regularity</span></div></div>
-      <div class="q"><span class="num">·</span><div><b>Platform earnings</b><span class="why">Rollee / Palenca connect Uber, Rappi, DiDi — a bridge segment; platform workers carry IMSS since Jan 2026</span></div></div>
-    </div>
-    <div class="card" data-step="2"><h3>What he controls</h3>
-      <div class="q"><span class="num">1</span><div><b>He chooses what we look at</b><span class="why">and saying no never makes his price worse — otherwise it isn't consent</span></div></div>
-      <div class="q"><span class="num">2</span><div><b>We never look at his phone, his contacts, or where he goes</b><span class="why">excluded by policy — every one is a proxy for class and region</span></div></div>
-      <div class="q"><span class="num">3</span><div><b>He sees our estimate before we price him on it</b><span class="why">with the reasons, and a person to appeal to</span></div></div>
-    </div>
-    <div class="card" data-step="3"><h3>What raises his line</h3>
-      <p style="font-size:15px">"Two more on-time payments, and your remesa landing here two more months, and your line goes to $19,500." Shown before he has to ask. A commitment, not a score.</p>
-      <div class="band" style="margin-top:12px;font-size:14.5px;padding:14px 16px">I shipped this in México, to this segment: <b>−1.43% default rate</b> showing the next limit 10 days before it was due. A simple ladder captured most of it — <b>ship the simple version first.</b></div>
-    </div>
+    <div class="card" data-step="1"><div class="eb" style="margin-bottom:4px;color:var(--coral-ink)">Product fit</div><h3>One line that grows. No stacking.</h3><p style="font-size:14px">His remesa and deposit rhythm are the income. We size one line to what we can see, with confidence attached — and it grows with his record instead of him juggling four lenders.</p><span class="why">Signals: remittances (US$30.76B in H1), deposit rhythm, platform earnings via Rollee / Palenca. Never his phone, contacts or location — by policy.</span></div>
+    <div class="card" data-step="2"><div class="eb" style="margin-bottom:4px;color:var(--gold-ink)">Price fit</div><h3>Same price as Lupita. Risk lives in the line, not the rate.</h3><p style="font-size:14px">A higher rate for the customer with less paperwork is what makes borrowing emergency-only. So we hold the price, size the line to our confidence, and let the ladder do the rest.</p><span class="why">He sees our income estimate before we price him on it — with the reasons, and a person to appeal to.</span></div>
+    <div class="card" data-step="3"><div class="eb" style="margin-bottom:4px;color:var(--nu-ink)">Pathway fit</div><h3>See exactly what raises the line.</h3><p style="font-size:14px">"Two more on-time payments, your remesa landing two more months, and your line goes to $19,500." Shown before he asks. In thin-file lending the good customers leave as fast as the bad ones default — because nobody gives them a reason to stay.</p>
+      <div class="quote" style="margin-top:8px">"I want to see my name next to a higher limit. It motivates me to work harder at my job too."<small>A customer, on a growth hub I shipped in México for this segment. It cut default 1.43% (ITT) — and a simple ladder captured most of it.</small></div></div>
   </div>
-  <p class="foot" data-step="4"><b>Why Nu can go where no bank has:</b> people <i>want</i> to bring Nu their money. Aspiration gets Beto in the door; data lets us say yes. A risky segment gets a clear path instead of a no.</p>
+  <div class="strip" data-step="4">
+    <div><div class="k">Yield</div><div class="v">New lendable demand</div><span class="why">the highest-yield place to deploy the deposits we park — risk priced in the line size</span></div>
+    <div><div class="k">Retention</div><div class="v">Progression, not rate</div><span class="why">the customer who is climbing is the one repaying — cheaper than 13% on a Cajita</span></div>
+    <div><div class="k">Funding</div><div class="v">Near-free float</div><span class="why">a remesa that lands here and is spent from here costs nothing to hold</span></div>
+  </div>
 </div></section>
 
-<!-- 8 WHAT THEY GET (product screens) -->
+<!-- 8 WHAT THEY GET -->
 <section class="slide dense"><div class="w">
   <div class="eb rise">What they get</div>
   <h2 class="rise">The same Nu they already love — now with their income in it.</h2>
@@ -308,26 +345,29 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   <p class="foot" data-step="4">Screens recreated from the Nu México app's current Cuenta, Tarjeta and Cajitas surfaces, with the proposed changes applied. Amounts are illustrative.</p>
 </div></section>
 
-<!-- 9 CREDIT & ACCOUNT -->
-<section class="slide"><div class="w">
-  <div class="eb rise">What it changes across credit and account</div>
-  <h2 class="rise">Seeing income is the input every product was missing.</h2>
-  <div class="grid g2" style="align-items:start">
-    <div>
-      <div class="q" data-step="1"><span class="num">1</span><div><b>A card limit that matches your salary.</b><span class="why">Not a bureau score. More yeses on thin files, bigger limits, fewer losses — Card's P&amp;L, fed by Core's signal.</span></div></div>
-      <div class="q" data-step="2"><span class="num">2</span><div><b>A card that pays itself the day after payday.</b><span class="why">Autopay and a chosen due date already exist. Knowing payday is the one missing input — and it is the one that moves delinquency.</span></div></div>
-      <div class="q" data-step="3"><span class="num">3</span><div><b>A loan that fits the quincena.</b><span class="why">Préstamo de nómina, repaid the day after the salary lands, from the account it lands in. BBVA's and Banorte's payroll-loan moat — reached through data, not an employer contract.</span></div></div>
-      <div class="q" data-step="4"><span class="num">4</span><div><b>A line you can see how to raise.</b><span class="why">Same tier for observed income. Progression buys loyalty cheaper than yield does — the customer who is climbing is the one who is repaying.</span></div></div>
+<!-- 9 THE PRICING CALL -->
+<section class="slide dense pricing"><div class="w">
+  <div class="eb rise">Yield strategy &amp; mass-market pricing</div>
+  <h2 class="rise">How I'd actually make the pricing call.</h2>
+  <div class="grid" style="grid-template-columns:0.9fr 1.6fr;gap:14px;align-items:start">
+    <div class="card" data-step="1" style="font-size:13.5px">
+      <h3 style="font-size:17px">The five numbers on the table</h3>
+      <div class="q"><span class="num">1</span><div><b>What the next peso of deposit costs</b><span class="why">6.50% base · 13% premium (≈CETES + 6.5), capped at MX$25k</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>What it earns</b><span class="why">6.49% parked in CETES · ~25% lent, net of losses <i>(mine)</i></span></div></div>
+      <div class="q"><span class="num">3</span><div><b>How many pesos leave per point cut</b><span class="why">β≈2.9 — the 15→11.5 move kept &gt;90% of balances</span></div></div>
+      <div class="q"><span class="num">4</span><div><b>How much we can lend</b><span class="why">35% today · 60% once income is visible</span></div></div>
+      <div class="q"><span class="num">5</span><div><b>What retention costs per lever</b><span class="why">13% yield · progression · Nu+ at ~0.3%</span></div></div>
     </div>
-    <div>
-      <div class="grid g2" data-step="5">
-        <div class="card stat"><div class="v mono">35→60%</div><div class="k">of deposits lent, not parked</div><span class="why">the target, not a forecast</span></div>
-        <div class="card stat"><div class="v mono good"><span class="cnt" data-to="1.4" data-dec="1" data-pre="+$" data-suf="B">0</span></div><div class="k">more credit, from money we already hold</div><span class="why">no new deposits needed</span></div>
-      </div>
-      <div class="band" data-step="6" style="margin-top:16px;font-size:15.5px"><b>Same yield budget, pointed at the relationship.</b> Base tier = CETES, matched. Premium = CETES + 6.5, earned by income landing instead of a card swipe, capped at a month of income. Budget-neutral at launch — what changes is who earns it.</div>
-      <p class="foot" data-step="6"><b>Operating model:</b> Core owns the income signal and the customer P&amp;L. Card and Account own their surfaces. One shared number downstream of all of us is how alignment gets built without authority.</p>
-    </div>
+    <table class="dt" data-step="2">
+      <tr><th>Decision</th><th>Option A</th><th>Option B</th><th>The call</th></tr>
+      <tr><td>Headline rate</td><td>Cut it. <span class="gain">Saves cost of funds</span> · <span class="cost">loses ~β × Δ in balances, and a headline every time</span></td><td>Keep it, re-gate it. <span class="gain">Same spend, pointed at deployable income</span></td><td class="call">Re-gate. Same budget, better peso.</td></tr>
+      <tr><td>Premium gate</td><td>One card swipe a month. <span class="cost">Proves alive, not banking with us</span></td><td>Income landing. <span class="gain">Spread on the next peso ~1.5pp → ~6pp</span></td><td class="call">Income. That is the whole strategy.</td></tr>
+      <tr><td>The cap</td><td>Flat MX$25k. <span class="cost">Overpays the hot-money tail</span></td><td>One month of income. <span class="cost">Underpays large depositors</span> — <span class="gain">the rate-sensitive ones we least want at 13%</span></td><td class="call">Income cap. Take the tail risk.</td></tr>
+      <tr><td>How it's quoted</td><td>"13% fija". <span class="cost">Every Banxico cut becomes our announcement</span></td><td>CETES + 6.5. <span class="gain">Falls with Banxico, silently. Brazil already quotes 120% of CDI</span></td><td class="call">Spread. México is the outlier.</td></tr>
+      <tr><td>Beto's price</td><td>Risk-priced rate. <span class="cost">Emergency-only borrowing, fairness exposure, trust erodes</span></td><td>Same price, smaller line. <span class="gain">Risk in the line size; ladder grows it; identical terms</span></td><td class="call">Same price. Size the line.</td></tr>
+    </table>
   </div>
+  <div class="band" data-step="3" style="margin-top:12px"><b>The rule:</b> pay premium only where it buys income we can lend against · price risk in the line, not the rate · buy retention with progression before yield. Budget-neutral at launch — what changes is who earns it. <span class="why" style="display:inline">Every input is a slider in the live model; the base was never bought with rate — Cuenta Nu launched at 9% under an 11.25% policy rate.</span></div>
 </div></section>
 
 <!-- 10 GO TO MARKET -->
@@ -352,16 +392,16 @@ svg{display:block;width:100%;height:auto;overflow:visible}
       <div class="q"><span class="num">4</span><div><b>Quincena OOH, last</b><span class="why">metro and bus, timed to payday — only once the in-app funnel has proven the landing rate</span></div></div>
     </div>
   </div>
-  <div class="band" data-step="4" style="margin-top:16px;font-size:15.5px"><b>What we measure:</b> landings per thousand people prompted, and cost per landed customer against cost per rate-acquired one. Month one is in-app only. Mass media waits until the funnel earns it.</div>
+  <div class="band" data-step="4" style="margin-top:14px"><b>What we measure:</b> landings per thousand people prompted, and cost per landed customer against cost per rate-acquired one. Month one is in-app only. Mass media waits until the funnel earns it.</div>
 </div></section>
 
 <!-- 11 MEASURED & RISKS -->
-<section class="slide"><div class="w">
+<section class="slide dense"><div class="w">
   <div class="eb rise">How we'll know — and where it breaks</div>
   <h2 class="rise">One north star. Three checkpoints. Three risks.</h2>
   <div class="grid g2" style="align-items:start">
     <div>
-      <div class="band rise" style="--d:150ms;margin-bottom:12px;font-size:15px"><b>North star:</b> the share of customers whose income lands at Nu. Today ~8% (my assumption). Every other number moves because this one does.</div>
+      <div class="band rise" style="--d:150ms;margin-bottom:10px"><b>North star:</b> the share of customers whose income lands at Nu. Today ~8% (my assumption). Cost of funds, lending, loss and love all move because this one does.</div>
       <div class="tl">
         <div class="row" data-step="1"><div class="t">6<small>months</small></div><div><b>Salaries landing from the cohort we can already see.</b><span class="why">Balance sensitivity measured by segment · yield quoted as a spread · Beto's door in test.</span></div></div>
         <div class="row" data-step="2"><div class="t">12<small>months</small></div><div><b>Income visibility climbing. Lending moving off 35%.</b><span class="why">Beto's lines performing like Lupita's · fewer missed card payments · cost of funds falling with Banxico.</span></div></div>
@@ -381,7 +421,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   <div class="eb rise">Nu te ve</div>
   <h1 class="rise" style="font-size:clamp(36px,5.2vw,64px);line-height:1.06">Lupita's salary lands here. Beto's remesa counts here. Both get the price their income deserves.</h1>
   <p class="lede rise" style="margin-top:22px">You are not short of deposits. You are short of visible income — and that is a product problem before it is a pricing one.</p>
-  <p class="foot rise">Live model &amp; both flows: claude.ai/code/artifact/93da0992-7c28-4c92-81cd-f67f16a3cfaa · Every Nu figure is my read of a public source, treated as an assumption: Nu Holdings Q2 2026 · Nu México rate card and help pages · CNBV/SHCP · Banxico · INEGI ENIF 2024 &amp; ENOE Q2 2026 · IMSS · CONDUSEF. Prior-work evidence cited as effect sizes and intervals only.</p>
+  <p class="foot rise">Live model &amp; both flows: claude.ai/code/artifact/93da0992-7c28-4c92-81cd-f67f16a3cfaa · Every Nu figure is my read of a public source, treated as an assumption: Nu Holdings Q2 2026 · Nu México rate card and help pages · CNBV/SHCP · Banxico · INEGI/CNBV ENIF 2024 &amp; ENOE Q2 2026 · IMSS · CONDUSEF. Prior-work evidence cited as effect sizes and intervals only.</p>
 </div></section>
 
 </div>
