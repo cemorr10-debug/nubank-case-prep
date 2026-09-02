@@ -1,0 +1,707 @@
+<title>Nu te ve</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF8FD;--surface:#FFFFFF;--ink:#221f3a;--ink2:#3f4566;--muted:#71728f;
+--hair:rgba(42,44,74,.13);--coral:#F2856A;--coral-ink:#c05a3e;--gold-ink:#8a6a14;
+--nu:#820AD1;--nu-ink:#6b0bb0;--good:#2c7a52;--warn-ink:#a2571c;
+--c1:rgba(242,133,106,.16);--c2:rgba(225,169,60,.18);--c3:rgba(130,10,209,.10);
+--c4:rgba(62,156,110,.14);--c5:rgba(112,113,142,.13);
+--glow1:rgba(130,10,209,.16);--glow2:rgba(242,133,106,.18);
+--sh:0 18px 44px -30px rgba(35,38,63,.45);--shh:0 26px 54px -30px rgba(35,38,63,.55);
+--ph-bg:#F5F2FA;--ph-top:#820AD1;--ph-ink:#1b1630;--ph-mut:#6f6a86;--ph-card:#FFFFFF}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--bg:#171827;--surface:#212237;--ink:#eeedf7;--ink2:#c8c7db;--muted:#9293b0;
+--hair:rgba(236,235,245,.13);--coral-ink:#f59c85;--gold-ink:#e8ba62;
+--nu:#B57BF0;--nu-ink:#c79af5;--good:#6cc496;--warn-ink:#e4a06a;
+--c1:rgba(242,133,106,.18);--c2:rgba(225,169,60,.16);--c3:rgba(181,123,240,.18);
+--c4:rgba(79,181,131,.16);--c5:rgba(143,144,171,.16);
+--glow1:rgba(181,123,240,.16);--glow2:rgba(242,133,106,.12);
+--sh:0 18px 44px -30px rgba(0,0,0,.8);--shh:0 26px 54px -30px rgba(0,0,0,.9)}}
+:root[data-theme="dark"]{--bg:#171827;--surface:#212237;--ink:#eeedf7;--ink2:#c8c7db;--muted:#9293b0;
+--hair:rgba(236,235,245,.13);--coral-ink:#f59c85;--gold-ink:#e8ba62;
+--nu:#B57BF0;--nu-ink:#c79af5;--good:#6cc496;--warn-ink:#e4a06a;
+--c1:rgba(242,133,106,.18);--c2:rgba(225,169,60,.16);--c3:rgba(181,123,240,.18);
+--c4:rgba(79,181,131,.16);--c5:rgba(143,144,171,.16);
+--glow1:rgba(181,123,240,.16);--glow2:rgba(242,133,106,.12);
+--sh:0 18px 44px -30px rgba(0,0,0,.8);--shh:0 26px 54px -30px rgba(0,0,0,.9)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow:hidden}
+.glow{position:fixed;inset:-20%;pointer-events:none;z-index:0;
+background:radial-gradient(38% 42% at 22% 28%,var(--glow1),transparent 70%),radial-gradient(34% 36% at 80% 74%,var(--glow2),transparent 70%);
+animation:drift 36s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(3%,-2%) scale(1.06)}}
+.deck{position:relative;height:100vh;width:100%;z-index:1}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:60px 48px 88px;opacity:0;transform:translateY(16px) scale(.985);pointer-events:none;transition:opacity .5s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+.slide.in{opacity:1;transform:none;pointer-events:auto}
+.w{width:100%;max-width:1080px}
+.w.tight{max-width:880px}
+.eb{font-size:11.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--nu-ink);margin-bottom:12px}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(44px,7vw,92px);line-height:1;letter-spacing:-.025em;text-wrap:balance}
+h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(28px,3.8vw,46px);line-height:1.08;letter-spacing:-.015em;text-wrap:balance;margin-bottom:18px}
+h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:19px;line-height:1.2;margin-bottom:6px}
+.lede{font-size:clamp(15px,1.45vw,19px);color:var(--ink2);max-width:62ch;line-height:1.5}
+.why{display:block;color:var(--muted);font-size:13.5px;margin-top:5px;line-height:1.5}
+.do{font-size:14.5px;color:var(--nu-ink);font-weight:600;margin-top:10px}
+.card{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:16px 18px;box-shadow:var(--sh)}
+.plain{padding:0;background:none;border:0;box-shadow:none}
+.band{border-radius:16px;padding:15px 20px;background:linear-gradient(120deg,var(--c3),var(--c1));border:1px solid var(--hair);font-size:16px;line-height:1.45}
+.band b{color:var(--nu-ink)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}.slide{padding:52px 20px 88px;overflow:auto;align-items:flex-start}}
+.num{font-family:'Fraunces',Georgia,serif;font-size:16px;font-weight:600;color:var(--coral);min-width:22px;padding-top:2px}
+.q{display:flex;gap:12px;align-items:flex-start;padding:9px 2px;border-bottom:1px solid var(--hair)}
+.q:last-child{border-bottom:none}
+.q b{font-weight:600;font-size:15px}
+.chip{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap;vertical-align:2px;margin-left:6px}
+.chip.hot{background:var(--c1);color:var(--coral-ink)}.chip.nu{background:var(--c3);color:var(--nu-ink)}
+.chip.ok{background:var(--c4);color:var(--good)}.chip.warn{background:var(--c2);color:var(--gold-ink)}
+.stat .v{font-family:'Fraunces',Georgia,serif;font-size:clamp(34px,4vw,52px);font-weight:600;line-height:1;letter-spacing:-.025em;color:var(--nu-ink);font-variant-numeric:tabular-nums}
+.stat .v.coral{color:var(--coral-ink)}.stat .v.good{color:var(--good)}
+.stat .k{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:9px}
+/* two-sided benefit rows */
+.ben{display:grid;grid-template-columns:64px 1fr;gap:10px;font-size:13px;padding:6px 0;border-top:1px solid var(--hair);align-items:baseline}
+.ben .t{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ben .t.nu{color:var(--good)}
+/* portrait figure */
+.fig{display:flex;gap:16px;align-items:center}
+.por{width:96px;height:96px;flex:0 0 96px;border-radius:50%;overflow:hidden;box-shadow:var(--sh)}
+.fig .big{font-family:'Fraunces',serif;font-size:clamp(30px,3.6vw,46px);font-weight:600;line-height:1;letter-spacing:-.02em;color:var(--nu-ink);font-variant-numeric:tabular-nums}
+.fig .big.coral{color:var(--coral-ink)}
+.fig .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+/* TAM nested bars */
+.tam{display:flex;flex-direction:column;gap:9px}
+.tam .r{display:grid;grid-template-columns:1fr 128px;gap:14px;align-items:center}
+.tam .track{height:26px;border-radius:6px;background:var(--c5);position:relative;overflow:hidden}
+.tam .fill{height:100%;border-radius:6px;width:var(--w)}
+body.anim .tam .fill{transition:width .9s cubic-bezier(.2,.7,.2,1);width:0}
+body.anim .slide.in .tam .fill{width:var(--w)}
+.tam .lab{font-size:12.5px;line-height:1.25}
+.tam .lab b{display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.tam .sub{color:var(--muted);font-size:11px}
+/* product ladder */
+.lad{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:stretch}
+@media(max-width:900px){.lad{grid-template-columns:1fr}}
+.rung{border:1px solid var(--hair);border-radius:16px;padding:14px 16px;background:var(--surface);box-shadow:var(--sh);display:flex;flex-direction:column}
+.rung.top{border-color:var(--nu);box-shadow:0 0 0 1px var(--nu),var(--shh)}
+.rung .gate{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.rung.top .gate{color:var(--nu-ink)}
+.rung h3{font-size:21px;margin-bottom:3px}
+.rung .tag{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.rung ul{list-style:none;display:flex;flex-direction:column;gap:5px;font-size:13px;margin-top:2px}
+.rung li{padding-left:15px;position:relative;line-height:1.35}
+.rung li:before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--c5)}
+.rung.top li:before{background:var(--nu)}
+.rung li.new{font-weight:600;color:var(--ink)}
+.rung .ft{margin-top:auto;padding-top:10px;font-size:12px;color:var(--muted);line-height:1.4}
+/* journey */
+.jr{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+@media(max-width:900px){.jr{grid-template-columns:1fr}}
+.jr .s{padding:0 12px;position:relative}
+.jr .s:first-child{padding-left:0}.jr .s:last-child{padding-right:0}
+.jr .when{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--nu-ink);margin-bottom:7px}
+.jr .dot{display:block;width:11px;height:11px;border-radius:50%;background:var(--nu);margin-bottom:9px;position:relative}
+.jr .dot:after{content:"";position:absolute;left:11px;top:5px;height:1.5px;width:calc(100vw);max-width:200px;background:linear-gradient(90deg,var(--nu),var(--hair))}
+.jr .s:last-child .dot:after{display:none}
+@media(max-width:900px){.jr .dot:after{display:none}.jr .say{min-height:0}.jr .s{padding:0 0 14px}}
+.jr .say{font-family:'Fraunces',serif;font-size:14.5px;font-weight:600;line-height:1.25;color:var(--ink);margin-bottom:8px;min-height:3.75em}
+.jr .ben{grid-template-columns:52px 1fr;font-size:12px;gap:8px}
+/* decision table */
+.dt{width:100%;border-collapse:collapse;font-size:13px;background:var(--surface);border:1px solid var(--hair);border-radius:16px;overflow:hidden;box-shadow:var(--sh)}
+.dt th,.dt td{padding:8px 11px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.38}
+.dt tr:last-child td{border-bottom:none}
+.dt th{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+.dt td:first-child{font-weight:700;color:var(--ink);width:15%}
+.dt td.call{font-weight:700;color:var(--nu-ink);width:23%}
+.dt .cost{color:var(--coral-ink)}.dt .gain{color:var(--good)}
+.scroll{overflow-x:auto}
+/* cost-of-funds mini table */
+.cof{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;margin-top:8px}
+.cof th,.cof td{padding:5px 8px;text-align:right;border-bottom:1px solid var(--hair)}
+.cof th:first-child,.cof td:first-child{text-align:left}
+.cof th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cof tr:last-child td{border-bottom:none;font-weight:700;color:var(--nu-ink)}
+/* team pod */
+.pod .p{display:grid;grid-template-columns:142px 1fr;gap:12px;padding:7px 0;border-bottom:1px solid var(--hair);font-size:13px}
+.pod .p:last-child{border-bottom:none}
+.pod .p b{font-weight:600;color:var(--ink)}
+.pod .p.me b{color:var(--nu-ink)}
+.pod .p span{color:var(--muted)}
+.tl .row{display:grid;grid-template-columns:88px 1fr;gap:14px;align-items:start;padding:10px 0;border-bottom:1px solid var(--hair)}
+.tl .row:last-child{border-bottom:none}
+.tl .t{font-family:'Fraunces',serif;font-size:23px;font-weight:600;color:var(--nu-ink);line-height:1}
+.tl .t small{display:block;font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:5px;font-weight:700}
+.foot{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.5}
+.foot b{color:var(--ink2)}
+.quote{font-family:'Fraunces',serif;font-size:15.5px;font-style:italic;line-height:1.4;color:var(--ink);padding:11px 15px;border-left:3px solid var(--coral);background:var(--c1);border-radius:0 12px 12px 0}
+.quote small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:11.5px;color:var(--muted);margin-top:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.dense h2{margin-bottom:13px;font-size:clamp(26px,3.4vw,41px)}
+.dense .card{padding:13px 15px}
+.dense .q{padding:7px 2px}
+.dense .why{font-size:12.5px;margin-top:3px}
+.dense .band{padding:13px 17px;font-size:14.5px}
+.dense .foot{margin-top:10px}
+/* phones */
+.phones{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+@media(max-width:900px){.phones{grid-template-columns:1fr}}
+.ph{width:100%;max-width:244px;margin:0 auto;border-radius:28px;background:var(--ph-bg);border:1px solid rgba(0,0,0,.12);box-shadow:var(--shh);overflow:hidden;color:var(--ph-ink);font-size:12px;line-height:1.35}
+.ph .top{background:var(--ph-top);color:#fff;padding:24px 15px 15px;font-weight:600}
+.ph .top .sm{display:block;font-size:10.5px;opacity:.82;font-weight:500;margin-bottom:5px}
+.ph .top .big{font-family:'Fraunces',serif;font-size:23px;font-weight:600;letter-spacing:-.02em}
+.ph .body{padding:11px 11px 15px;display:flex;flex-direction:column;gap:8px}
+.ph .c{background:var(--ph-card);border-radius:12px;padding:9px 11px;border:1px solid rgba(0,0,0,.06)}
+.ph .c h5{font-size:11.5px;font-weight:700;margin-bottom:4px;color:var(--ph-ink);font-family:'Inter',sans-serif}
+.ph .r{display:flex;justify-content:space-between;gap:8px;color:var(--ph-mut);padding:2px 0}
+.ph .r b{color:var(--ph-ink);font-variant-numeric:tabular-nums}
+.ph .g{color:#1f8a5b;font-weight:700}
+.ph .btn2{background:var(--ph-top);color:#fff;border-radius:10px;padding:8px;text-align:center;font-weight:700;font-size:12px;margin-top:2px}
+.ph .bar2{height:6px;border-radius:99px;background:rgba(130,10,209,.15);overflow:hidden}
+.ph .bar2 i{display:block;height:100%;width:66%;background:var(--ph-top)}
+.cap{text-align:center;font-size:12.5px;color:var(--ink2);margin-top:9px}
+.cap b{display:block;font-family:'Fraunces',serif;font-size:15.5px;color:var(--ink)}
+/* builds */
+.rise,[data-step]{opacity:1;transform:none}
+body.anim .rise,body.anim [data-step]{opacity:0;transform:translateY(15px)}
+body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0ms)}
+@keyframes rise{to{opacity:1;transform:none}}
+.draw path.arc{stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset 1.1s ease}
+.slide.in .draw path.arc{stroke-dashoffset:0}
+.draw .node{opacity:0;transform:scale(.9);transform-origin:center;transition:opacity .4s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.slide.in .draw .node{opacity:1;transform:none}
+/* nav */
+.bar{position:fixed;left:0;top:0;height:3px;background:var(--nu);width:0;transition:width .4s ease;z-index:5}
+.nav{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:14px;z-index:5;pointer-events:none}
+.nav>*{pointer-events:auto}
+.dots{display:flex;gap:6px;justify-content:center}
+.dots button{width:8px;height:8px;border-radius:50%;border:0;background:var(--hair);cursor:pointer;padding:0;transition:transform .2s,background .2s}
+.dots button[aria-current="true"]{background:var(--nu);transform:scale(1.4)}
+.dots button:focus-visible{outline:2px solid var(--nu);outline-offset:2px}
+.btn{font:600 13px 'Inter',sans-serif;color:var(--ink2);background:var(--surface);border:1px solid var(--hair);border-radius:999px;padding:9px 15px;cursor:pointer;box-shadow:var(--sh)}
+.btn:hover{color:var(--nu-ink)}.btn:disabled{opacity:.4;cursor:default}.btn:focus-visible{outline:2px solid var(--nu);outline-offset:2px}
+.ctr{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:5px;text-align:center}
+.brand{position:fixed;top:16px;left:24px;display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--muted);z-index:5}
+.brand i{width:10px;height:10px;border-radius:50%;background:var(--nu);display:inline-block}
+.kick{position:fixed;top:16px;right:24px;font-size:12px;color:var(--muted);z-index:5;font-variant-numeric:tabular-nums}
+@media(prefers-reduced-motion:reduce){.slide,.bar,.draw path.arc,.draw .node,.tam .fill,body.anim .tam .fill{transition:none}.glow{animation:none}
+  body.anim .rise,body.anim [data-step]{opacity:1;transform:none}
+  body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:none}
+  body.anim .tam .fill{width:var(--w)}}
+@media print{
+  body{overflow:visible;background:#fff}
+  .glow,.bar,.nav,.brand,.kick{display:none}
+  .deck{height:auto}
+  .slide{position:relative;inset:auto;opacity:1!important;transform:none!important;pointer-events:auto;min-height:100vh;page-break-after:always;padding:40px}
+  [data-step],.rise,.draw .node{opacity:1!important;transform:none!important;animation:none!important}
+  .draw path.arc{stroke-dashoffset:0!important}
+  .tam .fill{width:var(--w)!important}
+}
+</style>
+
+<div class="glow"></div>
+<div class="brand"><i></i>Core México · business case</div>
+<div class="kick" id="kick"></div>
+<div class="bar" id="bar"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <clipPath id="pc"><circle cx="60" cy="60" r="60"/></clipPath>
+</defs></svg>
+
+<div class="deck" id="deck">
+
+<!-- 1 TITLE -->
+<section class="slide in"><div class="w tight">
+  <div class="eb rise">Caroline Morrison · Product Director, Core México · 4 September 2026</div>
+  <h1 class="rise">Nu te ve.</h1>
+  <p class="lede rise" style="margin-top:20px;font-size:clamp(17px,1.7vw,22px)">See the customer's income. Price them fairly. Show them the path.<br>That is how a licensed bank gets loved — and how it wins the mass market.</p>
+  <p class="foot rise">→ advances · ← goes back · P prints. A live pricing model and two clickable flows sit behind this deck. Assumptions are marked throughout and listed on the final slide.</p>
+</div></section>
+
+<!-- 2 THE BLIND SPOT -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Where we are</div>
+  <h2 class="rise">One blind spot. Two problems.</h2>
+  <div class="grid g2" style="align-items:stretch">
+    <div class="card" data-step="1">
+      <div class="eb" style="color:var(--coral-ink);margin-bottom:6px">The customer's problem</div>
+      <h3>Credit priced for what we cannot see.</h3>
+      <p style="font-size:14px;margin-top:4px"><b>63% of Mexican adults cannot get formal credit</b> — 82% of women. Not because they don't earn. Because no institution can see what they earn.</p>
+      <span class="why">So the price is set for the worst case. Our own personal loan carries a CAT near 85% — the cost of lending into a blind spot, paid by the customer who can least afford it.</span>
+      <div class="do">A thin file is not a thin income.</div>
+    </div>
+    <div class="card" data-step="2">
+      <div class="eb" style="color:var(--nu-ink);margin-bottom:6px">Nu's problem</div>
+      <h3>Deposits we pay for and cannot deploy.</h3>
+      <p style="font-size:14px;margin-top:4px"><b>US$5.7bn of deposits, 35% lent.</b> Two-thirds parked in securities earning roughly the policy rate — while we pay above it to hold them.</p>
+      <span class="why">And the two cheap levers are already spent: Banxico ended its cutting cycle in May and consensus has it flat at 6.50% through 2027, so the curve is not coming to help — and Q2 already ran deposit optimisation, shrinking the book deliberately to improve funding cost.</span>
+      <div class="do">The next leg cannot come from paying less.</div>
+    </div>
+  </div>
+  <div class="band" data-step="3" style="margin-top:14px"><b>Both problems have the same cause.</b> Nu can see what sixteen million people <i>spend</i>. It cannot see what they <i>earn</i>. Underwriting, pricing and funding cost all bottleneck on the same missing signal — and the banking licence is the first time we are allowed to go get it.</div>
+  <p class="foot" data-step="3">CNBV/INEGI ENIF 2024 · Nu Holdings Q2 2026 results · Banxico policy announcements and the August Citi expectations survey · Nu México rate card. CAT figure is my read of public disclosure, treated as an assumption.</p>
+</div></section>
+
+<!-- 3 ACT ONE : LUPITA -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Act one · the formal worker</div>
+  <h2 class="rise">22.8 million salaries land somewhere every quincena.</h2>
+  <div class="grid g2" style="grid-template-columns:1fr 1.15fr;align-items:start">
+    <div data-step="1">
+      <div class="fig">
+        <svg class="por" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait: Lupita, a formally employed worker in her late twenties">
+          <g clip-path="url(#pc)">
+            <rect width="120" height="120" fill="var(--c3)"/>
+            <circle cx="60" cy="47" r="22" fill="var(--nu)" opacity=".9"/>
+            <path d="M14 120C16 90 35 76 60 76s44 14 46 44z" fill="var(--nu)" opacity=".9"/>
+            <path d="M38 40c2-14 10-20 22-20s20 6 22 20c-6-5-14-7-22-7s-16 2-22 7z" fill="var(--ink)" opacity=".28"/>
+          </g>
+        </svg>
+        <div>
+          <div class="big">38%</div>
+          <div class="lbl">of Mexican workers</div>
+        </div>
+      </div>
+      <div class="quote" style="margin-top:14px">"My salary goes to the bank my boss picked. I pay fees, I keep a minimum, and my credit line is whatever the bureau says — not what I earn."<small>Lupita, 29 · IMSS-registered · already a Nu customer</small></div>
+      <span class="why" style="margin-top:10px">She already lives in Nu — card, Cajitas, recargas. Her paycheck leaves the other bank within 48 hours, mostly to pay her Nu card. <b>Her problem is plumbing.</b> The paycheck is parked in the wrong place.</span>
+    </div>
+    <div class="card" data-step="2">
+      <h3>Why this is winnable now, and was not before</h3>
+      <div class="q"><span class="num">1</span><div><b>Payroll dispersal is a banking activity.</b><span class="why">As a SOFIPO we could not host a nómina account. Since 6 August we can — with IPAB cover at 400,000 UDIs instead of 25,000.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>The worker chooses, not the employer.</b><span class="why">Portability is her legal right: free, about eleven business days, and her employer never has to be involved. The incumbent's grip is an HR contract she can simply walk around.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>We already know who they are.</b><span class="why">A recurring same-day deposit from a known employer is visible in our own data. We do not have to find these customers — we have to ask them.</span></div></div>
+      <div class="ben"><div class="t">Her</div><div>A line sized on her salary, not on a bureau file. No fee, no minimum, money the day it lands.</div></div>
+      <div class="ben"><div class="t nu">Nu</div><div>Transactional balances that don't rate-shop, verified income to lend against, and payday-aligned collection.</div></div>
+    </div>
+  </div>
+  <p class="foot" data-step="3">IMSS, June 2026: 22,779,704 registered positions. Share of the ~59.5m employed population (INEGI ENOE). Portrait is an illustration, not a photograph.</p>
+</div></section>
+
+<!-- 4 MOAT & TAM -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">The opportunity</div>
+  <h2 class="rise">Big enough to matter. Hard enough to copy.</h2>
+  <div class="grid g2" style="grid-template-columns:1.15fr 1fr;align-items:start">
+    <div data-step="1">
+      <div class="tam">
+        <div class="r"><div class="track"><div class="fill" style="--w:100%;background:var(--c5)"></div></div><div class="lab"><b>59.5M</b><span class="sub">employed in México</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:55%;background:var(--coral);opacity:.75"></div></div><div class="lab"><b>32.7M</b><span class="sub">informal · no payslip</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:38.3%;background:var(--nu);opacity:.75"></div></div><div class="lab"><b>22.8M</b><span class="sub">formal · IMSS payroll</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:26.9%;background:var(--nu)"></div></div><div class="lab"><b>16M</b><span class="sub">Nu México customers</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:2.2%;background:var(--good)"></div></div><div class="lab"><b>~1.3M</b><span class="sub">income visible to Nu <i>(assumption)</i></span></div></div>
+      </div>
+      <p class="foot" style="margin-top:12px"><b>The gap is the strategy.</b> We have 27% of the country's workers as customers and we can see the income of roughly two percent of them. Nobody else has that gap either — which is why it is still available.</p>
+    </div>
+    <div class="card" data-step="2">
+      <h3>Why it holds once we have it</h3>
+      <div class="q"><span class="num">1</span><div><b>A redirected salary is a switching cost a rate cannot buy.</b><span class="why">Moving a deposit takes one tap. Moving where your salary is paid takes eleven days and a decision. People do it roughly once. Whoever is holding it when the music stops keeps it.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>Every month of observed income compounds.</b><span class="why">Month one it is an estimate. Month twelve it is a repayment record with seasonality in it. The decision gets better while the cost of making it falls — and that curve is not purchasable.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>A follower starts cold no matter what they pay.</b><span class="why">Klar, Stori, Ualá and Mercado Pago can match 13% in a week. None of them can match a year of watching someone get paid. Rate competition is a price war; income visibility is an asset that appreciates.</span></div></div>
+      <div class="do">This is the only asset in the Mexican mass market that gets more valuable the longer you hold it.</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 5 THE LADDER -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">The mass-market bundle · Q1</div>
+  <h2 class="rise">Nu México already has the products. It does not have a ladder.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-bottom:14px">Cuenta, Cajitas, Tarjeta, Préstamo, Nu+ all exist and all ship today. What is missing is a reason to climb — a tier structure where the benefit is <b>earned by banking with us</b>, not by being alive.</p>
+  <div class="lad">
+    <div class="rung" data-step="1">
+      <div class="gate">Gate · anyone</div>
+      <h3>Nu</h3><div class="tag">Ships today</div>
+      <ul>
+        <li>Cuenta Nu + debit card</li>
+        <li>Cajita 24/7 at 7.00%</li>
+        <li>Tarjeta de Crédito, limit from a bureau score</li>
+        <li>Nu+ points</li>
+      </ul>
+      <div class="ft">Acquisition. Costs us roughly the funding benchmark — TIIE de fondeo is 7.00%.</div>
+    </div>
+    <div class="rung" data-step="2">
+      <div class="gate">Gate · one purchase a month</div>
+      <h3>Nu Turbo</h3><div class="tag">Ships today</div>
+      <ul>
+        <li>Everything in Nu, plus:</li>
+        <li class="new">Cajita Turbo at 13%, capped at $25,000</li>
+        <li>Cajitas congeladas, 7.05–7.30%</li>
+      </ul>
+      <div class="ft"><b style="color:var(--coral-ink)">The problem.</b> No minimum spend, so a $20 coffee earns up to $3,250 a year. The gate proves the customer is alive. It does not prove they bank with us.</div>
+    </div>
+    <div class="rung top" data-step="3">
+      <div class="gate">Gate · your income lands here</div>
+      <h3>Nu Nómina</h3><div class="tag">The licence unlocks this</div>
+      <ul>
+        <li>Everything above, plus:</li>
+        <li class="new">Yield quoted as CETES + 6.5, capped at one month of income</li>
+        <li class="new">Card limit sized on observed income, not the bureau</li>
+        <li class="new">Autopay the day after payday</li>
+        <li class="new">Préstamo timed to the quincena</li>
+        <li class="new">Nu+ doubled on recargas and basic services</li>
+        <li class="new">Micro life and unemployment cover · IPAB to 400k UDIs</li>
+      </ul>
+      <div class="ft">Only the top rung is new build. The two below it are a re-gating of products already in the app.</div>
+    </div>
+  </div>
+  <div class="band" data-step="4" style="margin-top:14px"><b>The premium budget does not grow — it moves.</b> Today we spend 600bp over TIIE to reward a card swipe. Tomorrow the same spend is gated on income landing, which is the one behaviour that lowers our funding cost <i>and</i> makes the deposit lendable. Net of a 50bp trim to the base rate, launch is roughly budget-neutral. <span class="why" style="display:inline">One tier, not two: two bundles would mean two roadmaps, two pricing committees, and a worse deal for the customer with less paperwork.</span></div>
+</div></section>
+
+<!-- 6 THE JOURNEY -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">The product · Q4</div>
+  <h2 class="rise">Trae tu nómina.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-bottom:18px">Three minutes in the app, no employer involved, no paperwork. Here is the whole thing — and what each step is worth to her and to us.</p>
+  <div class="jr">
+    <div class="s" data-step="1"><span class="dot"></span><div class="when">Day 0 · we ask</div>
+      <div class="say">"Vemos que tu sueldo llega a otro banco."</div>
+      <div class="ben"><div class="t">Her</div><div>Nothing to look up. We already know her payday.</div></div>
+      <div class="ben"><div class="t nu">Nu</div><div>In-app, near-zero CAC, aimed at a cohort we can already identify.</div></div>
+    </div>
+    <div class="s" data-step="2"><span class="dot"></span><div class="when">Day 0 · three minutes</div>
+      <div class="say">"Cámbiala aquí. Tu jefe no se entera."</div>
+      <div class="ben"><div class="t">Her</div><div>Her legal right, exercised in the app. No HR, no forms.</div></div>
+      <div class="ben"><div class="t nu">Nu</div><div>Direct to consumer — no corporate payroll sales cycle to grind through.</div></div>
+    </div>
+    <div class="s" data-step="3"><span class="dot"></span><div class="when">Days 1–11 · the wait</div>
+      <div class="say">"Tu nómina llega el 15 de octubre. Vamos en el paso 2 de 3."</div>
+      <div class="ben"><div class="t">Her</div><div>A named date instead of eleven days of silence.</div></div>
+      <div class="ben"><div class="t nu">Nu</div><div>This is where the funnel leaks. Narrating the wait <i>is</i> the product, not polish.</div></div>
+    </div>
+    <div class="s" data-step="4"><span class="dot"></span><div class="when">Payday · it lands</div>
+      <div class="say">"Tu sueldo llegó. Disponible ya."</div>
+      <div class="ben"><div class="t">Her</div><div>Her money the day it arrives, insured to 400k UDIs.</div></div>
+      <div class="ben"><div class="t nu">Nu</div><div>A transactional balance that does not leave for 50bp. Cost of funds falls by mix, not by cutting.</div></div>
+    </div>
+    <div class="s" data-step="5"><span class="dot"></span><div class="when">Day after · and month 3</div>
+      <div class="say">"Tu línea sube a $24,000 — basada en tu sueldo."</div>
+      <div class="ben"><div class="t">Her</div><div>The card pays itself. The limit finally matches what she earns.</div></div>
+      <div class="ben"><div class="t nu">Nu</div><div>Fewer missed payments on Card's delinquency line. Lending moves off 35%.</div></div>
+    </div>
+  </div>
+  <div class="band" data-step="6" style="margin-top:16px"><b>What we count is the landing, never the request.</b> A switch requested is a vanity metric; a salary that actually arrives is the only event that changes our funding cost, our underwriting and her price. <span class="why" style="display:inline">Honest caveat: a customer-controlled debit the day after payday is not deduction at source. It captures the timing advantage of crédito de nómina, not its legal seniority — so I would size that gain from a test, not assume it.</span></div>
+</div></section>
+
+<!-- 7 ACT TWO : BETO -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Act two · the informal worker</div>
+  <h2 class="rise">33 million people earn steadily. No payslip exists to prove it.</h2>
+  <div class="grid g2" style="grid-template-columns:1fr 1.15fr;align-items:start">
+    <div data-step="1">
+      <div class="fig">
+        <svg class="por" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait: Don Beto, an informally employed worker in his late forties">
+          <g clip-path="url(#pc)">
+            <rect width="120" height="120" fill="var(--c1)"/>
+            <circle cx="60" cy="48" r="21" fill="var(--coral)"/>
+            <path d="M14 120C16 91 35 77 60 77s44 14 46 43z" fill="var(--coral)"/>
+            <path d="M31 36h58a4 4 0 0 1 0 8H31a4 4 0 0 1 0-8z" fill="var(--ink)" opacity=".32"/>
+            <path d="M43 36c0-10 6-15 17-15s17 5 17 15z" fill="var(--ink)" opacity=".32"/>
+          </g>
+        </svg>
+        <div>
+          <div class="big coral">55%</div>
+          <div class="lbl">of Mexican workers</div>
+        </div>
+      </div>
+      <div class="quote" style="margin-top:14px">"My son sends money the last week of every month — eleven months, never late. Plus the tienda. When I ask for credit they look at me like I have nothing."<small>Don Beto, 47 · informal · receives remittances</small></div>
+      <span class="why" style="margin-top:10px">So he borrows the way people without a bank borrow: creatively, and at high risk. <b>Payroll caps out at 38% of the workforce.</b> This is the other 55% — and it is where a challenger earns the right to call itself a mass-market bank.</span>
+    </div>
+    <div class="card" data-step="2">
+      <h3>Same tier. Same price. Different proof.</h3>
+      <div class="q"><span class="num">1</span><div><b>The income is already landing here.</b><span class="why">His remesa and his deposit rhythm arrive in a Nu account — first-party, so this needs no open-banking regime, which México still has not published. Platform-earnings connectors are an optional third signal, never the pipe. Never his phone, contacts or location, by policy.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>Risk lives in the line, not the rate.</b><span class="why">A higher price for the customer with less paperwork is exactly what makes borrowing emergency-only. So we hold the price and size the line to our confidence — and I take the lower return per peso early, because shorter tenors and progression push risk down over the relationship.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>He can see what raises it.</b><span class="why">"Two more on-time payments, your remesa landing two more months, and your line goes to $19,500." Shown before he asks. In thin-file lending the good customers leave as fast as the bad ones default, because nobody gives them a reason to stay.</span></div></div>
+      <div class="ben"><div class="t">Him</div><div>One line that grows instead of four lenders stacked — at the same price Lupita pays.</div></div>
+      <div class="ben"><div class="t nu">Nu</div><div>New lendable demand at high yield, retention bought with progression instead of rate, and near-free float.</div></div>
+    </div>
+  </div>
+  <div class="band" data-step="3" style="margin-top:12px"><b>Both doors open onto the same tier, the same price, the same credit line.</b> A person with less paperwork does not get a worse deal here. That is the mission — and it is also the single easiest thing to defend in a fairness review.</div>
+  <p class="foot" data-step="3">INEGI ENOE: informality 55.0% of the employed population, July 2026. Portrait is an illustration, not a photograph.</p>
+</div></section>
+
+<!-- 8 WHAT THEY GET -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">What they get</div>
+  <h2 class="rise">The same Nu they already love — now with their income in it.</h2>
+  <div class="phones">
+    <div data-step="1">
+      <div class="ph"><div class="top"><span class="sm">Cuenta Nu</span><span class="big">$14,860.00</span></div>
+        <div class="body">
+          <div class="c"><div class="r"><span>Nómina · 15 sep</span><b class="g">+$8,420.00</b></div><div class="r"><span>Tu sueldo llegó. Disponible ya.</span></div></div>
+          <div class="c"><h5>Cajita Nómina</h5><div class="r"><span>Rendimiento</span><b>CETES + 6.5%</b></div><div class="r"><span>Hoy</span><b>12.99% anual</b></div><div class="r"><span>Hasta</span><b>$8,420 · un mes de sueldo</b></div></div>
+          <div class="c"><h5>Recargas</h5><div class="r"><span>Telcel · 30 sep</span><b>2× puntos Nu+</b></div></div>
+        </div></div>
+      <div class="cap"><b>Account</b>Her salary, available the day it lands. Yield quoted as a spread, so it never has to be "cut".</div>
+    </div>
+    <div data-step="2">
+      <div class="ph"><div class="top"><span class="sm">Tarjeta de Crédito</span><span class="big">Límite $24,000</span></div>
+        <div class="body">
+          <div class="c"><h5>Basado en tu sueldo</h5><div class="r"><span>3 meses de nómina en Nu</span><b class="g">✓</b></div><div class="bar2" style="margin:6px 0 4px"><i></i></div><div class="r"><span>Crece con tu historial</span></div></div>
+          <div class="c"><h5>Pago automático</h5><div class="r"><span>Se paga el</span><b>16 de cada mes</b></div><div class="r"><span>Un día después de tu quincena</span></div></div>
+          <div class="c"><h5>Préstamo de nómina</h5><div class="r"><span>Hasta</span><b>$16,800</b></div><div class="r"><span>Se descuenta el día después de cobrar</span></div></div>
+        </div></div>
+      <div class="cap"><b>Credit</b>A limit that matches what she earns. A card that pays itself. A loan that fits the quincena.</div>
+    </div>
+    <div data-step="3">
+      <div class="ph"><div class="top"><span class="sm">Crece con Nu</span><span class="big">Nivel 3 → 4</span></div>
+        <div class="body">
+          <div class="c"><h5>Tu ingreso, como lo vemos</h5><div class="r"><span>Remesas + depósitos</span><b>$6,050 / mes</b></div><div class="r"><span>Confianza</span><b class="g">Alta · 11 meses</b></div><div class="r"><span>¿No es correcto? Corrígelo</span></div></div>
+          <div class="c"><h5>Tu línea sube a $19,500 cuando…</h5><div class="r"><span>✓ Dos pagos puntuales más</span></div><div class="r"><span>· Tu remesa llega 2 meses más</span></div></div>
+          <div class="btn2">Ver mi camino</div>
+        </div></div>
+      <div class="cap"><b>Growth hub</b>Beto sees what Nu sees, and exactly what raises his line. Same tier as Lupita.</div>
+    </div>
+  </div>
+  <p class="foot" data-step="4">Screens recreated from the Nu México app's current Cuenta, Tarjeta and Cajitas surfaces with the proposed changes applied. Amounts are illustrative.</p>
+</div></section>
+
+<!-- 9 THE FIVE NUMBERS -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Yield strategy &amp; mass-market pricing · Q3</div>
+  <h2 class="rise">What 13% actually costs.</h2>
+  <div class="grid g2" style="grid-template-columns:1fr 1fr;align-items:start">
+    <div class="card" data-step="1">
+      <h3>The five numbers I would put on the table</h3>
+      <div class="q"><span class="num">1</span><div><b>What the next peso of deposit costs</b><span class="why">7.00% base · 13% premium, capped at $25,000 and gated on one purchase</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>What it earns</b><span class="why">6.49% parked in CETES · roughly 25% lent, net of losses <i>(my assumption)</i></span></div></div>
+      <div class="q"><span class="num">3</span><div><b>How many pesos leave per point cut</b><span class="why"><b>You already ran this experiment.</b> On 5 January you cut 200bp, 15% → 13%. The balance response by segment is sitting in our data. I do not have it. That analysis is week one.</span></div></div>
+      <div class="q"><span class="num">4</span><div><b>How much of it we can lend</b><span class="why">35% today · the group runs near 58% <i>(assumption)</i></span></div></div>
+      <div class="q"><span class="num">5</span><div><b>What retention costs per lever</b><span class="why">yield · progression · Nu+ at roughly 0.3%</span></div></div>
+    </div>
+    <div class="card" data-step="2">
+      <h3>The cap is doing the work</h3>
+      <p style="font-size:13.5px;margin-top:2px">13% is not our cost of funds. It is a <b>capped, self-liquidating acquisition budget</b> sitting on the first $25,000 — and above the cap we pay 7.00%, which is TIIE de fondeo exactly.</p>
+      <div class="scroll"><table class="cof">
+        <tr><th>Customer balance</th><th>Interest / yr</th><th>Blended cost</th></tr>
+        <tr><td>$25,000</td><td>$3,250</td><td>13.00%</td></tr>
+        <tr><td>$50,000</td><td>$5,000</td><td>10.00%</td></tr>
+        <tr><td>$100,000</td><td>$8,500</td><td>8.50%</td></tr>
+        <tr><td>$250,000</td><td>$19,000</td><td>7.60%</td></tr>
+      </table></div>
+      <div class="band" style="margin-top:11px;padding:11px 14px;font-size:13.5px"><b>Ceiling on the true subsidy: $1,500 per customer per year</b> — 600bp over TIIE de fondeo, on a capped base. That is the acquisition budget. The question is not whether it is too big. It is what we make people do to earn it.</div>
+      <span class="why" style="margin-top:9px">Which reframes the whole debate: <b>we are not overpaying for deposits.</b> We are paying a bounded bounty for a behaviour — and right now the behaviour we buy is a $20 coffee.</span>
+    </div>
+  </div>
+  <p class="foot" data-step="3">Nu México published rate card, September 2026 · CETES 28d 6.49% (1 Sep auction) · TIIE de fondeo 7.00%, the reference Nu itself cited for the January adjustment. Arithmetic is mine.</p>
+</div></section>
+
+<!-- 10 THE CALL -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Yield strategy &amp; mass-market pricing · Q3</div>
+  <h2 class="rise">Don't cut the rate. Re-gate it.</h2>
+  <div class="scroll"><table class="dt" data-step="1">
+    <tr><th>Decision</th><th>Option A</th><th>Option B</th><th>The call</th></tr>
+    <tr><td>Headline rate</td><td>Cut it. <span class="gain">Saves cost of funds</span> · <span class="cost">loses balances, and buys a bad headline every time</span></td><td>Hold it, re-gate it. <span class="gain">Same spend, pointed at deployable income</span></td><td class="call">Re-gate. Same budget, better peso.</td></tr>
+    <tr><td>Premium gate</td><td>One purchase a month. <span class="cost">Proves alive, not banking with us</span></td><td>Income landing here. <span class="gain">Turns an interest expense into a funding-mix change</span></td><td class="call">Income. That is the whole strategy.</td></tr>
+    <tr><td>The cap</td><td>Flat $25,000. <span class="cost">Overpays the rate-shopping tail</span></td><td>One month of income. <span class="cost">Underpays large depositors</span> — <span class="gain">the least loyal money we hold</span></td><td class="call">Income cap. Take the tail risk.</td></tr>
+    <tr><td>How it is quoted</td><td>"13% fija". <span class="cost">We own a number we must defend, and every move is our announcement</span></td><td>CETES + 6.5. <span class="gain">Transmission is automatic whenever the curve moves. Brazil already quotes 120% of CDI</span></td><td class="call">Spread. México is the outlier.</td></tr>
+  </table></div>
+  <div class="grid g2" style="margin-top:13px;align-items:start">
+    <div class="card" data-step="2">
+      <h3>Why spread-quoting, honestly</h3>
+      <p style="font-size:13.5px">Not because it "falls with Banxico" — consensus has the policy rate flat at 6.50% through 2027, so in the base case it falls with nothing. The real reasons: <b>we stop owning a number we have to defend</b>, transmission is automatic if and when the curve does move, and it is the group's existing convention.</p>
+      <span class="why">If I argued this on rate cuts that are not coming, the first analyst in the room would take the slide apart — and they would be right.</span>
+    </div>
+    <div class="card" data-step="3">
+      <h3>The rule I would hold the team to</h3>
+      <div class="q"><span class="num">·</span><div><b>Pay premium only where it buys income we can lend against.</b></div></div>
+      <div class="q"><span class="num">·</span><div><b>Price risk in the line, never in the rate.</b></div></div>
+      <div class="q"><span class="num">·</span><div><b>Buy retention with progression before yield.</b><span class="why">Our own history says the base was never bought with rate: Cuenta Nu launched at 9% under an 11.25% policy rate.</span></div></div>
+      <div class="q"><span class="num">·</span><div><b>CAT goes on the scorecard.</b><span class="why">A CAT near 85% is what lending blind costs. Visibility is what makes credit cheaper — so that number should fall as visibility rises, rather than be defended.</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 11 RESPONSIBLE AI -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Responsible AI &amp; personalisation · Q7</div>
+  <h2 class="rise">Personalisation may only move a price in the customer's favour.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-bottom:14px">This section is not bolted on. Tiering, conditionality and income-sized limits <i>are</i> personalised pricing — the fairness question is generated by the pricing design on the last two slides, so it has to be answered by the same person.</p>
+  <div class="grid g3">
+    <div class="card" data-step="1"><div class="eb" style="margin-bottom:4px;color:var(--coral-ink)">The line I will not cross</div>
+      <h3>Elasticity tracks desperation.</h3>
+      <p style="font-size:13.5px">In a price-sensitive, low-income base, willingness-to-pay is highest where the alternatives are worst. Optimising for it charges the most to the people least able to bear it — and it is legal, effective, and exactly how a mission dies quietly.</p>
+      <span class="why"><b>So AI sets eligibility, limits and timing.</b> Never "this customer will tolerate worse."</span>
+    </div>
+    <div class="card" data-step="2"><div class="eb" style="margin-bottom:4px;color:var(--gold-ink)">How it gets tested</div>
+      <h3>Fairness on outcomes, not on inputs.</h3>
+      <p style="font-size:13.5px">Dropping gender from a model does not make it fair — proxies survive. So we test the outputs: <b>approval rate, limit and price parity by gender and by state</b>, run as standing monitoring, not a launch gate.</p>
+      <span class="why">Exclusion by policy on the input side too: no phone, contacts or location, ever — regardless of lift.</span>
+    </div>
+    <div class="card" data-step="3"><div class="eb" style="margin-bottom:4px;color:var(--nu-ink)">What the customer sees</div>
+      <h3>Our estimate, before we price on it.</h3>
+      <p style="font-size:13.5px">Beto sees the income we think he has, the reasons, a "that's not right" button, and a person to appeal to. If we cannot explain a decision to the customer, the model is using something it should not be.</p>
+      <span class="why">We are a supervised bank now. <b>Build the appeal path before the model</b>, not after CONDUSEF asks.</span>
+    </div>
+  </div>
+  <div class="band" data-step="4" style="margin-top:14px"><b>The cheapest fairness control we have is the one on slide seven: same tier, same price, both doors.</b> A single price removes the entire surface where personalised pricing could go wrong — and it costs us return per peso, not customers. I would rather defend a smaller line than a higher rate.</div>
+</div></section>
+
+<!-- 12 SEQUENCING -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">First six months, then 24 · Q8 &amp; Q2</div>
+  <h2 class="rise">Ordered by what expires first.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-bottom:13px">Only one thing here has a clock on it: the licence advantage. Anything a licensed competitor could also do goes later. Anything only we can do right now goes first.</p>
+  <div class="grid" style="grid-template-columns:1.45fr 1fr 1fr">
+    <div class="card" data-step="1" style="background:linear-gradient(180deg,var(--c3),transparent 60%) var(--surface)">
+      <div class="eb" style="margin-bottom:6px">Months 0–6 · my top three priorities</div>
+      <div class="q"><span class="num">1</span><div><b>Fix what we measure about deposits.</b><span class="why">Pull the January cut apart by segment. Balance sensitivity via a geographic holdout, MDE pre-registered. Re-quote yield as a spread. Retire "deposit growth" as a goal. <i>First because it is nearly free and it is the evidence base for the other two.</i></span></div></div>
+      <div class="q"><span class="num">2</span><div><b>Ship Lupita's door to the cohort we can already see.</b><span class="why">Portability for customers whose payroll pattern is already in our data. <i>Second because it is the thing that expires.</i></span></div></div>
+      <div class="q"><span class="num">3</span><div><b>Stand up Beto's spine.</b><span class="why">Consent flow, income estimator, fairness harness. Not the whole product. <i>Third because it has the longest lead time, so it has to start early to land late.</i></span></div></div>
+    </div>
+    <div class="card" data-step="2">
+      <div class="eb" style="margin-bottom:6px">Months 7–12</div>
+      <h3>Scale the anchor before the window closes</h3>
+      <span class="why">Beto's door to general availability at the same tier · credit lines sized on observed income · the bundle live end to end · protection attached.</span>
+      <div class="do" style="font-size:13.5px">Measured on landings, and on lending moving off 35%.</div>
+    </div>
+    <div class="card" data-step="3">
+      <div class="eb" style="margin-bottom:6px">Months 13–24</div>
+      <h3>Turn the anchor into depth</h3>
+      <span class="why">Investments — newly licensable · préstamo timed to the quincena at scale · higher-value lending · and only now an employer-side offer.</span>
+      <div class="do" style="font-size:13.5px">Leading with an HR sales motion is how a challenger loses this market to people who have sold to HR for thirty years.</div>
+    </div>
+  </div>
+  <p class="foot" data-step="4"><b>If the window is six months instead of twelve</b> — because Mercado Pago is licensed sooner — H1 does not compress. H3 gets cut. I would rather have 300,000 salaries landing than a signed employer pipeline.</p>
+</div></section>
+
+<!-- 13 TEAM -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Team &amp; org design · Q5</div>
+  <h2 class="rise">A foundational hire should design the pod, not just staff it.</h2>
+  <div class="grid g2" style="align-items:start">
+    <div class="card" data-step="1">
+      <h3>What I would build</h3>
+      <div class="pod" style="margin-top:8px">
+        <div class="p me"><b>Me</b><span>Value proposition, the ladder, pricing and yield</span></div>
+        <div class="p"><b>PM · Income</b><span>Both doors — portability, the estimator, the growth hub</span></div>
+        <div class="p"><b>PM/APM · Pricing</b><span>The model, the holdouts, the rate-committee interface</span></div>
+        <div class="p"><b>Design lead</b><span>The other open role — placed on Beto's door</span></div>
+        <div class="p"><b>Embedded</b><span>2 analysts (one pricing, one credit-adjacent) + 1 data scientist</span></div>
+        <div class="p"><b>Dotted</b><span>Model risk · legal and regulatory · treasury</span></div>
+      </div>
+    </div>
+    <div class="card" data-step="2">
+      <h3>Three org calls I would defend</h3>
+      <div class="q"><span class="num">1</span><div><b>Hire the pricing analyst before the second PM.</b><span class="why">The bottleneck here is decision quality, not shipping throughput. One more PM ships more things; one analyst makes the yield decision right — and on a book this size that decision is worth more than a quarter of roadmap.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>Do not ask to own Card's or GBA's surfaces.</b><span class="why">Own the income signal and the customer-level P&amp;L instead. Asking for org control costs six months and the relationship — and I would lose the argument anyway.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>Put the designer on Beto's door, not Lupita's.</b><span class="why">Portability is a known pattern. Consent, an income estimate shown back to someone, and a visible ladder are where craft decides whether it works at all.</span></div></div>
+    </div>
+  </div>
+  <p class="foot" data-step="3">One of two open roles, and the first PM reporting into this structure — how the pod is shaped now is how it scales.</p>
+</div></section>
+
+<!-- 14 ALIGNMENT -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Alignment without authority · Q6 &amp; Q8</div>
+  <h2 class="rise">I would not try to win the argument. I would change what we are arguing about.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-bottom:12px">Say Card's roadmap collides with a bundle I have to ship on a regulatory clock. I own none of the three teams that have to move.</p>
+  <div class="grid g3">
+    <div class="card" data-step="1"><div class="eb" style="margin-bottom:4px">With Credit Card</div><h3>Trade an asset, not a favour.</h3>
+      <span class="why">I bring something they cannot get anywhere else: income they can underwrite against, and collection timed to payday. Both land on <b>their</b> delinquency line. In exchange I get placement in their flows. That is a trade with a number attached — not a request.</span></div>
+    <div class="card" data-step="2"><div class="eb" style="margin-bottom:4px">With Account · GBA</div><h3>Own the spec, not the surface.</h3>
+      <span class="why">They own the account experience; I own what the tier promises and what the customer is worth. The interface between us is one shared customer-level P&amp;L — so we argue about which sequence makes the customer worth more, which evidence can settle, instead of whose roadmap wins, which it cannot.</span></div>
+    <div class="card" data-step="3"><div class="eb" style="margin-bottom:4px">With global · representing México</div><h3>Not an exception — the next instance.</h3>
+      <span class="why">Croma is the group's newest bundle: a tiered offer anchored on spend, for customers from R$5,000 a month. Right architecture, wrong anchor for this market. México's mass market needs the same architecture <b>income-anchored</b> — and that is the instance <i>every</i> newly licensed market will need first. I am not asking for a local exception. I am volunteering to build the version Colombia inherits.</span></div>
+  </div>
+  <div class="band" data-step="4" style="margin-top:13px"><b>Three things I would do before I needed to.</b> Agree the shared P&amp;L with Diego and both leads while nothing is at stake · get Legal to frame the regulatory date as a <b>shared compliance exposure</b>, so it arrives as a fact rather than as my deadline · and put the disagreement into a test design whose guardrail metric <b>the other team chooses</b>. And if Card still cannot move: ship the tier without the card component and add it later. Shipping on time beats winning the argument.</div>
+</div></section>
+
+<!-- 15 MEASURED & RISKS -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">How we will know — and where it breaks</div>
+  <h2 class="rise">One north star. Three checkpoints. Three risks.</h2>
+  <div class="grid g2" style="align-items:start">
+    <div>
+      <div class="band rise" style="--d:150ms;margin-bottom:10px"><b>North star: the share of customers whose income lands at Nu.</b> Today roughly 2% <i>(my assumption)</i>. Cost of funds, deployment, loss and love all move because this one does.</div>
+      <div class="tl">
+        <div class="row" data-step="1"><div class="t">6<small>months</small></div><div><b>Salaries landing from the cohort we can already see.</b><span class="why">The January cut analysed by segment · yield quoted as a spread · Beto's door in test.</span></div></div>
+        <div class="row" data-step="2"><div class="t">12<small>months</small></div><div><b>Income visibility climbing. Lending moving off 35%.</b><span class="why">Beto's lines performing like Lupita's · fewer missed card payments · funding cost falling on mix, not on rate.</span></div></div>
+        <div class="row" data-step="3"><div class="t">24<small>months</small></div><div><b>Nu as the primary bank. Loved, not just liked.</b><span class="why">Principality and NPS up · price and approval parity by gender and state · the loop compounding.</span></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="q" data-step="4"><span class="num">1</span><div><b>Customers get pickier about rate once Mercado Pago and Klar are banks.</b> <span class="chip warn">most likely</span><span class="why">They are not today — Cuenta Nu launched at 9% under an 11.25% policy rate. Measure it by segment now, and hold the base on relationship rather than rate.</span></div></div>
+      <div class="q" data-step="5"><span class="num">2</span><div><b>We see something we should not.</b> <span class="chip hot">trust</span><span class="why">Exclusion by policy, outcome parity by gender and state, and an explanation we can show the customer. If we cannot show it, the model is using something it should not be.</span></div></div>
+      <div class="q" data-step="6"><span class="num">3</span><div><b>Bigger lines, more bust-out — and a remesa is not a salary.</b> <span class="chip hot">credit</span><span class="why">Remittance income depends on someone offshore and correlates with US labour, so a whole cohort can move together. That argues for smaller lines, shorter tenors and a concentration limit — not for refusing to lend. Climbers have to outweigh the rest, measured rather than assumed.</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 16 CLOSE -->
+<section class="slide"><div class="w tight">
+  <div class="eb rise">Nu te ve</div>
+  <h1 class="rise" style="font-size:clamp(34px,5vw,62px);line-height:1.06">Lupita's salary lands here. Beto's remesa counts here. Both get the price their income deserves.</h1>
+  <p class="lede rise" style="margin-top:20px">You are not short of deposits — you are short of visible income. No rate cut fixes that, and this year no rate cut is coming.</p>
+  <p class="foot rise">Live model &amp; both flows: claude.ai/code/artifact/93da0992-7c28-4c92-81cd-f67f16a3cfaa<br><br><b>Key assumptions:</b> ~2% of Nu México customers have income landing with us · group loan-to-deposit near 58% · ~25% net lending yield · personal-loan CAT near 85% · Nu México rate card current as of the September card. <b>Facts:</b> Nu Holdings Q2 2026 results · IMSS June 2026 · INEGI ENOE July 2026 · CNBV/INEGI ENIF 2024 · Banxico policy announcements and the August Citi survey · CETES 28d auction, 1 September 2026 · Nu México published rendimientos. Prior-work evidence cited as effect sizes and intervals only.</p>
+</div></section>
+
+</div>
+
+<div class="nav">
+  <button class="btn" id="prev" type="button">← Back</button>
+  <div><div class="dots" id="dots"></div><div class="ctr" id="ctr"></div></div>
+  <button class="btn" id="next" type="button">Next →</button>
+</div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')), n=slides.length, i=0;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dots=document.getElementById('dots'), bar=document.getElementById('bar'), ctr=document.getElementById('ctr'), kick=document.getElementById('kick');
+  var prevBtn=document.getElementById('prev'), nextBtn=document.getElementById('next');
+  slides.forEach(function(_,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Slide '+(k+1));b.addEventListener('click',function(){go(k);});dots.appendChild(b);});
+  var db=[].slice.call(dots.children);
+
+  function cascade(s){
+    var k=0;
+    s.querySelectorAll('.rise').forEach(function(e){ e.style.setProperty('--d',(k++*80)+'ms'); });
+    var after=k*80+60;
+    s.querySelectorAll('[data-step]').forEach(function(e){
+      var st=+e.getAttribute('data-step')||1;
+      e.style.setProperty('--d',(after+(st-1)*130)+'ms');
+    });
+    var all=s.querySelectorAll('.rise,[data-step]');
+    all.forEach(function(e){ e.style.animation='none'; });
+    void s.offsetHeight;
+    all.forEach(function(e){ e.style.animation=''; });
+  }
+
+  function go(k){
+    if(k<0||k>=n||(k===i&&slides[k].classList.contains('in')))return;
+    slides[i].classList.remove('in');
+    i=k;
+    cascade(slides[i]);
+    slides[i].classList.add('in');
+    paint();
+    try{history.replaceState(null,'','#'+(i+1));}catch(e){}
+  }
+  function paint(){
+    db.forEach(function(b,k){b.setAttribute('aria-current',k===i?'true':'false');});
+    bar.style.width=((i+1)/n*100)+'%';
+    ctr.textContent=(i+1)+' / '+n;
+    kick.textContent=String(i+1).padStart(2,'0')+' / '+n;
+    prevBtn.disabled=i===0; nextBtn.disabled=i===n-1;
+  }
+  prevBtn.addEventListener('click',function(){go(i-1);});
+  nextBtn.addEventListener('click',function(){go(i+1);});
+  document.addEventListener('keydown',function(e){
+    if(e.target&&/INPUT|TEXTAREA/.test(e.target.tagName))return;
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'||e.key==='Enter'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){go(0);} else if(e.key==='End'){go(n-1);}
+    else if(e.key==='p'||e.key==='P'){window.print();}
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.nav,.brand,.kick,a,button'))return;
+    go(i+1);
+  });
+  document.body.classList.add('anim');
+  var h=parseInt((location.hash||'').slice(1),10);
+  if(h>=1&&h<=n&&h!==1){ slides[0].classList.remove('in'); i=h-1; slides[i].classList.add('in'); }
+  cascade(slides[i]); paint();
+})();
+</script>
