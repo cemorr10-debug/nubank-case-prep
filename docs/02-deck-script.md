@@ -81,28 +81,43 @@ habit. A rate is a price.** Habits are defensible; prices aren't."
 
 ---
 
-## 5 · Mass-market bundles: two tiers, earned by behaviour  ·  *3:00*
+## 5 · Mass-market bundles — what already exists, and what I would change  ·  *3:00*
 
-| | **Nu Base** | **Nu Nómina** |
+> ⚠️ **The most dangerous slide in the deck.** Nu already prices by tier, already caps the
+> premium, and already gates it on a behaviour. Diego owned this product. Proposing any of
+> those three as new ideas is the worst thing you could do in this room.
+
+**Published rate card, in force 10 Aug – 7 Oct 2026:**
+
+| Product | Rate | Condition |
 |---|---|---|
-| How you qualify | any customer | recurring income lands at Nu — **documented *or* observed** |
-| Yield | CETES + 1.5% | **CETES + 4.0%**, up to a balance cap |
-| Credit | score-based, thin | line sized on observed income |
-| Protection | optional | micro-cover included |
-| What it costs us | low | **lower per peso of balance** |
+| Cajita 24/7 | **6.50%** | none — and CETES 28d is **6.49%** |
+| Cajita Turbo | **13.00%** fija | **capped MX$25,000** · **one card purchase a month** |
+| Ahorro Congelado | 6.55–6.80% | by term |
 
-**Four design decisions, and why:**
-1. **Two tiers, not five.** Mass market punishes complexity. Every tier is a support call.
-2. **The premium is earned by a behaviour, not a balance.** We pay up only for money that
-   arrives with data and stickiness behind it.
-3. **Cap the premium balance.** We're buying the relationship, not the treasury balance.
-   Above the cap, the customer gets the base rate — and we stop overpaying for hot money.
-4. **One tier, two doors.** Documented income and observed income reach *identical* terms.
-   This is the whole inclusion argument, and it's also the simplest thing to defend in a
-   fairness review — if the informal tier isn't a lower tier, there's no disparate outcome
-   to explain.
+Turbo was 15% until **5 January 2026**.
 
----
+**Say:** "Before I propose anything on pricing — you already price by tier, you already cap
+the premium at twenty-five thousand pesos, and you already gate it on a behaviour. Your
+base tier is sitting one basis point above CETES. So the open question isn't whether to
+have a premium tier. It's **which gate and which cap.**"
+
+**Three changes:**
+
+1. **Change the gate.** One card purchase a month proves the customer is *alive*, not that
+   they bank with you. It is nearly costless to satisfy and carries almost no information.
+   **Gate the premium on income landing instead** — then the 13% buys a relationship rather
+   than a pulse.
+2. **Change the cap.** A flat MX$25,000 gives every customer an identical yield subsidy
+   regardless of what they bring. **Scale it with income deposited** — roughly one month of
+   it — so the yield budget follows the relationship.
+3. **Change the quote.** "13% fija" forces you to *announce* every cut. January's produced
+   *"ganarás menos por tus ahorros"* (Expansión) and *"Pésimas noticias para clientes Nu
+   México"* (Xataka). **A spread over CETES reprices silently** as Banxico moves.
+
+**One tier, two doors:** documented income and observed income must reach identical terms.
+That is the inclusion argument and the fairness argument at once — if the informal tier is
+not a lower tier, there is no disparate outcome to explain.
 
 ## 6 · Sequencing — 24 months  ·  *4:00*
 
@@ -135,11 +150,14 @@ goes first.
 
 **Four moves:**
 
-1. **Quote a spread, not a number.** "CETES + 4.00%", not "10.49%". As Banxico cuts, funding
-   cost falls automatically and there's never a "Nu cut your rate" headline — because we
-   didn't. *Risk to test: customers may anchor on absolute numbers, and the competitive
-   comparison sites certainly do.*
-2. **Price the relationship, not the balance.** Premium requires income landing; capped.
+1. **Quote a spread, not a number.** Today it is "13% fija", so every cut has to be
+   announced — and January's was, in exactly the terms you would predict. Quoted against
+   CETES, funding cost falls as Banxico moves and there is no headline, because you did not
+   cut anything. *Risk to test: customers may anchor on absolute numbers, and the comparison
+   sites certainly do.*
+2. **Fix the gate, not the size of the premium.** Further cuts have diminishing returns and
+   a real brand cost. Re-point the existing 13% at income landing rather than at one card
+   purchase a month.
 3. **Segment balance sensitivity — never blend it.** This is *outflow elasticity* — how many balances leave per point of rate cut — **not** the
    standard pass-through "deposit beta". Say which you mean. A blended figure hides that the
    base is two populations: brand-acquired and near-insensitive, and rate-shoppers.

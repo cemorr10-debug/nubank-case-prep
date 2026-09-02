@@ -139,35 +139,42 @@ function foot(s,t){
 
 /* ---------- 5 BUNDLES ---------- */
 { const s=S(); light(s);
-  head(s,'2.1.1  Mass-market bundles','Two tiers, earned by behaviour — not by balance',false);
-  const rows=[['How you qualify','Any customer','Recurring income lands at Nu — documented or observed'],
-              ['Yield','CETES + 1.5%','CETES + 4.0%, up to a balance cap'],
-              ['Credit','Score-based, thin','Line sized on observed income'],
-              ['Protection','Optional','Micro-cover included'],
-              ['What it costs us','Low','Lower per peso of balance']];
-  P.defineSlideMaster||0;
-  s.addTable([[{text:'',options:{fill:{color:'FFFFFF'}}},
-               {text:'Nu Base',options:{bold:true,fontSize:15,color:INK,fontFace:HEAD}},
-               {text:'Nu Nómina',options:{bold:true,fontSize:15,color:PURPLE,fontFace:HEAD}}]].concat(
-      rows.map(r=>[{text:r[0],options:{bold:true,color:MUTED,fontSize:11.5}},
-                   {text:r[1],options:{color:BODY,fontSize:12.5}},
-                   {text:r[2],options:{color:INK,fontSize:12.5,bold:true}}])),
-    {x:M,y:1.95,w:7.1,colW:[1.9,2.1,3.1],border:{type:'solid',color:LINE,pt:1},
-     fontFace:TEXT,rowH:0.44,valign:'middle',margin:0.09,fill:{color:'FFFFFF'}});
+  head(s,'2.1.1  Mass-market bundles','The tiering already exists. Three things I would change.',false);
+  s.addText('Published rate card, in force 10 August to 7 October 2026',
+    {x:M,y:1.9,w:6.3,h:0.3,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12,italic:true,color:MUTED});
+  s.addTable([[{text:'Product',options:{bold:true,color:MUTED,fontSize:10.5}},
+               {text:'Rate',options:{bold:true,color:MUTED,fontSize:10.5}},
+               {text:'Condition',options:{bold:true,color:MUTED,fontSize:10.5}}],
+     [{text:'Cajita 24/7',options:{bold:true,color:INK,fontSize:12}},
+      {text:'6.50%',options:{bold:true,color:INK,fontSize:12}},
+      {text:'None — and CETES is 6.49%',options:{color:BODY,fontSize:11}}],
+     [{text:'Cajita Turbo',options:{bold:true,color:PURPLE,fontSize:12}},
+      {text:'13.00%',options:{bold:true,color:PURPLE,fontSize:12}},
+      {text:'Capped at MX$25,000 · one card purchase a month',options:{color:BODY,fontSize:11}}],
+     [{text:'Ahorro Congelado',options:{bold:true,color:INK,fontSize:12}},
+      {text:'6.55–6.80%',options:{bold:true,color:INK,fontSize:12}},
+      {text:'By term',options:{color:BODY,fontSize:11}}]],
+    {x:M,y:2.28,w:6.3,colW:[1.75,1.15,3.4],border:{type:'solid',color:LINE,pt:1},
+     fontFace:TEXT,rowH:0.46,valign:'middle',margin:0.09,fill:{color:'FFFFFF'}});
+  card(s,M,4.35,6.3,1.9,PURPLE_PALE);
+  s.addText('The tiering, the cap and the behavioural gate are already built.',
+    {x:M+0.3,y:4.55,w:5.75,h:0.44,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13.5,bold:true,color:INK,lineSpacing:18});
+  s.addText('The base tier already sits at the risk-free rate, and Turbo was already cut from 15% to 13% in January. The unsolved problem is not whether to have a premium tier. It is which gate and which cap.',
+    {x:M+0.3,y:5.02,w:5.75,h:1.1,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12.5,color:BODY,lineSpacing:17});
 
-  card(s,8.05,1.95,4.68,4.35,'FAF8FD');
-  s.addText('Four design decisions',{x:8.33,y:2.15,w:4.2,h:0.32,isTextBox:true,margin:0,fontFace:HEAD,fontSize:15,bold:true,color:INK});
-  const dd=[['Two tiers, not five.','Mass market punishes complexity. Every tier is a support call.'],
-            ['The premium is a behaviour, not a balance.','We pay up only for money that arrives with data behind it.'],
-            ['Cap the premium balance.','We are buying the relationship, not the treasury balance.'],
-            ['One tier, two doors.','Documented and observed income reach identical terms.']];
+  const dd=[['Change the gate.','One card purchase a month proves the customer is alive, not that they bank with us. It is nearly costless to satisfy and carries almost no information. Gate the premium on income landing instead.'],
+            ['Change the cap.','A flat MX$25,000 gives every customer an identical yield subsidy regardless of what they bring. Scale the cap with income deposited — roughly one month of it.'],
+            ['Change the quote.','“13% fija” forces us to announce every cut. January’s produced “ganarás menos por tus ahorros” and “pésimas noticias para clientes Nu”. A spread over CETES reprices silently as Banxico moves.']];
+  card(s,7.15,1.9,5.58,4.35,'FAF8FD');
+  s.addText('What I would change',{x:7.43,y:2.1,w:5.0,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:15,bold:true,color:INK});
   dd.forEach((d,i)=>{
-    const y=2.6+i*0.9;
-    s.addText((i+1).toString(),{x:8.33,y,w:0.3,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13,bold:true,color:PURPLE});
-    s.addText(d[0],{x:8.68,y:y-0.02,w:3.9,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:12.5,bold:true,color:INK});
-    s.addText(d[1],{x:8.68,y:y+0.28,w:3.9,h:0.5,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,color:BODY,lineSpacing:15});
+    const y=2.55+i*1.22;
+    s.addText((i+1).toString(),{x:7.43,y,w:0.3,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13,bold:true,color:PURPLE});
+    s.addText(d[0],{x:7.78,y:y-0.02,w:4.6,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13,bold:true,color:INK});
+    s.addText(d[1],{x:7.78,y:y+0.3,w:4.6,h:0.9,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,color:BODY,lineSpacing:15});
   });
-  foot(s,'“One tier, two doors” is the inclusion argument and the fairness argument at once: if the informal tier is not a lower tier, there is no disparate outcome to explain.');
+  foot(s,'One tier, two doors: documented income and observed income must reach identical terms — which is the inclusion argument and the fairness argument at once.');
+  s.addNotes('Critical: do NOT propose tiering, capping or behavioural gating as new ideas. Diego owned this product and all three already exist. The contribution is which gate and which cap.');
 }
 
 /* ---------- 6 SEQUENCING ---------- */
@@ -199,8 +206,8 @@ function foot(s,t){
 /* ---------- 7 PRICING ---------- */
 { const s=S(); light(s);
   head(s,'2.1.3  Pricing and yield','Four moves, and the data behind each',false);
-  const mv=[['Quote a spread, not a number.','“CETES + 4.00%”, not “10.49%”. As Banxico cuts, funding cost falls automatically and there is never a “Nu cut your rate” headline — because we did not.'],
-    ['Price the relationship, not the balance.','The premium requires income landing and is capped. We pay up only for money that brings data and stickiness with it.'],
+  const mv=[['Quote a spread, not a number.','Today it is “13% fija”, so every cut must be announced — January’s produced “ganarás menos por tus ahorros”. Quoted against CETES, funding cost falls as Banxico moves, with no headline.'],
+    ['Fix the gate, not the size of the premium.','Further cuts have diminishing returns and real brand cost. Re-point the 13% at income landing rather than at one card purchase a month, and it buys a relationship instead of a pulse.'],
     ['Segment balance sensitivity. Never blend it.','Balances that leave per point of rate cut — not the pass-through “deposit beta”. The base is two populations: brand-acquired and near-insensitive, and rate-shoppers. Blending them makes every cut look safe until it is not.'],
     ['Retire “deposit growth” as a goal.','At 35% LDR it is a cost line wearing a growth metric’s clothes. Replace with deployable deposits and cost of funds against TIIE.']];
   mv.forEach((m,i)=>{

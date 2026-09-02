@@ -30,6 +30,17 @@ cohort without it. If that gap is small, my case is wrong and I'd want to know i
 not month twelve."
 **This is the single best answer in the pack. Rehearse it until it's fluent.**
 
+### Q2b. "You know our base tier is already at CETES and Turbo is already capped, right?"
+**Under it:** did you look at the actual product, or just the earnings release?
+**Answer:** "I did — Cajita 24/7 at 6.50% against CETES at 6.49%, Turbo at 13% capped at
+twenty-five thousand pesos and gated on one card purchase a month, and Turbo came down from
+15% in January. Which is exactly why I'm not proposing tiering, or a cap, or a behavioural
+gate — you have all three. My argument is narrower: **the gate is weak and the cap is
+flat.** One purchase a month proves a customer is alive, not that they bank with you, and a
+flat cap gives everyone the same subsidy regardless of what they bring. Re-point that same
+13% at income landing and scale the cap with income deposited, and the yield budget you are
+already spending starts buying a relationship."
+
 ### Q3. "We've already run the deposit optimisation. What's actually new here?"
 **Under it:** are you telling us things we did last quarter?
 **Answer:** "You have, and it worked — that's why I used your own result as the model's
@@ -142,6 +153,7 @@ credibility arguing that Mexico goes first than arguing that Mexico gets its own
 | Don't | Because |
 |---|---|
 | Explain Cuenta Nu's yield mechanics to Diego | He owned the Bank Account Core Experience. It's his product. |
+| **Propose tiering, a balance cap, or a behavioural gate as new ideas** | **All three already exist.** 6.50% / 13.00% capped at MX$25,000, gated on one card purchase a month. Naming them as recommendations is the single worst available move. |
 | Say "you're overpaying for deposits" | Too strong and wrong — the marginal peso earns ~1.5pp, not negative. Say *underearning*. |
 | Present the licence reframe as a gotcha | Make the point in 60 seconds, warmly, and move on. |
 | Lead any section with balance-sheet language | The JD explicitly prefers product-centric over traditional. Lead with the customer. |

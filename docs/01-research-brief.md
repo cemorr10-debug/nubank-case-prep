@@ -21,11 +21,17 @@ That transition is ~4 weeks old. The strategic question is not *how to prepare* 
 
 ## 2. Where Nu México stands (Q2 2026)
 
+> **Sourcing caveat.** The Q2 2026 figures below come from search summaries of the 13 Aug
+> 2026 earnings release. `sec.gov` and `nubank.com.br` are both blocked by this
+> environment's egress proxy, so the primary document could not be opened. Reproduced
+> consistently across independent searches, but **verify the 35% LDR against the actual
+> release or investor deck before presenting it.**
+
 | Metric | Value |
 |---|---|
 | Customers (Mexico) | 15.8M at Q2; **16M as of July 2026** (~16.5% of adult population) |
 | Deposits (Mexico) | **US$5.7B** — declined modestly QoQ, deliberately |
-| **Loan-to-deposit ratio (Mexico)** | **35%** |
+| **Loan-to-deposit ratio (Mexico)** | **35%** `[SECOND-HAND — VERIFY]` |
 | Profitability | **Broke even Q1 2026** — ~2 years faster than Brazil did |
 | Market position | 3rd largest financial institution in market; leading issuer of *new* credit cards |
 | ARPAC (consolidated) | US$17.10, +22% YoY FX-neutral |
@@ -35,16 +41,53 @@ That transition is ~4 weeks old. The strategic question is not *how to prepare* 
 
 **The load-bearing number is the 35% LDR.** Nu México is over-funded and under-lent.
 
-## 3. The yield history — deposit beta is well below 1
+## 3. The actual rate card — VERIFIED, and it changes the case
 
-- Nu México cut its Cuenta Nu yield from **~15% → ~11.5%**.
-- Result: **>90% retention, balances still grew**, even against 13%+ competitor offers.
-- Q2 2026 framing: deposits declined "as part of a deliberate deposit-optimization
-  strategy, improving cost of funding while maintaining ample liquidity."
+Published rates, calculated 10 Aug 2026, in force to 7 Oct 2026:
 
-**Implication:** the headline rate was overpaying for balances. There is proven room to
-re-architect yield without losing the base — but it has already been partly harvested,
-so the *next* cut is not free. The remaining move is structural, not another rate cut.
+| Product | Rate | Conditions |
+|---|---|---|
+| **Cajita 24/7** (default liquid savings) | **6.50%** | none. **CETES 28d is 6.49% — the base tier is already at the risk-free rate.** |
+| **Cajita Turbo** | **13.00%** annual fixed | **capped at MX$25,000**; requires **≥1 card purchase per month** (credit or debit, no minimum). Immediate liquidity, daily accrual, auto-reinvested. |
+| **Ahorro Congelado** (term) | 6.80% / 6.70% / 6.60% / 6.55% | by term |
+
+All IPAB-guaranteed to 400,000 UDIs.
+
+### Rate history
+- Cajita Turbo launched at **15%**.
+- Cut to **13%**, effective **5 January 2026**, cap held at MX$25,000.
+- Secondary reporting describes blended deposit cost falling ~15% → ~11.5% with **>90%
+  retention and continued balance growth**, against 13%+ offers elsewhere.
+  `[ASSUMPTION]` the 11.5% blended figure is second-hand and may not reconcile cleanly to
+  the published rate card — treat the *direction* as solid and the level as unverified.
+
+### ⚠️ The implication that must not be missed
+**Nu México already prices by tier, already caps the premium, and already gates it on a
+behaviour.** Any recommendation to "cap the premium tier" or "make the premium behavioural
+rather than balance-based" is describing what exists. Diego owned this product. The value
+has to be in *which gate and which cap*, not in the idea of having them.
+
+What is genuinely open:
+1. **The gate is weak.** One card purchase a month proves the customer is alive, not that
+   they bank with Nu. It is close to costless to satisfy and carries almost no information.
+2. **The cap is flat.** MX$25,000 for everyone means an identical yield subsidy regardless
+   of what relationship the customer brings.
+3. **The rate is quoted as an absolute number.** "13% fija" forces Nu to *announce* every
+   cut. The January 2026 cut produced exactly the predicted press: Expansión, "Nu ajusta los
+   rendimientos… ganarás menos por tus ahorros"; Xataka, "Pésimas noticias para clientes Nu
+   México." A spread over CETES reprices silently as Banxico moves.
+
+### Why Nu pays for deposits at all
+1. **The rate was the acquisition channel** — incumbents pay ~0–1% on savings.
+2. **It was a trust premium** for a SOFIPO with ~US$12.6K of insurance. **This expired on
+   6 August 2026**: IPAB now covers ~US$201K. The risk-compensation rationale is gone.
+3. **SOFIPO rate competition** — Klar, Finsus, Stori.
+4. **Deposits fund the credit book**, cheaper than wholesale debt — though 13% against
+   CETES 6.49% is expensive funding on any measure.
+5. **The design is a real product** — daily accrual, no minimum, instant liquidity.
+
+Reasons 1 and 2 have both weakened. But further cuts have diminishing returns and a real
+brand cost, so the move is to change **what the premium is attached to**, not its size.
 
 ## 4. Rate environment (falling)
 

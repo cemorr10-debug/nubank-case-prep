@@ -273,8 +273,8 @@ hr.r{border:0; border-top:1px solid var(--line); margin:26px 0}
      </div>
 
      <div class="ctrl">
-      <div class="ctrl-top"><label for="i-yield">Deposit yield paid</label><span class="val" id="v-yield">11.50%</span></div>
-      <p class="hint">Headline rate on Cuenta Nu. Cut from ~15% to ~11.5% with &gt;90% retention.<span class="anchor">observed</span></p>
+      <div class="ctrl-top"><label for="i-yield">Blended cost of deposits</label><span class="val" id="v-yield">11.50%</span></div>
+      <p class="hint">Not a single published rate. The real card is <b>6.50% Cajita 24/7</b> (CETES is 6.49%) and <b>13.00% Cajita Turbo</b>, capped at MX$25,000 and gated on one card purchase a month.<span class="anchor">verified</span></p>
       <input type="range" id="i-yield" min="0" max="16" step="0.25" value="11.5">
       <div class="scale"><span>0%</span><span>CETES</span><span>16%</span></div>
      </div>
@@ -308,11 +308,12 @@ hr.r{border:0; border-top:1px solid var(--line); margin:26px 0}
     <div class="assump-b">
      <table class="a">
       <tr><th>Input</th><th>Value &amp; basis</th></tr>
-      <tr><td>Deposit base</td><td><span class="tag fact">FACT</span> US$5.70B at 11.5% (Q2 2026). Scales with β.</td></tr>
+      <tr><td>Deposit base</td><td><span class="tag fact">FACT</span> US$5.70B (Q2 2026) — second-hand from the 13 Aug release; verify. Scales with β.</td></tr>
+      <tr><td>Published rates</td><td><span class="tag fact">FACT</span> Cajita 24/7 <b>6.50%</b> · Cajita Turbo <b>13.00%</b>, cap MX$25,000, one card purchase/month · Ahorro Congelado 6.55–6.80%. In force 10 Aug – 7 Oct 2026. Turbo was 15% until 5 Jan 2026.</td></tr>
       <tr><td>LDR floor</td><td><span class="tag assum">ASSUM</span> 28% — what is underwritable with no income signal.</td></tr>
       <tr><td>LDR ceiling</td><td><span class="tag assum">ASSUM</span> 70% — Brazil-like deployment once income is visible.</td></tr>
       <tr><td>Visibility for ceiling</td><td><span class="tag assum">ASSUM</span> 45% attach. Calibration check: 8% attach ⇒ 35.5% LDR, against 35% reported.</td></tr>
-      <tr><td>Cost of funds</td><td><span class="tag assum">ASSUM</span> Headline yield paid on <em>all</em> balances. Deliberately conservative — real nómina balances are transactional and cost far less, so the case understates its own upside.</td></tr>
+      <tr><td>Cost of funds</td><td><span class="tag assum">ASSUM</span> The 11.5% default is a <em>blended</em> cost across the tiers, not a published rate — second-hand and unreconciled to the card above. Treated as paid on all balances, which is deliberately conservative.</td></tr>
      </table>
     </div>
    </details>
@@ -357,8 +358,8 @@ hr.r{border:0; border-top:1px solid var(--line); margin:26px 0}
    <div class="lab">How I would actually make the call</div>
    <h4>Three decisions this model produces, and the data I would need for each</h4>
    <ul>
-    <li><b>Price the yield as a spread, not a number.</b> Quote it against CETES rather than as an absolute %. With Banxico cutting, funding cost falls automatically and we never run a "Nu cut your rate" news cycle. <em>Needs:</em> brand-tracking on how the rate is understood, and whether customers anchor on the number or the ranking.</li>
-    <li><b>Pay up only for money that brings income with it.</b> Base rate for everyone; the premium tier requires a recurring inbound and is capped at a balance ceiling. <em>Needs:</em> balance sensitivity by segment, from a geographic rate holdout — not a single blended figure. The one number I would most want on day 1.</li>
+    <li><b>Quote a spread, not a number.</b> "13% fija" forces us to announce every cut — January's produced <em>"ganarás menos por tus ahorros"</em> (Expansión) and <em>"pésimas noticias para clientes Nu"</em> (Xataka). Against CETES, cost falls as Banxico moves with no headline. <em>Needs:</em> whether customers anchor on the number or on the ranking.</li>
+    <li><b>Fix the gate, not the size of the premium.</b> The tier, the MX$25,000 cap and a behavioural gate all exist already. But one card purchase a month proves the customer is alive, not that they bank with us. Re-point the 13% at income landing, and scale the cap with income deposited. <em>Needs:</em> balance sensitivity by segment from a geographic holdout — the one number I would most want on day 1.</li>
     <li><b>Stop treating deposit growth as a goal.</b> At 35% LDR, deposits above what we can deploy are a cost line wearing a growth metric's clothes. <em>Needs:</em> LTV by acquisition source, split yield-acquired vs. income-acquired, which I would expect to differ by more than the rate does.</li>
    </ul>
   </div>
