@@ -1,0 +1,9 @@
+# The deck is a single self-contained page; publish it as-is.
+[build]
+  publish = "public"
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
