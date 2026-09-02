@@ -265,10 +265,40 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
     </div>
     <div class="card" data-step="2">
       <div class="eb" style="color:var(--nu-ink);margin-bottom:6px">Nu's problem</div>
-      <h3>Deposits we pay for and cannot deploy.</h3>
-      <p style="font-size:14px;margin-top:4px"><b>US$5.7bn of deposits, 35% lent.</b> Two-thirds parked in securities earning roughly the policy rate — while we pay above it to hold them.</p>
-      <span class="why">And the two cheap levers are already spent: Banxico ended its cutting cycle in May and consensus has it flat at 6.50% through 2027, so the curve is not coming to help — and Q2 already ran deposit optimisation, shrinking the book deliberately to improve funding cost.</span>
-      <div class="do">The next leg cannot come from paying less.</div>
+      <p style="font-size:14.5px"><b>US$5.7bn of deposits — only 35% of it lent.</b> The rest sits in securities earning less than the base rate we pay to hold it.</p>
+      <h3 style="margin-top:12px">We are paying for deposits we cannot deploy.</h3>
+      <div class="do" style="margin-top:6px">And the cheap levers are spent.</div>
+      <svg class="draw" viewBox="0 0 540 286" role="img" aria-label="Of a 5.7 billion dollar deposit book, 35 percent — 2.0 billion — is lent, and 65 percent — 3.7 billion — is parked in securities earning 6.49 percent against a base funding cost of 7.00 percent, a negative carry. Both cheap levers are spent: cutting the rate, because Banxico is flat through 2027, and shrinking the book, already run in the second quarter." style="margin-top:12px">
+        <g class="node">
+          <rect x="20" y="34" width="172" height="66" rx="9" fill="var(--nu)"/>
+          <text x="106" y="60" font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="#fff" text-anchor="middle">35% LENT</text>
+          <text x="106" y="78" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">$2.0bn</text>
+          <text x="106" y="93" font-family="Inter,sans-serif" font-size="10.5" fill="#fff" opacity=".8" text-anchor="middle">working</text>
+        </g>
+        <g class="node" style="transition-delay:.25s">
+          <rect x="196" y="34" width="324" height="66" rx="9" fill="var(--c5)" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <text x="358" y="60" font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="var(--ink)" text-anchor="middle">65% PARKED IN SECURITIES</text>
+          <text x="358" y="78" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="var(--ink)" text-anchor="middle">$3.7bn</text>
+          <text x="358" y="93" font-family="Inter,sans-serif" font-size="10.5" fill="var(--ink2)" text-anchor="middle">idle</text>
+        </g>
+        <g class="node" style="transition-delay:.5s" font-family="Inter,sans-serif" text-anchor="middle">
+          <path d="M358 104 L358 118" stroke="var(--coral)" stroke-width="1.5"/>
+          <text x="358" y="136" font-size="12.5" fill="var(--ink2)">earns <tspan font-weight="700" fill="var(--ink)">6.49%</tspan> · we pay <tspan font-weight="700" fill="var(--ink)">7.00%</tspan> to hold it</text>
+          <rect x="272" y="146" width="172" height="25" rx="12.5" fill="var(--coral)" opacity=".9"/>
+          <text x="358" y="163" font-size="12" font-weight="700" fill="#3a1a10">Negative carry, at best</text>
+        </g>
+        <g class="node" style="transition-delay:.75s" font-family="Inter,sans-serif">
+          <text x="20" y="206" font-size="10.5" font-weight="700" letter-spacing="1.6" fill="var(--muted)">THE TWO CHEAP FIXES</text>
+          <rect x="20" y="218" width="244" height="52" rx="11" fill="none" stroke="var(--hair)" stroke-width="1.5"/>
+          <text x="38" y="240" font-size="13" font-weight="700" fill="var(--muted)">Cut what we pay</text>
+          <path d="M36 235 L140 235" stroke="var(--coral)" stroke-width="1.8"/>
+          <text x="38" y="257" font-size="11" fill="var(--muted)">Banxico flat at 6.50% to 2027</text>
+          <rect x="276" y="218" width="244" height="52" rx="11" fill="none" stroke="var(--hair)" stroke-width="1.5"/>
+          <text x="294" y="240" font-size="13" font-weight="700" fill="var(--muted)">Shrink the book</text>
+          <path d="M292 235 L401 235" stroke="var(--coral)" stroke-width="1.8"/>
+          <text x="294" y="257" font-size="11" fill="var(--muted)">already run in Q2</text>
+        </g>
+      </svg>
     </div>
   </div>
   <div class="band" data-step="3" style="margin-top:14px"><b>Both problems have the same cause — and the licence is the first answer to either.</b> Nu can see what sixteen million people <i>spend</i>, never what they <i>earn</i>. As a bank we can finally host their income, insure it to 400,000 UDIs, and hold the whole relationship in one place instead of four apps. <b>That consolidation is the agency:</b> an institution that sees everything can price on everything.</div>
