@@ -139,42 +139,37 @@ function foot(s,t){
 
 /* ---------- 5 BUNDLES ---------- */
 { const s=S(); light(s);
-  head(s,'2.1.1  Mass-market bundles','The tiering already exists. Three things I would change.',false);
-  s.addText('Published rate card, in force 10 August to 7 October 2026',
-    {x:M,y:1.9,w:6.3,h:0.3,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12,italic:true,color:MUTED});
-  s.addTable([[{text:'Product',options:{bold:true,color:MUTED,fontSize:10.5}},
-               {text:'Rate',options:{bold:true,color:MUTED,fontSize:10.5}},
-               {text:'Condition',options:{bold:true,color:MUTED,fontSize:10.5}}],
-     [{text:'Cajita 24/7',options:{bold:true,color:INK,fontSize:12}},
-      {text:'6.50%',options:{bold:true,color:INK,fontSize:12}},
-      {text:'None — and CETES is 6.49%',options:{color:BODY,fontSize:11}}],
-     [{text:'Cajita Turbo',options:{bold:true,color:PURPLE,fontSize:12}},
-      {text:'13.00%',options:{bold:true,color:PURPLE,fontSize:12}},
-      {text:'Capped at MX$25,000 · one card purchase a month',options:{color:BODY,fontSize:11}}],
-     [{text:'Ahorro Congelado',options:{bold:true,color:INK,fontSize:12}},
-      {text:'6.55–6.80%',options:{bold:true,color:INK,fontSize:12}},
-      {text:'By term',options:{color:BODY,fontSize:11}}]],
-    {x:M,y:2.28,w:6.3,colW:[1.75,1.15,3.4],border:{type:'solid',color:LINE,pt:1},
-     fontFace:TEXT,rowH:0.46,valign:'middle',margin:0.09,fill:{color:'FFFFFF'}});
-  card(s,M,4.35,6.3,1.9,PURPLE_PALE);
-  s.addText('The tiering, the cap and the behavioural gate are already built.',
-    {x:M+0.3,y:4.55,w:5.75,h:0.44,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13.5,bold:true,color:INK,lineSpacing:18});
-  s.addText('The base tier already sits at the risk-free rate, and Turbo was already cut from 15% to 13% in January. The unsolved problem is not whether to have a premium tier. It is which gate and which cap.',
-    {x:M+0.3,y:5.02,w:5.75,h:1.1,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12.5,color:BODY,lineSpacing:17});
+  head(s,'2.1.1  Mass-market bundles','One bundle, two tiers, two doors into the same tier',false);
+  s.addText([{text:'You already price by tier — Cajita 24/7 at 6.50% and Cajita Turbo at 13% capped at MX$25,000 on one card purchase a month. ',options:{color:MUTED}},
+             {text:'This is that architecture, re-anchored on income. Budget-neutral at launch: both tiers reproduce today’s published rates.',options:{bold:true,color:INK}}],
+    {x:M,y:1.86,w:12.11,h:0.5,isTextBox:true,margin:0,fontFace:TEXT,fontSize:12.5,lineSpacing:17});
 
-  const dd=[['Change the gate.','One card purchase a month proves the customer is alive, not that they bank with us. It is nearly costless to satisfy and carries almost no information. Gate the premium on income landing instead.'],
-            ['Change the cap.','A flat MX$25,000 gives every customer an identical yield subsidy regardless of what they bring. Scale the cap with income deposited — roughly one month of it.'],
-            ['Change the quote.','“13% fija” forces us to announce every cut. January’s produced “ganarás menos por tus ahorros” and “pésimas noticias para clientes Nu”. A spread over CETES reprices silently as Banxico moves.']];
-  card(s,7.15,1.9,5.58,4.35,'FAF8FD');
-  s.addText('What I would change',{x:7.43,y:2.1,w:5.0,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:15,bold:true,color:INK});
-  dd.forEach((d,i)=>{
-    const y=2.55+i*1.22;
-    s.addText((i+1).toString(),{x:7.43,y,w:0.3,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13,bold:true,color:PURPLE});
-    s.addText(d[0],{x:7.78,y:y-0.02,w:4.6,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13,bold:true,color:INK});
-    s.addText(d[1],{x:7.78,y:y+0.3,w:4.6,h:0.9,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,color:BODY,lineSpacing:15});
-  });
-  foot(s,'Brazil runs the same architecture — a capped, boosted box, quoted as 120% of CDI. The capped box is the group pattern; the gate and the quoting convention are what differ. Rates as published, 10 Aug 2026.');
-  s.addNotes('Critical: do NOT propose tiering, capping or behavioural gating as new ideas. Diego owned this product and all three already exist. The contribution is which gate and which cap.');
+  s.addTable([[{text:'',options:{fill:{color:'FFFFFF'}}},
+               {text:'Nu',options:{bold:true,fontSize:14,color:INK,fontFace:HEAD}},
+               {text:'Nu Nómina',options:{bold:true,fontSize:14,color:PURPLE,fontFace:HEAD}}],
+     [{text:'How you qualify',options:{bold:true,color:MUTED,fontSize:11}},{text:'Anyone',options:{color:BODY,fontSize:11.5}},{text:'Income lands here — payslip or observed',options:{color:INK,fontSize:11.5,bold:true}}],
+     [{text:'Yield',options:{bold:true,color:MUTED,fontSize:11}},{text:'CETES, matched',options:{color:BODY,fontSize:11.5}},{text:'CETES + 6.5, capped at one month of income',options:{color:INK,fontSize:11.5,bold:true}}],
+     [{text:'Credit line',options:{bold:true,color:MUTED,fontSize:11}},{text:'Bureau-thin, score-based',options:{color:BODY,fontSize:11.5}},{text:'Sized on the income we can see',options:{color:INK,fontSize:11.5,bold:true}}],
+     [{text:'Card payment',options:{bold:true,color:MUTED,fontSize:11}},{text:'Autopay available',options:{color:BODY,fontSize:11.5}},{text:'Payday-aligned autopay',options:{color:INK,fontSize:11.5,bold:true}}],
+     [{text:'Rewards',options:{bold:true,color:MUTED,fontSize:11}},{text:'Nu+ as today',options:{color:BODY,fontSize:11.5}},{text:'Nu+ doubled on recargas and basic services',options:{color:INK,fontSize:11.5,bold:true}}],
+     [{text:'Protection',options:{bold:true,color:MUTED,fontSize:11}},{text:'—',options:{color:BODY,fontSize:11.5}},{text:'Micro life and unemployment cover',options:{color:INK,fontSize:11.5,bold:true}}],
+     [{text:'Fees, minimums',options:{bold:true,color:MUTED,fontSize:11}},{text:'None',options:{color:BODY,fontSize:11.5}},{text:'None',options:{color:BODY,fontSize:11.5}}]],
+    {x:M,y:2.5,w:7.3,colW:[1.7,2.3,3.3],border:{type:'solid',color:LINE,pt:1},
+     fontFace:TEXT,rowH:0.4,valign:'middle',margin:0.08,fill:{color:'FFFFFF'}});
+
+  card(s,8.15,2.5,4.58,3.5,'FAF8FD');
+  s.addText('Assembled, not built',{x:8.43,y:2.7,w:4.0,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:15,bold:true,color:INK});
+  s.addText('ALREADY IN THE APP',{x:8.43,y:3.08,w:4.0,h:0.24,isTextBox:true,margin:0,fontFace:HEAD,fontSize:9,bold:true,charSpacing:1.1,color:MUTED});
+  s.addText('Cuenta Nu and debit · Cajitas · credit and secured cards · personal loans · Nu+ points · recargas from 30+ carriers · card autopay',
+    {x:8.43,y:3.3,w:4.0,h:0.75,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11,color:BODY,lineSpacing:14.5});
+  s.addText('UNLOCKED BY THE LICENCE',{x:8.43,y:4.12,w:4.0,h:0.24,isTextBox:true,margin:0,fontFace:HEAD,fontSize:9,bold:true,charSpacing:1.1,color:PURPLE});
+  s.addText('Payroll hosting · portability · IPAB cover · higher deposit limits · investments',
+    {x:8.43,y:4.34,w:4.0,h:0.5,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11,color:BODY,lineSpacing:14.5});
+  s.addText('Every component of the base tier already exists. The bundle is an assembly and a re-anchoring, not a build — which is why it can ship inside the licence window.',
+    {x:8.43,y:4.95,w:4.05,h:0.95,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,color:INK,lineSpacing:15});
+
+  foot(s,'Derived: US$5.7B across 16M customers averages ~US$355 a head, so a flat MX$25,000 cap binds only on the high-balance tail — precisely the money we least want to pay 13% for.');
+  s.addNotes('Do NOT present tiering, a cap or a behavioural gate as new ideas — Diego owned this product and all three exist. Lead by saying so. The contribution is the anchor: income landing rather than a card swipe, and a cap that scales with income rather than a flat one. Budget-neutral is the line that makes this sellable to Finance.');
 }
 
 /* ---------- 6 SEQUENCING ---------- */
@@ -207,7 +202,7 @@ function foot(s,t){
 { const s=S(); light(s);
   head(s,'2.1.3  Pricing and yield','Four moves, and the data behind each',false);
   const mv=[['Quote a spread, not a number.','Brazil already quotes its equivalent box as 120% of CDI. México quotes “13% fija”, so every cut must be announced — January’s made headlines. México is the outlier here, not the innovator.'],
-    ['Fix the gate, not the size of the premium.','Further cuts have diminishing returns and real brand cost. Re-point the 13% at income landing rather than at one card purchase a month, and it buys a relationship instead of a pulse.'],
+    ['Fix the gate and the cap, not the size.','Further cuts have diminishing returns and brand cost. Re-point the 13% at income landing rather than one card purchase, and scale the cap with income rather than a flat MX$25,000.'],
     ['Segment balance sensitivity. Never blend it.','Balances that leave per point of rate cut — not the pass-through “deposit beta”. The base is two populations: brand-acquired and near-insensitive, and rate-shoppers. Blending them makes every cut look safe until it is not.'],
     ['Retire “deposit growth” as a goal.','At 35% LDR it is a cost line wearing a growth metric’s clothes. Replace with deployable deposits and cost of funds against TIIE.']];
   mv.forEach((m,i)=>{
@@ -262,7 +257,7 @@ function foot(s,t){
 
 /* ---------- 9 TRACK A ---------- */
 { const s=S(); light(s);
-  head(s,'2.1.4  Product · Track A','Trae tu nómina — the missing input',false);
+  head(s,'2.1.4  Product · Cuenta Nómina','The payroll account, and why it holds',false);
   const yy=1.88;
   stat(s,M,yy,2.7,'22.76M','FORMAL JOBS (IMSS)','record, July 2026');
   stat(s,M+3.05,yy,2.7,'~36%','OF ADULTS HAVE ONE','a payroll account at all');
@@ -270,19 +265,61 @@ function foot(s,t){
   stat(s,M+9.15,yy,2.9,'11 days','TO PORT ONE','free, by law, worker-initiated',GREEN);
 
   const cw=3.9, cy=3.5, ch=2.78;
-  const cards=[[M,'The wedge',PURPLE_PALE,
-    'Portabilidad de nómina is the worker’s legal right. Banks cannot charge for it and cannot refuse. No employer sale required.\n\nThe incumbent moat is a corporate contract signed years ago. Portability makes it irrelevant — the decision belongs to the worker.'],
-   [M+cw+0.2,'The loop is already built','FAF8FD',
-    'Autopay already debits the Nu account. The Turbo yield gate already requires monthly card activity. Nu+ points already route back into a Cajita. Customers already choose their own payment due date.\n\nNómina is not a new business line. It is the missing input to a machine that is already running.'],
-   [M+2*(cw+0.2),'Payday-aligned autopay','FAF8FD',
-    'We have autopay. We have a selectable due date. What we do not have is knowing when payday is — income landing supplies exactly that.\n\nDebit one day after the observed payday and delinquency falls. That is crédito de nómina economics without employer deduction — reached through data, not a corporate contract.']];
+  const cards=[[M,'What it is',PURPLE_PALE,
+    'A payroll account you switch to in the app, in minutes, without telling your employer. Portability is the worker’s legal right: free, and the transfer begins within 11 business days.\n\nTu sueldo, disponible el día que llega · Una línea que crece con tu sueldo · Tu tarjeta se paga sola el día después de tu quincena · Sin comisiones, sin saldo mínimo · Protegida por el IPAB'],
+   [M+cw+0.2,'Why they switch','FAF8FD',
+    'Nine in ten payroll accounts sit with big banks that charge fees, require minimums, and gate the credit attached to them on the bureau. We charge nothing, and we size credit on the salary we can now see.\n\nAnd the switch needs no employer conversation — which is the only reason a challenger can win this at all.'],
+   [M+2*(cw+0.2),'Why it holds','FAF8FD',
+    'The moat is not the rate. Autopay already debits the account; the customer already picks a due date; points already route into a Cajita. Add the salary, align the debit to the day after payday, and size the line on that income.\n\nLeaving now costs the customer their line. A rate never did that.']];
   cards.forEach(c=>{
     card(s,c[0],cy,cw,ch,c[2]);
     s.addText(c[1],{x:c[0]+0.28,y:cy+0.2,w:cw-0.5,h:0.34,isTextBox:true,margin:0,fontFace:HEAD,fontSize:14.5,bold:true,color:c[2]===PURPLE_PALE?PURPLE:INK});
     s.addText(c[3],{x:c[0]+0.28,y:cy+0.6,w:cw-0.5,h:2.0,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11.5,color:BODY,lineSpacing:15.5});
   });
-  foot(s,'Metric: completed first salary landings, never requests. The 11-day gap is where the funnel leaks — naming a date is the retention mechanic, not polish.');
-  s.addNotes('The third card is the strongest thing in the deck. Do not rush it. Both components already exist in the product — the only missing input is knowledge of payday, which is precisely what income landing provides. It also happens to improve Card\u2019s P&L rather than mine, which is what makes it tradeable.');
+  foot(s,'Only a bank can host payroll. This is the licence’s one non-copyable asset until Mercado Pago and Klar are licensed — which is what makes the next twelve months the whole strategy.');
+  s.addNotes('The third card is the moat argument and the one to land: every mechanism downstream of the salary already exists in the product. Payday-aligned autopay needs one missing input, knowledge of payday, which income landing supplies. It improves Card’s P&L rather than mine, which is what makes it tradeable on the alignment slide.');
+}
+
+/* ---------- 9b PLAN TO WIN ---------- */
+{ const s=S(); light(s);
+  head(s,'2.1.4  Product · Cuenta Nómina','The plan to win: query first, sales motion last',false);
+  const fn=[['Detected','recurring inbound from a bank CLABE',false],['Offered','in-app, no employer involved',false],
+            ['Requested','portability filed',false],['Landed','first salary arrives',true],['Principal','two consecutive cycles',false]];
+  const fw=2.28, fg=0.17;
+  fn.forEach((f,i)=>{
+    const x=M+i*(fw+fg);
+    s.addShape(P.ShapeType.roundRect,{x,y:1.88,w:fw,h:0.8,rectRadius:0.06,fill:{color:f[2]?PURPLE:'FAF8FD'},line:{color:f[2]?PURPLE:LINE,width:1}});
+    s.addText(f[0],{x:x+0.16,y:1.97,w:fw-0.3,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13.5,bold:true,color:f[2]?'FFFFFF':INK});
+    s.addText(f[1],{x:x+0.16,y:2.28,w:fw-0.3,h:0.34,isTextBox:true,margin:0,fontFace:TEXT,fontSize:10.5,color:f[2]?'EBDDFB':MUTED,lineSpacing:13});
+    if(i<fn.length-1) s.addText('›',{x:x+fw+0.02,y:2.08,w:fg,h:0.4,isTextBox:true,margin:0,align:'center',fontFace:HEAD,fontSize:18,color:LINE});
+  });
+
+  const ph=[['PHASE 0 · WEEKS 1–8','Query, don’t build','Customers already showing a fixed, recurring inbound from a bank CLABE. No new infrastructure — the first version is a query.'],
+            ['PHASE 1 · WEEKS 8–16','The switch','Portability flow, the 11-day tracking screen, monitoring of the old account. Ship to the detected cohort only.'],
+            ['PHASE 2 · MONTHS 4–9','The second door','Observed income — remittances, platform payouts, deposit rhythm — reaches the identical tier. Same terms, different proof.'],
+            ['PHASE 3 · MONTHS 10–24','Employers, last','Only after consumer pull has proved demand. Leading with an HR sales motion is how a challenger loses this market.']];
+  const pw=2.92, pg=0.14, py=2.92, phh=1.9;
+  ph.forEach((p,i)=>{
+    const x=M+i*(pw+pg);
+    card(s,x,py,pw,phh,i===0?PURPLE_PALE:'FAF8FD');
+    s.addText(p[0],{x:x+0.24,y:py+0.18,w:pw-0.45,h:0.24,isTextBox:true,margin:0,fontFace:HEAD,fontSize:9,bold:true,charSpacing:1,color:i===0?PURPLE:MUTED});
+    s.addText(p[1],{x:x+0.24,y:py+0.44,w:pw-0.45,h:0.32,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13.5,bold:true,color:INK});
+    s.addText(p[2],{x:x+0.24,y:py+0.8,w:pw-0.45,h:1.05,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11,color:BODY,lineSpacing:14.5});
+  });
+
+  card(s,M,5.02,12.11,1.55,'FAF8FD');
+  s.addText('Where it leaks, and what I would do about it',{x:M+0.28,y:5.18,w:8,h:0.3,isTextBox:true,margin:0,fontFace:HEAD,fontSize:13.5,bold:true,color:INK});
+  const rk=[['The 11-day gap. ','Name the date, show the steps, watch the old account. That is the retention mechanic.'],
+            ['“Will my employer know?” ','They don’t need to. Say it on the screen where the request is made.'],
+            ['Payroll providers routing around the CLABE. ','Detect the failed landing and handle it case by case — by hand at first.'],
+            ['Bust-out on a new line. ','Stage limits, short tenors, progression rather than jumps.']];
+  rk.forEach((r,i)=>{
+    const x=M+0.28+(i%2)*6.0, y=5.55+Math.floor(i/2)*0.47;
+    s.addText([{text:r[0],options:{bold:true,color:INK}},{text:r[1],options:{color:BODY}}],
+      {x,y,w:5.75,h:0.44,isTextBox:true,margin:0,fontFace:TEXT,fontSize:11,lineSpacing:14});
+  });
+  foot(s,'The only metric that counts is Landed. Requests are vanity; the deposit arriving is the event that changes the balance sheet. The second metric is cycles retained.');
+  s.addNotes('Phase 0 is the credibility move: it costs nothing and produces evidence inside two months. If asked how large the detected cohort is, say you cannot know from outside and it is the first query you would run — some share of 16M customers already show a payroll pattern in their inbound SPEI.');
 }
 
 /* ---------- 10 TRACK B ---------- */

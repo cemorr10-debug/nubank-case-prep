@@ -1,6 +1,6 @@
 # Deck Script — Core México Business Case
 **30 min present · 30 min Q&A · English · Fri 4 Sept, 8:00**
-15 slides + appendix. Timings in the right margin sum to 29 min with a 1-min buffer.
+18 slides incl. close + appendix. Timings sum to ~30:15 — tight by design; the cut-order in the Q&A drill handles overrun.
 
 `[PENDING]` = needs your personal example. `[ASSUM]` = say the word "assumption" out loud.
 
@@ -23,7 +23,7 @@ demo both, and every assumption in the model is a slider you can move while I'm 
 
 ---
 
-## 2 · We're already past the starting line  ·  *2:00*
+## 2 · We're already past the starting line  ·  *1:30*
 
 **Slide:**
 - CNBV authorised **10 July**. Nu México has operated as a **bank since 6 August 2026** — 27 days.
@@ -45,7 +45,7 @@ seconds, then move — don't linger or it reads as a gotcha.
 
 ---
 
-## 3 · The number that should be running the roadmap  ·  *3:00*
+## 3 · The number that should be running the roadmap  ·  *2:30*
 
 **Slide:** 16M customers · US$5.7B deposits · **35% loan-to-deposit** · broke even Q1'26 ·
 ARPAC $17.10 · deposits deliberately shrinking
@@ -66,7 +66,7 @@ challenges it, that's the cue to open the simulator early — it survives 15% an
 
 ---
 
-## 4 · The core value proposition  ·  *3:00*
+## 4 · The core value proposition  ·  *2:00*
 
 > ## *"La cuenta donde llega tu dinero."*
 > **The account your money arrives in — not the one it sits in.**
@@ -87,45 +87,42 @@ habit. A rate is a price.** Habits are defensible; prices aren't."
 
 ---
 
-## 5 · Mass-market bundles — what already exists, and what I would change  ·  *3:00*
+## 5 · The mass-market bundle  ·  *2:30*
 
-> ⚠️ **The most dangerous slide in the deck.** Nu already prices by tier, already caps the
-> premium, and already gates it on a behaviour. Diego owned this product. Proposing any of
-> those three as new ideas is the worst thing you could do in this room.
+**Open by naming what exists — one sentence, then move:**
+> *"You already price by tier: Cajita 24/7 at 6.50%, Cajita Turbo at 13% capped at
+> twenty-five thousand on one card purchase a month. This is that architecture, re-anchored
+> on income. And it is budget-neutral at launch — both tiers reproduce today's published
+> rates, quoted relatively."*
 
-**Published rate card, in force 10 Aug – 7 Oct 2026:**
-
-| Product | Rate | Condition |
+| | **Nu** | **Nu Nómina** |
 |---|---|---|
-| Cajita 24/7 | **6.50%** | none — and CETES 28d is **6.49%** |
-| Cajita Turbo | **13.00%** fija | **capped MX$25,000** · **one card purchase a month** |
-| Ahorro Congelado | 6.55–6.80% | by term |
+| How you qualify | Anyone | **Income lands here — payslip or observed** |
+| Yield | CETES, matched | **CETES + 6.5, capped at one month of income** |
+| Credit line | Bureau-thin, score-based | **Sized on the income we can see** |
+| Card payment | Autopay available | **Payday-aligned autopay** |
+| Rewards | Nu+ as today | **Nu+ doubled on recargas and basic services** |
+| Protection | — | **Micro life and unemployment cover** |
+| Fees, minimums | None | None |
 
-Turbo was 15% until **5 January 2026**.
+**Assembled, not built.** Every component of the base tier already exists in the app —
+Cuenta Nu and debit, Cajitas, credit and secured cards, personal loans, Nu+ points, recargas
+from 30+ carriers, card autopay. The licence adds payroll hosting, portability, IPAB cover,
+higher limits and investments. *"The bundle is an assembly and a re-anchoring, not a build —
+which is why it can ship inside the licence window."*
 
-**Say:** "Before I propose anything on pricing — you already price by tier, you already cap
-the premium at twenty-five thousand pesos, and you already gate it on a behaviour. Your
-base tier is sitting one basis point above CETES. So the open question isn't whether to
-have a premium tier. It's **which gate and which cap.**"
+**The cap argument, if asked:** US$5.7B across 16M customers averages about US$355 a head,
+so a flat MX$25,000 cap binds only on the high-balance tail — precisely the money we least
+want to pay 13% for. Scaling the cap to income redirects that subsidy without raising it.
 
-**Three changes:**
+**One tier, two doors:** documented income and observed income reach *identical* terms.
+That is the inclusion argument and the fairness argument at once.
 
-1. **Change the gate.** One card purchase a month proves the customer is *alive*, not that
-   they bank with you. It is nearly costless to satisfy and carries almost no information.
-   **Gate the premium on income landing instead** — then the 13% buys a relationship rather
-   than a pulse.
-2. **Change the cap.** A flat MX$25,000 gives every customer an identical yield subsidy
-   regardless of what they bring. **Scale it with income deposited** — roughly one month of
-   it — so the yield budget follows the relationship.
-3. **Change the quote.** "13% fija" forces you to *announce* every cut. January's produced
-   *"ganarás menos por tus ahorros"* (Expansión) and *"Pésimas noticias para clientes Nu
-   México"* (Xataka). **A spread over CETES reprices silently** as Banxico moves.
+**Do not** present tiering, a cap, or a behavioural gate as new ideas. Diego owned this
+product. The contribution is the *anchor* — income landing rather than a card swipe — and
+"budget-neutral" is the line that makes it sellable to Finance.
 
-**One tier, two doors:** documented income and observed income must reach identical terms.
-That is the inclusion argument and the fairness argument at once — if the informal tier is
-not a lower tier, there is no disparate outcome to explain.
-
-## 6 · Sequencing — 24 months  ·  *4:00*
+## 6 · Sequencing — 24 months  ·  *2:30*
 
 **Ordering principle, state it first:** *the only thing that expires is licence exclusivity.*
 Anything a licensed competitor could also do goes later. Anything only we can do right now
@@ -152,7 +149,7 @@ goes first.
 
 ---
 
-## 7 · Pricing framework  ·  *3:00*
+## 7 · Pricing framework  ·  *2:30*
 
 **Four moves:**
 
@@ -200,40 +197,62 @@ is a one-time harvest with rising risk; income visibility compounds."**
 
 ---
 
-## 9 · Track A — *Trae tu nómina*  ·  *4:00*  ·  **PROTOTYPE**
-
-> **The reframe that makes this ask small:** the loop is already built. Autopay already
-> debits the Nu account. The Turbo yield gate already requires monthly card activity. Nu+
-> points already route back into a Cajita. Customers already choose their own payment due
-> date. **Nómina is not a new business line — it is the missing input to a machine that is
-> already running.**
-
-**The product this unlocks — payday-aligned autopay:**
-Nu has autopay. Nu lets the customer pick their due date. What Nu does *not* have is
-knowledge of **when payday is** — which is exactly what income landing supplies. Debit one
-day after the observed payday and the successful-autopay rate rises while delinquency falls.
-That is **crédito de nómina economics without employer deduction** — what BBVA's and
-Banorte's payroll-lending moat is built on, reached through data instead of a contract.
-It works identically for Track B: an observed remittance rhythm is a payday like any other.
+## 9 · Cuenta Nómina — the proposition  ·  *2:30*  ·  **PROTOTYPE**
 
 - 22.76M IMSS formal jobs · ~36% of adults hold a payroll account · **~90% of those sit with
-  a handful of big banks**
-- **The wedge:** portability is the *worker's* legal right, banks cannot charge for it, and
-  it completes in **11 business days**. No employer sale required.
-- **Sell the credit line, not the rate.** The rate attracts the deposits we least want.
-- **The metric is completed first salary landings.** Requests are vanity; the deposit
-  arriving is the event that moves the balance sheet.
-- **The risk is the 11-day gap** — a long silence after an irreversible-feeling decision.
-  Naming a date, showing the steps and watching the old account *is* the retention mechanic.
+  a handful of big banks** · portability completes in **11 business days**, free, by law
 
-**Say:** "The incumbent moat here is a corporate contract signed years ago. Portability makes
-it irrelevant, because the decision belongs to the worker. This is the same consumer-pull
-move Nu used against card incumbents in Brazil — and it's the one play that stops working
-the day Mercado Pago is licensed."
+**What it is:** *"A payroll account you switch to in the app, in minutes, without telling
+your employer."* Then the promises, in the customer's language:
+- *Tu sueldo, disponible el día que llega* — no hold
+- *Una línea que crece con tu sueldo* — sized on income we can see, grows with a streak
+- *Tu tarjeta se paga sola, el día después de tu quincena*
+- *Sin comisiones, sin saldo mínimo*
+- *Protegida por el IPAB*
+
+**Why they switch:** nine in ten payroll accounts sit with big banks that charge fees,
+require minimums, and gate the attached credit on the bureau. We charge nothing and size
+credit on the salary we can now see. And the switch needs no employer conversation — *"which
+is the only reason a challenger can win this at all."*
+
+**Why it holds — this is the beat to land:** the moat is not the rate. Autopay already
+debits the account; the customer already picks a due date; points already route into a
+Cajita. Add the salary, align the debit to the day after payday, size the line on that
+income — and **leaving now costs the customer their line. A rate never did that.**
+
+**Say:** "Only a bank can host payroll. This is the licence's one non-copyable asset until
+Mercado Pago and Klar are licensed — which is what makes the next twelve months the whole
+strategy."
 
 ---
 
-## 10 · Track B — *Ingreso observado*  ·  *4:00*  ·  **PROTOTYPE**
+## 9b · The plan to win  ·  *2:00*
+
+**The funnel, and the only metric that counts:**
+Detected → Offered → Requested → **Landed** → Principal (two consecutive cycles)
+
+*"Requests are vanity. The deposit arriving is the event that changes the balance sheet."*
+
+| Phase | When | What |
+|---|---|---|
+| **0 — Query, don't build** | weeks 1–8 | Customers already showing a fixed recurring inbound from a bank CLABE. No new infrastructure. |
+| **1 — The switch** | weeks 8–16 | Portability flow, the 11-day tracking screen, monitoring of the old account. Detected cohort only. |
+| **2 — The second door** | months 4–9 | Observed income reaches the identical tier. Same terms, different proof. |
+| **3 — Employers, last** | months 10–24 | Only after consumer pull has proved demand. |
+
+**Where it leaks, and what I'd do:**
+- **The 11-day gap** → name the date, show the steps, watch the old account. That *is* the
+  retention mechanic.
+- **"Will my employer know?"** → they don't need to. Say it on the screen where the request
+  is made.
+- **Payroll providers routing around the CLABE** → detect the failed landing, handle it by
+  hand at first.
+- **Bust-out on a new line** → stage limits, short tenors, progression rather than jumps.
+
+**If asked how big the detected cohort is:** you can't know from outside, and it's the first
+query you'd run. Some share of 16M customers already show a payroll pattern in inbound SPEI.
+
+## 10 · Track B — *Ingreso observado*  ·  *2:30*  ·  **PROTOTYPE**
 
 - **55.1% of the workforce is informal — 33.1M people.** A formal-only strategy serves 44.6%
   of workers, in a country where only **37.3% of adults can access formal credit at all**.
@@ -265,7 +284,7 @@ supervisor, which matters now that Nu is CNBV-supervised.
 
 ---
 
-## 11 · Responsible AI — one rule, then the guardrails  ·  *2:00*
+## 11 · Responsible AI — one rule, then the guardrails  ·  *1:30*
 
 > ## Personalisation may only move a price in the customer's favour.
 > AI decides **eligibility, limits, timing and experience.** It never decides that *this*
@@ -292,7 +311,7 @@ constrain the objective than audit the outcome."
 
 ---
 
-## 12 · Team & org design  ·  *2:00*
+## 12 · Team & org design  ·  *1:00*
 
 **The pod** (I'd be the first PM into this structure — treat it as foundational):
 - **Me** — value proposition, bundles, pricing
@@ -313,7 +332,7 @@ constrain the objective than audit the outcome."
 
 ---
 
-## 13 · Alignment without authority  ·  *3:00*
+## 13 · Alignment without authority  ·  *2:00*
 
 **The scenario:** Card's roadmap collides with a bundle on a regulatory clock.
 
@@ -341,7 +360,7 @@ I wouldn't try to win the argument. I'd change what we're arguing about.
 
 ---
 
-## 14 · First six months, and the global conversation  ·  *3:00*
+## 14 · First six months, and the global conversation  ·  *2:00*
 
 **Top 3, in this order:**
 
@@ -372,7 +391,7 @@ credibility on a fight I've already lost is the most expensive thing a local PM 
 
 ---
 
-## 15 · Assumptions, and what I'd want on day one  ·  *1:30*
+## 15 · Assumptions, and what I'd want on day one  ·  *0:45*
 
 **What I assumed** (all in the model as sliders): 25% net credit yield · 28% LDR floor /
 70% ceiling · 45% attach for full deployment · 8% income landing today · headline yield paid

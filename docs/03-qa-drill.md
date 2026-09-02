@@ -261,7 +261,8 @@ credibility arguing that Mexico goes first than arguing that Mexico gets its own
 | Assert any Nu figure as fact | Say the sourcing line in the first minute. Every Nu number is "my read of a public source, treated as an assumption." It costs 15 seconds and it makes every later number safe. |
 
 ## If you're running long
-Cut in this order: slide 12 (org) to 60 seconds → slide 6 (sequencing) to the ordering
-principle plus the H1 bullets → slide 5 (bundles) to the table with no commentary.
-**Never cut:** slide 3 (diagnosis), slide 8 (live demo), slide 11 (the AI rule), the
-payday-aligned autopay card on slide 9, or the Crece/+10% beat on slide 10.
+Cut in this order: slide 13 (org) to 45 seconds → slide 10 (plan to win) to the funnel
+line and phase 0 only → slide 6 (sequencing) to the ordering principle plus the H1 bullets.
+**Never cut:** slide 3 (diagnosis), slide 5 (the bundle — it's the JD's first bullet),
+slide 8 (live demo), the "why it holds" card on slide 9, slide 12 (the AI rule), or the
+−1.43% beat on slide 11.
