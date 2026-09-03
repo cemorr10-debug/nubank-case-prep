@@ -146,6 +146,15 @@ body.anim .slide.in .lad.grow .rung{animation:growup .95s cubic-bezier(.2,.7,.2,
 .fwsvg .arc{stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 1s ease}
 .slide.in .fwsvg .arc{stroke-dashoffset:0}
 @media(max-width:900px){.fw{height:auto}.fwn{position:static;margin-bottom:12px}.fwsvg{display:none}}
+.opt{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;background:var(--surface);border:1px solid var(--hair);border-radius:16px;overflow:hidden;box-shadow:var(--sh)}
+.opt th,.opt td{padding:9px 12px;text-align:left;vertical-align:top;line-height:1.38;border-bottom:1px solid var(--hair)}
+.opt tr:last-child td{border-bottom:none}
+.opt th{font-family:'Fraunces',serif;font-size:15.5px;font-weight:600;color:var(--ink);background:var(--bg)}
+.opt th:first-child,.opt td:first-child{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);width:13%;padding-top:11px;font-family:'Inter',sans-serif}
+.opt th.rec{background:var(--c3);color:var(--nu-ink)}
+.opt td.rec{background:rgba(130,10,209,.05)}
+.opt .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--nu-ink);background:var(--c3);padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
+.opt .no{color:var(--coral-ink)}.opt .yes{color:var(--good)}
 /* journey */
 .jr{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
 @media(max-width:900px){.jr{grid-template-columns:1fr}}
@@ -740,39 +749,24 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
 <section class="slide dense"><div class="w">
   <div class="eb rise">Yield strategy &amp; mass-market pricing · Q3</div>
   <h2 class="rise">Every turn of the flywheel makes us better at pricing.</h2>
-  <p class="lede rise" style="--d:120ms;font-size:15px;margin-top:-4px;margin-bottom:12px">The same three questions before every rate decision. The flywheel is what finally lets us answer them.</p>
-  <div class="grid" style="grid-template-columns:1.15fr 0.9fr 1.1fr;gap:14px;align-items:stretch">
-
-    <div class="card" data-step="1" style="display:flex;flex-direction:column">
-      <div class="coltag" style="color:var(--nu-ink)">The questions</div>
-      <div class="q" style="padding-top:2px"><span class="num">1</span><div><b>What do we pay, and what do we make?</b><span class="why">We pay 7%, or 13% on the first $25,000. We make about 25% if we lend it, 6.5% if it sits.</span></div></div>
-      <div class="q"><span class="num">2</span><div><b>What does the customer do to earn it?</b><span class="why">Today, buy a coffee. Tomorrow, land their income here.</span></div></div>
-      <div class="q"><span class="num">3</span><div><b>How risky are they, really?</b><span class="why">We can now see what they earn, whether they climb, and who pays back.</span></div></div>
-    </div>
-
-    <div class="card" data-step="2" style="display:flex;flex-direction:column">
-      <div class="coltag" style="color:var(--good)">The levers</div>
-      <b style="font-size:13.5px;color:var(--nu-ink)">Deposits</b>
-      <ul style="list-style:none;font-size:13.5px;line-height:1.5;margin:4px 0 12px">
-        <li>The rate we pay</li><li>Who qualifies for it</li><li>How much of their money it covers</li><li>Fixed, or tied to the market</li>
-      </ul>
-      <b style="font-size:13.5px;color:var(--good)">Loans</b>
-      <ul style="list-style:none;font-size:13.5px;line-height:1.5;margin:4px 0 0">
-        <li>The starting price</li><li>What earns a lower one</li><li>The limit</li>
-      </ul>
-    </div>
-
-    <div class="card" data-step="3" style="display:flex;flex-direction:column;background:linear-gradient(180deg,var(--c3),var(--surface) 60%)">
-      <div class="coltag" style="color:var(--coral-ink)">The call</div>
-      <b style="font-size:13.5px;color:var(--nu-ink)">Deposits</b>
-      <p style="font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;line-height:1.25;margin:4px 0 14px">13% on one month of your income, for anyone whose income lands here. Tied to the government rate.</p>
-      <b style="font-size:13.5px;color:var(--good)">Loans</b>
-      <p style="font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;line-height:1.25;margin:4px 0 0">One starting price for everyone. Lower risk earns a lower price. Risk sets the limit, and the limit grows.</p>
-    </div>
-
+  <div class="grid g3 rise" style="--d:140ms;gap:10px;margin-top:4px">
+    <div class="card" style="padding:11px 14px"><span class="coltag" style="color:var(--nu-ink);margin-bottom:3px;display:block">Question 1</span><b style="font-size:13.5px">What do we pay, and what do we make?</b><span class="why" style="font-size:12px">7% or 13% paid. 25% if lent, 6.5% if it sits.</span></div>
+    <div class="card" style="padding:11px 14px"><span class="coltag" style="color:var(--nu-ink);margin-bottom:3px;display:block">Question 2</span><b style="font-size:13.5px">What does the customer do to earn it?</b><span class="why" style="font-size:12px">Today, buy a coffee. Tomorrow, land their income.</span></div>
+    <div class="card" style="padding:11px 14px"><span class="coltag" style="color:var(--nu-ink);margin-bottom:3px;display:block">Question 3</span><b style="font-size:13.5px">How risky are they, really?</b><span class="why" style="font-size:12px">We now see income, growth, and who pays back.</span></div>
   </div>
-  <div class="band" data-step="4" style="margin-top:14px;font-size:15.5px"><b style="color:var(--coral-ink)">What we trade.</b> We give up the deposits that only came for the rate, and some margin on the riskiest borrowers, to buy income that stays and customers who climb.</div>
-  <p class="foot" data-step="4" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> Nu México rate card, Sep 2026: 7.00% base, Turbo 13% capped at $25,000 · TIIE de fondeo 7.00% · CETES 28d 6.49% · loan-to-deposit 35%, Nu Holdings Q2 2026. <b>Assumptions.</b> ~25% net lending yield · default result from a prior growth-hub test, effect size only · the 5 January cut from 15% to 13% is the elasticity experiment already in Nu's data; reading it is week one.</p>
+
+  <div class="coltag" data-step="1" style="margin-top:14px;color:var(--coral-ink)">The options for the 13%, and what each one trades</div>
+  <div class="scroll" data-step="1"><table class="opt">
+    <tr><th></th><th>A · Keep it as is</th><th>B · Cut it to 11%</th><th class="rec">C · Gate it on income<span class="tag">Recommended</span></th></tr>
+    <tr><td>What it is</td><td>13% for anyone who buys once a month, on the first $25,000.</td><td>11% on the same terms. Saves 200bp.</td><td class="rec">13% on one month of your income, for anyone whose income lands here. Tied to the government rate.</td></tr>
+    <tr><td>What it costs</td><td class="no">Up to $1,500 per customer a year over the interbank rate, to buy a coffee.</td><td class="yes">Up to $500 per customer a year less.</td><td class="rec yes">The same money we spend today.</td></tr>
+    <tr><td>What it buys</td><td class="no">Activity. Not income, not a bank relationship.</td><td class="no">Nothing new. Fewer deposits at a lower price.</td><td class="rec yes">Income that stays, that we can see, and that we can lend against.</td></tr>
+    <tr><td>What it risks</td><td>Two-thirds of the book stays unlent. The gate stays a coffee.</td><td>Balances leave, competitors match in a week, and it makes the news.</td><td class="rec">Swipe-only customers drop to 7%. Some of them leave.</td></tr>
+    <tr><td>The data that decides</td><td colspan="3"><b>The 5 January cut, 15% to 13%:</b> how many pesos left, by segment. Unread, in our data. · <b>Share of Turbo balances</b> from customers with no income landing. · <b>Loan-to-deposit</b>, 35% today. · <b>Loss rate</b> for income-visible vs not. · <b>Competitor rates</b>: Klar, Stori, Ualá, Mercado Pago.</td></tr>
+  </table></div>
+
+  <div class="band" data-step="2" style="margin-top:12px;font-size:15px"><b>The call is C.</b> And on loans: one starting price for everyone, lower risk earns a lower price, risk sets the limit. <span class="why" style="display:inline">If the January data shows balances are stickier than we think, C gets cheaper still. If they are not, B was never safe either.</span></div>
+  <p class="foot" data-step="2" style="font-size:10.5px;line-height:1.4"><b>Facts.</b> Nu México rate card, Sep 2026: 7.00% base, Turbo 13% capped at $25,000 · TIIE de fondeo 7.00% · CETES 28d 6.49% · loan-to-deposit 35%, Nu Holdings Q2 2026. <b>Assumptions.</b> ~25% net lending yield · $1,500 and $500 are per-customer ceilings on a $25,000 cap · default result from a prior growth-hub test, effect size only.</p>
 </div></section>
 
 <!-- 10 THE CALL -->
