@@ -92,11 +92,13 @@ body.anim .slide.in .tam .fill{width:var(--w)}
 .attrs span{color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding-top:2px}
 .attrs b{font-weight:600;color:var(--ink)}
 .role{color:var(--muted);font-size:12.5px;line-height:1.3;margin-top:5px}
-.ev{background:var(--c4);border-radius:12px;padding:12px 14px;margin:8px 0 4px}
-.ev .v{font-family:'Fraunces',serif;font-size:30px;font-weight:600;line-height:1;color:var(--good);font-variant-numeric:tabular-nums}
+.ev{background:var(--c4);border-radius:12px;padding:10px 13px;margin:6px 0 2px}
+.ev .v{font-family:'Fraunces',serif;font-size:26px;font-weight:600;line-height:1;color:var(--good);font-variant-numeric:tabular-nums}
 .ev .k{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:5px}
-.ev .evq{font-family:'Fraunces',serif;font-style:italic;font-size:13px;line-height:1.35;color:var(--ink);margin-top:10px}
+.ev .evq{font-family:'Fraunces',serif;font-style:italic;font-size:12.5px;line-height:1.3;color:var(--ink);margin-top:8px}
 .ev .evq small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:10.5px;color:var(--muted);margin-top:4px}
+.card.tight .q{padding:5px 2px}
+.card.tight .why{margin-top:2px}
 .coltag{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:9px}
 .tam .sub{color:var(--muted);font-size:11px}
 /* product ladder */
@@ -527,7 +529,7 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
       <div class="gate">Gate · one purchase a month</div>
       <h3>Nu Turbo</h3>
       <ul><li>Cajita Turbo at 13%, capped at $25,000</li></ul>
-      <div class="ft"><b style="color:var(--coral-ink)">The gate buys a coffee.</b> A $20 purchase earns up to $3,250 a year.</div>
+      <div class="ft"><b style="color:var(--coral-ink)">The gate rewards a transaction, not a relationship.</b> One $20 purchase earns up to $3,250 a year.</div>
     </div>
     <div class="rung r3" data-step="3" style="min-height:310px">
       <div class="gate">Gate · your salary lands here</div>
@@ -542,7 +544,7 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
       <div class="ft"><b style="color:#a8f0c6">New.</b> The licence unlocks it.</div>
     </div>
   </div>
-  <div class="band" data-step="4" style="margin-top:20px;font-size:17px"><b>The premium budget does not grow. It moves,</b> from rewarding a swipe to rewarding a salary.</div>
+  <div class="band" data-step="4" style="margin-top:20px;font-size:17px"><b>The premium budget does not grow. It moves,</b> from rewarding a transaction to rewarding a salary.</div>
 </div></section>
 
 <!-- 7 ACT TWO : BETO -->
@@ -597,9 +599,9 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
       <span class="why" style="margin-top:auto;padding-top:12px"><b>Payroll reaches 38%.</b> Observed income reaches the rest.</span>
     </div>
 
-    <div class="card" data-step="3" style="display:flex;flex-direction:column">
+    <div class="card tight" data-step="3" style="display:flex;flex-direction:column">
       <div class="coltag" style="color:var(--good)">The solution · lower risk without a payslip</div>
-      <div class="q" style="padding-top:2px"><span class="num">1</span><div><b>Expose growth, and customers de-risk themselves.</b><span class="why">Show him what raises his line, and every other way to earn: cashback, Nu+ points, refer a friend. The customer who is climbing is the one repaying.</span></div></div>
+      <div class="q" style="padding-top:2px"><span class="num">1</span><div><b>Expose growth, and customers de-risk themselves.</b><span class="why">Show him what raises his line, plus cashback, Nu+ points and referrals. The customer who is climbing is the one repaying.</span></div></div>
       <div class="ev">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
           <div><div class="v">−10.2%</div><div class="k">default rate, relative<br>−1.43 pp, intent-to-treat</div></div>
@@ -608,11 +610,12 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
         <div class="evq">"I want to see my name next to a higher limit. It motivates me to work harder at my job too."<small>A customer in the test. Prior role, effect size only.</small></div>
       </div>
       <div class="q"><span class="num">2</span><div><b>Counterfactual scoring: a promise we can keep.</b><span class="why">A specific next limit, risk-weighted and personal to him. He pays on time, and we honor it.</span></div></div>
-      <div class="q"><span class="num">3</span><div><b>Alternative data, including what he tells us.</b><span class="why">Rollee and Palenca for platform earnings. A Nu agent he can ask how to grow, which learns how the tienda runs. A third signal, never the pipe.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>A Nu agent that turns conversation into underwriting.</b><span class="why">He asks it how to grow. It learns how the tienda runs and when the remesa lands, and maps that to our credit labels. It can only ever unlock.</span></div></div>
+      <div class="q"><span class="num">4</span><div><b>Alternative data.</b><span class="why">Rollee and Palenca for platform earnings. A third signal, never the pipe.</span></div></div>
     </div>
   </div>
   <div class="band" data-step="4" style="margin-top:16px;font-size:16.5px"><b>Expand access to liquidity through the right offer at the right time.</b></div>
-  <p class="foot" data-step="4" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> INEGI ENOE, Q1 2026: 32.6m in informal work (54.8%), of which 17.6m in the informal sector, 7.7m informal jobs in formal firms, government and institutions, 5.2m agriculture, 2.2m paid domestic work · Banxico: remittances US$61.8bn in 2025, 99.1% by electronic transfer.<br><b>Assumptions.</b> Beto is a composite, and his portrait is an illustration · his income figure is illustrative · the default and retention results are from a growth-hub A/B test at a previous employer, México, cited as effect sizes only.</p>
+  <p class="foot" data-step="4" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> INEGI ENOE, Q1 2026: 32.6m in informal work (54.8%), components as shown · Banxico: remittances US$61.8bn in 2025, 99.1% by electronic transfer.<br><b>Assumptions.</b> Beto is a composite; portrait and income are illustrative · test results are from a prior employer, cited as effect sizes only.</p>
 </div></section>
 
 <!-- 8 WHAT THEY GET -->
@@ -755,7 +758,7 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
     <div class="card" data-step="1" style="display:flex;flex-direction:column">
       <div class="coltag" style="color:var(--nu-ink)">The questions</div>
       <div class="q" style="padding-top:2px"><span class="num">1</span><div><b>What do we pay, and what do we make?</b><span class="why">We pay 7%, or 13% on the first $25,000. We make about 25% if we lend it, 6.5% if it sits.</span></div></div>
-      <div class="q"><span class="num">2</span><div><b>What does the customer do to earn it?</b><span class="why">Today, buy a coffee. Tomorrow, land their income here.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>What does the customer do to earn it?</b><span class="why">Today, a single purchase. Tomorrow, their income lands here.</span></div></div>
       <div class="q"><span class="num">3</span><div><b>How risky are they, really?</b><span class="why">We can now see what they earn, whether they climb, and who pays back.</span></div></div>
     </div>
 
@@ -791,12 +794,12 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
   <div class="scroll" data-step="1" style="margin-top:8px"><table class="opt" style="font-size:12.5px">
     <tr><th></th><th>A · Keep it as is</th><th>B · Cut it to 11%</th><th>C · Gate it on income</th><th class="rec">D · Add 15% for income<span class="tag">Recommended</span></th></tr>
     <tr><td>What it is</td><td>13% for anyone who buys once a month, on the first $25,000.</td><td>11% on the same terms.</td><td>13% only for customers whose income lands here, on one month of it.</td><td class="rec">13% stays. Add 15% on one month of income for anyone whose income lands here.</td></tr>
-    <tr><td>What it costs</td><td class="no">Up to $1,500 per customer a year over the interbank rate, to buy a coffee.</td><td class="yes">Up to $500 per customer a year less.</td><td class="yes">The same money we spend today.</td><td class="rec">About $170 a year more per salary customer. 15% on a month's pay costs less than 13% on $25,000.</td></tr>
+    <tr><td>What it costs</td><td class="no">Up to $1,500 per customer a year over the interbank rate, for a single transaction.</td><td class="yes">Up to $500 per customer a year less.</td><td class="yes">The same money we spend today.</td><td class="rec">About $170 a year more per salary customer. 15% on a month's pay costs less than 13% on $25,000.</td></tr>
     <tr><td>What it buys</td><td class="no">Activity. Not income, not a bank relationship.</td><td class="no">Nothing new.</td><td class="yes">Income that stays and can be lent.</td><td class="rec yes">The same income, plus a headline nobody can match. Nobody loses anything. More deposits that stay, so lower loan prices too.</td></tr>
-    <tr><td>What it risks</td><td>Two-thirds of the book stays unlent.</td><td>Balances leave, competitors match, and it makes the news.</td><td>Swipe-only customers drop to 7%. Some leave.</td><td class="rec">The coffee gate survives another year.</td></tr>
+    <tr><td>What it risks</td><td>Two-thirds of the book stays unlent.</td><td>Balances leave, competitors match, and it makes the news.</td><td>Transaction-only customers drop to 7%. Some leave.</td><td class="rec">We keep paying for transactions, not relationships, for another year.</td></tr>
     <tr><td>The data that decides</td><td colspan="4"><b>The 5 January cut, 15% to 13%:</b> how many pesos left, by segment. Unread, in our data. · <b>Share of Turbo balances</b> from customers with no income landing. · <b>Loan-to-deposit</b>, 35% today. · <b>Loss rate</b> for income-visible vs not. · <b>Competitor rates</b>: Klar, Stori, Ualá, Mercado Pago.</td></tr>
   </table></div>
-  <div class="band" data-step="2" style="margin-top:14px;font-size:15.5px"><b>Recommendation: Option D now, Option C by month 12.</b> Launch the 15% while it is pure upside. Once income is landing and the January data is read, trim the swipe tier. <b>And the deposits D brings in are cheaper money, which means cheaper loans.</b></div>
+  <div class="band" data-step="2" style="margin-top:14px;font-size:15.5px"><b>Recommendation: Option D now, Option C by month 12.</b> Launch the 15% while it is pure upside. Once income is landing and the January data is read, trim the transaction tier. <b>And the deposits D brings in are cheaper money, which means cheaper loans.</b></div>
   <p class="foot" data-step="2" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> Nu México rate card, Sep 2026 · TIIE de fondeo 7.00% · CETES 28d 6.49% · loan-to-deposit 35%, Nu Holdings Q2 2026. <b>Assumptions.</b> $1,500 and $500 are per-customer ceilings on a $25,000 cap · $170 is 200bp on an $8,420 monthly salary · the January cut has not yet been read by segment; that analysis is week one.</p>
 </div></section>
 
