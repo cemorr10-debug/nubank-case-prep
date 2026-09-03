@@ -133,6 +133,19 @@ body.anim .slide.in .lad.grow .rung{animation:growup .95s cubic-bezier(.2,.7,.2,
 .rung.r3 h3,.rung.r3 li{color:#fff}
 .rung.r3 li:before{background:#fff}
 .rung.r3 .ft{color:rgba(255,255,255,.82)}
+.slide.dk{background:#150d26}
+.slide.dk h2{color:#fff}
+.slide.dk .eb{color:#c9a8f5}
+.slide.dk .lede{color:rgba(255,255,255,.78)}
+.fw{position:relative;height:440px;max-width:1000px;margin:18px auto 0}
+.fwn{position:absolute;border-radius:18px;overflow:hidden;background:#23163d;border:1.5px solid #7b3fd6;box-shadow:0 24px 48px -24px rgba(0,0,0,.7)}
+.fwh{background:#9a3df0;color:#fff;font-family:'Fraunces',serif;font-size:23px;font-weight:600;text-align:center;padding:18px 16px;line-height:1.1}
+.fwb{padding:14px 18px 16px;font-size:14px;color:#fff;text-align:center;line-height:1.4}
+.fwb span{display:block;margin-top:7px;font-size:12.5px;color:#9fe3bd;font-weight:700}
+.fwsvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.fwsvg .arc{stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 1s ease}
+.slide.in .fwsvg .arc{stroke-dashoffset:0}
+@media(max-width:900px){.fw{height:auto}.fwn{position:static;margin-bottom:12px}.fwsvg{display:none}}
 /* journey */
 .jr{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
 @media(max-width:900px){.jr{grid-template-columns:1fr}}
@@ -683,51 +696,42 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
 </div></section>
 
 <!-- 8b FLYWHEEL -->
-<section class="slide dense"><div class="w">
+<section class="slide dense dk"><div class="w">
   <div class="eb rise">The flywheel</div>
-  <h2 class="rise">Customer value is business value.</h2>
-  <p class="lede rise" style="--d:120ms;font-size:15px;margin-top:-4px;margin-bottom:6px">Every turn lowers risk for Nu and raises agency for the customer.</p>
-  <svg class="draw" viewBox="0 0 1000 548" role="img" aria-label="A flywheel of four stages: income lands at Nu, the right fit, the right path, growth compounds, and back to income landing. At the centre: agency up, risk down." style="max-width:960px;margin:0 auto">
-    <defs><marker id="fwa" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5 0 10z" fill="var(--nu)"/></marker></defs>
-    <g fill="none" stroke="var(--nu)" stroke-width="2.6" opacity=".55" marker-end="url(#fwa)">
-      <path class="arc" d="M636 78 Q 770 78 770 218"/>
-      <path class="arc" style="transition-delay:.3s" d="M770 332 Q 770 470 636 470"/>
-      <path class="arc" style="transition-delay:.6s" d="M364 470 Q 230 470 230 332"/>
-      <path class="arc" style="transition-delay:.9s" d="M230 218 Q 230 78 364 78"/>
-    </g>
-    <g font-family="Inter,sans-serif">
-      <g class="node">
-        <rect x="370" y="6" width="260" height="100" rx="14" fill="var(--c3)"/>
-        <text x="500" y="34" font-size="15.5" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="Fraunces,serif">Income lands at Nu</text>
-        <text x="500" y="58" font-size="11.5" fill="var(--ink2)" text-anchor="middle"><tspan font-weight="700" fill="var(--coral-ink)">Customer </tspan>Money the day it lands, insured</text>
-        <text x="500" y="80" font-size="11.5" fill="var(--ink2)" text-anchor="middle"><tspan font-weight="700" fill="var(--good)">Nu </tspan>Deposits that stay, cheaper funding</text>
+  <h2 class="rise">Creating customer value is creating business value.</h2>
+  <div class="fw">
+    <svg class="fwsvg draw" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true">
+      <defs><marker id="fwa" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto"><path d="M0 0L10 5 0 10z" fill="#F2856A"/></marker></defs>
+      <g fill="none" stroke="#F2856A" stroke-width="9" stroke-linecap="round" marker-end="url(#fwa)" vector-effect="non-scaling-stroke">
+        <path class="arc" d="M236 246 L352 150"/>
+        <path class="arc" style="transition-delay:.35s" d="M648 150 L764 246"/>
+        <path class="arc" style="transition-delay:.7s" d="M690 420 L310 420"/>
       </g>
-      <g class="node" style="transition-delay:.35s">
-        <rect x="730" y="224" width="260" height="100" rx="14" fill="var(--c3)"/>
-        <text x="860" y="252" font-size="15.5" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="Fraunces,serif">The right fit</text>
-        <text x="860" y="276" font-size="11.5" fill="var(--ink2)" text-anchor="middle"><tspan font-weight="700" fill="var(--coral-ink)">Customer </tspan>A limit sized on real income</text>
-        <text x="860" y="298" font-size="11.5" fill="var(--ink2)" text-anchor="middle"><tspan font-weight="700" fill="var(--good)">Nu </tspan>Lending moves off 35%</text>
+      <g class="node" style="transition-delay:1s">
+        <circle cx="500" cy="262" r="98" fill="none" stroke="#a889e0" stroke-width="1.6" stroke-dasharray="7 6"/>
+        <path d="M500 156 l9 8 -18 0z" fill="#a889e0"/>
+        <path d="M606 262 l-8 9 0 -18z" fill="#a889e0"/>
+        <path d="M500 368 l-9 -8 18 0z" fill="#a889e0"/>
+        <path d="M394 262 l8 -9 0 18z" fill="#a889e0"/>
+        <path d="M430 192 L500 262 M570 192 L500 262 M430 332 L500 262 M570 332 L500 262" stroke="#a889e0" stroke-width="1.2" stroke-dasharray="4 5" opacity=".6"/>
+        <circle cx="500" cy="262" r="62" fill="#9a3df0"/>
+        <text x="500" y="256" font-size="17" font-weight="600" fill="#fff" text-anchor="middle" font-family="Fraunces,serif">Agency up.</text>
+        <text x="500" y="280" font-size="17" font-weight="600" fill="#fff" text-anchor="middle" font-family="Fraunces,serif">Risk down.</text>
       </g>
-      <g class="node" style="transition-delay:.65s">
-        <rect x="370" y="442" width="260" height="100" rx="14" fill="var(--c3)"/>
-        <text x="500" y="470" font-size="15.5" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="Fraunces,serif">The right path</text>
-        <text x="500" y="494" font-size="11.5" fill="var(--ink2)" text-anchor="middle"><tspan font-weight="700" fill="var(--coral-ink)">Customer </tspan>Sees exactly what raises the line</text>
-        <text x="500" y="516" font-size="11.5" fill="var(--ink2)" text-anchor="middle"><tspan font-weight="700" fill="var(--good)">Nu </tspan>−10% default, +2% retention</text>
-      </g>
-      <g class="node" style="transition-delay:.95s">
-        <rect x="10" y="224" width="260" height="100" rx="14" fill="var(--c3)"/>
-        <text x="140" y="252" font-size="15.5" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="Fraunces,serif">Growth compounds</text>
-        <text x="140" y="276" font-size="11.5" fill="var(--ink2)" text-anchor="middle"><tspan font-weight="700" fill="var(--coral-ink)">Customer </tspan>Bigger line, more ways to earn</text>
-        <text x="140" y="298" font-size="11.5" fill="var(--ink2)" text-anchor="middle"><tspan font-weight="700" fill="var(--good)">Nu </tspan>More income lands, richer data</text>
-      </g>
-      <g class="node" style="transition-delay:1.25s">
-        <circle cx="500" cy="274" r="78" fill="var(--nu)"/>
-        <text x="500" y="268" font-size="21" font-weight="600" fill="#fff" text-anchor="middle" font-family="Fraunces,serif">Agency up.</text>
-        <text x="500" y="296" font-size="21" font-weight="600" fill="#fff" text-anchor="middle" font-family="Fraunces,serif">Risk down.</text>
-      </g>
-    </g>
-  </svg>
-  <div class="band" data-step="1" style="margin-top:14px;font-size:16px"><b>The more a customer invests in the relationship, the more they get back, and the cheaper they are to serve.</b></div>
+    </svg>
+    <div class="fwn" data-step="1" style="width:270px;left:calc(50% - 135px);top:0">
+      <div class="fwh">The right fit</div>
+      <div class="fwb">A limit sized on real income, at one price for everyone.<span>Nu: lending moves off 35%</span></div>
+    </div>
+    <div class="fwn" data-step="2" style="width:290px;right:0;top:250px">
+      <div class="fwh">The right time</div>
+      <div class="fwb">Income lands here and credit fits the quincena.<span>Nu: deposits that stay, cheaper funding</span></div>
+    </div>
+    <div class="fwn" data-step="3" style="width:290px;left:0;top:250px">
+      <div class="fwh">The right path</div>
+      <div class="fwb">Customers see exactly what raises the line, and climb.<span>Nu: −10% default, +2% retention</span></div>
+    </div>
+  </div>
 </div></section>
 
 <!-- 9 THE FIVE NUMBERS -->
