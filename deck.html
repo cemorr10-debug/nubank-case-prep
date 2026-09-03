@@ -739,31 +739,38 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
 <!-- 9 THE FIVE NUMBERS -->
 <section class="slide dense"><div class="w">
   <div class="eb rise">Yield strategy &amp; mass-market pricing · Q3</div>
-  <h2 class="rise">What 13% actually costs.</h2>
-  <div class="grid g2" style="grid-template-columns:1fr 1fr;align-items:start">
-    <div class="card" data-step="1">
-      <h3>The five numbers I would put on the table</h3>
-      <div class="q"><span class="num">1</span><div><b>What the next peso of deposit costs</b><span class="why">7.00% base · 13% premium, capped at $25,000 and gated on one purchase</span></div></div>
-      <div class="q"><span class="num">2</span><div><b>What it earns</b><span class="why">6.49% parked in CETES · roughly 25% lent, net of losses <i>(my assumption)</i></span></div></div>
-      <div class="q"><span class="num">3</span><div><b>How many pesos leave per point cut</b><span class="why"><b>You already ran this experiment.</b> On 5 January you cut 200bp, 15% → 13%. The balance response by segment is sitting in our data. I do not have it. That analysis is week one.</span></div></div>
-      <div class="q"><span class="num">4</span><div><b>How much of it we can lend</b><span class="why">35% today · the group runs near 58% <i>(assumption)</i></span></div></div>
-      <div class="q"><span class="num">5</span><div><b>What retention costs per lever</b><span class="why">yield · progression · Nu+ at roughly 0.3%</span></div></div>
-    </div>
-    <div class="card" data-step="2">
-      <h3>The cap is doing the work</h3>
-      <p style="font-size:13.5px;margin-top:2px">13% is not our cost of funds. It is a <b>capped, self-liquidating acquisition budget</b> sitting on the first $25,000. Above the cap we pay 7.00%, which is TIIE de fondeo exactly.</p>
+  <h2 class="rise">Seeing income gives us room on both sides of the rate.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-top:-4px;margin-bottom:12px">What we pay for deposits, and what we charge for credit.</p>
+  <div class="grid g2" style="align-items:stretch">
+
+    <div class="card" data-step="1" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">Yield · what we pay</div>
+      <h3>13% is not a cost of funds. It is a capped acquisition budget.</h3>
+      <p style="font-size:13.5px;margin-top:4px">It applies to the first $25,000 only. Above the cap we pay 7.00%, which is TIIE de fondeo exactly.</p>
       <div class="scroll"><table class="cof">
-        <tr><th>Customer balance</th><th>Interest / yr</th><th>Blended cost</th></tr>
-        <tr><td>$25,000</td><td>$3,250</td><td>13.00%</td></tr>
-        <tr><td>$50,000</td><td>$5,000</td><td>10.00%</td></tr>
-        <tr><td>$100,000</td><td>$8,500</td><td>8.50%</td></tr>
-        <tr><td>$250,000</td><td>$19,000</td><td>7.60%</td></tr>
+        <tr><th>Customer balance</th><th>Blended cost</th></tr>
+        <tr><td>$25,000</td><td>13.0%</td></tr>
+        <tr><td>$100,000</td><td>8.5%</td></tr>
+        <tr><td>$250,000</td><td>7.6%</td></tr>
       </table></div>
-      <div class="band" style="margin-top:11px;padding:11px 14px;font-size:13.5px"><b>Ceiling on the true subsidy: $1,500 per customer per year</b>: 600bp over TIIE de fondeo, on a capped base. That is the acquisition budget. The question is not whether it is too big. It is what we make people do to earn it.</div>
-      <span class="why" style="margin-top:9px">Which reframes the whole debate: <b>we are not overpaying for deposits.</b> We are paying a bounded bounty for a behaviour, and right now the behaviour we buy is a $20 coffee.</span>
+      <div class="stat" style="margin-top:12px"><div class="v" style="font-size:clamp(26px,3vw,36px)">$1,500</div><div class="k">ceiling per customer per year · 600bp over TIIE on a capped base</div></div>
+      <div class="do" style="margin-top:auto;padding-top:12px">Same budget. Point it at a salary, not a swipe.</div>
     </div>
+
+    <div class="card" data-step="2" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--good)">Credit · what we charge</div>
+      <h3>Visibility is what makes credit cheaper.</h3>
+      <p style="font-size:13.5px;margin-top:4px">A price is a loss buffer plus a margin. Every point of risk we can see is a point we no longer have to charge for.</p>
+      <div class="stat" style="margin-top:10px"><div class="v coral" style="font-size:clamp(26px,3vw,36px)">CAT ~85%</div><div class="k">our personal loan today, priced for what we cannot see <i>(assumption)</i></div></div>
+      <div class="q" style="margin-top:8px"><span class="num">1</span><div><b>Income visible</b><span class="why">Smaller loss buffer, lower price.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>Growth exposed</b><span class="why">−10% default, +2% retention. Lower price again.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>Risk in the line, not the rate</b><span class="why">One price for everyone. Confidence sets the limit.</span></div></div>
+      <div class="do" style="margin-top:auto;padding-top:12px">CAT goes on the scorecard, and it should fall.</div>
+    </div>
+
   </div>
-  <p class="foot" data-step="3">Nu México published rate card, September 2026 · CETES 28d 6.49% (1 Sep auction) · TIIE de fondeo 7.00%, the reference Nu itself cited for the January adjustment. Arithmetic is mine.</p>
+  <div class="band" data-step="3" style="margin-top:14px;font-size:16.5px"><b>The flywheel funds both.</b> Deposits that stay lower what we pay. Risk we can see lowers what we charge.</div>
+  <p class="foot" data-step="3" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> Nu México rate card, Sep 2026: Cajita 24/7 7.00%, Turbo 13% capped at $25,000, one purchase a month · TIIE de fondeo 7.00%, the reference Nu cited for the January cut · CETES 28d 6.49%, 1 Sep auction.<br><b>Assumptions.</b> Blended-cost arithmetic is mine · personal-loan CAT near 85% is my read of public disclosure · the 5 January cut from 15% to 13% is the elasticity experiment already in Nu's data; reading it by segment is week one.</p>
 </div></section>
 
 <!-- 10 THE CALL -->
