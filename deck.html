@@ -193,6 +193,14 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .ph .btn2{background:var(--ph-top);color:#fff;border-radius:10px;padding:8px;text-align:center;font-weight:700;font-size:12px;margin-top:2px}
 .ph .bar2{height:6px;border-radius:99px;background:rgba(130,10,209,.15);overflow:hidden}
 .ph .bar2 i{display:block;height:100%;width:66%;background:var(--ph-top)}
+.stp{display:flex;flex-direction:column;margin-top:5px}
+.stp .s{display:grid;grid-template-columns:18px 1fr;gap:8px;align-items:center;padding:4px 0;position:relative}
+.stp .s+.s:before{content:"";position:absolute;left:8px;top:-7px;height:11px;width:2px;background:rgba(130,10,209,.18)}
+.stp .s i{width:18px;height:18px;border-radius:50%;background:rgba(130,10,209,.12);display:flex;align-items:center;justify-content:center;font-size:9.5px;font-style:normal;color:var(--ph-mut);font-weight:700}
+.stp .s.on i{background:var(--ph-top);color:#fff}
+.stp .s b{display:block;font-size:12px;color:var(--ph-ink);line-height:1.15}
+.stp .s.on b{color:var(--ph-top)}
+.stp .s span{font-size:10px;color:var(--ph-mut);line-height:1.2}
 .cap{text-align:center;font-size:12.5px;color:var(--ink2);margin-top:9px}
 .cap b{display:block;font-family:'Fraunces',serif;font-size:15.5px;color:var(--ink)}
 /* builds */
@@ -542,13 +550,28 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
       <div class="cap"><b>Credit</b>A limit that matches what she earns. A card that pays itself. A loan that fits the quincena.</div>
     </div>
     <div data-step="3">
-      <div class="ph"><div class="top"><span class="sm">Crece con Nu</span><span class="big">Nivel 3 → 4</span></div>
+      <div class="ph"><div class="top"><span class="sm">Crece con Nu</span><span class="big">Don Beto · Nivel 3</span></div>
         <div class="body">
-          <div class="c"><h5>Tu ingreso, como lo vemos</h5><div class="r"><span>Remesas + depósitos</span><b>$6,050 / mes</b></div><div class="r"><span>Confianza</span><b class="g">Alta · 11 meses</b></div><div class="r"><span>¿No es correcto? Corrígelo</span></div></div>
-          <div class="c"><h5>Tu línea sube a $19,500 cuando…</h5><div class="r"><span>✓ Dos pagos puntuales más</span></div><div class="r"><span>· Tu remesa llega 2 meses más</span></div></div>
+          <div class="c" style="position:relative">
+            <h5>Mi límite de crédito</h5>
+            <div class="stp">
+              <div class="s"><i>·</i><div><b>$28,000</b><span>Trae tu nómina</span></div></div>
+              <div class="s"><i>·</i><div><b>$19,500</b><span>Dos pagos puntuales más</span></div></div>
+              <div class="s on"><i>★</i><div><b>$12,000</b><span>Tu límite hoy</span></div></div>
+            </div>
+            <svg viewBox="0 0 40 50" style="position:absolute;right:9px;top:28px;width:34px;height:auto" aria-hidden="true">
+              <path d="M20 48V22" stroke="var(--ph-top)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path d="M20 32c-8 0-12-5-12-11 6 0 12 4 12 11z" fill="var(--ph-top)" opacity=".5"/>
+              <path d="M20 26c8 0 12-5 12-11-6 0-12 4-12 11z" fill="var(--ph-top)" opacity=".8"/>
+              <circle cx="20" cy="9" r="6.5" fill="#e1a93c"/><text x="20" y="12.5" font-size="8.5" font-weight="700" text-anchor="middle" fill="#3a2c08" font-family="Inter,sans-serif">$</text>
+            </svg>
+          </div>
+          <div class="c"><div class="r"><span>Racha de pagos</span><b class="g">4 puntuales</b></div></div>
+          <div class="c"><div class="r"><span>Nu+ · 1,240 pts</span><b>2× recargas</b></div></div>
+          <div class="c"><div class="r"><span>Invita a un amigo</span><b>+500 pts</b></div></div>
           <div class="btn2">Ver mi camino</div>
         </div></div>
-      <div class="cap"><b>Growth hub</b>Beto sees what Nu sees, and exactly what raises his line. Same tier as Lupita.</div>
+      <div class="cap"><b>Growth hub</b>Beto sees exactly what raises his line, and every other way to earn with Nu.</div>
     </div>
   </div>
   <p class="foot" data-step="4">Screens recreated from the Nu México app's current Cuenta, Tarjeta and Cajitas surfaces with the proposed changes applied. Amounts are illustrative.</p>
