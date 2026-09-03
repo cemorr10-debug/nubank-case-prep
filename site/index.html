@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Core Mexico Case Strategy</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF8FD;--surface:#FFFFFF;--ink:#221f3a;--ink2:#3f4566;--muted:#71728f;
+--hair:rgba(42,44,74,.13);--coral:#F2856A;--coral-ink:#c05a3e;--gold-ink:#8a6a14;
+--nu:#820AD1;--nu-ink:#6b0bb0;--good:#2c7a52;--warn-ink:#a2571c;
+--c1:rgba(242,133,106,.16);--c2:rgba(225,169,60,.18);--c3:rgba(130,10,209,.10);
+--c4:rgba(62,156,110,.14);--c5:rgba(112,113,142,.13);
+--glow1:rgba(130,10,209,.16);--glow2:rgba(242,133,106,.18);
+--sh:0 18px 44px -30px rgba(35,38,63,.45);--shh:0 26px 54px -30px rgba(35,38,63,.55);
+--ph-bg:#F5F2FA;--ph-top:#820AD1;--ph-ink:#1b1630;--ph-mut:#6f6a86;--ph-card:#FFFFFF}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--bg:#171827;--surface:#212237;--ink:#eeedf7;--ink2:#c8c7db;--muted:#9293b0;
+--hair:rgba(236,235,245,.13);--coral-ink:#f59c85;--gold-ink:#e8ba62;
+--nu:#B57BF0;--nu-ink:#c79af5;--good:#6cc496;--warn-ink:#e4a06a;
+--c1:rgba(242,133,106,.18);--c2:rgba(225,169,60,.16);--c3:rgba(181,123,240,.18);
+--c4:rgba(79,181,131,.16);--c5:rgba(143,144,171,.16);
+--glow1:rgba(181,123,240,.16);--glow2:rgba(242,133,106,.12);
+--sh:0 18px 44px -30px rgba(0,0,0,.8);--shh:0 26px 54px -30px rgba(0,0,0,.9)}}
+:root[data-theme="dark"]{--bg:#171827;--surface:#212237;--ink:#eeedf7;--ink2:#c8c7db;--muted:#9293b0;
+--hair:rgba(236,235,245,.13);--coral-ink:#f59c85;--gold-ink:#e8ba62;
+--nu:#B57BF0;--nu-ink:#c79af5;--good:#6cc496;--warn-ink:#e4a06a;
+--c1:rgba(242,133,106,.18);--c2:rgba(225,169,60,.16);--c3:rgba(181,123,240,.18);
+--c4:rgba(79,181,131,.16);--c5:rgba(143,144,171,.16);
+--glow1:rgba(181,123,240,.16);--glow2:rgba(242,133,106,.12);
+--sh:0 18px 44px -30px rgba(0,0,0,.8);--shh:0 26px 54px -30px rgba(0,0,0,.9)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow:hidden}
+.glow{position:fixed;inset:-20%;pointer-events:none;z-index:0;
+background:radial-gradient(38% 42% at 22% 28%,var(--glow1),transparent 70%),radial-gradient(34% 36% at 80% 74%,var(--glow2),transparent 70%);
+animation:drift 36s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(3%,-2%) scale(1.06)}}
+.deck{position:relative;height:100vh;width:100%;z-index:1}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:60px 48px 88px;opacity:0;transform:translateY(16px) scale(.985);pointer-events:none;transition:opacity .5s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+.slide.in{opacity:1;transform:none;pointer-events:auto}
+.w{width:100%;max-width:1080px}
+.w.tight{max-width:880px}
+.eb{font-size:11.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--nu-ink);margin-bottom:12px}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(44px,7vw,92px);line-height:1;letter-spacing:-.025em;text-wrap:balance}
+h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(28px,3.8vw,46px);line-height:1.08;letter-spacing:-.015em;text-wrap:balance;margin-bottom:18px}
+h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:19px;line-height:1.2;margin-bottom:6px}
+.lede{font-size:clamp(15px,1.45vw,19px);color:var(--ink2);max-width:62ch;line-height:1.5}
+.why{display:block;color:var(--muted);font-size:13.5px;margin-top:5px;line-height:1.5}
+.do{font-size:14.5px;color:var(--nu-ink);font-weight:600;margin-top:10px}
+.card{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:16px 18px;box-shadow:var(--sh)}
+.plain{padding:0;background:none;border:0;box-shadow:none}
+.band{border-radius:16px;padding:15px 20px;background:linear-gradient(120deg,var(--c3),var(--c1));border:1px solid var(--hair);font-size:16px;line-height:1.45}
+.band b{color:var(--nu-ink)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}.slide{padding:52px 20px 88px;overflow:auto;align-items:flex-start}}
+.num{font-family:'Fraunces',Georgia,serif;font-size:16px;font-weight:600;color:var(--coral);min-width:22px;padding-top:2px}
+.q{display:flex;gap:12px;align-items:flex-start;padding:9px 2px;border-bottom:1px solid var(--hair)}
+.q:last-child{border-bottom:none}
+.q b{font-weight:600;font-size:15px}
+.chip{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap;vertical-align:2px;margin-left:6px}
+.chip.hot{background:var(--c1);color:var(--coral-ink)}.chip.nu{background:var(--c3);color:var(--nu-ink)}
+.chip.ok{background:var(--c4);color:var(--good)}.chip.warn{background:var(--c2);color:var(--gold-ink)}
+.stat .v{font-family:'Fraunces',Georgia,serif;font-size:clamp(34px,4vw,52px);font-weight:600;line-height:1;letter-spacing:-.025em;color:var(--nu-ink);font-variant-numeric:tabular-nums}
+.stat .v.coral{color:var(--coral-ink)}.stat .v.good{color:var(--good)}
+.stat .k{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:9px}
+/* two-sided benefit rows */
+.ben{display:grid;grid-template-columns:64px 1fr;gap:10px;font-size:13px;padding:6px 0;border-top:1px solid var(--hair);align-items:baseline}
+.ben .t{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ben .t.nu{color:var(--good)}
+/* portrait figure */
+.fig{display:flex;gap:16px;align-items:center}
+.por{width:104px;height:104px;flex:0 0 104px;border-radius:50%;overflow:hidden;box-shadow:var(--sh)}
+.fig .big{font-family:'Fraunces',serif;font-size:clamp(30px,3.6vw,46px);font-weight:600;line-height:1;letter-spacing:-.02em;color:var(--nu-ink);font-variant-numeric:tabular-nums}
+.fig .big.coral{color:var(--coral-ink)}
+.fig .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+/* TAM nested bars */
+.tam{display:flex;flex-direction:column;gap:9px}
+.tam .r{display:grid;grid-template-columns:1fr 128px;gap:14px;align-items:center}
+.tam .track{height:26px;border-radius:6px;background:var(--c5);position:relative;overflow:hidden}
+.tam .fill{height:100%;border-radius:6px;width:var(--w)}
+body.anim .tam .fill{transition:width .9s cubic-bezier(.2,.7,.2,1);width:0}
+body.anim .slide.in .tam .fill{width:var(--w)}
+.tam .lab{font-size:12.5px;line-height:1.25}
+.tam .lab b{display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.tam.sm .r{grid-template-columns:1fr 96px;gap:10px}
+.tam.sm .lab b{font-size:14.5px}
+.tam.sm .track{height:22px}
+.tam.sm .sub{font-size:10.5px}
+.attrs{display:flex;flex-direction:column;margin-top:14px;font-size:12.5px}
+.attrs>div{display:grid;grid-template-columns:74px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--hair)}
+.attrs>div:last-child{border-bottom:none}
+.attrs span{color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding-top:2px}
+.attrs b{font-weight:600;color:var(--ink)}
+.role{color:var(--muted);font-size:12.5px;line-height:1.3;margin-top:5px}
+.ev{background:var(--c4);border-radius:12px;padding:10px 13px;margin:6px 0 2px}
+.ev .v{font-family:'Fraunces',serif;font-size:26px;font-weight:600;line-height:1;color:var(--good);font-variant-numeric:tabular-nums}
+.ev .k{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.ev .evq{font-family:'Fraunces',serif;font-style:italic;font-size:12.5px;line-height:1.3;color:var(--ink);margin-top:8px}
+.ev .evq small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:10.5px;color:var(--muted);margin-top:4px}
+.card.tight .q{padding:5px 2px}
+.card.tight .why{margin-top:2px}
+.coltag{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:9px}
+.tam .sub{color:var(--muted);font-size:11px}
+/* product ladder */
+.lad{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:stretch}
+@media(max-width:900px){.lad{grid-template-columns:1fr}}
+.rung{border:1px solid var(--hair);border-radius:16px;padding:14px 16px;background:var(--surface);box-shadow:var(--sh);display:flex;flex-direction:column}
+.rung.top{border-color:var(--nu);box-shadow:0 0 0 1px var(--nu),var(--shh)}
+.rung .gate{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.rung.top .gate{color:var(--nu-ink)}
+.rung h3{font-size:21px;margin-bottom:3px}
+.rung .tag{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.rung ul{list-style:none;display:flex;flex-direction:column;gap:5px;font-size:13px;margin-top:2px}
+.rung li{padding-left:15px;position:relative;line-height:1.35}
+.rung li:before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--c5)}
+.rung.top li:before{background:var(--nu)}
+.rung li.new{font-weight:600;color:var(--ink)}
+.rung .ft{margin-top:auto;padding-top:10px;font-size:12px;color:var(--muted);line-height:1.4}
+/* ladder: grow-up animation, stair line, escalating treatment */
+.lad.grow{position:relative;align-items:end;margin-top:64px}
+.lad.grow .rung{transform-origin:bottom center;position:relative;z-index:1}
+body.anim .slide.in .lad.grow .rung{animation:growup .95s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0ms)}
+@keyframes growup{from{opacity:0;transform:scaleY(.1)}to{opacity:1;transform:none}}
+.stairs{position:absolute;left:0;right:0;top:-46px;height:calc(100% + 46px);pointer-events:none;z-index:0}
+.stairs path.arc{stroke-dasharray:2400;stroke-dashoffset:2400;transition:stroke-dashoffset 1.7s ease .35s}
+.slide.in .stairs path.arc{stroke-dashoffset:0}
+@media(max-width:900px){.stairs{display:none}.lad.grow{margin-top:20px}}
+.rung.r1{background:var(--surface)}
+.rung.r1 .gate{color:var(--muted)}
+.rung.r2{background:linear-gradient(180deg,var(--c3),var(--surface) 72%);border-color:rgba(130,10,209,.28)}
+.rung.r2 .gate{color:var(--nu-ink)}
+.rung.r2 li:before{background:var(--nu);opacity:.55}
+.rung.r3{background:linear-gradient(160deg,#8f1fe4 0%,#5c0aa1 100%);border:0;color:#fff;box-shadow:0 34px 64px -28px rgba(92,10,161,.65)}
+.rung.r3 .gate{color:rgba(255,255,255,.78)}
+.rung.r3 h3,.rung.r3 li{color:#fff}
+.rung.r3 li:before{background:#fff}
+.rung.r3 .ft{color:rgba(255,255,255,.82)}
+.slide.dk{background:#150d26}
+.slide.dk h2{color:#fff}
+.slide.dk .eb{color:#c9a8f5}
+.slide.dk .lede{color:rgba(255,255,255,.78)}
+.fw{position:relative;height:440px;max-width:1000px;margin:18px auto 0}
+.fwn{position:absolute;border-radius:18px;overflow:hidden;background:var(--surface);border:1px solid var(--hair);box-shadow:var(--shh)}
+.fwh{background:var(--nu);color:#fff;font-family:'Fraunces',serif;font-size:23px;font-weight:600;text-align:center;padding:18px 16px;line-height:1.1}
+.fwb{padding:16px 20px 18px;font-size:14.5px;color:var(--ink);text-align:center;line-height:1.4}
+.fwb span{display:block;margin-top:7px;font-size:12.5px;color:#9fe3bd;font-weight:700}
+.fwsvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.fwsvg .arc{stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 1s ease}
+.slide.in .fwsvg .arc{stroke-dashoffset:0}
+@media(max-width:900px){.fw{height:auto}.fwn{position:static;margin-bottom:12px}.fwsvg{display:none}}
+.opt{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;background:var(--surface);border:1px solid var(--hair);border-radius:16px;overflow:hidden;box-shadow:var(--sh)}
+.opt th,.opt td{padding:9px 12px;text-align:left;vertical-align:top;line-height:1.38;border-bottom:1px solid var(--hair)}
+.opt tr:last-child td{border-bottom:none}
+.opt th{font-family:'Fraunces',serif;font-size:15.5px;font-weight:600;color:var(--ink);background:var(--bg)}
+.opt th:first-child,.opt td:first-child{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);width:13%;padding-top:11px;font-family:'Inter',sans-serif}
+.opt th.rec{background:var(--c3);color:var(--nu-ink)}
+.opt td.rec{background:rgba(130,10,209,.05)}
+.opt .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--nu-ink);background:var(--c3);padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
+.opt .no{color:var(--coral-ink)}.opt .yes{color:var(--good)}
+/* journey */
+.jr{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+@media(max-width:900px){.jr{grid-template-columns:1fr}}
+.jr .s{padding:0 12px;position:relative}
+.jr .s:first-child{padding-left:0}.jr .s:last-child{padding-right:0}
+.jr .when{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--nu-ink);margin-bottom:7px}
+.jr .dot{display:block;width:11px;height:11px;border-radius:50%;background:var(--nu);margin-bottom:9px;position:relative}
+.jr .dot:after{content:"";position:absolute;left:11px;top:5px;height:1.5px;width:calc(100vw);max-width:200px;background:linear-gradient(90deg,var(--nu),var(--hair))}
+.jr .s:last-child .dot:after{display:none}
+@media(max-width:900px){.jr .dot:after{display:none}.jr .say{min-height:0}.jr .s{padding:0 0 14px}}
+.jr .say{font-family:'Fraunces',serif;font-size:14.5px;font-weight:600;line-height:1.25;color:var(--ink);margin-bottom:8px;min-height:3.75em}
+.jr .ben{grid-template-columns:52px 1fr;font-size:12px;gap:8px}
+/* decision table */
+.dt{width:100%;border-collapse:collapse;font-size:13px;background:var(--surface);border:1px solid var(--hair);border-radius:16px;overflow:hidden;box-shadow:var(--sh)}
+.dt th,.dt td{padding:8px 11px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.38}
+.dt tr:last-child td{border-bottom:none}
+.dt th{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+.dt td:first-child{font-weight:700;color:var(--ink);width:15%}
+.dt td.call{font-weight:700;color:var(--nu-ink);width:23%}
+.dt .cost{color:var(--coral-ink)}.dt .gain{color:var(--good)}
+.scroll{overflow-x:auto}
+/* cost-of-funds mini table */
+.cof{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;margin-top:8px}
+.cof th,.cof td{padding:5px 8px;text-align:right;border-bottom:1px solid var(--hair)}
+.cof th:first-child,.cof td:first-child{text-align:left}
+.cof th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cof tr:last-child td{border-bottom:none;font-weight:700;color:var(--nu-ink)}
+/* team pod */
+.pod .p{display:grid;grid-template-columns:142px 1fr;gap:12px;padding:7px 0;border-bottom:1px solid var(--hair);font-size:13px}
+.pod .p:last-child{border-bottom:none}
+.pod .p b{font-weight:600;color:var(--ink)}
+.pod .p.me b{color:var(--nu-ink)}
+.pod .p span{color:var(--muted)}
+.tl .row{display:grid;grid-template-columns:88px 1fr;gap:14px;align-items:start;padding:10px 0;border-bottom:1px solid var(--hair)}
+.tl .row:last-child{border-bottom:none}
+.tl .t{font-family:'Fraunces',serif;font-size:23px;font-weight:600;color:var(--nu-ink);line-height:1}
+.tl .t small{display:block;font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:5px;font-weight:700}
+.foot{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.5}
+.foot b{color:var(--ink2)}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-size:15.5px;line-height:1.35;color:var(--nu-ink);text-align:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--hair)}
+.quote{font-family:'Fraunces',serif;font-size:15.5px;font-style:italic;line-height:1.4;color:var(--ink);padding:11px 15px;border-left:3px solid var(--coral);background:var(--c1);border-radius:0 12px 12px 0}
+.quote small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:11.5px;color:var(--muted);margin-top:6px}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.dense h2{margin-bottom:13px;font-size:clamp(26px,3.4vw,41px)}
+.dense .card{padding:13px 15px}
+.dense .q{padding:7px 2px}
+.dense .why{font-size:12.5px;margin-top:3px}
+.dense .band{padding:13px 17px;font-size:14.5px}
+.dense .foot{margin-top:10px}
+/* phones */
+.phones{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+@media(max-width:900px){.phones{grid-template-columns:1fr}}
+.ph{width:100%;max-width:244px;margin:0 auto;border-radius:28px;background:var(--ph-bg);border:1px solid rgba(0,0,0,.12);box-shadow:var(--shh);overflow:hidden;color:var(--ph-ink);font-size:12px;line-height:1.35}
+.ph .top{background:var(--ph-top);color:#fff;padding:24px 15px 15px;font-weight:600}
+.ph .top .sm{display:block;font-size:10.5px;opacity:.82;font-weight:500;margin-bottom:5px}
+.ph .top .big{font-family:'Fraunces',serif;font-size:23px;font-weight:600;letter-spacing:-.02em}
+.ph .body{padding:11px 11px 15px;display:flex;flex-direction:column;gap:8px}
+.ph .c{background:var(--ph-card);border-radius:12px;padding:9px 11px;border:1px solid rgba(0,0,0,.06)}
+.ph .c h5{font-size:11.5px;font-weight:700;margin-bottom:4px;color:var(--ph-ink);font-family:'Inter',sans-serif}
+.ph .r{display:flex;justify-content:space-between;gap:8px;color:var(--ph-mut);padding:2px 0}
+.ph .r b{color:var(--ph-ink);font-variant-numeric:tabular-nums}
+.ph .g{color:#1f8a5b;font-weight:700}
+.ph .btn2{background:var(--ph-top);color:#fff;border-radius:10px;padding:8px;text-align:center;font-weight:700;font-size:12px;margin-top:2px}
+.ph .bar2{height:6px;border-radius:99px;background:rgba(130,10,209,.15);overflow:hidden}
+.ph .bar2 i{display:block;height:100%;width:66%;background:var(--ph-top)}
+.stp{display:flex;flex-direction:column;margin-top:5px}
+.stp .s{display:grid;grid-template-columns:18px 1fr;gap:8px;align-items:center;padding:4px 0;position:relative}
+.stp .s+.s:before{content:"";position:absolute;left:8px;top:-7px;height:11px;width:2px;background:rgba(130,10,209,.18)}
+.stp .s i{width:18px;height:18px;border-radius:50%;background:rgba(130,10,209,.12);display:flex;align-items:center;justify-content:center;font-size:9.5px;font-style:normal;color:var(--ph-mut);font-weight:700}
+.stp .s.on i{background:var(--ph-top);color:#fff}
+.stp .s b{display:block;font-size:12px;color:var(--ph-ink);line-height:1.15}
+.stp .s.on b{color:var(--ph-top)}
+.stp .s span{font-size:10px;color:var(--ph-mut);line-height:1.2}
+.ph{background:#f4f3f6}
+.ph .hd{padding:20px 16px 6px}
+.ph .hd .sm{display:block;font-size:10.5px;color:#6f6a86;margin-bottom:4px}
+.ph .hd .big{font-family:'Fraunces',serif;font-size:26px;font-weight:600;letter-spacing:-.02em;color:#1b1630;line-height:1}
+.ph .hd .grow{display:block;margin-top:6px;font-size:12px;font-weight:700;color:#1f8a5b}
+.ph .ico{width:22px;height:22px;border-radius:50%;background:#e9e8ee;display:inline-flex;align-items:center;justify-content:center;flex:0 0 22px}
+.ph .ico svg,.ph .acts i svg{width:12px;height:12px;display:block;fill:none;stroke:#1b1630;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ph .ico.in{background:#dff2e6}.ph .ico.in svg{stroke:#1f8a5b}
+.ph .ico.nu{background:#efe6fa}.ph .ico.nu svg{stroke:var(--ph-top)}
+.ph .caj{display:flex;align-items:center;gap:9px;padding:8px 16px 4px;font-size:11px}
+.ph .caj .t{flex:1;min-width:0}
+.ph .caj .t span{display:block;color:#6f6a86;font-size:10.5px;line-height:1.2}
+.ph .caj .t b{display:block;color:#1b1630;font-size:12.5px;font-variant-numeric:tabular-nums;margin-top:2px}
+.ph .caj .pl{background:var(--ph-top);color:#fff;font-size:9.5px;font-weight:700;padding:3px 7px;border-radius:6px;white-space:nowrap}
+.ph .caj .ch{color:#9a95ad;font-size:15px;line-height:1}
+.ph .acts{display:flex;gap:6px;padding:12px 12px 12px}
+.ph .acts div{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:9.5px;color:#1b1630;flex:1;text-align:center;line-height:1.1}
+.ph .acts i{width:40px;height:40px;border-radius:50%;background:#e9e8ee;display:flex;align-items:center;justify-content:center;font-style:normal}
+.ph .acts i svg{width:16px;height:16px}
+.ph .sheet{background:#fff;border-radius:16px 16px 0 0;padding:8px 0 10px;margin-top:2px}
+.ph .sec{padding:6px 16px 6px;font-size:12.5px;font-weight:700;color:#1b1630}
+.ph .srch{margin:0 16px 6px;background:#f4f3f6;border-radius:999px;padding:7px 12px;font-size:10.5px;color:#9a95ad}
+.ph .mv{display:flex;align-items:flex-start;gap:9px;padding:7px 16px;font-size:11px;border-top:1px solid #f0eff3}
+.ph .mv:first-of-type{border-top:0}
+.ph .mv .ico{width:26px;height:26px;flex-basis:26px;margin-top:1px}
+.ph .mv .tx{flex:1;min-width:0}
+.ph .mv .tx b{display:block;font-size:11.5px;color:#1b1630;font-weight:600;line-height:1.2}
+.ph .mv .tx span{color:#6f6a86;font-size:10px;line-height:1.2;display:block;margin-top:1px}
+.ph .mv .amt{text-align:right;white-space:nowrap}
+.ph .mv .amt b{display:block;font-size:11.5px;color:#1b1630;font-variant-numeric:tabular-nums;line-height:1.2}
+.ph .mv .amt span{font-size:9.5px;color:#9a95ad;display:block;margin-top:1px}
+.ph .mv .amt span.d{text-transform:uppercase;letter-spacing:.04em}
+.ph .mv .amt b.g{color:#1f8a5b}
+.ph .body{padding-top:0}
+.ncard{position:absolute;right:-26px;top:38px;width:132px;height:82px;border-radius:10px;background:linear-gradient(135deg,#9d33f2,#7a0fd0);transform:rotate(-11deg);box-shadow:0 20px 32px -14px rgba(90,10,160,.65);color:#fff;padding:10px 12px;font-family:'Inter',sans-serif;z-index:2}
+.ncard .nu{font-family:'Fraunces',serif;font-weight:700;font-size:21px;letter-spacing:-.05em;display:block;line-height:1}
+.ncard .nm{position:absolute;left:12px;bottom:10px;font-size:8.5px;opacity:.92}
+.ncard .db{position:absolute;right:12px;bottom:10px;font-size:7.5px;opacity:.75}
+.ncard .mc{position:absolute;right:12px;top:10px;width:24px;height:14px}
+.ncard .mc:before,.ncard .mc:after{content:"";position:absolute;top:0;width:14px;height:14px;border-radius:50%}
+.ncard .mc:before{left:0;background:#e94b3c}.ncard .mc:after{right:0;background:#f6a623;opacity:.92}
+.ph .chat{padding:4px 12px 8px;display:flex;flex-direction:column;gap:6px}
+.ph .bub{max-width:84%;padding:8px 11px;border-radius:14px;font-size:11px;line-height:1.3}
+.ph .bub.me{align-self:flex-end;background:var(--ph-top);color:#fff;border-bottom-right-radius:4px}
+.ph .bub.ai{align-self:flex-start;background:#fff;color:#1b1630;border-bottom-left-radius:4px;border:1px solid #ebe9f0}
+.ph .chips{display:flex;gap:6px;padding:2px 12px 8px;flex-wrap:wrap}
+.ph .chip2{font-size:10px;font-weight:600;color:var(--ph-top);border:1px solid var(--ph-top);border-radius:999px;padding:4px 9px;background:#fff}
+.ph .inp{margin:0 12px 12px;background:#fff;border:1px solid #e6e4ec;border-radius:999px;padding:8px 12px;font-size:10.5px;color:#9a95ad}
+.ben ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px}
+.ben li{padding-left:12px;position:relative;line-height:1.35}
+.ben li:before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--coral)}
+.cap{text-align:center;font-size:12.5px;color:var(--ink2);margin-top:9px}
+.cap b{display:block;font-family:'Fraunces',serif;font-size:15.5px;color:var(--ink)}
+/* builds */
+.rise,[data-step]{opacity:1;transform:none}
+body.anim .rise,body.anim [data-step]{opacity:0;transform:translateY(15px)}
+body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0ms)}
+@keyframes rise{to{opacity:1;transform:none}}
+.draw path.arc{stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset 1.1s ease}
+.slide.in .draw path.arc{stroke-dashoffset:0}
+.draw .node{opacity:0;transform:scale(.9);transform-origin:center;transition:opacity .4s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.slide.in .draw .node{opacity:1;transform:none}
+/* nav */
+.bar{position:fixed;left:0;top:0;height:3px;background:var(--nu);width:0;transition:width .4s ease;z-index:5}
+.nav{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:14px;z-index:5;pointer-events:none}
+.nav>*{pointer-events:auto}
+.dots{display:flex;gap:6px;justify-content:center}
+.dots button{width:8px;height:8px;border-radius:50%;border:0;background:var(--hair);cursor:pointer;padding:0;transition:transform .2s,background .2s}
+.dots button[aria-current="true"]{background:var(--nu);transform:scale(1.4)}
+.dots button:focus-visible{outline:2px solid var(--nu);outline-offset:2px}
+.btn{font:600 13px 'Inter',sans-serif;color:var(--ink2);background:var(--surface);border:1px solid var(--hair);border-radius:999px;padding:9px 15px;cursor:pointer;box-shadow:var(--sh)}
+.btn:hover{color:var(--nu-ink)}.btn:disabled{opacity:.4;cursor:default}.btn:focus-visible{outline:2px solid var(--nu);outline-offset:2px}
+.ctr{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:5px;text-align:center}
+.brand{position:fixed;top:16px;left:24px;display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--muted);z-index:5}
+.brand i{width:10px;height:10px;border-radius:50%;background:var(--nu);display:inline-block}
+.kick{position:fixed;top:16px;right:24px;font-size:12px;color:var(--muted);z-index:5;font-variant-numeric:tabular-nums}
+@media(prefers-reduced-motion:reduce){.slide,.bar,.draw path.arc,.draw .node,.tam .fill,body.anim .tam .fill,.stairs path.arc{transition:none}.glow{animation:none}
+  body.anim .slide.in .lad.grow .rung{animation:none}.stairs path.arc{stroke-dashoffset:0}
+  body.anim .rise,body.anim [data-step]{opacity:1;transform:none}
+  body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:none}
+  body.anim .tam .fill{width:var(--w)}}
+@media print{
+  body{overflow:visible;background:#fff}
+  .glow,.bar,.nav,.brand,.kick{display:none}
+  .deck{height:auto}
+  .slide{position:relative;inset:auto;opacity:1!important;transform:none!important;pointer-events:auto;min-height:100vh;page-break-after:always;padding:40px}
+  [data-step],.rise,.draw .node{opacity:1!important;transform:none!important;animation:none!important}
+  .draw path.arc,.stairs path.arc{stroke-dashoffset:0!important}
+  .tam .fill{width:var(--w)!important}
+  .lad.grow .rung{animation:none!important;opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+
+<div class="glow"></div>
+<div class="brand"><i></i>Core México · business case</div>
+<div class="kick" id="kick"></div>
+<div class="bar" id="bar"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <clipPath id="pc"><circle cx="60" cy="60" r="60"/></clipPath>
+  <symbol id="i-lock" viewBox="0 0 16 16"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-down" viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></symbol>
+  <symbol id="i-right" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></symbol>
+  <symbol id="i-card" viewBox="0 0 16 16"><rect x="2" y="4" width="12" height="9" rx="1.5"/><path d="M2 7h12"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 16 16"><rect x="2.5" y="3.5" width="11" height="10" rx="1.5"/><path d="M2.5 7h11M6 2v3M10 2v3"/></symbol>
+  <symbol id="i-cash" viewBox="0 0 16 16"><rect x="2" y="4.5" width="12" height="8" rx="1.5"/><circle cx="8" cy="8.5" r="2"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 16 16"><path d="M2 12l4-4 3 3 5-6M10 5h4v4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 16 16"><circle cx="6" cy="6" r="2.5"/><circle cx="11.5" cy="7" r="2"/><path d="M2 14c0-2.5 2-4 4-4s4 1.5 4 4M10 13.5c.2-1.8 1.2-3 3-3s2 1.2 2 3"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 16 16"><rect x="2.5" y="6.5" width="11" height="7.5" rx="1"/><path d="M2 6.5h12M8 6.5V14M8 6.5C6 6.5 4 5 5 3.5S8 4 8 6.5c0-2.5 2-4.5 3-3S10 6.5 8 6.5z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 16 16"><path d="M8 2l1.8 3.9 4.2.5-3.1 2.9.8 4.2L8 11.4l-3.7 2.1.8-4.2L2 6.4l4.2-.5z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 16 16"><path d="M8 2c1 2.5 4 4 4 7.5A4 4 0 0 1 4 9.5C4 7.5 5.5 6.5 6 5c.5 1 1.5 1.5 2 2.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 16 16"><rect x="4.5" y="2" width="7" height="12" rx="1.5"/><path d="M7 12h2"/></symbol>
+  <symbol id="i-building" viewBox="0 0 16 16"><rect x="3" y="2.5" width="10" height="11.5" rx="1"/><path d="M6 6h1M9 6h1M6 9h1M9 9h1M7 14v-2.5h2V14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7"/></symbol>
+</defs></svg>
+
+<div class="deck" id="deck">
+
+<!-- 1 TITLE -->
+<section class="slide in"><div class="w tight">
+  <div class="eb rise">Caroline Morrison · Product Director, Core México · 4 September 2026</div>
+  <h1 class="rise">Nu te ve.</h1>
+  <p class="lede rise" style="margin-top:20px;font-size:clamp(17px,1.7vw,22px)">Become the most beloved bank in México.</p>
+</div></section>
+
+<!-- 2 THE BLIND SPOT -->
+<section class="slide dense"><div class="w">
+  <h2 class="rise" style="font-size:clamp(19px,3.15vw,35px)">We are on a mission to unleash the power of the global majority.</h2>
+  <div class="grid g2" style="align-items:stretch">
+    <div class="card" data-step="1" style="display:flex;flex-direction:column">
+      <div class="eb" style="color:var(--coral-ink);margin-bottom:6px">The customer's problem</div>
+      <h3>Customers can't see a path to financial power.</h3>
+      <p style="font-size:13.5px;margin-top:5px"><b style="color:var(--coral-ink)">63% can't get formal credit.</b> Those who can pay a premium, or start below their true capacity.</p>
+      <svg class="draw" viewBox="0 0 500 376" role="img" aria-label="A self-reinforcing loop. Product doesn't fit: customers stack loans to cover unmet needs, so risk compounds. Price doesn't fit: high prices force emergency-only borrowing, so growth stalls. Pathway doesn't fit: customers can't see how to improve, so trust and agency erode, which returns them to stacking loans." style="margin-top:14px">
+        <defs><marker id="cyc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5 0 10z" fill="var(--nu)"/></marker></defs>
+        <g fill="none" stroke="var(--nu)" stroke-width="2.4" opacity=".45" marker-end="url(#cyc)">
+          <path class="arc" d="M363 80 C 445 112, 458 188, 421 232"/>
+          <path class="arc" style="transition-delay:.3s" d="M278 318 C 258 342, 242 342, 223 321"/>
+          <path class="arc" style="transition-delay:.6s" d="M80 232 C 43 188, 55 112, 137 80"/>
+        </g>
+        <g font-family="Inter,sans-serif" text-anchor="middle">
+          <g class="node">
+            <rect x="145" y="0" width="210" height="128" rx="14" fill="var(--c3)"/>
+            <g transform="translate(235,8)" fill="var(--nu)">
+              <rect x="0" y="18" width="11" height="10" rx="1.5" opacity=".5"/>
+              <rect x="12" y="13" width="11" height="15" rx="1.5" opacity=".75"/>
+              <rect x="3" y="6" width="11" height="10" rx="1.5" opacity=".62"/>
+              <rect x="16" y="0" width="10" height="12" rx="1.5" transform="rotate(15 21 6)"/>
+            </g>
+            <text x="250" y="57" font-size="14" font-weight="700" fill="var(--ink)">Product doesn't fit</text>
+            <text x="250" y="75" font-size="11" fill="var(--ink2)">Customers stack loans</text>
+            <text x="250" y="89" font-size="11" fill="var(--ink2)">to cover unmet needs</text>
+            <rect x="192" y="99" width="116" height="21" rx="10.5" fill="var(--nu)"/>
+            <text x="250" y="113.5" font-size="10" font-weight="700" fill="#fff" letter-spacing=".3">Risk Compounds</text>
+          </g>
+          <g class="node" style="transition-delay:.35s">
+            <rect x="285" y="244" width="210" height="128" rx="14" fill="var(--c3)"/>
+            <g transform="translate(376,252)" fill="var(--nu)">
+              <path d="M3 15 L15 3 L25 3 A2.5 2.5 0 0 1 27.5 5.5 L27.5 15 L15.5 27 Z" opacity=".8"/>
+              <circle cx="21" cy="9.5" r="2.6" fill="var(--surface)"/>
+            </g>
+            <text x="390" y="301" font-size="14" font-weight="700" fill="var(--ink)">Price doesn't fit</text>
+            <text x="390" y="319" font-size="11" fill="var(--ink2)">High prices force</text>
+            <text x="390" y="333" font-size="11" fill="var(--ink2)">emergency-only borrowing</text>
+            <rect x="336" y="343" width="108" height="21" rx="10.5" fill="var(--nu)"/>
+            <text x="390" y="357.5" font-size="10" font-weight="700" fill="#fff" letter-spacing=".3">Growth Stalls</text>
+          </g>
+          <g class="node" style="transition-delay:.7s">
+            <rect x="5" y="244" width="210" height="128" rx="14" fill="var(--c3)"/>
+            <g transform="translate(95,253)" fill="none" stroke="var(--nu)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M0 26 L0 20 L9 20 L9 13 L18 13"/>
+              <path d="M18 13 L18 6 L28 6" stroke-dasharray="3 3.5" opacity=".42"/>
+            </g>
+            <text x="110" y="301" font-size="14" font-weight="700" fill="var(--ink)">Pathway doesn't fit</text>
+            <text x="110" y="319" font-size="11" fill="var(--ink2)">Customers can't see</text>
+            <text x="110" y="333" font-size="11" fill="var(--ink2)">how to improve</text>
+            <rect x="40" y="343" width="140" height="21" rx="10.5" fill="var(--nu)"/>
+            <text x="110" y="357.5" font-size="10" font-weight="700" fill="#fff" letter-spacing=".3">Trust &amp; Agency Erode</text>
+          </g>
+          <text class="node" style="transition-delay:.95s" x="250" y="186" font-family="Fraunces,serif" font-size="21" font-weight="600" fill="var(--nu-ink)">And risk compounds.</text>
+        </g>
+      </svg>
+      <p class="pull" style="color:var(--coral-ink)">So they build creative, albeit high-risk, workarounds.</p>
+    </div>
+    <div class="card" data-step="2" style="display:flex;flex-direction:column">
+      <div class="eb" style="color:var(--nu-ink);margin-bottom:6px">Nu's problem</div>
+      <h3>Nu can't see the customer clearly.</h3>
+      <p style="font-size:13.5px;margin-top:5px">We see what <b>16 million people spend</b>. Not what they <b>earn</b>, so most of the book can't be lent.</p>
+      <svg class="draw" viewBox="0 0 540 232" role="img" aria-label="Of a 5.7 billion dollar deposit book, 35 percent, or 2.0 billion, is lent today. With income visible, deployment could reach 65 percent, or 3.7 billion, unlocking a further 1.7 billion of lending." style="margin-top:16px">
+        <g font-family="Inter,sans-serif">
+          <g class="node">
+            <text x="0" y="26" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="var(--muted)">TODAY</text>
+            <text x="0" y="42" font-size="11.5" fill="var(--ink2)">35% lent</text>
+            <rect x="104" y="8" width="416" height="44" rx="8" fill="var(--c5)"/>
+            <rect x="104" y="8" width="146" height="44" rx="8" fill="var(--nu)"/>
+            <text x="177" y="35" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" font-family="Fraunces,serif">$2.0bn</text>
+          </g>
+          <g class="node" style="transition-delay:.3s">
+            <text x="0" y="112" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="var(--good)">UNLOCKED</text>
+            <text x="0" y="128" font-size="11.5" fill="var(--ink2)">65% lent</text>
+            <rect x="104" y="94" width="416" height="44" rx="8" fill="var(--c5)"/>
+            <rect x="104" y="94" width="146" height="44" rx="8" fill="var(--nu)"/>
+            <rect x="250" y="94" width="126" height="44" rx="8" fill="var(--good)" opacity=".26"/>
+            <rect x="250.75" y="94.75" width="124.5" height="42.5" rx="7.5" fill="none" stroke="var(--good)" stroke-width="1.6" stroke-dasharray="5 4"/>
+            <text x="177" y="121" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" font-family="Fraunces,serif">$2.0bn</text>
+            <text x="313" y="121" font-size="14" font-weight="700" fill="var(--good)" text-anchor="middle" font-family="Fraunces,serif">+$1.7bn</text>
+          </g>
+          <g class="node" style="transition-delay:.55s">
+            <path d="M250 148 L250 158 L376 158 L376 148" fill="none" stroke="var(--good)" stroke-width="1.5" opacity=".6"/>
+            <text x="313" y="180" font-size="13.5" font-weight="700" fill="var(--good)" text-anchor="middle">The prize: $1.7bn put to work</text>
+            <text x="313" y="200" font-size="11.5" fill="var(--ink2)" text-anchor="middle">About $210m a year at Nu's 12.4% risk-adjusted margin</text>
+            <text x="313" y="220" font-size="10.5" font-style="italic" fill="var(--muted)" text-anchor="middle">illustrative: the 65% target is mine</text>
+          </g>
+        </g>
+      </svg>
+      <p class="pull">Payroll data is what moves 35% to 65%.</p>
+    </div>
+  </div>
+  <div class="band" data-step="3" style="margin-top:14px;font-size:17px"><b>We are uniquely positioned to break limiting assumptions about the economic power of the global majority.</b> The licence makes payroll the customer's right, not the employer's favour, and that turns a card they like into <b>a bank they love</b>.</div>
+  <p class="foot" data-step="3" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> Nu Holdings Q2 2026: México deposits US$5.7bn, loan-to-deposit 35%; group risk-adjusted NIM a record 12.4%, guided to hold · CNBV authorised Nubank México as a banca múltiple, 9 July; 16m customers by end-July · CNBV/INEGI ENIF 2024.<br><b>Assumptions.</b> 65% lent is my target, not a disclosed plan · the 12.4% margin applied to México's incremental balances is order-of-magnitude, not a forecast · the price-premium claim rests on a personal-loan CAT near 85%, my read of public disclosure.</p>
+</div></section>
+
+<!-- 3 THE OPPORTUNITY -->
+<section class="slide dense"><div class="w">
+  <h2 class="rise" style="font-size:clamp(21px,3.3vw,38px)">22.8 million salaries. Almost none land at Nu.</h2>
+  <div class="grid" style="grid-template-columns:0.92fr 1.12fr 1.06fr;gap:16px;align-items:stretch">
+
+    <div class="card" data-step="1" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--coral-ink)">The customer</div>
+      <div class="fig" style="gap:14px">
+        <!-- SWAP: replace this <svg class="por"> with <img class="por" src="data:image/jpeg;base64,..."> for a real photo -->
+        <svg class="por" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait of Lupita, a 29-year-old administrative assistant">
+          <g clip-path="url(#pc)">
+            <rect width="120" height="120" fill="var(--c1)"/>
+            <path d="M16 120C18 95 39 85 60 85s42 10 44 35z" fill="var(--nu)"/>
+            <rect x="52" y="68" width="16" height="22" rx="7" fill="#c98663"/>
+            <path d="M31 60c-2-28 11-42 29-42s31 14 29 42c0 15-4 23-6 27l-8-4c4-12 4-24 4-30-8 4-30 4-38 0 0 6 0 18 4 30l-8 4c-2-4-6-12-6-27z" fill="#3b2b23"/>
+            <ellipse cx="60" cy="54" rx="19" ry="22" fill="#d69a72"/>
+            <path d="M41 50c0-16 9-23 19-23s19 7 19 23c-3-8-9-12-19-12s-16 4-19 12z" fill="#3b2b23"/>
+            <circle cx="53" cy="55" r="2" fill="#2a1d18"/>
+            <circle cx="67" cy="55" r="2" fill="#2a1d18"/>
+            <path d="M54 64c3 4 9 4 12 0" stroke="#2a1d18" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <circle cx="46" cy="61" r="3" fill="#c4735a" opacity=".35"/>
+            <circle cx="74" cy="61" r="3" fill="#c4735a" opacity=".35"/>
+          </g>
+        </svg>
+        <div>
+          <div style="font-family:'Fraunces',serif;font-size:25px;font-weight:600;line-height:1.05">Lupita, 29</div>
+          <div class="role">Auxiliar administrativa<br>Guadalajara</div>
+        </div>
+      </div>
+      <div class="attrs">
+        <div><span>Earns</span><b>$8,420 a quincena</b></div>
+        <div><span>Formal</span><b>IMSS-registered, 4 years</b></div>
+        <div><span>With Nu</span><b>Card, 2 Cajitas, recargas</b></div>
+        <div><span>Salary</span><b style="color:var(--coral-ink)">Lands at her boss's bank</b></div>
+      </div>
+      <div class="quote" style="margin-top:auto;font-size:14.5px">"My credit line is whatever the bureau says, not what I earn."</div>
+    </div>
+    <div class="card" data-step="2" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">The size</div>
+      <div class="tam sm">
+        <div class="r"><div class="track"><div class="fill" style="--w:100%;background:var(--c5)"></div></div><div class="lab"><b>59.5M</b><span class="sub">employed in México</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:55%;background:var(--coral);opacity:.75"></div></div><div class="lab"><b>32.7M</b><span class="sub">informal, no payslip</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:38.3%;background:var(--nu);opacity:.72"></div></div><div class="lab"><b>22.8M</b><span class="sub">formal, IMSS payroll</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:26.9%;background:var(--nu)"></div></div><div class="lab"><b>16M</b><span class="sub">Nu México customers</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:2.2%;background:var(--good)"></div></div><div class="lab"><b>Few</b><span class="sub">income visible <i>(not disclosed)</i></span></div></div>
+      </div>
+      <span class="why" style="margin-top:auto;padding-top:12px"><b>The gap is the strategy.</b> 27% of México's workers bank with us. We see income for few of them, and have never counted.</span>
+    </div>
+
+    <div class="card" data-step="3" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--good)">The unlock</div>
+      <div class="q"><span class="num">1</span><div><b>Payroll is a banking activity.</b><span class="why">A SOFIPO could not offer nómina portability. A bank can, insured to 400,000 UDIs.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>The worker chooses, not the boss.</b><span class="why">Portability is her legal right: free, ten business days, no employer involved.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>We already know who they are.</b><span class="why">Her payroll pattern is already in our data. We do not have to find her. We have to ask.</span></div></div>
+      <div class="ben"><div class="t">Her</div><div>A line sized on her salary. Money the day it lands.</div></div>
+      <div class="ben"><div class="t nu">Nu</div><div>Deposits that stay, income to lend against, autodebit aligned to pay cycles.</div></div>
+    </div>
+
+  </div>
+  <div class="band" data-step="4" style="margin-top:16px;font-size:16px"><b>Anyone can match a rate, but no one can match a salary that already lands here.</b></div>
+  <p class="foot" data-step="4" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> IMSS, June 2026: 22,779,704 registered positions · INEGI ENOE: ~59.5m employed, informality 55.0% at July 2026 · Nu Holdings Q2 2026 and July update: 16m México customers.<br><b>Assumptions.</b> Nu has not disclosed how many customers have income landing here; I assume low single digits, and the bar is drawn at 2% to show scale · Lupita is a composite, and her portrait is an illustration.</p>
+</div></section>
+
+<!-- 5 THE LADDER -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">The mass-market bundle · Q1</div>
+  <h2 class="rise">Nu's products, built into a ladder of mutual value.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15.5px;margin-top:-6px">The more a customer invests in the relationship, the more they get in return.</p>
+  <div class="lad grow" style="margin-top:56px">
+    <svg class="stairs draw" viewBox="0 0 1080 356" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="stg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="var(--muted)" stop-opacity=".55"/><stop offset=".55" stop-color="var(--nu)"/><stop offset="1" stop-color="var(--nu)"/></linearGradient></defs>
+      <path class="arc" d="M10 164 H358 V104 H722 V34 H1066" fill="none" stroke="url(#stg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+      <g class="node" style="transition-delay:1.5s">
+        <circle cx="1052" cy="9" r="6.5" fill="var(--nu)"/>
+        <path d="M1043 34c0-12 4-17 9-17s9 5 9 17z" fill="var(--nu)"/>
+      </g>
+    </svg>
+    <div class="rung r1" data-step="1" style="min-height:180px">
+      <div class="gate">Gate · anyone</div>
+      <h3>Nu</h3>
+      <ul><li>Account, card, Cajita at 7%</li></ul>
+      <div class="ft">Ships today.</div>
+    </div>
+    <div class="rung r2" data-step="2" style="min-height:240px">
+      <div class="gate">Gate · one purchase a month</div>
+      <h3>Nu Turbo</h3>
+      <ul><li>Cajita Turbo at 13%, capped at $25,000</li></ul>
+      <div class="ft"><b style="color:var(--coral-ink)">The gate rewards a transaction, not a relationship.</b> One $20 purchase earns up to $3,250 a year.</div>
+    </div>
+    <div class="rung r3" data-step="3" style="min-height:310px">
+      <div class="gate">Gate · your salary lands here</div>
+      <h3>Nu Nómina</h3>
+      <ul>
+        <li>15% on a month of income, quoted as CETES + 8.5</li>
+        <li>Card limit on real income</li>
+        <li>Autopay the day after payday</li>
+        <li>Préstamo timed to the quincena</li>
+        <li>Insured to 400,000 UDIs</li>
+      </ul>
+      <div class="ft"><b style="color:#a8f0c6">New.</b> The licence makes it a right.</div>
+    </div>
+  </div>
+  <div class="band" data-step="4" style="margin-top:20px;font-size:17px"><b>The premium budget does not grow. It moves,</b> from rewarding a transaction to rewarding a salary.</div>
+</div></section>
+
+<!-- 7 ACT TWO : BETO -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Act two · the informal worker</div>
+  <h2 class="rise" style="font-size:clamp(21px,3.3vw,38px)">33 million people earn steadily. No payslip proves it.</h2>
+  <div class="grid" style="grid-template-columns:0.9fr 0.88fr 1.32fr;gap:16px;align-items:stretch">
+
+    <div class="card" data-step="1" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--coral-ink)">The customer</div>
+      <div class="fig" style="gap:14px">
+        <!-- SWAP: replace this <svg class="por"> with <img class="por" src="data:image/jpeg;base64,..."> for a real photo -->
+        <svg class="por" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait of Don Beto, a 47-year-old shop owner">
+          <g clip-path="url(#pc)">
+            <rect width="120" height="120" fill="var(--c1)"/>
+            <path d="M14 120C16 94 38 84 60 84s44 10 46 36z" fill="#8a6a14"/>
+            <rect x="52" y="68" width="16" height="20" rx="7" fill="#a86a45"/>
+            <ellipse cx="60" cy="55" rx="19" ry="21" fill="#b9784f"/>
+            <path d="M39 49c0-14 9-24 21-24s21 10 21 24z" fill="#4a3f3a"/>
+            <path d="M33 49h54a3 3 0 0 1 0 6H33a3 3 0 0 1 0-6z" fill="#3a302b"/>
+            <circle cx="53" cy="60" r="2" fill="#2a1d18"/>
+            <circle cx="67" cy="60" r="2" fill="#2a1d18"/>
+            <path d="M51 68c3-2 15-2 18 0" stroke="#3a302b" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M55 73c2 2 8 2 10 0" stroke="#2a1d18" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+          </g>
+        </svg>
+        <div>
+          <div style="font-family:'Fraunces',serif;font-size:25px;font-weight:600;line-height:1.05">Don Beto, 47</div>
+          <div class="role">Tienda de abarrotes<br>Morelia, Michoacán</div>
+        </div>
+      </div>
+      <div class="attrs">
+        <div><span>Earns</span><b>~$6,050 a month, tienda + remesas</b></div>
+        <div><span>Formal</span><b>None. No IMSS, no payslip</b></div>
+        <div><span>With Nu</span><b>Cuenta Nu, remesas 11 months running</b></div>
+        <div><span>Credit</span><b style="color:var(--coral-ink)">Denied, so he borrows from a prestamista</b></div>
+      </div>
+      <div class="quote" style="margin-top:auto;font-size:14.5px">"When I ask for credit they look at me like I have nothing."</div>
+    </div>
+
+    <div class="card" data-step="2" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">The size</div>
+      <div class="tam sm">
+        <div class="r"><div class="track"><div class="fill" style="--w:100%;background:var(--c5)"></div></div><div class="lab"><b>59.5M</b><span class="sub">employed in México</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:54.8%;background:var(--coral);opacity:.45"></div></div><div class="lab"><b>32.6M</b><span class="sub">informal, no payslip</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:29.6%;background:var(--coral)"></div></div><div class="lab"><b>17.6M</b><span class="sub">own business, unregistered</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:12.9%;background:var(--coral);opacity:.6"></div></div><div class="lab"><b>7.7M</b><span class="sub">off the books at a formal firm</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:8.7%;background:var(--coral);opacity:.6"></div></div><div class="lab"><b>5.2M</b><span class="sub">farming</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:3.7%;background:var(--coral);opacity:.6"></div></div><div class="lab"><b>2.2M</b><span class="sub">domestic work</span></div></div>
+      </div>
+      <div class="stat" style="margin-top:14px"><div class="v coral" style="font-size:clamp(26px,3vw,36px)">US$61.8bn</div><div class="k">in remittances last year, 99% electronic</div></div>
+      <span class="why" style="margin-top:auto;padding-top:12px"><b>Payroll reaches 38%.</b> Observed income reaches the rest.</span>
+    </div>
+
+    <div class="card tight" data-step="3" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--good)">The solution · lower risk without a payslip</div>
+      <div class="q" style="padding-top:2px"><span class="num">1</span><div><b>Expose growth, and customers de-risk themselves.</b><span class="why">Show him what raises his line, plus cashback, Nu+ points and referrals. The customer who is climbing is the one repaying.</span></div></div>
+      <div class="ev">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div><div class="v">−10.2%</div><div class="k">default rate, relative<br>−1.43 pp, intent-to-treat</div></div>
+          <div><div class="v">+2%</div><div class="k">next-loan retention,<br>compounding each cycle</div></div>
+        </div>
+        <div class="evq">"I want to see my name next to a higher limit. It motivates me to work harder at my job too."<small>A customer in the test. Prior role, effect size only.</small></div>
+      </div>
+      <div class="q"><span class="num">2</span><div><b>Counterfactual scoring: a promise we can keep.</b><span class="why">A specific next limit, risk-weighted and personal to him. He pays on time, and we honor it.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>A Nu agent that turns conversation into underwriting.</b><span class="why">He asks it how to grow. It learns how the tienda runs and when the remesa lands, and maps that to our credit labels.</span></div></div>
+      <div class="q"><span class="num">4</span><div><b>Alternative data.</b><span class="why">Rollee and Palenca for platform earnings. A third signal, never the pipe.</span></div></div>
+    </div>
+  </div>
+  <div class="band" data-step="4" style="margin-top:16px;font-size:16.5px"><b>Expand access to liquidity through the right offer at the right time.</b></div>
+  <p class="foot" data-step="4" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> INEGI ENOE, Q1 2026: 32.6m in informal work (54.8%), components as shown · Banxico: remittances US$61.8bn in 2025, 99.1% by electronic transfer.<br><b>Assumptions.</b> Beto is a composite; portrait and income are illustrative · test results are from a prior employer, cited as effect sizes only.</p>
+</div></section>
+
+<!-- 8 WHAT THEY GET -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">What they get</div>
+  <h2 class="rise">The same Nu they already love, with even more ways to grow.</h2>
+  <div class="phones" style="margin-top:22px;grid-template-columns:repeat(4,1fr);gap:14px">
+
+    <div data-step="1">
+        <div class="ph">
+          <div class="hd"><span class="sm">Saldo disponible</span><span class="big">$14,860.00</span></div>
+          <div class="caj"><span class="ico"><svg><use href="#i-lock"/></svg></span><div class="t"><span>Dinero en tu Cajita Nómina</span><b>$8,420.00</b></div><span class="pl">14.99%</span><span class="ch">›</span></div>
+          <div class="acts">
+            <div><i><svg><use href="#i-down"/></svg></i>Recibir</div>
+            <div><i><svg><use href="#i-right"/></svg></i>Transferir</div>
+            <div><i><svg><use href="#i-card"/></svg></i>Mis Tarjetas</div>
+            <div><i><svg><use href="#i-cash"/></svg></i>Retirar</div>
+          </div>
+          <div class="sheet">
+            <div class="sec">Movimientos</div>
+            <div class="srch">Buscar</div>
+            <div class="mv"><span class="ico in"><svg><use href="#i-down"/></svg></span><div class="tx"><b>Nómina</b><span>Tu sueldo llegó</span></div><div class="amt"><b class="g">+$8,420.00</b><span class="d">15 sep</span></div></div>
+            <div class="mv"><span class="ico in"><svg><use href="#i-trend"/></svg></span><div class="tx"><b>Rendimiento</b><span>Cajita Nómina · CETES + 8.5</span></div><div class="amt"><b class="g">+$105.20</b><span class="d">30 sep</span></div></div>
+            <div class="mv"><span class="ico"><svg><use href="#i-phone"/></svg></span><div class="tx"><b>Recarga Telcel</b><span>2× puntos Nu+</span></div><div class="amt"><b>$200.00</b><span class="d">30 sep</span></div></div>
+          </div>
+        </div>
+      <div class="cap"><b>Account</b>Income the day it lands, salary or remesa. Yield quoted as a spread.</div>
+    </div>
+
+    <div data-step="2">
+      <div style="position:relative;max-width:244px;margin:0 auto">
+      <div class="ph">
+        <div class="hd"><span class="sm">Límite disponible</span><span class="big">$24,000.00</span></div>
+        <div class="caj"><span class="ico in"><svg><use href="#i-check"/></svg></span><div class="t"><span>Basado en tu sueldo</span><b>3 meses de nómina en Nu</b></div><span class="pl">Verificado</span></div>
+        <div style="margin:6px 16px 2px"><div class="bar2"><i></i></div></div>
+        <div class="acts">
+          <div><i><svg><use href="#i-card"/></svg></i>Pagar</div>
+          <div><i><svg><use href="#i-cal"/></svg></i>Diferir</div>
+          <div><i><svg><use href="#i-card"/></svg></i>Mis Tarjetas</div>
+          <div><i><svg><use href="#i-trend"/></svg></i>Ajustar</div>
+        </div>
+        <div class="sheet">
+          <div class="sec">Tu crédito</div>
+          <div class="mv"><span class="ico"><svg><use href="#i-cal"/></svg></span><div class="tx"><b>Pago automático</b><span>Un día después de tu quincena</span></div><div class="amt"><b>Día 16</b><span>cada mes</span></div></div>
+          <div class="mv"><span class="ico"><svg><use href="#i-cash"/></svg></span><div class="tx"><b>Préstamo de nómina</b><span>Se descuenta al cobrar</span></div><div class="amt"><b>$16,800</b><span>hasta</span></div></div>
+          <div class="mv"><span class="ico in"><svg><use href="#i-trend"/></svg></span><div class="tx"><b>Crece con tu historial</b><span>Sube con cada nómina</span></div><div class="amt"><b class="g">+$3,000</b><span>próximo</span></div></div>
+        </div>
+      </div>
+      <div class="ncard"><span class="nu">nu</span><span class="mc"></span><span class="nm">Lupita Morales</span><span class="db">crédito</span></div>
+      </div>
+      <div class="cap"><b>Credit</b>A limit sized on what you earn, not what a bureau says. A card that pays itself.</div>
+    </div>
+
+    <div data-step="3">
+      <div class="ph">
+        <div class="hd"><span class="sm">Tu límite de crédito · Don Beto</span><span class="big">$12,000.00</span><span class="grow">↑ $4,000 desde que empezaste</span></div>
+        <div class="body">
+          <div class="c" style="position:relative;margin:6px 12px 0;background:#fff">
+            <h5>Tu camino</h5>
+            <div class="stp">
+              <div class="s"><i>·</i><div><b>$28,000</b><span>Trae tu nómina</span></div></div>
+              <div class="s"><i>·</i><div><b>$19,500</b><span>Dos pagos puntuales más</span></div></div>
+              <div class="s on"><i>★</i><div><b>$12,000</b><span>Tu límite hoy</span></div></div>
+            </div>
+            <svg viewBox="0 0 40 50" style="position:absolute;right:9px;top:28px;width:32px;height:auto" aria-hidden="true">
+              <path d="M20 48V22" stroke="var(--ph-top)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path d="M20 32c-8 0-12-5-12-11 6 0 12 4 12 11z" fill="var(--ph-top)" opacity=".5"/>
+              <path d="M20 26c8 0 12-5 12-11-6 0-12 4-12 11z" fill="var(--ph-top)" opacity=".8"/>
+              <circle cx="20" cy="9" r="6.5" fill="#e1a93c"/><text x="20" y="12.5" font-size="8.5" font-weight="700" text-anchor="middle" fill="#3a2c08" font-family="Inter,sans-serif">$</text>
+            </svg>
+          </div>
+        </div>
+        <div class="acts">
+          <div><i><svg><use href="#i-card"/></svg></i>Pagar</div>
+          <div><i><svg><use href="#i-users"/></svg></i>Invitar</div>
+          <div><i><svg><use href="#i-gift"/></svg></i>Recompensas</div>
+        </div>
+        <div class="sheet">
+          <div class="sec">Recompensas</div>
+          <div class="mv"><span class="ico in"><svg><use href="#i-flame"/></svg></span><div class="tx"><b>Racha de pagos</b><span>Racha iniciada</span></div><div class="amt"><b class="g">4 puntuales</b></div></div>
+          <div class="mv"><span class="ico nu"><svg><use href="#i-star"/></svg></span><div class="tx"><b>Nu+</b><span>2× en recargas</span></div><div class="amt"><b>1,240 pts</b></div></div>
+          <div class="mv"><span class="ico in"><svg><use href="#i-users"/></svg></span><div class="tx"><b>Invita a un amigo</b><span>Por cada uno</span></div><div class="amt"><b class="g">+500 pts</b></div></div>
+        </div>
+      </div>
+      <div class="cap"><b>Growth hub</b>See exactly what raises your line, and every other way to earn.</div>
+    </div>
+
+    <div data-step="4">
+      <div class="ph">
+        <div class="hd"><span class="sm">Pregúntale a Nu</span><span class="big">Hola, Beto</span></div>
+        <div class="chat">
+          <div class="bub me">¿Cómo llego a $19,500?</div>
+          <div class="bub ai">Dos pagos puntuales más, y tu remesa llegando dos meses más. Vas 1 de 2.</div>
+          <div class="bub me">Mi hijo manda el 28. ¿Eso cuenta?</div>
+          <div class="bub ai">Sí. La vemos llegar desde hace 11 meses. Ya está a tu favor.</div>
+        </div>
+        <div class="chips"><span class="chip2">Ver mi camino</span><span class="chip2">¿Y si traigo mi nómina?</span></div>
+        <div class="inp">Escribe tu pregunta…</div>
+      </div>
+      <div class="cap"><b>Ask Nu</b>Ask how to grow, in your own words.</div>
+    </div>
+
+  </div>
+  <p class="foot" data-step="4">Screens modelled on the Nu México app's current Cuenta and Cajitas surfaces, with the proposed changes applied. Amounts are illustrative.</p>
+</div></section>
+
+<!-- 8b FLYWHEEL -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">The flywheel</div>
+  <h2 class="rise">Creating customer value is creating business value.</h2>
+  <div class="fw">
+    <svg class="fwsvg draw" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true">
+      <defs><marker id="fwa" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto"><path d="M0 0L10 5 0 10z" fill="var(--coral)"/></marker></defs>
+      <g fill="none" stroke="var(--coral)" stroke-width="9" stroke-linecap="round" marker-end="url(#fwa)" vector-effect="non-scaling-stroke">
+        <path class="arc" d="M236 246 L352 150"/>
+        <path class="arc" style="transition-delay:.35s" d="M648 150 L764 246"/>
+        <path class="arc" style="transition-delay:.7s" d="M690 424 L310 424"/>
+      </g>
+      <g class="node" style="transition-delay:1s">
+        <circle cx="500" cy="262" r="100" fill="none" stroke="var(--nu)" stroke-width="1.6" stroke-dasharray="7 6" opacity=".55"/>
+        <path d="M500 154 l9 8 -18 0z" fill="var(--nu)"/>
+        <path d="M608 262 l-8 9 0 -18z" fill="var(--nu)"/>
+        <path d="M500 370 l-9 -8 18 0z" fill="var(--nu)"/>
+        <path d="M392 262 l8 -9 0 18z" fill="var(--nu)"/>
+        <path d="M429 191 L500 262 M571 191 L500 262 M429 333 L500 262 M571 333 L500 262" stroke="var(--nu)" stroke-width="1.2" stroke-dasharray="4 5" opacity=".4"/>
+        <circle cx="500" cy="262" r="66" fill="var(--nu)"/>
+        <text x="500" y="244" font-size="12" fill="#fff" text-anchor="middle" opacity=".85">Increase</text>
+        <text x="500" y="262" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">Originations</text>
+        <text x="500" y="279" font-size="12" fill="#fff" text-anchor="middle" opacity=".85">and <tspan font-weight="700" opacity="1">Retention</tspan></text>
+        <text x="500" y="296" font-size="11.5" fill="#fff" text-anchor="middle" opacity=".85">by right-fitting <tspan font-weight="700" opacity="1">pLTV</tspan></text>
+      </g>
+    </svg>
+    <div class="fwn" data-step="1" style="width:270px;left:calc(50% - 135px);top:0">
+      <div class="fwh">The Right Fit</div>
+      <div class="fwb">Nu meets capacity needs and customers stabilize</div>
+    </div>
+    <div class="fwn" data-step="2" style="width:290px;right:0;top:250px">
+      <div class="fwh">The Right Time</div>
+      <div class="fwb">Customers realize their relationship value and trust and agency compound</div>
+    </div>
+    <div class="fwn" data-step="3" style="width:290px;left:0;top:250px">
+      <div class="fwh">The Right Pathways</div>
+      <div class="fwb">Nu unlocks access to new products and growth compounds</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 9 THE FIVE NUMBERS -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Yield strategy &amp; mass-market pricing · Q3</div>
+  <h2 class="rise">Every turn of the flywheel makes us better at pricing.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-top:-4px;margin-bottom:12px">The same three questions before every rate decision. The flywheel is what finally lets us answer them.</p>
+  <div class="grid" style="grid-template-columns:1.15fr 0.9fr 1.1fr;gap:14px;align-items:stretch">
+
+    <div class="card" data-step="1" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">The questions</div>
+      <div class="q" style="padding-top:2px"><span class="num">1</span><div><b>What do we pay, and what do we make?</b><span class="why">We pay 7%, or 13% on the first $25,000. We make about 25% if we lend it, 6.5% if it sits.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>What does the customer do to earn it?</b><span class="why">Today, a single purchase. Tomorrow, their income lands here.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>How risky are they, really?</b><span class="why">We can now see what they earn, whether they climb, and who pays back.</span></div></div>
+    </div>
+
+    <div class="card" data-step="2" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--good)">The levers</div>
+      <b style="font-size:13.5px;color:var(--nu-ink)">Deposits</b>
+      <ul style="list-style:none;font-size:13.5px;line-height:1.5;margin:4px 0 12px">
+        <li>The rate we pay</li><li>Who qualifies for it</li><li>How much of their money it covers</li><li>Fixed, or tied to the market</li>
+      </ul>
+      <b style="font-size:13.5px;color:var(--good)">Loans</b>
+      <ul style="list-style:none;font-size:13.5px;line-height:1.5;margin:4px 0 0">
+        <li>The starting price</li><li>What earns a lower one</li><li>The limit</li>
+      </ul>
+    </div>
+
+    <div class="card" data-step="3" style="display:flex;flex-direction:column;background:linear-gradient(180deg,var(--c3),var(--surface) 60%)">
+      <div class="coltag" style="color:var(--coral-ink)">The call</div>
+      <b style="font-size:13.5px;color:var(--nu-ink)">Deposits</b>
+      <p style="font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;line-height:1.25;margin:4px 0 14px">15% on one month of your income, for anyone whose income lands here. 13% stays for now. Both tied to the government rate.</p>
+      <b style="font-size:13.5px;color:var(--good)">Loans</b>
+      <p style="font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;line-height:1.25;margin:4px 0 0">One starting price for everyone. Lower risk earns a lower price. Risk sets the limit, and the limit grows.</p>
+    </div>
+
+  </div>
+  <div class="band" data-step="4" style="margin-top:14px;font-size:15.5px"><b style="color:var(--coral-ink)">What we trade.</b> We give up the deposits that only came for the rate, and some margin on the riskiest borrowers, to buy income that stays and customers who climb.</div>
+  <p class="foot" data-step="4" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> Nu México rate card, Sep 2026: 7.00% base, Turbo 13% capped at $25,000 · TIIE de fondeo 7.00% · CETES 28d 6.49% · loan-to-deposit 35%, Nu Holdings Q2 2026. <b>Assumptions.</b> ~25% net lending yield · default result from a prior growth-hub test, effect size only.</p>
+</div></section>
+
+<!-- 10 THE CALL -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Yield strategy &amp; mass-market pricing · Q3</div>
+  <h2 class="rise">Four options for the 13%, and what each one trades.</h2>
+  <div class="scroll" data-step="1" style="margin-top:8px"><table class="opt" style="font-size:12.5px">
+    <tr><th></th><th>A · Keep it as is</th><th>B · Cut it to 11%</th><th>C · Gate it on income</th><th class="rec">D · Add 15% for income<span class="tag">Recommended</span></th></tr>
+    <tr><td>What it is</td><td>13% for anyone who buys once a month, on the first $25,000.</td><td>11% on the same terms.</td><td>13% only for customers whose income lands here, on one month of it.</td><td class="rec">13% stays. Add 15% on one month of income for anyone whose income lands here.</td></tr>
+    <tr><td>What it costs</td><td class="no">Up to $1,500 per customer a year over the interbank rate, for a single transaction.</td><td class="yes">Up to $500 per customer a year less.</td><td class="yes">The same money we spend today.</td><td class="rec">About $340 a year more per salary customer. 15% on a month's pay still costs less than 13% on $25,000.</td></tr>
+    <tr><td>What it buys</td><td class="no">Activity. Not income, not a bank relationship.</td><td class="no">Nothing new.</td><td class="yes">Income that stays and can be lent.</td><td class="rec yes">The same income, plus a headline nobody can match. Nobody loses anything. More deposits that stay, so lower loan prices too.</td></tr>
+    <tr><td>What it risks</td><td>Two-thirds of the book stays unlent.</td><td>Balances leave, competitors match, and it makes the news.</td><td>Transaction-only customers drop to 7%. Some leave.</td><td class="rec">We keep paying for transactions, not relationships, for another year.</td></tr>
+    <tr><td>The data that decides</td><td colspan="4"><b>The 5 January cut, 15% to 13%:</b> how many pesos left, by segment. Unread, in our data. · <b>Share of Turbo balances</b> from customers with no income landing. · <b>Loan-to-deposit</b>, 35% today. · <b>Loss rate</b> for income-visible vs not. · <b>Competitor rates</b>: Klar, Stori, Ualá, Mercado Pago.</td></tr>
+  </table></div>
+  <div class="band" data-step="2" style="margin-top:14px;font-size:15.5px"><b>Recommendation: Option D now, Option C by month 12.</b> Launch the 15% while it is pure upside. Once income is landing and the January data is read, trim the transaction tier. <b>And the deposits D brings in are cheaper money, which means cheaper loans.</b></div>
+  <p class="foot" data-step="2" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> Nu México rate card, Sep 2026 · TIIE de fondeo 7.00% · CETES 28d 6.49% · loan-to-deposit 35%, Nu Holdings Q2 2026. <b>Assumptions.</b> $1,500 and $500 are per-customer ceilings on a $25,000 cap · $340 is 200bp on a $16,840 month, two quincenas of $8,420 · the January cut has not yet been read by segment; that analysis is week one.</p>
+</div></section>
+
+<!-- 11 RESPONSIBLE AI -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Responsible AI &amp; personalisation · Q7</div>
+  <h2 class="rise">Everywhere we deploy AI, we do it with excellence.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-top:-4px;margin-bottom:12px">AI can only make things better for the customer. A person owns every decision.</p>
+  <div class="grid g3" style="gap:14px;align-items:stretch">
+
+    <div class="card" data-step="1" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">How we build</div>
+      <h3 style="font-size:17px">AI in the team's hands.</h3>
+      <div class="ben" style="grid-template-columns:88px 1fr"><div class="t" style="color:var(--good)">Success</div><div><b>Team velocity up 30%</b> from AI tooling. The January rate-cut analysis done in days, not a quarter.</div></div>
+      <div class="ben" style="grid-template-columns:88px 1fr;margin-top:auto"><div class="t" style="color:var(--coral-ink)">Guardrails</div><ul>
+        <li>A person signs every decision.</li>
+        <li>No customer data in tools without a contract.</li>
+        <li>AI drafts. Humans own.</li>
+      </ul></div>
+    </div>
+
+    <div class="card" data-step="2" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">How we decide</div>
+      <h3 style="font-size:17px">Models that size a limit and lower a price.</h3>
+      <div class="ben" style="grid-template-columns:88px 1fr"><div class="t" style="color:var(--good)">Success</div><div><b>Lending from 35% to 65% of deposits</b> with no rise in loss rate. <b>Zero outcome gaps</b> by gender or other biases, checked monthly.</div></div>
+      <div class="ben" style="grid-template-columns:88px 1fr;margin-top:auto"><div class="t" style="color:var(--coral-ink)">Guardrails</div><ul>
+        <li>Personalisation only ever moves a price down.</li>
+        <li>Removing gender does not remove bias. Proxies survive and gaps drift. Test outcomes monthly, pull the model when a gap opens.</li>
+        <li>Every decision explainable, with a person to appeal to.</li>
+      </ul></div>
+    </div>
+
+    <div class="card" data-step="3" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">How we talk</div>
+      <h3 style="font-size:17px">An agent the customer can ask how to grow.</h3>
+      <div class="ben" style="grid-template-columns:88px 1fr"><div class="t" style="color:var(--good)">Success</div><div><b>Half of growth-hub users</b> talk to it monthly. What it learns <b>lifts thin-file approval 10 points</b> at the same loss rate.</div></div>
+      <div class="ben" style="grid-template-columns:88px 1fr;margin-top:auto"><div class="t" style="color:var(--coral-ink)">Guardrails</div><ul>
+        <li>The customer knows it is an agent, and what it remembers.</li>
+        <li>It never sells.</li>
+      </ul></div>
+    </div>
+
+  </div>
+  <div class="band" data-step="4" style="margin-top:14px;font-size:15.5px"><b>The simplest fairness control is the pricing rule itself.</b> Everyone starts at the same price, and AI, whether a model or a conversation, can only move it down.</div>
+  <p class="foot" data-step="4" style="font-size:10.8px;line-height:1.45"><b>Assumptions.</b> Success thresholds are targets I would set, not results.</p>
+</div></section>
+
+<!-- 12 SEQUENCING -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">First six months, then 24 · Q8 &amp; Q2</div>
+  <h2 class="rise">The window just opened. We move first.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-top:-4px;margin-bottom:14px">The licence lets us land payroll for 16 million people who already bank here. Every month we wait, a licensed competitor can move first.</p>
+  <div class="grid g3" style="gap:14px;align-items:stretch">
+
+    <div class="card" data-step="1" style="display:flex;flex-direction:column;background:linear-gradient(180deg,var(--c3),var(--surface) 60%)">
+      <div class="coltag" style="color:var(--nu-ink)">Months 1–6 · Use the licence</div>
+      <h3>Get payroll live.</h3>
+      <div class="q"><span class="num">1</span><div><b>Launch Trae tu nómina</b><span class="why">To the customers whose payroll we can already see. Needs Account and GBA.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>Test 15% on income against 13% today</b><span class="why">A yield and price sensitivity test, sized from what past cuts taught us. Treasury sets the rate.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>Count who already lands income here, then tag it from day one</b><span class="why">Nu has never published this number. Nothing after this works without it.</span></div></div>
+      <div class="ben" style="margin-top:auto;grid-template-columns:72px 1fr"><div class="t nu">Success</div><div>Salaries landing. Income behind Turbo balances. An elasticity number in hand.</div></div>
+    </div>
+
+    <div class="card" data-step="2" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">Months 7–12 · Scale</div>
+      <h3>Scale what won.</h3>
+      <div class="q"><span class="num">1</span><div><b>Roll the winning deposit strategy to everyone</b><span class="why">Segmented where the test says so.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>Test the informal package with one cohort</b><span class="why">Ask Nu, the growth hub, rewards. A test, not a launch. Beto's door opens.</span></div></div>
+      <div class="ben" style="margin-top:auto;grid-template-columns:72px 1fr"><div class="t nu">Success</div><div>Income landing from both doors.</div></div>
+    </div>
+
+    <div class="card" data-step="3" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">Months 13–24 · Depth</div>
+      <h3>Turn the anchor into depth.</h3>
+      <div class="q"><span class="num">1</span><div><b>New partner data</b><span class="why">Rollee, Palenca, and what the agent learns.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>New products</b><span class="why">Insurance, investments. An employer offer only once their people already bank here.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>Pricing and yield at the person level</b><span class="why">The rate and limit each customer has earned. A loss ceiling per segment: cross it and limits stop growing.</span></div></div>
+      <div class="ben" style="margin-top:auto;grid-template-columns:72px 1fr"><div class="t nu">Success</div><div>Lending from 35% to 65% of deposits. A bank they love.</div></div>
+    </div>
+
+  </div>
+  <p class="fn" data-step="4" style="margin:8px 0 0;font-size:12px;color:var(--muted)">Months 1 to 6 run on Account, GBA and Credit Card capacity I do not own, and a rate Treasury signs. If payroll slips, the pricing test waits.</p>
+  <div class="band" data-step="5" style="margin-top:14px;font-size:15.5px"><b>See income first. Lend against it. Then price for the person.</b> In 24 months Nu is the bank 16 million people get paid into, and the one they love.</div>
+</div></section>
+
+<!-- 14 ALIGNMENT -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Alignment without authority · Q6</div>
+  <h2 class="rise">When the customer wins, we all win.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-top:-4px;margin-bottom:16px">Align on a clear, measurable vision first. The trade-offs reveal themselves. Say Card's roadmap collides with a bundle on the licence clock.</p>
+  <div class="grid" style="grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch">
+    <div class="card" data-step="1" style="display:flex;flex-direction:column"><span class="num" style="font-size:26px">1</span><h3 style="margin-top:6px;font-size:17px">One team. One number.</h3>
+      <span class="why">Agree the customer outcome and one shared benchmark before we talk roadmaps. It is not personal.</span></div>
+    <div class="card" data-step="2" style="display:flex;flex-direction:column"><span class="num" style="font-size:26px">2</span><h3 style="margin-top:6px;font-size:17px">Be humble. Learn their problem first.</h3>
+      <span class="why">Card lives on delinquency and a launch already promised. Ask what makes their quarter easier before asking for anything.</span></div>
+    <div class="card" data-step="3" style="display:flex;flex-direction:column"><span class="num" style="font-size:26px">3</span><h3 style="margin-top:6px;font-size:17px">Trade in assets and customer benefits, not just relational equity.</h3>
+      <span class="why">Income they can underwrite against. Collection timed to payday. A trade, not a favour.</span></div>
+    <div class="card" data-step="4" style="display:flex;flex-direction:column"><span class="num" style="font-size:26px">4</span><h3 style="margin-top:6px;font-size:17px">Show, don't tell.</h3>
+      <span class="why">A small test beats a long argument. Card picks the guardrail. The data settles it.</span></div>
+    <div class="card" data-step="5" style="display:flex;flex-direction:column"><span class="num" style="font-size:26px">5</span><h3 style="margin-top:6px;font-size:17px">Think outside the box. Keep the ambition.</h3>
+      <span class="why">If Card cannot move, ship without the card piece and add it at month 7. The promise never shrinks. Only the sequence bends.</span></div>
+  </div>
+  <div class="band" data-step="6" style="margin-top:16px;font-size:15.5px"><b>Keep the customer at the centre and it stops being personal.</b> Nobody has to lose for Lupita to win.</div>
+</div></section>
+
+<!-- 13 TEAM -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Team &amp; org design · Q5</div>
+  <h2 class="rise">Start as the team. Grow it as the customer wins.</h2>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-top:-4px;margin-bottom:14px">I assume no headcount. Six months as an IC with the partners who can hit the benchmarks. Roles come later, and only where owning the work directly adds leverage.</p>
+  <div class="grid" style="grid-template-columns:1.1fr 1fr;gap:14px;align-items:stretch">
+
+    <div class="card" data-step="1" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">Months 1–6 · one IC, seven partners</div>
+      <svg class="draw" viewBox="0 0 520 250" role="img" aria-label="Hub and spoke: me at the centre, working directly with a pricing analyst, credit, Card and Account PMs, data science, marketing, design, and legal and treasury" style="margin-top:4px">
+        <g stroke="var(--nu)" stroke-width="1.5" opacity=".35" fill="none">
+          <path class="arc" d="M260 125 L95 48"/><path class="arc" d="M260 125 L95 202"/><path class="arc" d="M260 125 L260 30"/><path class="arc" d="M260 125 L260 220"/>
+          <path class="arc" d="M260 125 L425 48"/><path class="arc" d="M260 125 L425 202"/><path class="arc" d="M260 125 L60 125"/><path class="arc" d="M260 125 L460 125"/>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="var(--ink)" text-anchor="middle">
+          <g class="node"><circle cx="260" cy="125" r="40" fill="var(--nu)"/><text x="260" y="121" fill="#fff" font-size="13" font-weight="700">Me</text><text x="260" y="137" fill="#fff" font-size="10" opacity=".85">IC, six months</text></g>
+          <g class="node" style="transition-delay:.1s"><rect x="40" y="30" width="110" height="36" rx="18" fill="var(--c3)"/><text x="95" y="52">Pricing analyst</text></g>
+          <g class="node" style="transition-delay:.2s"><rect x="215" y="12" width="90" height="36" rx="18" fill="var(--c3)"/><text x="260" y="34">Credit</text></g>
+          <g class="node" style="transition-delay:.3s"><rect x="360" y="30" width="130" height="36" rx="18" fill="var(--c3)"/><text x="425" y="52">Card &amp; Account PMs</text></g>
+          <g class="node" style="transition-delay:.4s"><rect x="5" y="107" width="110" height="36" rx="18" fill="var(--c3)"/><text x="60" y="129">Data science</text></g>
+          <g class="node" style="transition-delay:.5s"><rect x="405" y="107" width="110" height="36" rx="18" fill="var(--c3)"/><text x="460" y="129">Marketing</text></g>
+          <g class="node" style="transition-delay:.6s"><rect x="40" y="184" width="110" height="36" rx="18" fill="var(--c3)"/><text x="95" y="206">Design</text></g>
+          <g class="node" style="transition-delay:.7s"><rect x="360" y="184" width="130" height="36" rx="18" fill="var(--c3)"/><text x="425" y="206">Legal &amp; Treasury</text></g>
+          <g class="node" style="transition-delay:.8s"><rect x="200" y="202" width="120" height="36" rx="18" fill="var(--c4)"/><text x="260" y="224" fill="var(--good)">Diego</text></g>
+        </g>
+      </svg>
+      <div class="ben" style="margin-top:auto;grid-template-columns:90px 1fr"><div class="t nu">Benchmark</div><div>Salaries landing. Income behind Turbo balances. An elasticity number.</div></div>
+    </div>
+
+    <div class="card" data-step="2" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--good)">The test a new role must pass</div>
+      <div class="q"><span class="num">1</span><div><b>The work recurs.</b><span class="why">Daily decisions, not a launch that ends.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>A partner carries it part-time, and it now gates the roadmap.</b><span class="why">Pricing analysis gating a rate call. Design gating Beto's package.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>Owning it moves a number we can name.</b><span class="why">Approval, loss, cost of funds, or income landing here.</span></div></div>
+      <div class="ben" style="margin-top:auto;grid-template-columns:90px 1fr"><div class="t nu">Rule</div><div>All three, or the partner keeps it. A role gets a business case, like a product.</div></div>
+    </div>
+
+  </div>
+  <div class="band" data-step="3" style="margin-top:14px;font-size:15.5px"><b>Earn the team. Never build one for its own sake.</b></div>
+</div></section>
+
+<!-- 15 CLOSE -->
+<section class="slide"><div class="w">
+  <div class="eb rise">Nu te ve</div>
+  <h1 class="rise" style="font-size:clamp(32px,4.4vw,56px);line-height:1.06">Two years from now, 16 million people bank with someone who can finally see them.</h1>
+  <div class="grid g3" style="margin-top:30px;gap:18px">
+    <div class="fig" data-step="1"><svg class="por" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait of Lupita, a 29-year-old administrative assistant">
+          <g clip-path="url(#pc)">
+            <rect width="120" height="120" fill="var(--c1)"/>
+            <path d="M16 120C18 95 39 85 60 85s42 10 44 35z" fill="var(--nu)"/>
+            <rect x="52" y="68" width="16" height="22" rx="7" fill="#c98663"/>
+            <path d="M31 60c-2-28 11-42 29-42s31 14 29 42c0 15-4 23-6 27l-8-4c4-12 4-24 4-30-8 4-30 4-38 0 0 6 0 18 4 30l-8 4c-2-4-6-12-6-27z" fill="#3b2b23"/>
+            <ellipse cx="60" cy="54" rx="19" ry="22" fill="#d69a72"/>
+            <path d="M41 50c0-16 9-23 19-23s19 7 19 23c-3-8-9-12-19-12s-16 4-19 12z" fill="#3b2b23"/>
+            <circle cx="53" cy="55" r="2" fill="#2a1d18"/>
+            <circle cx="67" cy="55" r="2" fill="#2a1d18"/>
+            <path d="M54 64c3 4 9 4 12 0" stroke="#2a1d18" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <circle cx="46" cy="61" r="3" fill="#c4735a" opacity=".35"/>
+            <circle cx="74" cy="61" r="3" fill="#c4735a" opacity=".35"/>
+          </g>
+        </svg><div style="font-family:'Fraunces',serif;font-size:clamp(17px,1.7vw,22px);font-weight:600;line-height:1.2">Lupita's salary lands here.</div></div>
+    <div class="fig" data-step="2"><svg class="por" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait of Don Beto, a 47-year-old shop owner">
+          <g clip-path="url(#pc)">
+            <rect width="120" height="120" fill="var(--c1)"/>
+            <path d="M14 120C16 94 38 84 60 84s44 10 46 36z" fill="#8a6a14"/>
+            <rect x="52" y="68" width="16" height="20" rx="7" fill="#a86a45"/>
+            <ellipse cx="60" cy="55" rx="19" ry="21" fill="#b9784f"/>
+            <path d="M39 49c0-14 9-24 21-24s21 10 21 24z" fill="#4a3f3a"/>
+            <path d="M33 49h54a3 3 0 0 1 0 6H33a3 3 0 0 1 0-6z" fill="#3a302b"/>
+            <circle cx="53" cy="60" r="2" fill="#2a1d18"/>
+            <circle cx="67" cy="60" r="2" fill="#2a1d18"/>
+            <path d="M51 68c3-2 15-2 18 0" stroke="#3a302b" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M55 73c2 2 8 2 10 0" stroke="#2a1d18" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+          </g>
+        </svg><div style="font-family:'Fraunces',serif;font-size:clamp(17px,1.7vw,22px);font-weight:600;line-height:1.2">Beto's remesa counts here.</div></div>
+    <div class="fig" data-step="3"><svg class="por" viewBox="0 0 120 120" role="img" aria-label="Nu"><g clip-path="url(#pc)"><rect width="120" height="120" fill="var(--nu)"/><text x="60" y="76" text-anchor="middle" font-family="Fraunces,serif" font-size="46" font-weight="700" fill="#fff" letter-spacing="-2">nu</text></g></svg><div style="font-family:'Fraunces',serif;font-size:clamp(17px,1.7vw,22px);font-weight:600;line-height:1.2">Both see a path to financial power.</div></div>
+  </div>
+  <div class="band" data-step="4" style="margin-top:26px;font-size:16.5px"><b>One number turns the flywheel: the share of customers whose income lands at Nu.</b> Not yet counted. I assume low single digits. Every point it climbs makes the fit, the timing and the pathways better for everyone.</div>
+  <p data-step="5" style="margin-top:24px;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(18px,1.9vw,24px);line-height:1.3;color:var(--nu-ink);max-width:56ch">We are on a mission to unleash the power of the global majority. In México, this is what it looks like.</p>
+</div></section>
+
+<!-- 16 APPENDIX -->
+<section class="slide dense"><div class="w">
+  <div class="eb rise">Appendix · what I am watching, and what this rests on</div>
+  <h2 class="rise">Three risks. One page of sources.</h2>
+  <div class="grid" style="grid-template-columns:1.25fr 1fr;gap:16px;align-items:start">
+    <div class="card" data-step="1">
+      <div class="q" style="padding-top:2px"><span class="num">1</span><div><b>Customers get pickier about rate once Mercado Pago and Klar are banks.</b> <span class="chip warn">most likely</span><span class="why">They are not today. Cuenta Nu launched at 9% under an 11.25% policy rate. Measure elasticity by segment now, and hold the base on relationship rather than rate.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>We see something we should not.</b> <span class="chip hot">trust</span><span class="why">Exclusion by policy, outcome parity across gender and other biases, and an explanation we can show the customer. If we cannot show it, the model is using something it should not.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>Bigger lines, more bust-out, and a remesa is not a salary.</b> <span class="chip hot">credit</span><span class="why">Remittance income depends on someone offshore and moves with US labour, so a cohort can move together. Smaller lines, shorter tenors and a concentration limit, not a refusal to lend.</span></div></div>
+    </div>
+    <div class="card" data-step="2" style="font-size:12.5px;line-height:1.5">
+      <div class="coltag" style="color:var(--nu-ink)">Facts</div>
+      <p>Nu Holdings Q2 2026 results and July update · CNBV banca múltiple authorisation, 9 July 2026 · IMSS registered positions, June 2026 · INEGI ENOE, Q1 and July 2026 · CNBV/INEGI ENIF 2024 · Banxico policy announcements and the August Citi survey · CETES 28d auction, 1 September 2026 · Banxico remittances 2025 · Nu México published rendimientos, September 2026.</p>
+      <div class="coltag" style="color:var(--coral-ink);margin-top:12px">Assumptions</div>
+      <p>the share of Nu México customers with income landing here is undisclosed; I assume low single digits · 65% lent is my target · ~25% net lending yield · personal-loan CAT near 85% · $340 is 200bp on a $16,840 month · Lupita and Beto are composites · prior-role evidence cited as effect sizes only.</p>
+      <p style="margin-top:12px;color:var(--muted)">Live model and both flows: claude.ai/code/artifact/93da0992-7c28-4c92-81cd-f67f16a3cfaa</p>
+    </div>
+  </div>
+</div></section>
+
+</div>
+
+<div class="nav">
+  <button class="btn" id="prev" type="button">← Back</button>
+  <div><div class="dots" id="dots"></div><div class="ctr" id="ctr"></div></div>
+  <button class="btn" id="next" type="button">Next →</button>
+</div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')), n=slides.length, i=0;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dots=document.getElementById('dots'), bar=document.getElementById('bar'), ctr=document.getElementById('ctr'), kick=document.getElementById('kick');
+  var prevBtn=document.getElementById('prev'), nextBtn=document.getElementById('next');
+  slides.forEach(function(_,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Slide '+(k+1));b.addEventListener('click',function(){go(k);});dots.appendChild(b);});
+  var db=[].slice.call(dots.children);
+
+  function cascade(s){
+    var k=0;
+    s.querySelectorAll('.rise').forEach(function(e){ e.style.setProperty('--d',(k++*80)+'ms'); });
+    var after=k*80+60;
+    s.querySelectorAll('[data-step]').forEach(function(e){
+      var st=+e.getAttribute('data-step')||1;
+      e.style.setProperty('--d',(after+(st-1)*130)+'ms');
+    });
+    var all=s.querySelectorAll('.rise,[data-step]');
+    all.forEach(function(e){ e.style.animation='none'; });
+    void s.offsetHeight;
+    all.forEach(function(e){ e.style.animation=''; });
+  }
+
+  function go(k){
+    if(k<0||k>=n||(k===i&&slides[k].classList.contains('in')))return;
+    slides[i].classList.remove('in');
+    i=k;
+    cascade(slides[i]);
+    slides[i].classList.add('in');
+    paint();
+    try{history.replaceState(null,'','#'+(i+1));}catch(e){}
+  }
+  function paint(){
+    db.forEach(function(b,k){b.setAttribute('aria-current',k===i?'true':'false');});
+    bar.style.width=((i+1)/n*100)+'%';
+    ctr.textContent=(i+1)+' / '+n;
+    kick.textContent=String(i+1).padStart(2,'0')+' / '+n;
+    prevBtn.disabled=i===0; nextBtn.disabled=i===n-1;
+  }
+  prevBtn.addEventListener('click',function(){go(i-1);});
+  nextBtn.addEventListener('click',function(){go(i+1);});
+  document.addEventListener('keydown',function(e){
+    if(e.target&&/INPUT|TEXTAREA/.test(e.target.tagName))return;
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'||e.key==='Enter'){e.preventDefault();go(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    else if(e.key==='Home'){go(0);} else if(e.key==='End'){go(n-1);}
+    else if(e.key==='p'||e.key==='P'){window.print();}
+  });
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.nav,.brand,.kick,a,button'))return;
+    go(i+1);
+  });
+  document.body.classList.add('anim');
+  var h=parseInt((location.hash||'').slice(1),10);
+  if(h>=1&&h<=n&&h!==1){ slides[0].classList.remove('in'); i=h-1; slides[i].classList.add('in'); }
+  cascade(slides[i]); paint();
+})();
+</script>
+
+</body>
+</html>
