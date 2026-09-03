@@ -82,6 +82,11 @@ body.anim .tam .fill{transition:width .9s cubic-bezier(.2,.7,.2,1);width:0}
 body.anim .slide.in .tam .fill{width:var(--w)}
 .tam .lab{font-size:12.5px;line-height:1.25}
 .tam .lab b{display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.tam.sm .r{grid-template-columns:1fr 96px;gap:10px}
+.tam.sm .lab b{font-size:14.5px}
+.tam.sm .track{height:22px}
+.tam.sm .sub{font-size:10.5px}
+.coltag{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:9px}
 .tam .sub{color:var(--muted);font-size:11px}
 /* product ladder */
 .lad{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:stretch}
@@ -318,64 +323,52 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
   <p class="foot" data-step="3" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> Nu Holdings Q2 2026: México deposits US$5.7bn, loan-to-deposit 35%; group risk-adjusted NIM a record 12.4%, guided to hold · CNBV authorised Nubank México as a banca múltiple, 9 July; 16m customers by end-July · CNBV/INEGI ENIF 2024.<br><b>Assumptions.</b> 65% lent is my target, not a disclosed plan · the 12.4% margin applied to México's incremental balances is order-of-magnitude, not a forecast · the price-premium claim rests on a personal-loan CAT near 85%, my read of public disclosure.</p>
 </div></section>
 
-<!-- 3 ACT ONE : LUPITA -->
+<!-- 3 THE OPPORTUNITY -->
 <section class="slide dense"><div class="w">
-  <div class="eb rise">Act one · the formal worker</div>
-  <h2 class="rise">22.8 million salaries land somewhere every quincena.</h2>
-  <div class="grid g2" style="grid-template-columns:1fr 1.15fr;align-items:start">
-    <div data-step="1">
+  <h2 class="rise" style="font-size:clamp(21px,3.3vw,38px)">22.8 million salaries. Almost none land at Nu.</h2>
+  <div class="grid" style="grid-template-columns:0.92fr 1.12fr 1.06fr;gap:16px;align-items:stretch">
+
+    <div class="card" data-step="1" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--coral-ink)">The customer</div>
       <div class="fig">
         <svg class="por" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait: Lupita, a formally employed worker in her late twenties">
           <g clip-path="url(#pc)">
-            <rect width="120" height="120" fill="var(--c3)"/>
-            <circle cx="60" cy="47" r="22" fill="var(--nu)" opacity=".9"/>
-            <path d="M14 120C16 90 35 76 60 76s44 14 46 44z" fill="var(--nu)" opacity=".9"/>
+            <rect width="120" height="120" fill="var(--c1)"/>
+            <circle cx="60" cy="47" r="22" fill="var(--coral)"/>
+            <path d="M14 120C16 90 35 76 60 76s44 14 46 44z" fill="var(--coral)"/>
             <path d="M38 40c2-14 10-20 22-20s20 6 22 20c-6-5-14-7-22-7s-16 2-22 7z" fill="var(--ink)" opacity=".28"/>
           </g>
         </svg>
-        <div>
-          <div class="big">38%</div>
-          <div class="lbl">of Mexican workers</div>
-        </div>
+        <div><div class="big coral">38%</div><div class="lbl">of México's workers</div></div>
       </div>
-      <div class="quote" style="margin-top:14px">"My salary goes to the bank my boss picked. I pay fees, I keep a minimum, and my credit line is whatever the bureau says, not what I earn."<small>Lupita, 29 · IMSS-registered · already a Nu customer</small></div>
-      <span class="why" style="margin-top:10px">She already lives in Nu: card, Cajitas, recargas. Her paycheck leaves the other bank within 48 hours, mostly to pay her Nu card. <b>Her problem is plumbing.</b> The paycheck is parked in the wrong place.</span>
+      <div class="quote" style="margin-top:13px;font-size:14.5px">"My salary goes to the bank my boss picked. My credit line is whatever the bureau says, not what I earn."<small>Lupita, 29 · IMSS-registered · already a Nu customer</small></div>
+      <span class="why" style="margin-top:auto;padding-top:10px">She already lives in Nu. Her paycheck leaves the other bank within 48 hours, mostly to pay her Nu card. <b>Her problem is plumbing.</b></span>
     </div>
-    <div class="card" data-step="2">
-      <h3>Why this is winnable now, and was not before</h3>
-      <div class="q"><span class="num">1</span><div><b>Payroll dispersal is a banking activity.</b><span class="why">As a SOFIPO we could not host a nómina account. Since 6 August we can, with IPAB cover at 400,000 UDIs instead of 25,000.</span></div></div>
-      <div class="q"><span class="num">2</span><div><b>The worker chooses, not the employer.</b><span class="why">Portability is her legal right: free, about eleven business days, and her employer never has to be involved. The incumbent's grip is an HR contract she can simply walk around.</span></div></div>
-      <div class="q"><span class="num">3</span><div><b>We already know who they are.</b><span class="why">A recurring same-day deposit from a known employer is visible in our own data. We do not have to find these customers. We have to ask them.</span></div></div>
-      <div class="ben"><div class="t">Her</div><div>A line sized on her salary, not on a bureau file. No fee, no minimum, money the day it lands.</div></div>
-      <div class="ben"><div class="t nu">Nu</div><div>Transactional balances that don't rate-shop, verified income to lend against, and payday-aligned collection.</div></div>
-    </div>
-  </div>
-  <p class="foot" data-step="3">IMSS, June 2026: 22,779,704 registered positions. Share of the ~59.5m employed population (INEGI ENOE). Portrait is an illustration, not a photograph.</p>
-</div></section>
 
-<!-- 4 MOAT & TAM -->
-<section class="slide dense"><div class="w">
-  <div class="eb rise">The opportunity</div>
-  <h2 class="rise">Big enough to matter. Hard enough to copy.</h2>
-  <div class="grid g2" style="grid-template-columns:1.15fr 1fr;align-items:start">
-    <div data-step="1">
-      <div class="tam">
+    <div class="card" data-step="2" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">The size</div>
+      <div class="tam sm">
         <div class="r"><div class="track"><div class="fill" style="--w:100%;background:var(--c5)"></div></div><div class="lab"><b>59.5M</b><span class="sub">employed in México</span></div></div>
-        <div class="r"><div class="track"><div class="fill" style="--w:55%;background:var(--coral);opacity:.75"></div></div><div class="lab"><b>32.7M</b><span class="sub">informal · no payslip</span></div></div>
-        <div class="r"><div class="track"><div class="fill" style="--w:38.3%;background:var(--nu);opacity:.75"></div></div><div class="lab"><b>22.8M</b><span class="sub">formal · IMSS payroll</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:55%;background:var(--coral);opacity:.75"></div></div><div class="lab"><b>32.7M</b><span class="sub">informal, no payslip</span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:38.3%;background:var(--nu);opacity:.72"></div></div><div class="lab"><b>22.8M</b><span class="sub">formal, IMSS payroll</span></div></div>
         <div class="r"><div class="track"><div class="fill" style="--w:26.9%;background:var(--nu)"></div></div><div class="lab"><b>16M</b><span class="sub">Nu México customers</span></div></div>
-        <div class="r"><div class="track"><div class="fill" style="--w:2.2%;background:var(--good)"></div></div><div class="lab"><b>~1.3M</b><span class="sub">income visible to Nu <i>(assumption)</i></span></div></div>
+        <div class="r"><div class="track"><div class="fill" style="--w:2.2%;background:var(--good)"></div></div><div class="lab"><b>~1.3M</b><span class="sub">income visible <i>(assumed)</i></span></div></div>
       </div>
-      <p class="foot" style="margin-top:12px"><b>The gap is the strategy.</b> We have 27% of the country's workers as customers and we can see the income of roughly two percent of them. Nobody else has that gap either, which is why it is still available.</p>
+      <span class="why" style="margin-top:auto;padding-top:12px"><b>The gap is the strategy.</b> 27% of México's workers are already our customers. We can see the income of about 2% of them.</span>
     </div>
-    <div class="card" data-step="2">
-      <h3>Why it holds once we have it</h3>
-      <div class="q"><span class="num">1</span><div><b>A redirected salary is a switching cost a rate cannot buy.</b><span class="why">Moving a deposit takes one tap. Moving where your salary is paid takes eleven days and a decision. People do it roughly once. Whoever is holding it when the music stops keeps it.</span></div></div>
-      <div class="q"><span class="num">2</span><div><b>Every month of observed income compounds.</b><span class="why">Month one it is an estimate. Month twelve it is a repayment record with seasonality in it. The decision gets better while the cost of making it falls, and that curve is not purchasable.</span></div></div>
-      <div class="q"><span class="num">3</span><div><b>A follower starts cold no matter what they pay.</b><span class="why">Klar, Stori, Ualá and Mercado Pago can match 13% in a week. None of them can match a year of watching someone get paid. Rate competition is a price war; income visibility is an asset that appreciates.</span></div></div>
-      <div class="do">This is the only asset in the Mexican mass market that gets more valuable the longer you hold it.</div>
+
+    <div class="card" data-step="3" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--good)">The unlock</div>
+      <div class="q"><span class="num">1</span><div><b>Payroll is a banking activity.</b><span class="why">A SOFIPO could not host a nómina account. A bank can, with IPAB cover at 400,000 UDIs instead of 25,000.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>The worker chooses, not the employer.</b><span class="why">Portability is her legal right: free, eleven business days, employer never involved. The incumbent's grip is an HR contract she walks around.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>We already know who they are.</b><span class="why">A recurring same-day deposit from a known employer sits in our own data. We do not have to find them. We have to ask.</span></div></div>
+      <div class="ben"><div class="t">Her</div><div>A line sized on her salary, not a bureau file. Money the day it lands.</div></div>
+      <div class="ben"><div class="t nu">Nu</div><div>Deposits that don't rate-shop, income to lend against, payday-aligned collection.</div></div>
     </div>
+
   </div>
+  <div class="band" data-step="4" style="margin-top:16px;font-size:16px"><b>A redirected salary is a switching cost a rate cannot buy.</b> Moving a deposit takes one tap; moving where your salary lands takes eleven days and a decision. Competitors can match 13% in a week. None can match a year of watching someone get paid.</div>
+  <p class="foot" data-step="4" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> IMSS, June 2026: 22,779,704 registered positions · INEGI ENOE: ~59.5m employed, informality 55.0% at July 2026 · Nu Holdings Q2 2026 and July update: 16m México customers.<br><b>Assumptions.</b> ~1.3m customers with income visible to Nu, my estimate, not disclosed · portrait is an illustration, not a photograph.</p>
 </div></section>
 
 <!-- 5 THE LADDER -->
