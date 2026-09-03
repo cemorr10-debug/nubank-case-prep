@@ -137,7 +137,7 @@ body.anim .slide.in .tam .fill{width:var(--w)}
 .tl .t small{display:block;font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:5px;font-weight:700}
 .foot{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.5}
 .foot b{color:var(--ink2)}
-.pull{font-family:'Fraunces',serif;font-style:italic;font-size:15.5px;line-height:1.35;color:var(--nu-ink);text-align:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--hair)}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-size:15.5px;line-height:1.35;color:var(--nu-ink);text-align:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--hair)}
 .quote{font-family:'Fraunces',serif;font-size:15.5px;font-style:italic;line-height:1.4;color:var(--ink);padding:11px 15px;border-left:3px solid var(--coral);background:var(--c1);border-radius:0 12px 12px 0}
 .quote small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:11.5px;color:var(--muted);margin-top:6px}
 svg{display:block;width:100%;height:auto;overflow:visible}
@@ -223,13 +223,12 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
 
 <!-- 2 THE BLIND SPOT -->
 <section class="slide dense"><div class="w">
-  <div class="eb rise">The mission</div>
   <h2 class="rise" style="font-size:clamp(19px,3.15vw,35px)">We're on a mission to unleash the power of the global majority.</h2>
   <div class="grid g2" style="align-items:stretch">
-    <div class="card" data-step="1">
+    <div class="card" data-step="1" style="display:flex;flex-direction:column">
       <div class="eb" style="color:var(--nu-ink);margin-bottom:6px">The customer's problem</div>
-      <h3>Customers can't see a path to their own financial power.</h3>
-      <p style="font-size:13.5px;margin-top:5px"><b>63% can't get formal credit</b> — and those who can often pay a premium, or start below their true capacity.</p>
+      <h3>Customers can't see a path to financial power.</h3>
+      <p style="font-size:13.5px;margin-top:5px"><b>63% can't get formal credit.</b> Those who can pay a premium, or start below their true capacity.</p>
       <svg class="draw" viewBox="0 0 500 376" role="img" aria-label="A self-reinforcing loop. Product doesn't fit: customers stack loans to cover unmet needs, so risk compounds. Price doesn't fit: high prices force emergency-only borrowing, so growth stalls. Pathway doesn't fit: customers can't see how to improve, so trust and agency erode — which returns them to stacking loans." style="margin-top:14px">
         <defs><marker id="cyc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5 0 10z" fill="var(--nu)"/></marker></defs>
         <g fill="none" stroke="var(--nu)" stroke-width="2.4" opacity=".45" marker-end="url(#cyc)">
@@ -281,11 +280,11 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
       </svg>
       <p class="pull">So they build creative, albeit high-risk, workarounds.</p>
     </div>
-    <div class="card" data-step="2">
+    <div class="card" data-step="2" style="display:flex;flex-direction:column">
       <div class="eb" style="color:var(--nu-ink);margin-bottom:6px">Nu's problem</div>
       <h3>Nu can't see the customer clearly.</h3>
-      <p style="font-size:13.5px;margin-top:5px">We can see what <b>16 million people spend</b>. We can't see what they <b>earn</b> — so most of the deposit book can't be lent.</p>
-      <svg class="draw" viewBox="0 0 540 250" role="img" aria-label="Of a 5.7 billion dollar deposit book, 35 percent — 2.0 billion — is lent today. With income visible, deployment could reach 65 percent, or 3.7 billion, unlocking a further 1.7 billion of lending." style="margin-top:16px">
+      <p style="font-size:13.5px;margin-top:5px">We see what <b>16 million people spend</b>. Not what they <b>earn</b> — so most of the book can't be lent.</p>
+      <svg class="draw" viewBox="0 0 540 232" role="img" aria-label="Of a 5.7 billion dollar deposit book, 35 percent — 2.0 billion — is lent today. With income visible, deployment could reach 65 percent, or 3.7 billion, unlocking a further 1.7 billion of lending." style="margin-top:16px">
         <g font-family="Inter,sans-serif">
           <g class="node">
             <text x="0" y="26" font-size="10.5" font-weight="700" letter-spacing="1.4" fill="var(--muted)">TODAY</text>
@@ -306,18 +305,17 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
           </g>
           <g class="node" style="transition-delay:.55s">
             <path d="M250 148 L250 158 L376 158 L376 148" fill="none" stroke="var(--nu)" stroke-width="1.5" opacity=".55"/>
-            <text x="313" y="180" font-size="13" font-weight="700" fill="var(--nu-ink)" text-anchor="middle">The prize: $1.7bn put to work</text>
-            <text x="313" y="199" font-size="11" fill="var(--ink2)" text-anchor="middle">≈$210m more a year at the group's 12.4%</text>
-            <text x="313" y="214" font-size="11" fill="var(--ink2)" text-anchor="middle">risk-adjusted margin</text>
-            <text x="313" y="236" font-size="10.5" font-style="italic" fill="var(--muted)" text-anchor="middle">illustrative — 65% target and margin applied are assumptions</text>
+            <text x="313" y="180" font-size="13.5" font-weight="700" fill="var(--nu-ink)" text-anchor="middle">The prize: $1.7bn put to work</text>
+            <text x="313" y="200" font-size="11.5" fill="var(--ink2)" text-anchor="middle">About $210m a year at Nu's 12.4% risk-adjusted margin</text>
+            <text x="313" y="220" font-size="10.5" font-style="italic" fill="var(--muted)" text-anchor="middle">illustrative — the 65% target is mine</text>
           </g>
         </g>
       </svg>
-      <p class="pull">Payroll and earnings data are what move 35% to 65%.</p>
+      <p class="pull">Payroll data is what moves 35% to 65%.</p>
     </div>
   </div>
-  <div class="band" data-step="3" style="margin-top:14px;font-size:17px"><b>We are uniquely positioned to break limiting assumptions about the economic power of the global majority.</b> The licence is the first time Nu can see income — and that is what turns a card they like into <b>a bank they love</b>.</div>
-  <p class="foot" data-step="3" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> Nu Holdings Q2 2026: México deposits US$5.7bn, loan-to-deposit 35%, deposits down on a deliberate deposit-optimisation strategy; group risk-adjusted NIM a record 12.4%, guided to hold · CNBV authorised Nubank México as a banca múltiple on 9 July; 16m customers by end-July · Nu México rate card, Sep 2026: Cajita 24/7 7.00%, Turbo 13% capped at $25,000 · CETES 28d 6.49%, 1 Sep auction · Banxico held at 6.50% since May; Citi survey, Aug 2026 · CNBV/INEGI ENIF 2024.<br><b>Assumptions.</b> 65% is my target, not a disclosed plan · the group's 12.4% margin is applied to México's incremental balances as an order-of-magnitude, not a forecast · the undeployed book earns roughly the risk-free rate — Nu discloses the ratio, not the asset mix · personal-loan CAT near 85%.</p>
+  <div class="band" data-step="3" style="margin-top:14px;font-size:17px"><b>We are uniquely positioned to break limiting assumptions about the economic power of the global majority.</b> The licence is the first time Nu can see income — and that turns a card they like into <b>a bank they love</b>.</div>
+  <p class="foot" data-step="3" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> Nu Holdings Q2 2026: México deposits US$5.7bn, loan-to-deposit 35%; group risk-adjusted NIM a record 12.4%, guided to hold · CNBV authorised Nubank México as a banca múltiple, 9 July; 16m customers by end-July · CNBV/INEGI ENIF 2024.<br><b>Assumptions.</b> 65% lent is my target, not a disclosed plan · the 12.4% margin applied to México's incremental balances is order-of-magnitude, not a forecast · the price-premium claim rests on a personal-loan CAT near 85%, my read of public disclosure.</p>
 </div></section>
 
 <!-- 3 ACT ONE : LUPITA -->
