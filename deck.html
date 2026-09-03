@@ -69,7 +69,7 @@ h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:19px;line-heig
 .ben .t.nu{color:var(--good)}
 /* portrait figure */
 .fig{display:flex;gap:16px;align-items:center}
-.por{width:96px;height:96px;flex:0 0 96px;border-radius:50%;overflow:hidden;box-shadow:var(--sh)}
+.por{width:104px;height:104px;flex:0 0 104px;border-radius:50%;overflow:hidden;box-shadow:var(--sh)}
 .fig .big{font-family:'Fraunces',serif;font-size:clamp(30px,3.6vw,46px);font-weight:600;line-height:1;letter-spacing:-.02em;color:var(--nu-ink);font-variant-numeric:tabular-nums}
 .fig .big.coral{color:var(--coral-ink)}
 .fig .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:7px}
@@ -86,6 +86,12 @@ body.anim .slide.in .tam .fill{width:var(--w)}
 .tam.sm .lab b{font-size:14.5px}
 .tam.sm .track{height:22px}
 .tam.sm .sub{font-size:10.5px}
+.attrs{display:flex;flex-direction:column;margin-top:14px;font-size:12.5px}
+.attrs>div{display:grid;grid-template-columns:74px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--hair)}
+.attrs>div:last-child{border-bottom:none}
+.attrs span{color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding-top:2px}
+.attrs b{font-weight:600;color:var(--ink)}
+.role{color:var(--muted);font-size:12.5px;line-height:1.3;margin-top:5px}
 .coltag{font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:9px}
 .tam .sub{color:var(--muted);font-size:11px}
 /* product ladder */
@@ -330,21 +336,36 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
 
     <div class="card" data-step="1" style="display:flex;flex-direction:column">
       <div class="coltag" style="color:var(--coral-ink)">The customer</div>
-      <div class="fig">
-        <svg class="por" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait: Lupita, a formally employed worker in her late twenties">
+      <div class="fig" style="gap:14px">
+        <!-- SWAP: replace this <svg class="por"> with <img class="por" src="data:image/jpeg;base64,..."> for a real photo -->
+        <svg class="por" viewBox="0 0 120 120" role="img" aria-label="Illustrated portrait of Lupita, a 29-year-old administrative assistant">
           <g clip-path="url(#pc)">
             <rect width="120" height="120" fill="var(--c1)"/>
-            <circle cx="60" cy="47" r="22" fill="var(--coral)"/>
-            <path d="M14 120C16 90 35 76 60 76s44 14 46 44z" fill="var(--coral)"/>
-            <path d="M38 40c2-14 10-20 22-20s20 6 22 20c-6-5-14-7-22-7s-16 2-22 7z" fill="var(--ink)" opacity=".28"/>
+            <path d="M16 120C18 95 39 85 60 85s42 10 44 35z" fill="var(--nu)"/>
+            <rect x="52" y="68" width="16" height="22" rx="7" fill="#c98663"/>
+            <path d="M31 60c-2-28 11-42 29-42s31 14 29 42c0 15-4 23-6 27l-8-4c4-12 4-24 4-30-8 4-30 4-38 0 0 6 0 18 4 30l-8 4c-2-4-6-12-6-27z" fill="#3b2b23"/>
+            <ellipse cx="60" cy="54" rx="19" ry="22" fill="#d69a72"/>
+            <path d="M41 50c0-16 9-23 19-23s19 7 19 23c-3-8-9-12-19-12s-16 4-19 12z" fill="#3b2b23"/>
+            <circle cx="53" cy="55" r="2" fill="#2a1d18"/>
+            <circle cx="67" cy="55" r="2" fill="#2a1d18"/>
+            <path d="M54 64c3 4 9 4 12 0" stroke="#2a1d18" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <circle cx="46" cy="61" r="3" fill="#c4735a" opacity=".35"/>
+            <circle cx="74" cy="61" r="3" fill="#c4735a" opacity=".35"/>
           </g>
         </svg>
-        <div><div class="big coral">38%</div><div class="lbl">of México's workers</div></div>
+        <div>
+          <div style="font-family:'Fraunces',serif;font-size:25px;font-weight:600;line-height:1.05">Lupita, 29</div>
+          <div class="role">Auxiliar administrativa<br>Guadalajara</div>
+        </div>
       </div>
-      <div class="quote" style="margin-top:13px;font-size:14.5px">"My salary goes to the bank my boss picked. My credit line is whatever the bureau says, not what I earn."<small>Lupita, 29 · IMSS-registered · already a Nu customer</small></div>
-      <span class="why" style="margin-top:auto;padding-top:10px">She already lives in Nu. Her paycheck leaves the other bank within 48 hours, mostly to pay her Nu card. <b>Her problem is plumbing.</b></span>
+      <div class="attrs">
+        <div><span>Earns</span><b>$8,420 a quincena</b></div>
+        <div><span>Formal</span><b>IMSS-registered, 4 years</b></div>
+        <div><span>With Nu</span><b>Card, 2 Cajitas, recargas</b></div>
+        <div><span>Salary</span><b style="color:var(--coral-ink)">Lands at her boss's bank</b></div>
+      </div>
+      <div class="quote" style="margin-top:auto;font-size:14.5px">"My credit line is whatever the bureau says, not what I earn."</div>
     </div>
-
     <div class="card" data-step="2" style="display:flex;flex-direction:column">
       <div class="coltag" style="color:var(--nu-ink)">The size</div>
       <div class="tam sm">
@@ -354,21 +375,21 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
         <div class="r"><div class="track"><div class="fill" style="--w:26.9%;background:var(--nu)"></div></div><div class="lab"><b>16M</b><span class="sub">Nu México customers</span></div></div>
         <div class="r"><div class="track"><div class="fill" style="--w:2.2%;background:var(--good)"></div></div><div class="lab"><b>~1.3M</b><span class="sub">income visible <i>(assumed)</i></span></div></div>
       </div>
-      <span class="why" style="margin-top:auto;padding-top:12px"><b>The gap is the strategy.</b> 27% of México's workers are already our customers. We can see the income of about 2% of them.</span>
+      <span class="why" style="margin-top:auto;padding-top:12px"><b>The gap is the strategy.</b> 27% of México's workers bank with us. We see 2% of their income.</span>
     </div>
 
     <div class="card" data-step="3" style="display:flex;flex-direction:column">
       <div class="coltag" style="color:var(--good)">The unlock</div>
-      <div class="q"><span class="num">1</span><div><b>Payroll is a banking activity.</b><span class="why">A SOFIPO could not host a nómina account. A bank can, with IPAB cover at 400,000 UDIs instead of 25,000.</span></div></div>
-      <div class="q"><span class="num">2</span><div><b>The worker chooses, not the employer.</b><span class="why">Portability is her legal right: free, eleven business days, employer never involved. The incumbent's grip is an HR contract she walks around.</span></div></div>
-      <div class="q"><span class="num">3</span><div><b>We already know who they are.</b><span class="why">A recurring same-day deposit from a known employer sits in our own data. We do not have to find them. We have to ask.</span></div></div>
-      <div class="ben"><div class="t">Her</div><div>A line sized on her salary, not a bureau file. Money the day it lands.</div></div>
-      <div class="ben"><div class="t nu">Nu</div><div>Deposits that don't rate-shop, income to lend against, payday-aligned collection.</div></div>
+      <div class="q"><span class="num">1</span><div><b>Payroll is a banking activity.</b><span class="why">A SOFIPO could not host nómina. A bank can, insured to 400,000 UDIs.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>The worker chooses, not the boss.</b><span class="why">Portability is her legal right: free, eleven days, no employer involved.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>We already know who they are.</b><span class="why">Her payroll pattern is already in our data. We do not have to find her. We have to ask.</span></div></div>
+      <div class="ben"><div class="t">Her</div><div>A line sized on her salary. Money the day it lands.</div></div>
+      <div class="ben"><div class="t nu">Nu</div><div>Deposits that stay, income to lend against.</div></div>
     </div>
 
   </div>
-  <div class="band" data-step="4" style="margin-top:16px;font-size:16px"><b>A redirected salary is a switching cost a rate cannot buy.</b> Moving a deposit takes one tap; moving where your salary lands takes eleven days and a decision. Competitors can match 13% in a week. None can match a year of watching someone get paid.</div>
-  <p class="foot" data-step="4" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> IMSS, June 2026: 22,779,704 registered positions · INEGI ENOE: ~59.5m employed, informality 55.0% at July 2026 · Nu Holdings Q2 2026 and July update: 16m México customers.<br><b>Assumptions.</b> ~1.3m customers with income visible to Nu, my estimate, not disclosed · portrait is an illustration, not a photograph.</p>
+  <div class="band" data-step="4" style="margin-top:16px;font-size:16px"><b>A redirected salary is a switching cost a rate cannot buy.</b> Competitors can match 13% in a week. None can match a year of watching someone get paid.</div>
+  <p class="foot" data-step="4" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> IMSS, June 2026: 22,779,704 registered positions · INEGI ENOE: ~59.5m employed, informality 55.0% at July 2026 · Nu Holdings Q2 2026 and July update: 16m México customers.<br><b>Assumptions.</b> ~1.3m customers with income visible to Nu, my estimate, not disclosed · Lupita is a composite, and her portrait is an illustration.</p>
 </div></section>
 
 <!-- 5 THE LADDER -->
