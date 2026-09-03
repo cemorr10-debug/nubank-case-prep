@@ -99,7 +99,7 @@ body.anim .slide.in .tam .fill{width:var(--w)}
 @media(max-width:900px){.lad{grid-template-columns:1fr}}
 .rung{border:1px solid var(--hair);border-radius:16px;padding:14px 16px;background:var(--surface);box-shadow:var(--sh);display:flex;flex-direction:column}
 .rung.top{border-color:var(--nu);box-shadow:0 0 0 1px var(--nu),var(--shh)}
-.rung .gate{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.rung .gate{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .rung.top .gate{color:var(--nu-ink)}
 .rung h3{font-size:21px;margin-bottom:3px}
 .rung .tag{font-size:12.5px;color:var(--muted);margin-bottom:10px}
@@ -395,46 +395,34 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
 <!-- 5 THE LADDER -->
 <section class="slide dense"><div class="w">
   <div class="eb rise">The mass-market bundle · Q1</div>
-  <h2 class="rise">Nu México already has the products. It does not have a ladder.</h2>
-  <p class="lede rise" style="--d:120ms;font-size:15px;margin-bottom:14px">Cuenta, Cajitas, Tarjeta, Préstamo, Nu+ all exist and all ship today. What is missing is a reason to climb: a tier structure where the benefit is <b>earned by banking with us</b>, not by being alive.</p>
-  <div class="lad">
-    <div class="rung" data-step="1">
+  <h2 class="rise">Nu has the products. It doesn't have a ladder.</h2>
+  <div class="lad" style="align-items:end;margin-top:26px">
+    <div class="rung" data-step="1" style="min-height:190px">
       <div class="gate">Gate · anyone</div>
-      <h3>Nu</h3><div class="tag">Ships today</div>
-      <ul>
-        <li>Cuenta Nu + debit card</li>
-        <li>Cajita 24/7 at 7.00%</li>
-        <li>Tarjeta de Crédito, limit from a bureau score</li>
-        <li>Nu+ points</li>
-      </ul>
-      <div class="ft">Acquisition. Costs us roughly the funding benchmark: TIIE de fondeo is 7.00%.</div>
+      <h3>Nu</h3>
+      <ul><li>Account, card, Cajita at 7%</li></ul>
+      <div class="ft">Ships today.</div>
     </div>
-    <div class="rung" data-step="2">
+    <div class="rung" data-step="2" style="min-height:250px">
       <div class="gate">Gate · one purchase a month</div>
-      <h3>Nu Turbo</h3><div class="tag">Ships today</div>
-      <ul>
-        <li>Everything in Nu, plus:</li>
-        <li class="new">Cajita Turbo at 13%, capped at $25,000</li>
-        <li>Cajitas congeladas, 7.05–7.30%</li>
-      </ul>
-      <div class="ft"><b style="color:var(--coral-ink)">The problem.</b> No minimum spend, so a $20 coffee earns up to $3,250 a year. The gate proves the customer is alive. It does not prove they bank with us.</div>
+      <h3>Nu Turbo</h3>
+      <ul><li>Cajita Turbo at 13%, capped at $25,000</li></ul>
+      <div class="ft"><b style="color:var(--coral-ink)">The gate buys a coffee.</b> A $20 purchase earns up to $3,250 a year.</div>
     </div>
-    <div class="rung top" data-step="3">
-      <div class="gate">Gate · your income lands here</div>
-      <h3>Nu Nómina</h3><div class="tag">The licence unlocks this</div>
+    <div class="rung top" data-step="3" style="min-height:310px">
+      <div class="gate">Gate · your salary lands here</div>
+      <h3>Nu Nómina</h3>
       <ul>
-        <li>Everything above, plus:</li>
-        <li class="new">Yield quoted as CETES + 6.5, capped at one month of income</li>
-        <li class="new">Card limit sized on observed income, not the bureau</li>
+        <li class="new">Yield quoted as CETES + 6.5</li>
+        <li class="new">Card limit on real income</li>
         <li class="new">Autopay the day after payday</li>
         <li class="new">Préstamo timed to the quincena</li>
-        <li class="new">Nu+ doubled on recargas and basic services</li>
-        <li class="new">Micro life and unemployment cover · IPAB to 400k UDIs</li>
+        <li class="new">Insured to 400,000 UDIs</li>
       </ul>
-      <div class="ft">Only the top rung is new build. The two below it are a re-gating of products already in the app.</div>
+      <div class="ft"><b style="color:var(--good)">New.</b> The licence unlocks it.</div>
     </div>
   </div>
-  <div class="band" data-step="4" style="margin-top:14px"><b>The premium budget does not grow. It moves.</b> Today we spend 600bp over TIIE to reward a card swipe. Tomorrow the same spend is gated on income landing, which is the one behaviour that lowers our funding cost <i>and</i> makes the deposit lendable. Net of a 50bp trim to the base rate, launch is roughly budget-neutral. <span class="why" style="display:inline">One tier, not two: two bundles would mean two roadmaps, two pricing committees, and a worse deal for the customer with less paperwork.</span></div>
+  <div class="band" data-step="4" style="margin-top:18px;font-size:17px"><b>The premium budget does not grow. It moves,</b> from rewarding a swipe to rewarding a salary.</div>
 </div></section>
 
 <!-- 6 THE JOURNEY -->
