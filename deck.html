@@ -109,6 +109,25 @@ body.anim .slide.in .tam .fill{width:var(--w)}
 .rung.top li:before{background:var(--nu)}
 .rung li.new{font-weight:600;color:var(--ink)}
 .rung .ft{margin-top:auto;padding-top:10px;font-size:12px;color:var(--muted);line-height:1.4}
+/* ladder: grow-up animation, stair line, escalating treatment */
+.lad.grow{position:relative;align-items:end;margin-top:64px}
+.lad.grow .rung{transform-origin:bottom center;position:relative;z-index:1}
+body.anim .slide.in .lad.grow .rung{animation:growup .95s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0ms)}
+@keyframes growup{from{opacity:0;transform:scaleY(.1)}to{opacity:1;transform:none}}
+.stairs{position:absolute;left:0;right:0;top:-46px;height:calc(100% + 46px);pointer-events:none;z-index:0}
+.stairs path.arc{stroke-dasharray:2400;stroke-dashoffset:2400;transition:stroke-dashoffset 1.7s ease .35s}
+.slide.in .stairs path.arc{stroke-dashoffset:0}
+@media(max-width:900px){.stairs{display:none}.lad.grow{margin-top:20px}}
+.rung.r1{background:var(--surface)}
+.rung.r1 .gate{color:var(--muted)}
+.rung.r2{background:linear-gradient(180deg,var(--c3),var(--surface) 72%);border-color:rgba(130,10,209,.28)}
+.rung.r2 .gate{color:var(--nu-ink)}
+.rung.r2 li:before{background:var(--nu);opacity:.55}
+.rung.r3{background:linear-gradient(160deg,#8f1fe4 0%,#5c0aa1 100%);border:0;color:#fff;box-shadow:0 34px 64px -28px rgba(92,10,161,.65)}
+.rung.r3 .gate{color:rgba(255,255,255,.78)}
+.rung.r3 h3,.rung.r3 li{color:#fff}
+.rung.r3 li:before{background:#fff}
+.rung.r3 .ft{color:rgba(255,255,255,.82)}
 /* journey */
 .jr{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
 @media(max-width:900px){.jr{grid-template-columns:1fr}}
@@ -199,7 +218,8 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
 .brand{position:fixed;top:16px;left:24px;display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--muted);z-index:5}
 .brand i{width:10px;height:10px;border-radius:50%;background:var(--nu);display:inline-block}
 .kick{position:fixed;top:16px;right:24px;font-size:12px;color:var(--muted);z-index:5;font-variant-numeric:tabular-nums}
-@media(prefers-reduced-motion:reduce){.slide,.bar,.draw path.arc,.draw .node,.tam .fill,body.anim .tam .fill{transition:none}.glow{animation:none}
+@media(prefers-reduced-motion:reduce){.slide,.bar,.draw path.arc,.draw .node,.tam .fill,body.anim .tam .fill,.stairs path.arc{transition:none}.glow{animation:none}
+  body.anim .slide.in .lad.grow .rung{animation:none}.stairs path.arc{stroke-dashoffset:0}
   body.anim .rise,body.anim [data-step]{opacity:1;transform:none}
   body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:none}
   body.anim .tam .fill{width:var(--w)}}
@@ -209,8 +229,9 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
   .deck{height:auto}
   .slide{position:relative;inset:auto;opacity:1!important;transform:none!important;pointer-events:auto;min-height:100vh;page-break-after:always;padding:40px}
   [data-step],.rise,.draw .node{opacity:1!important;transform:none!important;animation:none!important}
-  .draw path.arc{stroke-dashoffset:0!important}
+  .draw path.arc,.stairs path.arc{stroke-dashoffset:0!important}
   .tam .fill{width:var(--w)!important}
+  .lad.grow .rung{animation:none!important;opacity:1!important;transform:none!important}
 }
 </style>
 
@@ -396,33 +417,41 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
 <section class="slide dense"><div class="w">
   <div class="eb rise">The mass-market bundle · Q1</div>
   <h2 class="rise">Nu has the products. It doesn't have a ladder.</h2>
-  <div class="lad" style="align-items:end;margin-top:26px">
-    <div class="rung" data-step="1" style="min-height:190px">
+  <div class="lad grow">
+    <svg class="stairs draw" viewBox="0 0 1080 356" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="stg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="var(--muted)" stop-opacity=".55"/><stop offset=".55" stop-color="var(--nu)"/><stop offset="1" stop-color="var(--nu)"/></linearGradient></defs>
+      <path class="arc" d="M10 164 H358 V104 H722 V34 H1066" fill="none" stroke="url(#stg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+      <g class="node" style="transition-delay:1.5s">
+        <circle cx="1052" cy="9" r="6.5" fill="var(--nu)"/>
+        <path d="M1043 34c0-12 4-17 9-17s9 5 9 17z" fill="var(--nu)"/>
+      </g>
+    </svg>
+    <div class="rung r1" data-step="1" style="min-height:180px">
       <div class="gate">Gate · anyone</div>
       <h3>Nu</h3>
       <ul><li>Account, card, Cajita at 7%</li></ul>
       <div class="ft">Ships today.</div>
     </div>
-    <div class="rung" data-step="2" style="min-height:250px">
+    <div class="rung r2" data-step="2" style="min-height:240px">
       <div class="gate">Gate · one purchase a month</div>
       <h3>Nu Turbo</h3>
       <ul><li>Cajita Turbo at 13%, capped at $25,000</li></ul>
       <div class="ft"><b style="color:var(--coral-ink)">The gate buys a coffee.</b> A $20 purchase earns up to $3,250 a year.</div>
     </div>
-    <div class="rung top" data-step="3" style="min-height:310px">
+    <div class="rung r3" data-step="3" style="min-height:310px">
       <div class="gate">Gate · your salary lands here</div>
       <h3>Nu Nómina</h3>
       <ul>
-        <li class="new">Yield quoted as CETES + 6.5</li>
-        <li class="new">Card limit on real income</li>
-        <li class="new">Autopay the day after payday</li>
-        <li class="new">Préstamo timed to the quincena</li>
-        <li class="new">Insured to 400,000 UDIs</li>
+        <li>Yield quoted as CETES + 6.5</li>
+        <li>Card limit on real income</li>
+        <li>Autopay the day after payday</li>
+        <li>Préstamo timed to the quincena</li>
+        <li>Insured to 400,000 UDIs</li>
       </ul>
-      <div class="ft"><b style="color:var(--good)">New.</b> The licence unlocks it.</div>
+      <div class="ft"><b style="color:#a8f0c6">New.</b> The licence unlocks it.</div>
     </div>
   </div>
-  <div class="band" data-step="4" style="margin-top:18px;font-size:17px"><b>The premium budget does not grow. It moves,</b> from rewarding a swipe to rewarding a salary.</div>
+  <div class="band" data-step="4" style="margin-top:20px;font-size:17px"><b>The premium budget does not grow. It moves,</b> from rewarding a swipe to rewarding a salary.</div>
 </div></section>
 
 <!-- 6 THE JOURNEY -->
