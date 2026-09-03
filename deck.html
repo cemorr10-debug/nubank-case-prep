@@ -740,31 +740,39 @@ body.anim .slide.in .rise,body.anim .slide.in [data-step]{animation:rise .62s cu
 <section class="slide dense"><div class="w">
   <div class="eb rise">Yield strategy &amp; mass-market pricing · Q3</div>
   <h2 class="rise">Every turn of the flywheel makes us better at pricing.</h2>
-  <p class="lede rise" style="--d:120ms;font-size:15px;margin-top:-4px;margin-bottom:14px">Lower-risk customers are better-understood customers. That is the input pricing has been missing.</p>
+  <p class="lede rise" style="--d:120ms;font-size:15px;margin-top:-4px;margin-bottom:12px">The same three questions before every rate decision. The flywheel is what finally lets us answer them.</p>
+  <div class="grid" style="grid-template-columns:1.15fr 0.9fr 1.1fr;gap:14px;align-items:stretch">
 
-  <div class="coltag rise" style="--d:180ms;color:var(--good)">What we now know</div>
-  <div class="grid g3" style="gap:12px">
-    <div class="card" data-step="1"><b style="font-size:15px">What they earn</b><span class="why">Income lands here, salary or remesa.</span></div>
-    <div class="card" data-step="1"><b style="font-size:15px">Who pays back</b><span class="why">Showing people how to grow cut defaults 10%.</span></div>
-    <div class="card" data-step="1"><b style="font-size:15px">What money costs us</b><span class="why">Deposits that stay, not deposits that shop.</span></div>
-  </div>
-
-  <div class="coltag" data-step="2" style="margin-top:16px;color:var(--nu-ink)">So we can price both sides</div>
-  <div class="grid g2" style="gap:12px;align-items:stretch">
-    <div class="card" data-step="2">
-      <div class="coltag" style="color:var(--nu-ink)">Deposits · what we pay</div>
-      <h3 style="font-size:19px">13% on one month of your income, for anyone whose income lands here.</h3>
-      <span class="why" style="margin-top:6px">Tied to the government rate, so it moves with the market. Same money we spend today, with a better reason to earn it.</span>
+    <div class="card" data-step="1" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--nu-ink)">The questions</div>
+      <div class="q" style="padding-top:2px"><span class="num">1</span><div><b>What do we pay, and what do we make?</b><span class="why">We pay 7%, or 13% on the first $25,000. We make about 25% if we lend it, 6.5% if it sits.</span></div></div>
+      <div class="q"><span class="num">2</span><div><b>What does the customer do to earn it?</b><span class="why">Today, buy a coffee. Tomorrow, land their income here.</span></div></div>
+      <div class="q"><span class="num">3</span><div><b>How risky are they, really?</b><span class="why">We can now see what they earn, whether they climb, and who pays back.</span></div></div>
     </div>
-    <div class="card" data-step="2">
-      <div class="coltag" style="color:var(--good)">Loans · what we charge</div>
-      <h3 style="font-size:19px">The less risk we see, the lower the price.</h3>
-      <span class="why" style="margin-top:6px">Everyone starts at the same price. Income that lands here, payments made on time, and growth we can watch each bring it down. Personalised, and only ever downward.</span>
-    </div>
-  </div>
 
-  <div class="band" data-step="3" style="margin-top:14px;font-size:15.5px"><b style="color:var(--coral-ink)">What we trade.</b> We give up the deposits that only came for the rate, and some margin on the riskiest borrowers, to buy income that stays and customers who climb.</div>
-  <p class="foot" data-step="3" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> Nu México rate card, Sep 2026: 7.00% base, Turbo 13% capped at $25,000 · TIIE de fondeo 7.00% · CETES 28d 6.49% · loan-to-deposit 35%, Nu Holdings Q2 2026. <b>Assumptions.</b> Default result from a prior growth-hub test, effect size only · the 5 January cut from 15% to 13% is the elasticity experiment already in Nu's data; reading it is week one.</p>
+    <div class="card" data-step="2" style="display:flex;flex-direction:column">
+      <div class="coltag" style="color:var(--good)">The levers</div>
+      <b style="font-size:13.5px;color:var(--nu-ink)">Deposits</b>
+      <ul style="list-style:none;font-size:13.5px;line-height:1.5;margin:4px 0 12px">
+        <li>The rate we pay</li><li>Who qualifies for it</li><li>How much of their money it covers</li><li>Fixed, or tied to the market</li>
+      </ul>
+      <b style="font-size:13.5px;color:var(--good)">Loans</b>
+      <ul style="list-style:none;font-size:13.5px;line-height:1.5;margin:4px 0 0">
+        <li>The starting price</li><li>What earns a lower one</li><li>The limit</li>
+      </ul>
+    </div>
+
+    <div class="card" data-step="3" style="display:flex;flex-direction:column;background:linear-gradient(180deg,var(--c3),var(--surface) 60%)">
+      <div class="coltag" style="color:var(--coral-ink)">The call</div>
+      <b style="font-size:13.5px;color:var(--nu-ink)">Deposits</b>
+      <p style="font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;line-height:1.25;margin:4px 0 14px">13% on one month of your income, for anyone whose income lands here. Tied to the government rate.</p>
+      <b style="font-size:13.5px;color:var(--good)">Loans</b>
+      <p style="font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;line-height:1.25;margin:4px 0 0">One starting price for everyone. Lower risk earns a lower price. Risk sets the limit, and the limit grows.</p>
+    </div>
+
+  </div>
+  <div class="band" data-step="4" style="margin-top:14px;font-size:15.5px"><b style="color:var(--coral-ink)">What we trade.</b> We give up the deposits that only came for the rate, and some margin on the riskiest borrowers, to buy income that stays and customers who climb.</div>
+  <p class="foot" data-step="4" style="font-size:10.8px;line-height:1.45"><b>Facts.</b> Nu México rate card, Sep 2026: 7.00% base, Turbo 13% capped at $25,000 · TIIE de fondeo 7.00% · CETES 28d 6.49% · loan-to-deposit 35%, Nu Holdings Q2 2026. <b>Assumptions.</b> ~25% net lending yield · default result from a prior growth-hub test, effect size only · the 5 January cut from 15% to 13% is the elasticity experiment already in Nu's data; reading it is week one.</p>
 </div></section>
 
 <!-- 10 THE CALL -->
