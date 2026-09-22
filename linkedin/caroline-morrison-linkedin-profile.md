@@ -94,19 +94,18 @@ Full-time · Oct 2024 – Jun 2026 · Los Angeles, California, United States
 
 Hybrid IC + Managing Director role. Architected and delivered Tala's next-generation personalization and lending intelligence systems, uniting machine learning, product design and customer growth strategy.
 
-• +$2.3M in monthly contribution margin: built and deployed an end-to-end causal-inference R-learner engine that dynamically adjusts loan pricing and limits from real-time capacity signals.
-  ↳ Public release, Tala InSight (Jul 17, 2025): https://tala.co/blog/2025/07/17/tala-insight/ **[confirm]**
-• Gave every customer a precise, transparent view of their next eligible limit by integrating contextual-bandit rewards and counterfactual scoring into decisioning.
+• +$2.3M in monthly contribution margin: re-architected Tala's lending systems and decisioning engine around a causal-inference R-learner that prices loans and sets limits from real-time capacity signals, replacing score-only underwriting with personalized risk scoring. Launched publicly as Tala InSight.
+  ↳ https://tala.co/blog/2025/07/17/tala-insight/
   ↳ https://www.linkedin.com/pulse/beyond-credit-score-how-talas-new-ai-model-unlocks-true-siroya-o7hqc
-• Launched Tala's Installment Loan product, leading one of two cross-functional teams that combined ML-driven personalization with adaptive user experiences.
-  ↳ https://talamobile.mx/contrato-de-apertura-de-credito-a-plazos/
-  ↳ https://tala.ph/new-tala-loan-offers-repayment-flexibility/
-• Delivered personalized growth journeys in Mexico and the Philippines through server-driven UI: tailored rewards, limit-growth tracking and personalized loan products, creating a seamless, scalable path to customer empowerment and retention.
-  ↳ Crece con Tala, Mexico (Oct 23, 2025): https://talamobile.mx/2025/10/23/crece-con-tala/
+• Cut defaults among thin-margin customers by 1 point (10% relative) and lifted repeat rate by 1 point: launched Crece con Tala, a Growth Hub that shows every customer their next eligible limit, powered by a counterfactual scoring engine and contextual-bandit rewards that turn repayment behavior into a transparent path to more credit.
+  ↳ https://talamobile.mx/2025/10/23/crece-con-tala/
   ↳ https://expansion.mx/finanzas-personales/2025/10/28/tala-micro-prestamos-para-gente-que-vive-al-dia
+• Launched Tala's first installment loan product, Préstamo a Plazos, letting customers split repayment across up to four monthly payments and unlocking higher limits for customers with strong repayment history.
+  ↳ https://talamobile.mx/contrato-de-apertura-de-credito-a-plazos/
+• Migrated Tala's customer growth experiences to server-driven UI, so personalized journeys, rewards and loan products could ship to Mexico and the Philippines without app releases.
 
 Media to attach: Featured #1, #3.
-Skills: Causal Inference · Machine Learning · Credit Risk · Dynamic Pricing · Server-Driven UI · Python · SQL
+Skills: Causal Inference · Machine Learning · Credit Risk · Dynamic Pricing · Server-Driven UI · Contextual Bandits · Python · SQL
 
 #### Career break
 Dec 2023 – Sep 2024 · 10 mos
