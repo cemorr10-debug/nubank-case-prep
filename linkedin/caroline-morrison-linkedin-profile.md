@@ -182,18 +182,23 @@ Aug 2017 – Jul 2018 · Dallas-Fort Worth Metroplex
 ### BTC Media – Analyst
 Jun 2017 – Jul 2017 · Nashville Metropolitan Area
 
-• Led the acquisition and technical integration of a cryptocurrency podcast network into the world's largest and oldest bitcoin and blockchain media company; negotiated channel and show-host contract extensions and co-authored the PO.ET alt-coin white paper.
+• Led the acquisition and integration of a cryptocurrency podcast network into BTC Media, the world's oldest bitcoin and blockchain media company, negotiating channel and show-host contract extensions to keep the network's talent through the deal.
+• Co-authored the white paper for PO.ET, an alt-coin for timestamping and licensing digital media on the blockchain.
 
-### Joma Bakery Cafe – Strategy Analyst
+### Joma Bakery Cafe – Strategy Analyst, Corporate Responsibility
 May 2016 – Jul 2016 · Chiang Mai, Thailand
 
-• Implemented new strategies to support and employ women and transgender people leaving Thailand's sex industry.
-• Authored financial policies reconciling operations with the legal regulations of Cambodia, Vietnam, Thailand and Laos.
+• Redesigned the support Joma offers women leaving Thailand's sex industry for its job-skills training program, after mapping the barriers that kept women with dependents from finishing it.
+• Authored the financial policies that brought Joma's operations into compliance across four countries: Cambodia, Vietnam, Thailand and Laos.
 
-### Forza Financial – Chief Investment Officer
+### Forza Financial – Founding Chief Investment Officer
 Apr 2014 – Apr 2016 · Tuscaloosa, Alabama
 
-• Keep the existing description (student-founded microfinance institute, $500–$5,000 capital loans to local Alabama entrepreneurs). Lead with one metric if you have it: capital deployed or repayment rate.
+Where the lending career started: a student-founded, student-funded microfinance institute making $500 to $5,000 capital loans to entrepreneurs in Alabama who could not get them anywhere else.
+
+• Built and managed a $25,000 loan portfolio as founding CIO, setting credit policy and making lending decisions for local business owners.
+• Expanded Forza into three new Alabama counties, including a summer living in one of them to build the client network in person.
+• Invited to present three sessions at the National Lend for America Summit at UC Berkeley on how student-run microfinance institutes expand their client base.
 
 ---
 
