@@ -70,21 +70,21 @@ Profile > Add profile section > Recommended > Add featured > Add a link.
 
 ## 4. Experience (matches the live role structure)
 
+Every bullet leads with the outcome and uses only language from the resume. Roles the resume does
+not cover (Director of Lending 2023, Sr. Manager Experimentation 2022) get one framing bullet from
+the resume's Tala summary plus an **[add metric]** placeholder; nothing there is invented.
+
 ### Tala · 4 yrs 7 mos
 
 #### Director of Consumer Products and Applied AI
 Full-time · Jun 2026 – Present · Mexico City Metropolitan Area
 
-Suggested description:
-Own Tala's consumer product portfolio and applied-AI roadmap across Mexico and the Philippines: lending, growth, and conversational experiences built on the decisioning stack my previous team shipped.
-
-• Launched Grow with Tala in the Philippines (Jun 2026), extending the server-driven growth hub (limit tracking, guaranteed next-limit visibility, payment streaks, referral rewards) built in Mexico to a second market.
+• Launched Grow with Tala in the Philippines (Jun 2026), extending Mexico's personalized limit-growth, rewards and next-limit journey to a second market.
   ↳ https://bworldonline.com/spotlight/2026/06/24/758233/tala-launches-grow-with-tala-to-provide-customers-with-clear-and-reliable-path-to-credit-growth/
   ↳ https://context.ph/2026/06/29/tala-unveils-app-to-reward-smarter-borrowing-habits/
   ↳ https://backendnews.net/tala-feature-shows-users-path-to-higher-credit-limits/
-  ↳ https://fintechnews.ph/72117/lending/tala-digital-lending-credit-growth-tracker/
-• Lead the Agentic Conversational Underwriting & Coaching platform, combining LLM-driven conversation with the causal limit engine so customers can be underwritten and coached in-app. **[no public link found]**
-• **[fill in]** One bullet with a current-role metric (customers reached, margin, approval-rate lift, markets launched).
+• Lead Tala's Agentic Conversational Underwriting & Coaching platform, pairing ML-driven personalization with adaptive, conversational user experiences. **[no public link found]**
+• **[add metric]** One current-role outcome: customers reached, margin, approval-rate lift or markets launched.
 
 Media to attach: Featured #4.
 Skills: Applied AI · Conversational AI · Product Strategy · Consumer Products · Emerging Markets
@@ -92,20 +92,18 @@ Skills: Applied AI · Conversational AI · Product Strategy · Consumer Products
 #### Director of Lending, Decisioning and Personalization
 Full-time · Oct 2024 – Jun 2026 · Los Angeles, California, United States
 
-Suggested description:
 Hybrid IC + Managing Director role. Architected and delivered Tala's next-generation personalization and lending intelligence systems, uniting machine learning, product design and customer growth strategy.
 
-• Built and deployed an end-to-end causal-inference R-learner engine that dynamically sets loan pricing and limits from real-time capacity signals, driving +$2.3M in monthly contribution margin.
-• Integrated contextual-bandit rewards and counterfactual scoring to predict and expose each customer's next eligible limit with precision and transparency.
+• +$2.3M in monthly contribution margin: built and deployed an end-to-end causal-inference R-learner engine that dynamically adjusts loan pricing and limits from real-time capacity signals.
   ↳ Public release, Tala InSight (Jul 17, 2025): https://tala.co/blog/2025/07/17/tala-insight/ **[confirm]**
-  ↳ CEO article: https://www.linkedin.com/pulse/beyond-credit-score-how-talas-new-ai-model-unlocks-true-siroya-o7hqc
-• Led two cross-functional teams to launch Tala's Installment Loan product (Préstamo a Plazos, up to 4 monthly payments) and the foundations of the agentic underwriting platform.
+• Gave every customer a precise, transparent view of their next eligible limit by integrating contextual-bandit rewards and counterfactual scoring into decisioning.
+  ↳ https://www.linkedin.com/pulse/beyond-credit-score-how-talas-new-ai-model-unlocks-true-siroya-o7hqc
+• Launched Tala's Installment Loan product, leading one of two cross-functional teams that combined ML-driven personalization with adaptive user experiences.
   ↳ https://talamobile.mx/contrato-de-apertura-de-credito-a-plazos/
   ↳ https://tala.ph/new-tala-loan-offers-repayment-flexibility/
-• Designed and shipped Crece con Tala (Oct 2025), a server-driven UI growth experience delivering personalized journeys through tailored rewards, limit-growth tracking and personalized loan products, later extended to the Philippines.
-  ↳ https://talamobile.mx/2025/10/23/crece-con-tala/
-  ↳ https://talamobile.mx/2025/10/23/growth-hub/
-  ↳ Expansión coverage (Oct 28, 2025): https://expansion.mx/finanzas-personales/2025/10/28/tala-micro-prestamos-para-gente-que-vive-al-dia
+• Delivered personalized growth journeys in Mexico and the Philippines through server-driven UI: tailored rewards, limit-growth tracking and personalized loan products, creating a seamless, scalable path to customer empowerment and retention.
+  ↳ Crece con Tala, Mexico (Oct 23, 2025): https://talamobile.mx/2025/10/23/crece-con-tala/
+  ↳ https://expansion.mx/finanzas-personales/2025/10/28/tala-micro-prestamos-para-gente-que-vive-al-dia
 
 Media to attach: Featured #1, #3.
 Skills: Causal Inference · Machine Learning · Credit Risk · Dynamic Pricing · Server-Driven UI · Python · SQL
@@ -113,24 +111,20 @@ Skills: Causal Inference · Machine Learning · Credit Risk · Dynamic Pricing �
 #### Career break
 Dec 2023 – Sep 2024 · 10 mos
 
-Suggested one-liner (LinkedIn allows a description on career breaks; pick the true reason):
-> Planned break for [travel / family / relocation to Mexico City]. Returned to Tala in an expanded decisioning and personalization remit.
+One-liner (LinkedIn allows a description; use the true reason):
+> Planned break for [travel / family / relocation]. Returned to Tala in an expanded decisioning and personalization remit.
 
 #### Director of Lending
 Full-time · Feb 2023 – Dec 2023 · Los Angeles Metropolitan Area
 
-**[fill in]** The resume has no bullets for this year. Suggested framing to complete with your numbers:
-• Owned lending P&L levers (limits, pricing, term) for Mexico and the Philippines; set the decisioning roadmap that became the causal limit engine.
-• [Metric: portfolio growth, loss-rate change, approval-rate change, or new product shipped in 2023.]
+• Owned lending for Mexico and the Philippines and set the roadmap for Tala's next-generation lending intelligence systems, uniting machine learning, product design and customer growth strategy. **[add metric]**
 
 Skills: Lending · Credit Decisioning · P&L Management
 
 #### Senior Manager, Digital Product Management – Test Design and Experimentation
 Full-time · Mar 2022 – Feb 2023 · Los Angeles, California, United States
 
-**[fill in]** Suggested framing, drawing on the experimentation platform you built at Capital One:
-• Built Tala's experimentation practice: test design standards, guardrail metrics and a shared test-analysis pipeline across product teams.
-• [Metric: tests per quarter, time-to-readout reduction, or a headline win from a test.]
+• Built the test-design and experimentation practice behind Tala's personalization systems, bringing the ML-enabled testing approach proven at Capital One (5X test volume, 35% NPV lift) to Tala's product teams. **[add metric]**
 
 Skills: Experimentation · A/B Testing · Causal Inference · Product Analytics
 
@@ -141,22 +135,21 @@ Skills: Experimentation · A/B Testing · Causal Inference · Product Analytics
 #### Business Manager – Data Science and Analytics
 Full-time · Jan 2021 – Jan 2022
 
-• Built an ML-enabled testing infrastructure for product landing-page variants and email marketing campaigns: 35% lift in target NPV ($23MM incremental NPV), 5X more tests, 20% lower coordination cost, and digitized KPI reporting.
-• Recognized with the Capital One Associate RSU Grant (2021), a $150K grant to the top performer among 3,000 associates in the line of business.
+• $23MM incremental NPV (35% lift in target NPV): built an ML-enabled testing infrastructure for product landing-page variants and email marketing campaigns, increasing test quantity 5X, cutting coordination costs 20% and digitizing KPI reporting.
+• Top performer among 3,000 associates in the line of business: awarded the 2021 Capital One Associate RSU Grant ($150K).
 
 Skills: Machine Learning · Experimentation · Marketing Analytics · Data Science
 
 #### Business Manager – Auto Navigator
 Full-time · Jan 2020 – Jan 2021 · Dallas, Texas
 
-• Led a cross-functional team of 3 tech pods, 4 UX designers, 3 architects, 1 data engineer, 2 data scientists, 1 legal advisor and 2 direct reports ($4MM in resources) to re-design and re-architect the Dealer Navigator platform, a re-hashing tool suite for dealers.
-  ↳ Platform: https://dealernavigator.com/
-  ↳ Later public launch of the dealer-facing Navigator Platform (Jan 2023): https://www.capitalone.com/about/newsroom/navigator-platform-launch/ **[confirm]**
-• Tapped for a tiger team of 4 PMs to build and scale a digital-retail channel hosted directly on dealer websites as car buying moved online during COVID-19. Piloted at 15 dealers, scaled to 9,000 in five months, $13.6MM in new originations ($344K NPV). Contracted and integrated two third-party lenders at scale.
-  ↳ Context, Capital One 2020 research on dealers and digital tools: https://www.capitalone.com/about/newsroom/car-buying-dealer-digital/
-• Launched 15 A/B tests on the Auto Navigator experience, aggregating to 5X originations expectations ($350MM incremental originations) for a $2B annual-run-rate business.
+• $13.6MM in new originations ($344K NPV) in five months: scaled a new digital-retail channel hosted on dealer websites from a 15-dealer pilot to 9,000 dealers as car buying moved online during COVID-19; contracted and integrated two third-party lenders at scale.
+  ↳ https://www.capitalone.com/about/newsroom/car-buying-dealer-digital/
+• $350MM in incremental originations, 5X expectations: launched 15 A/B tests on the Auto Navigator experience, a $2B annual-run-rate business.
   ↳ https://www.capitalone.com/cars/
-• Capital One Mark of Distinction (2020), quarterly award for the highest-impact initiative in the line of business.
+• Re-designed and re-architected the Dealer Navigator platform, leading a $4MM cross-functional team of 3 tech pods, 4 UX designers, 3 architects, 1 data engineer, 2 data scientists, 1 legal advisor and 2 direct reports.
+  ↳ https://dealernavigator.com/ · https://www.capitalone.com/about/newsroom/navigator-platform-launch/ **[confirm]**
+• Capital One Mark of Distinction (2020): quarterly award for the highest-impact initiative in the line of business.
 
 Media to attach: Featured #6.
 Skills: Product Management · Auto Finance · A/B Testing · Cross-functional Leadership
@@ -164,38 +157,36 @@ Skills: Product Management · Auto Finance · A/B Testing · Cross-functional Le
 #### Sr. Associate, Digital Product Management – Auto Navigator
 Jan 2019 – Dec 2019 · Dallas, Texas
 
-• Launched two products into market: an entirely new end-to-end platform and an Auto Navigator iteration that drove a 30% lift in targeted online engagement.
-• Owned customer problems, product strategy and business requirements, working cross-functionally with Design, Tech, Research, Legal & Compliance and Credit partners.
+• 30% lift in targeted online engagement: launched two products into market, an entirely new end-to-end platform and an iteration of Auto Navigator.
+• Owned customer problems, product strategy and business requirements end to end, working across Design, Tech, Research, Legal & Compliance and Credit partners.
 
 #### Sr. Business Analyst – Business Risk Office
 Aug 2018 – Dec 2018 · Dallas, TX
 
-• Authored credit decisions and conducted end-to-end analysis of product risks and outcomes ahead of launches; built products in a highly regulated environment.
+• Authored credit decisions and end-to-end analyses of product risk and outcomes for product launches in a highly regulated environment.
 
 #### Business Analyst – Business Risk Office
 Aug 2017 – Jul 2018 · Dallas-Fort Worth Metroplex
 
-• Executed customer empathy research and analyzed A/B test results, delivering insights and recommendations to product teams and key decision makers.
+• Turned customer empathy research and A/B test results into insights and recommendations adopted by product teams and key decision makers.
 
 ---
 
 ### BTC Media – Analyst
 Jun 2017 – Jul 2017 · Nashville Metropolitan Area
 
-Replace the current one-liner with:
-• Managed the acquisition and technical integration of a cryptocurrency podcast network into BTC Media, the world's largest and oldest bitcoin and blockchain media company, and co-authored the white paper for the PO.ET alt-coin.
+• Led the acquisition and technical integration of a cryptocurrency podcast network into the world's largest and oldest bitcoin and blockchain media company; negotiated channel and show-host contract extensions and co-authored the PO.ET alt-coin white paper.
 
 ### Joma Bakery Cafe – Strategy Analyst
 May 2016 – Jul 2016 · Chiang Mai, Thailand
 
-Replace the current one-liner with:
-• Implemented strategies to support and employ women and transgender people leaving Thailand's sex industry.
-• Authored financial policies reconciling operations with legal regulations in Cambodia, Vietnam, Thailand and Laos.
+• Implemented new strategies to support and employ women and transgender people leaving Thailand's sex industry.
+• Authored financial policies reconciling operations with the legal regulations of Cambodia, Vietnam, Thailand and Laos.
 
 ### Forza Financial – Chief Investment Officer
 Apr 2014 – Apr 2016 · Tuscaloosa, Alabama
 
-Keep the existing description (student-founded microfinance institute, $500–$5,000 capital loans to local entrepreneurs). Consider adding one metric: loans deployed or repayment rate.
+• Keep the existing description (student-founded microfinance institute, $500–$5,000 capital loans to local Alabama entrepreneurs). Lead with one metric if you have it: capital deployed or repayment rate.
 
 ---
 
