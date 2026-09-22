@@ -161,9 +161,9 @@ Jan 2019 – Dec 2019 · Dallas, Texas
 #### Sr. Business Analyst – Business Risk Office
 Aug 2018 – Dec 2018 · Dallas, TX
 
-• Delivered a new risk-management tool for Capital One Auto Finance executives, leading a cross-functional product pod in the Business Risk Office to aggregate and manage business risks across the line of business.
-• Authored credit decisions and end-to-end analyses of product risk and outcomes for product launches, building in a highly regulated environment alongside Legal & Compliance and Credit partners.
-• Set build-versus-buy strategy for the tool, deciding which capabilities to build in house and which to source from third-party vendors, and managed the vendor technical integrations.
+• Shipped a new risk-management tool for Capital One Auto Finance executives, leading a cross-functional product pod in the Business Risk Office to give leadership one view of business risk across the line of business.
+• Authored credit decisions and end-to-end risk and outcome analyses for product launches, partnering with Legal & Compliance and Credit to ship in a highly regulated environment.
+• Owned the build-versus-buy call for the platform, selecting which capabilities to build in house and which to source from vendors, then managed the vendor technical integrations to delivery.
 
 #### Business Analyst – Business Risk Office
 Aug 2017 – Jul 2018 · Dallas-Fort Worth Metroplex
