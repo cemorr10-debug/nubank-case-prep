@@ -112,9 +112,12 @@ One-liner (LinkedIn allows a description; use the true reason):
 #### Director of Lending
 Full-time · Feb 2023 – Dec 2023 · Los Angeles Metropolitan Area
 
-• Owned lending for Mexico and the Philippines and set the roadmap for Tala's next-generation lending intelligence systems, uniting machine learning, product design and customer growth strategy. **[add metric]**
+• Expanded access without expanding risk: rewrote Tala's credit policy for Mexico and the Philippines so [X]% more first-time applicants qualified while portfolio losses held at [Y]%. **[add metric]**
+• Ran Tala's first structured price-sensitivity tests, measuring how demand, repayment and margin moved as rates changed by segment, and used the results to replace a single price for everyone with segment-level pricing. **[add result if available]**
+• Launched Tala's first rewards program, paying customers for on-time repayment and referrals, the foundation the Growth Hub was later built on. **[add adoption or repeat-rate figure]**
+• Owned lending P&L for Mexico and the Philippines, Tala's two largest markets: limits, pricing, term and credit policy.
 
-Skills: Lending · Credit Decisioning · P&L Management
+Skills: Credit Policy · Pricing Strategy · Lending · P&L Management · Experimentation
 
 #### Senior Manager, Digital Product Management – Test Design and Experimentation
 Full-time · Mar 2022 – Feb 2023 · Los Angeles, California, United States
