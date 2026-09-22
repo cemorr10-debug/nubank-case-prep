@@ -135,10 +135,12 @@ Skills: Experimentation · A/B Testing · Causal Inference · Product Analytics
 #### Business Manager – Data Science and Analytics
 Full-time · Jan 2021 – Jan 2022
 
-• $23MM incremental NPV (35% lift in target NPV): built an ML-enabled testing infrastructure for product landing-page variants and email marketing campaigns, increasing test quantity 5X, cutting coordination costs 20% and digitizing KPI reporting.
-• Top performer among 3,000 associates in the line of business: awarded the 2021 Capital One Associate RSU Grant ($150K).
+• $23MM in incremental NPV, a 35% lift against target: built a machine-learning-enabled testing infrastructure that used Bayesian bandits to allocate traffic across landing-page variants and email marketing campaigns, running 5X more tests, cutting coordination costs 20% and digitizing KPI reporting for the line of business.
+  ↳ Capital One's public write-up of the experimentation approach: https://www.capitalone.com/tech/software-engineering/using-experimentation-for-sound-decision-making/
+  ↳ Capital One research on Bayesian bandits for UX optimization (ICDM 2020): https://arxiv.org/abs/2010.04010
+• Selected by senior leadership as the top performer among 3,000 associates in Capital One Auto Finance (2021 Associate Equity Grant).
 
-Skills: Machine Learning · Experimentation · Marketing Analytics · Data Science
+Skills: Machine Learning · Bayesian Bandits · Experimentation · Marketing Analytics · Data Science
 
 #### Business Manager – Auto Navigator
 Full-time · Jan 2020 – Jan 2021 · Dallas, Texas
@@ -216,7 +218,7 @@ One of 23 students selected from 6,500; now on the advisory board spearheading a
 
 ## 7. Honors & awards
 
-• Capital One Associate RSU Grant (2021) – $150K grant to the top performer among 3,000 associates in the line of business
+• Capital One Associate Equity Grant (2021) – selected by senior leadership as top performer among 3,000 associates in the line of business
 • Capital One Mark of Distinction (2020) – quarterly award for highest-impact initiative in the LOB
 • Algernon Sydney Sullivan Award (2017) – national recognition for community service and leadership
 • Academic Elite Scholar, The University of Alabama
