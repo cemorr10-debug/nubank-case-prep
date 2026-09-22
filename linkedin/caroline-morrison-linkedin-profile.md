@@ -213,7 +213,7 @@ Academic Elite Scholar (one of two recipients of the university's highest academ
 LinkedIn fields per entry: Role · Organization · Cause · Start–End · Description. Newest first.
 
 ### Board Member
-Nameless Mountain · Cause: Health (or Education) · [Start year] – Present · Boulder, CO
+Nameless Mountain · Cause: Health (or Education) · 2025 – Present · Boulder, CO
 
 > Board member of Nameless Mountain, a Boulder center for meditation, retreat and contemplative education that is Dharma-rooted and open to people of every faith and none. Help set strategy and stewardship for a nonprofit built on the premise that serious spiritual practice should not carry a high price.
 
@@ -227,7 +227,7 @@ The University of Alabama, Division of Community Affairs · Cause: Education · 
   ↳ https://communityaffairs.ua.edu/about-us/boa/
 
 ### Advisory Board Member
-The University Fellows Experience, UA Honors College · Cause: Education · [Start year] – Present
+The University Fellows Experience, UA Honors College · Cause: Education · 2022 – Present
 
 > Advisory board member for the program that selected me as one of 23 students from an incoming class of 6,500. Leading a decade-long, $10M fundraising initiative to extend the program's global reach and its work on systemic poverty.
 
