@@ -168,7 +168,7 @@ Aug 2018 – Dec 2018 · Dallas, TX
 #### Business Analyst – Business Risk Office
 Aug 2017 – Jul 2018 · Dallas-Fort Worth Metroplex
 
-• Turned customer empathy research and A/B test results into insights and recommendations adopted by product teams and key decision makers.
+• Turned customer empathy research and statistical analysis of randomized A/B experiments into insights and recommendations adopted by product teams and Capital One Auto Finance decision makers, building the experimentation foundation for the product roles that followed.
 
 ---
 
