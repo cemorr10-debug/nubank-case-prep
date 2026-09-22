@@ -79,14 +79,14 @@ the resume's Tala summary plus an **[add metric]** placeholder; nothing there is
 #### Director of Consumer Products and Applied AI
 Full-time · Jun 2026 – Present · Mexico City Metropolitan Area
 
-• Launched Grow with Tala in the Philippines (Jun 2026), extending Mexico's personalized limit-growth, rewards and next-limit journey to a second market.
-  ↳ https://bworldonline.com/spotlight/2026/06/24/758233/tala-launches-grow-with-tala-to-provide-customers-with-clear-and-reliable-path-to-credit-growth/
+• Building the lending relationship customers love and trust: credit that grows with you, explains itself, and talks back.
+• Cut defaults among thin-margin customers 10% (1 point) and lifted repeat rate 1 point with Crece con Tala, a Growth Hub where every customer sees their next limit and exactly how to earn it, powered by a counterfactual scoring engine and personalized rewards.
+  ↳ Mexico launch (Oct 2025): https://talamobile.mx/2025/10/23/crece-con-tala/
+  ↳ Philippines launch (Jun 2026): https://bworldonline.com/spotlight/2026/06/24/758233/tala-launches-grow-with-tala-to-provide-customers-with-clear-and-reliable-path-to-credit-growth/
   ↳ https://context.ph/2026/06/29/tala-unveils-app-to-reward-smarter-borrowing-habits/
-  ↳ https://backendnews.net/tala-feature-shows-users-path-to-higher-credit-limits/
-• Lead Tala's Agentic Conversational Underwriting & Coaching platform, pairing ML-driven personalization with adaptive, conversational user experiences. **[no public link found]**
-• **[add metric]** One current-role outcome: customers reached, margin, approval-rate lift or markets launched.
+• Lead the product team building Tala's Agentic Harness, the conversational underwriting and coaching layer that turns every loan decision into a dialogue: customers get a decision, understand it, and know what to do next. **[no public link found]**
 
-Media to attach: Featured #4.
+Media to attach: Featured #3, #4.
 Skills: Applied AI · Conversational AI · Product Strategy · Consumer Products · Emerging Markets
 
 #### Director of Lending, Decisioning and Personalization
