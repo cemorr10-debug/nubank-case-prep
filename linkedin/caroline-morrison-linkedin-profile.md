@@ -223,12 +223,40 @@ One of 23 students selected from 6,500; now on the advisory board spearheading a
 
 ## 7. Honors & awards
 
-• Capital One Associate Equity Grant (2021) – selected by senior leadership as top performer among 3,000 associates in the line of business
-• Capital One Mark of Distinction (2020) – quarterly award for highest-impact initiative in the LOB
-• Algernon Sydney Sullivan Award (2017) – national recognition for community service and leadership
-• Academic Elite Scholar, The University of Alabama
+LinkedIn fields per entry: Title · Issuer · Issue date · Associated with · Description. Newest first.
 
----
+### Associate Equity Grant, Top Performer
+Issuer: Capital One · Issued: 2021 · Associated with: Capital One, Business Manager – Data Science and Analytics
+
+> Selected by senior leadership as the top performer among 3,000 associates in Capital One Auto Finance and awarded a one-time equity grant, the line of business's highest individual recognition. Awarded for building the machine-learning testing infrastructure that delivered $23M in incremental NPV and a 35% lift against target.
+
+Links: none public. Capital One does not publish associate-level recognition. Leave unlinked.
+
+### Mark of Distinction
+Issuer: Capital One · Issued: 2020 · Associated with: Capital One, Product Manager – Dealer Navigator Platform
+
+> Quarterly award for the highest-impact initiative in Capital One Auto Finance, recognizing the team that delivers the greatest results while overcoming the most significant challenges. Awarded for building and scaling Dealer Navigator from a 15-dealer pilot to 9,000 dealers in five months during COVID, generating $13.6M in new originations.
+
+Links: none public. Leave unlinked.
+
+### Algernon Sydney Sullivan Award
+Issuer: The Sullivan Foundation and The University of Alabama · Issued: May 2017 · Associated with: The University of Alabama
+
+> The University of Alabama's highest honor for a student and the oldest of its Premier Awards, given since 1928 to one woman and one man in each graduating class for excellence of character and service to humanity. Selected from a class of roughly 6,500. Presented by the Sullivan Foundation at more than 70 colleges and universities across the South.
+
+Links:
+  ↳ Vestavia Voice coverage of the award: https://vestaviavoice.com/peopleplaces/caroline-morrison712/
+  ↳ University of Alabama Premier Awards, Sullivan Award: https://premierawards.sl.ua.edu/awards/
+  ↳ Sullivan Foundation awards page: https://sullivanfdn.org/awards/
+
+Media to attach: the Vestavia Voice article (LinkedIn honors entries accept one media link).
+
+### Academic Elite Scholar
+Issuer: The University of Alabama · Issued: 2013 · Associated with: The University of Alabama
+
+> One of two recipients of The University of Alabama's highest academic scholarship in the incoming class.
+
+Links: none needed.
 
 ## 8. Skills (top 5 pinned first)
 
