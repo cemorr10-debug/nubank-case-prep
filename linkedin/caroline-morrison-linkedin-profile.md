@@ -79,12 +79,12 @@ the resume's Tala summary plus an **[add metric]** placeholder; nothing there is
 #### Director of Consumer Products and Applied AI
 Full-time · Jun 2026 – Present · Mexico City Metropolitan Area
 
-• Building the lending relationship customers love and trust: credit that grows with you, explains itself, and talks back.
+Obsessed with building the lending relationship customers love and trust: credit that grows with you, explains itself, and talks back.
+
 • Cut defaults among thin-margin customers 10% (1 point) and lifted repeat rate 1 point with Crece con Tala, a Growth Hub where every customer sees their next limit and exactly how to earn it, powered by a counterfactual scoring engine and personalized rewards.
   ↳ Mexico launch (Oct 2025): https://talamobile.mx/2025/10/23/crece-con-tala/
   ↳ Philippines launch (Jun 2026): https://bworldonline.com/spotlight/2026/06/24/758233/tala-launches-grow-with-tala-to-provide-customers-with-clear-and-reliable-path-to-credit-growth/
-  ↳ https://context.ph/2026/06/29/tala-unveils-app-to-reward-smarter-borrowing-habits/
-• Lead the product team building Tala's Agentic Harness, the conversational underwriting and coaching layer that turns every loan decision into a dialogue: customers get a decision, understand it, and know what to do next. **[no public link found]**
+• Lead the product team building Tala's Agentic Harness, the conversational underwriting and coaching layer that turns every loan decision into a dialogue: customers get a decision, understand it, and know what to do next.
 
 Media to attach: Featured #3, #4.
 Skills: Applied AI · Conversational AI · Product Strategy · Consumer Products · Emerging Markets
@@ -92,13 +92,14 @@ Skills: Applied AI · Conversational AI · Product Strategy · Consumer Products
 #### Director of Lending, Decisioning and Personalization
 Full-time · Oct 2024 – Jun 2026 · Los Angeles, California, United States
 
-• Made every loan decision personal: rebuilt Tala's lending and decisioning engine around a causal-inference R-learner that prices and sizes each loan from real-time capacity signals instead of a credit score alone. +$2.3M in monthly contribution margin. Launched publicly as Tala InSight.
+Every loan decision should feel like it was made for you.
+
+• Made it so: rebuilt Tala's consumer-facing lending and decisioning engine around a causal-inference R-learner that prices and sizes each loan from real-time capacity signals instead of a credit score alone. +$2.3M in monthly contribution margin. Launched publicly as Tala InSight.
   ↳ https://tala.co/blog/2025/07/17/tala-insight/
   ↳ https://www.linkedin.com/pulse/beyond-credit-score-how-talas-new-ai-model-unlocks-true-siroya-o7hqc
-• Built the counterfactual scoring engine behind Crece con Tala, so the app can tell each customer their next eligible limit before they earn it, and mean it.
-• Launched Tala's first installment loan, Préstamo a Plazos: up to four monthly payments and higher limits, unlocked by repayment behavior rather than a new application.
+• Led the team that launched Tala's first installment loan, Préstamo a Plazos: up to four monthly payments and higher limits, unlocked by repayment behavior and risk score rather than a new application.
   ↳ https://talamobile.mx/contrato-de-apertura-de-credito-a-plazos/
-• Moved Tala's growth experiences to server-driven UI, so personalized journeys, rewards and loan products ship to Mexico and the Philippines without waiting on an app release.
+• Moved Tala's growth experiences to server-driven UI, so personalized journeys, rewards and loan products ship and scale across every Tala market with minimal rebuild.
 
 Media to attach: Featured #1.
 Skills: Causal Inference · Machine Learning · Credit Risk · Dynamic Pricing · Server-Driven UI · Python · SQL
@@ -106,25 +107,26 @@ Skills: Causal Inference · Machine Learning · Credit Risk · Dynamic Pricing �
 #### Career break
 Dec 2023 – Sep 2024 · 10 mos
 
-One-liner (LinkedIn allows a description; use the true reason):
-> Planned break for [travel / family / relocation]. Returned to Tala in an expanded decisioning and personalization remit.
+> Planned break for [reason]. Returned to Tala with an expanded decisioning and personalization remit.
 
 #### Director of Lending
 Full-time · Feb 2023 – Dec 2023 · Los Angeles Metropolitan Area
 
-• Expanded access without expanding risk: rewrote Tala's credit policy for Mexico and the Philippines so [X]% more first-time applicants qualified while portfolio losses held at [Y]%. **[add metric]**
-• Ran Tala's first structured price-sensitivity tests, measuring how demand, repayment and margin moved as rates changed by segment, and used the results to replace a single price for everyone with segment-level pricing. **[add result if available]**
-• Launched Tala's first rewards program, paying customers for on-time repayment and referrals, the foundation the Growth Hub was later built on. **[add adoption or repeat-rate figure]**
-• Owned lending P&L for Mexico and the Philippines, Tala's two largest markets: limits, pricing, term and credit policy.
+Expanding access without expanding risk.
+
+• Led the cross-functional team managing the lending P&L for Mexico and the Philippines, Tala's two largest markets, setting limits, pricing, term and credit policy with the credit teams.
+• Ran Tala's first structured price-sensitivity tests, measuring how demand, repayment and margin moved as rates changed by segment, and used the results to replace segment-level pricing with person-level pricing. **[add result]**
+• Launched Tala's first rewards program, turning on-time repayment and referrals into earned benefits, the behavioral foundation later productized as the Growth Hub.
 
 Skills: Credit Policy · Pricing Strategy · Lending · P&L Management · Experimentation
 
-#### Senior Manager, Digital Product Management – Test Design and Experimentation
+#### Sr. Product Manager, Decisioning and Experimentation
 Full-time · Mar 2022 – Feb 2023 · Los Angeles, California, United States
 
-• Built the test-design and experimentation practice behind Tala's personalization systems, bringing the ML-enabled testing approach proven at Capital One (5X test volume, 35% NPV lift) to Tala's product teams. **[add metric]**
+• Launched Tier 1, a growth program extending credit to deeper thin-file customers with no prior Tala history, expanding access [X]% at [Y]% losses and proving Tala could underwrite further down the file profitably. **[add metric]**
+• Owned Tala's experimentation infrastructure and test-design process: an Assignment API for randomized, auditable treatment assignment, plus causal-inference standards for power, guardrails and effect estimation across product, credit and growth.
 
-Skills: Experimentation · A/B Testing · Causal Inference · Product Analytics
+Skills: Experimentation · Causal Inference · A/B Testing · Product Analytics · Credit Decisioning
 
 ---
 
