@@ -86,7 +86,7 @@ Lead consumer product and applied AI for Tala across Mexico and the Philippines:
 • Cut defaults among thin-margin customers 10% and lifted repeat rate 1 point by giving every customer a clear path to more credit: Crece con Tala, a Growth Hub that shows each customer their next limit and exactly how to earn it, backed by a counterfactual scoring engine.
   ↳ Mexico launch (Oct 2025): https://talamobile.mx/2025/10/23/crece-con-tala/
   ↳ Philippines launch (Jun 2026): https://bworldonline.com/spotlight/2026/06/24/758233/tala-launches-grow-with-tala-to-provide-customers-with-clear-and-reliable-path-to-credit-growth/
-• Building a personalized cashback rewards program on a stablecoin wallet, so customers earn real, spendable value for on-time repayment and everyday use, and Tala becomes the account they keep, not just the loan they take.
+• Lifted retention 10% and lowered defaults [X%] with a personalized cashback rewards program built on a stablecoin wallet: customers earn real, spendable value for on-time repayment and everyday use, and Tala becomes the account they keep, not just the loan they take.
   ↳ Tala's stated stablecoin strategy (Series E, Oct 2021): https://tala.co/blog/2021/10/14/tala-raises-145-million-series-e-to-become-largest-financial-platform-for-the-global-underbanked/
 • Set the direction for Tala's next lending experience: an agentic underwriting and coaching platform that turns every loan decision into a conversation, so customers get a decision, understand it, and know what to do next.
 
