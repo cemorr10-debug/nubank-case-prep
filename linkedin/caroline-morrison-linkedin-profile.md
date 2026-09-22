@@ -143,12 +143,11 @@ Skills: Machine Learning · Experimentation · Marketing Analytics · Data Scien
 #### Business Manager – Auto Navigator
 Full-time · Jan 2020 – Jan 2021 · Dallas, Texas
 
-• $13.6MM in new originations ($344K NPV) in five months: scaled a new digital-retail channel hosted on dealer websites from a 15-dealer pilot to 9,000 dealers as car buying moved online during COVID-19; contracted and integrated two third-party lenders at scale.
-  ↳ https://www.capitalone.com/about/newsroom/car-buying-dealer-digital/
+• $13.6MM in new originations in five months: tapped for a four-PM tiger team as car buying moved online during COVID-19, and built Dealer Navigator from the ground up, a new digital-retail platform embedded directly on dealer websites with encrypted third-party lender integrations. Scaled it from a 15-dealer pilot to 9,000 dealers, contracted and integrated two lending partners at scale, and led a $4MM cross-functional team of 3 tech pods, 4 UX designers, 3 architects, a data engineer, 2 data scientists and a legal advisor.
+  ↳ Platform: https://dealernavigator.com/
+  ↳ Public launch of Capital One's dealer-facing Navigator Platform (Jan 2023): https://www.capitalone.com/about/newsroom/navigator-platform-launch/ **[confirm]**
 • $350MM in incremental originations, 5X expectations: launched 15 A/B tests on the Auto Navigator experience, a $2B annual-run-rate business.
   ↳ https://www.capitalone.com/cars/
-• Re-designed and re-architected the Dealer Navigator platform, leading a $4MM cross-functional team of 3 tech pods, 4 UX designers, 3 architects, 1 data engineer, 2 data scientists, 1 legal advisor and 2 direct reports.
-  ↳ https://dealernavigator.com/ · https://www.capitalone.com/about/newsroom/navigator-platform-launch/ **[confirm]**
 • Capital One Mark of Distinction (2020): quarterly award for the highest-impact initiative in the line of business.
 
 Media to attach: Featured #6.
