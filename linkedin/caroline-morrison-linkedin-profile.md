@@ -210,16 +210,42 @@ Academic Elite Scholar (one of two recipients of the university's highest academ
 
 ## 6. Volunteer experience
 
-**Social Venture Partners Dallas** – Dana Juett Resident · Aug 2018 – Present
-Pro bono consulting and venture philanthropy; raised $5,000 for the Lone Star Justice Alliance to advance juvenile prison reform.
+LinkedIn fields per entry: Role · Organization · Cause · Start–End · Description. Newest first.
 
-**The Blackburn Institute** – Fellow · Mar 2015 – Present
-Statewide leadership network advancing ethical, values-based dialogue on Alabama's most complex social issues.
+### Board Member
+Nameless Mountain · Cause: Health (or Education) · [Start year] – Present · Boulder, CO
 
-**The University Fellows Experience** – University Fellow & Advisory Board Member · Aug 2013 – Present
-One of 23 students selected from 6,500; now on the advisory board spearheading a $10M decade-long fundraising initiative.
+> Board member of Nameless Mountain, a Boulder center for meditation, retreat and contemplative education that is Dharma-rooted and open to people of every faith and none. Help set strategy and stewardship for a nonprofit built on the premise that serious spiritual practice should not carry a high price.
 
----
+  ↳ https://www.namelessmountain.org/ (board listing on the site)
+
+### Board of Advisors Member
+The University of Alabama, Division of Community Affairs · Cause: Education · 2021 – Present
+
+> Serve on the university's Community Affairs Board of Advisors, a group of alumni who mentor current students, help recruit future leaders and support campus initiatives in student success, entrepreneurship and community leadership across Alabama.
+
+  ↳ https://communityaffairs.ua.edu/about-us/boa/
+
+### Advisory Board Member
+The University Fellows Experience, UA Honors College · Cause: Education · [Start year] – Present
+
+> Advisory board member for the program that selected me as one of 23 students from an incoming class of 6,500. Leading a decade-long, $10M fundraising initiative to extend the program's global reach and its work on systemic poverty.
+
+  ↳ https://honors.ua.edu/apply/witt-university-fellows-program/
+
+### Fellow
+The Blackburn Institute, The University of Alabama · Cause: Civil Rights and Social Action · Mar 2015 – Present
+
+> Lifetime fellow of a statewide leadership network that develops diverse leaders who understand Alabama's hardest challenges and commit to acting on them. Fellows carry that commitment through their professions and civic work across the state.
+
+  ↳ https://blackburn.sl.ua.edu/about/
+
+### Dana Juett Resident
+Social Venture Partners Dallas · Cause: Poverty Alleviation · Aug 2018 – 2019
+
+> Selected for SVP Dallas's nine-month venture-philanthropy residency, which trains young professionals to expand nonprofit capacity through pro bono consulting, leadership development and sustainable investment. Raised $5,000 for the Lone Star Justice Alliance to advance juvenile prison reform.
+
+  ↳ https://svpdallas.org/what-we-do/the-dana-juett-social-venture-leadership-residency/
 
 ## 7. Honors & awards
 
