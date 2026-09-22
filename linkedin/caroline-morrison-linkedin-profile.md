@@ -146,8 +146,6 @@ Full-time · Jan 2020 – Jan 2021 · Dallas, Texas
 • $13.6MM in new originations in five months: tapped for a four-PM tiger team as car buying moved online during COVID-19, and built Dealer Navigator from the ground up, a new digital-retail platform embedded directly on dealer websites with encrypted third-party lender integrations. Scaled it from a 15-dealer pilot to 9,000 dealers, contracted and integrated two lending partners at scale, and led a $4MM cross-functional team of 3 tech pods, 4 UX designers, 3 architects, a data engineer, 2 data scientists and a legal advisor.
   ↳ Platform: https://dealernavigator.com/
   ↳ Public launch of Capital One's dealer-facing Navigator Platform (Jan 2023): https://www.capitalone.com/about/newsroom/navigator-platform-launch/ **[confirm]**
-• $350MM in incremental originations, 5X expectations: launched 15 A/B tests on the Auto Navigator experience, a $2B annual-run-rate business.
-  ↳ https://www.capitalone.com/cars/
 • Capital One Mark of Distinction (2020): quarterly award for the highest-impact initiative in the line of business.
 
 Media to attach: Featured #6.
@@ -156,13 +154,16 @@ Skills: Product Management · Auto Finance · A/B Testing · Cross-functional Le
 #### Sr. Associate, Digital Product Management – Auto Navigator
 Jan 2019 – Dec 2019 · Dallas, Texas
 
-• 30% lift in targeted online engagement: launched two products into market, an entirely new end-to-end platform and an iteration of Auto Navigator.
-• Owned customer problems, product strategy and business requirements end to end, working across Design, Tech, Research, Legal & Compliance and Credit partners.
+• $350MM in incremental originations, 5X expectations: launched a series of 15 UX tests to isolate and capture the highest-leverage opportunities in the Auto Navigator experience, a $2B annual-run-rate business.
+• 30% lift in targeted online engagement: led a $1MM cross-functional team of Tech, Design and Legal partners to launch two products, an entirely new end-to-end platform and an Auto Navigator iteration spanning customer onboarding, inventory search and personalized pricing.
+  ↳ https://www.capitalone.com/cars/
 
 #### Sr. Business Analyst – Business Risk Office
 Aug 2018 – Dec 2018 · Dallas, TX
 
-• Authored credit decisions and end-to-end analyses of product risk and outcomes for product launches in a highly regulated environment.
+• Delivered a new risk-management tool for Capital One Auto Finance executives, leading a cross-functional product pod in the Business Risk Office to aggregate and manage business risks across the line of business.
+• Authored credit decisions and end-to-end analyses of product risk and outcomes for product launches, building in a highly regulated environment alongside Legal & Compliance and Credit partners.
+• Set build-versus-buy strategy for the tool, deciding which capabilities to build in house and which to source from third-party vendors, and managed the vendor technical integrations.
 
 #### Business Analyst – Business Risk Office
 Aug 2017 – Jul 2018 · Dallas-Fort Worth Metroplex
