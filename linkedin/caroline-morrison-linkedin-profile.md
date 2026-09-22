@@ -92,20 +92,16 @@ Skills: Applied AI · Conversational AI · Product Strategy · Consumer Products
 #### Director of Lending, Decisioning and Personalization
 Full-time · Oct 2024 – Jun 2026 · Los Angeles, California, United States
 
-Hybrid IC + Managing Director role. Architected and delivered Tala's next-generation personalization and lending intelligence systems, uniting machine learning, product design and customer growth strategy.
-
-• +$2.3M in monthly contribution margin: re-architected Tala's lending systems and decisioning engine around a causal-inference R-learner that prices loans and sets limits from real-time capacity signals, replacing score-only underwriting with personalized risk scoring. Launched publicly as Tala InSight.
+• Made every loan decision personal: rebuilt Tala's lending and decisioning engine around a causal-inference R-learner that prices and sizes each loan from real-time capacity signals instead of a credit score alone. +$2.3M in monthly contribution margin. Launched publicly as Tala InSight.
   ↳ https://tala.co/blog/2025/07/17/tala-insight/
   ↳ https://www.linkedin.com/pulse/beyond-credit-score-how-talas-new-ai-model-unlocks-true-siroya-o7hqc
-• Cut defaults among thin-margin customers by 1 point (10% relative) and lifted repeat rate by 1 point: launched Crece con Tala, a Growth Hub that shows every customer their next eligible limit, powered by a counterfactual scoring engine and contextual-bandit rewards that turn repayment behavior into a transparent path to more credit.
-  ↳ https://talamobile.mx/2025/10/23/crece-con-tala/
-  ↳ https://expansion.mx/finanzas-personales/2025/10/28/tala-micro-prestamos-para-gente-que-vive-al-dia
-• Launched Tala's first installment loan product, Préstamo a Plazos, letting customers split repayment across up to four monthly payments and unlocking higher limits for customers with strong repayment history.
+• Built the counterfactual scoring engine behind Crece con Tala, so the app can tell each customer their next eligible limit before they earn it, and mean it.
+• Launched Tala's first installment loan, Préstamo a Plazos: up to four monthly payments and higher limits, unlocked by repayment behavior rather than a new application.
   ↳ https://talamobile.mx/contrato-de-apertura-de-credito-a-plazos/
-• Migrated Tala's customer growth experiences to server-driven UI, so personalized journeys, rewards and loan products could ship to Mexico and the Philippines without app releases.
+• Moved Tala's growth experiences to server-driven UI, so personalized journeys, rewards and loan products ship to Mexico and the Philippines without waiting on an app release.
 
-Media to attach: Featured #1, #3.
-Skills: Causal Inference · Machine Learning · Credit Risk · Dynamic Pricing · Server-Driven UI · Contextual Bandits · Python · SQL
+Media to attach: Featured #1.
+Skills: Causal Inference · Machine Learning · Credit Risk · Dynamic Pricing · Server-Driven UI · Python · SQL
 
 #### Career break
 Dec 2023 – Sep 2024 · 10 mos
