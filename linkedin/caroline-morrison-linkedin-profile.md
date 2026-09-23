@@ -210,6 +210,13 @@ Where the lending career started: a student-founded, student-funded microfinance
 B.S. Business Administration, Economics & Mathematics (Minors: Finance, Systemic Poverty) · 2013 – 2017
 Academic Elite Scholar (one of two recipients of the university's highest academic scholarship). Honors College, President's List, Dean's List, Blue Key, Mortar Board, ODK, Cardinal Key, Lambda Sigma, The Anderson Society, The XXXI (President).
 
+**Universidad Superior de Gastronomía (Colegio Superior de Gastronomía)** · Mexico City
+Diplomado Superior en Gastronomía Avanzado · [Start] – [End]
+
+> Advanced professional diploma in gastronomy from Latin America's first gastronomy university, completed alongside my work at Tala in Mexico City. Advanced technique and kitchen practice under working chefs, for someone who spends the day on credit models and the evening on the stove.
+
+  ↳ https://www.sg.edu.mx/diplomado-superior-en-gastronomia-avanzado
+
 **London School of Economics** · Organizational Behavior · Jul 2015
 **The University Fellows Cuba Experience, Havana** · Change: A Global Perspective · Mar 2016
 
